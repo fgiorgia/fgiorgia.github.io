@@ -1,6 +1,5 @@
 import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 
@@ -46,7 +45,7 @@ const Home: NextPage<StaticProps> = ({ posts }) => {
       </Head>
 
       <main className={styles.main}>
-        <Image 
+        <img 
           className={styles.profileImage}
           src="/images/profile.jpeg" // Route of the image file
           height={144} // Desired size with correct aspect ratio
@@ -82,13 +81,13 @@ const Home: NextPage<StaticProps> = ({ posts }) => {
                 </div>
               </div>
               <div className="col-md-4 m-auto">
-                <Image
+                <img
                   src={post.frontMatter.thumbnailUrl}
                   className="img-fluid mt-1 rounded-start"
                   alt="thumbnail"
                   width={500}
                   height={400}
-                  objectFit="cover"
+                  // objectFit="cover"
                 />
               </div>
             </div>

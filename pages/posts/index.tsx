@@ -1,9 +1,9 @@
 import { MDXProvider } from '@mdx-js/react'
-import Image from 'next/image'
+
 // import { Heading, Text, Pre, Code, Table } from 'my-components'
 
-const ResponsiveImage = (props) => (
-  <Image alt={props.alt} layout="responsive" {...props} />
+const ResponsiveImage = (props: any) => (
+  <img alt={props.alt} layout="responsive" {...props} />
 )
 
 const components = {
