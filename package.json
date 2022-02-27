@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "deploy": "git add out/ -f && git commit -m \"Deploy gh-pages\" && git subtree push --prefix out origin gh-pages --force",
+    "deploy": "gh-pages --branch gh-pages --dist out --dotfiles",
     "start": "next start",
     "lint": "next lint"
   },
