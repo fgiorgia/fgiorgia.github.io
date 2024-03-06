@@ -20,7 +20,7 @@ author: Giorgia Faedda
 ###############################################
 
 navbar-links:
-  Posts: "_posts"
+  Posts: "posts"
   GitHub: "https://github.com/fgiorgia"
   About Me: "aboutme"
 
