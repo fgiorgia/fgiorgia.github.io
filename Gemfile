@@ -8,3 +8,5 @@ source "https://rubygems.org"
 
 gemspec
 
+# Additional project gems
+gem 'jekyll-environment-variables'
