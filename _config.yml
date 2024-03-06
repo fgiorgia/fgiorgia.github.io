@@ -20,11 +20,9 @@ author: Giorgia Faedda
 ###############################################
 
 navbar-links:
+  Posts: "posts"
+  GitHub: "https://github.com/fgiorgia"
   About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://fgiorgia.github.io"
 
 ################
 # --- Logo --- #
