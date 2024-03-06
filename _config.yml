@@ -92,6 +92,8 @@ share-links-active:
 
 keywords: "data analyst,data analytics,statistics,python,sql,power bi,tableau,interactive dashboards,customer behavior"
 
+favicon: "favicon.ico"
+
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
 url-pretty: "fgiorgia.github.io"
