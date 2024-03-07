@@ -12,7 +12,9 @@ jobs:
           make install
       - name: Build the site
         run: |
+          echo "building version $GIT_HASH"
           make build
         env: # Export secret as an environment variable
           GOOGLE_ANALYTICS_GTAG: ${{ secrets.GOOGLE_ANALYTICS_GTAG }}
           PAGES_REPO_NWO: ${{ github.repository }}
+          GIT_HASH: ${{ github.sha }}
