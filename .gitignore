@@ -13,5 +13,6 @@ Gemfile.lock
 
 beautiful-jekyll-theme-*.gem
 
-# dotenv
+# dotenv file
 .env
+_env.yml
