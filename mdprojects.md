@@ -13,8 +13,7 @@ cover-img:
 
 This is a collection of some personal projects I've worked on that are easily viewable online. Anything that is not browser-friendly will not make the cut :(
 
-I'm also [**available for consulting**](/shiny), so feel free to [contact me](/contact) if you'd like to work together. 
-
+I'm also [**available for consulting**](/shiny), so feel free to [contact me](/contact) if you'd like to work together.
 
 ---
 
@@ -24,7 +23,7 @@ My [YouTube channel](http://youtube.com/c/daattali?sub_confirmation=1) contains 
 
 ## Courses
 
-I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/case-studies-building-web-applications-with-shiny-in-r) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the __#2 best-rated course on DataCamp__.
+I have an interactive, online video course ["Case Studies in Shiny"](https://www.datacamp.com/courses/case-studies-building-web-applications-with-shiny-in-r) hosted on DataCamp. It's designed to give you practice building Shiny apps for real-life scenarios, while also helping your learn some advanced Shiny concepts. At the time of writing, 2.5 years after it was released, this course is the **#2 best-rated course on DataCamp**.
 
 ## Web services
 
@@ -33,7 +32,7 @@ I have an interactive, online video course ["Case Studies in Shiny"](https://www
 
 ## Website templates
 
- **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (__> 10k websites built__) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
+ **[Beautiful Jekyll](https://beautifuljekyll.com/)** - a very popular Jekyll theme (**> 10k websites built**) I created when making this website.  You can [view a demo](https://beautifuljekyll.com/) or use it yourself to make a pretty website similar to this one by visiting the [project page](https://github.com/daattali/beautiful-jekyll#readme). The theme is extremely easy to install - you can have a site up and running in 2 minutes, and it's designed to look great on both mobile devices and laptops.
 
 ## R Shiny apps
 
@@ -105,13 +104,13 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
 
 ## R Talks
 
-- **Keynote/main speaker:**   
+- **Keynote/main speaker:**
   - 2016 Shiny Developer Conference (Stanford, USA) ([Video](https://deanattali.com/shinyjs-shinydevcon-2016/))  
   - 2019 SER International Seminar on Statistics with R (Rio, Brazil)  
-  - 2020 e-Rum European R Users Meeting (Milan, Italy) ([Video](https://www.youtube.com/watch?v=kbiCCRxmDm8)) 
+  - 2020 e-Rum European R Users Meeting (Milan, Italy) ([Video](https://www.youtube.com/watch?v=kbiCCRxmDm8))
 - **Workshop instructor:**  
   - 2017 RStudio Conf (Orlando, USA)  
-  - 2018 RStudio Conf (San Diego, USA)   
+  - 2018 RStudio Conf (San Diego, USA)
   - 2019 SER International Seminar on Statistics with R (Rio, Brazil)  
   - 2019 Open Data Science Conference (San Francisco, USA)  
   - 2022 New York R Conference (New York, USA)
@@ -120,14 +119,14 @@ If you got here after reading some of my blog posts, you'll know that I'm a big 
   - 2017 useR Conference (Brussels, Belgium) ([Video](https://www.youtube.com/watch?v=eq8TUOxpBpM))  
   - 2018 RStudio Conf (San Diego, USA)  
   - 2021 SER International Seminar on Statistics with R (Rio, Brazil) ([Video](https://www.youtube.com/watch?v=Kes56uWFMDA))
-- **Interviews:**   
+- **Interviews:**
   - [Shiny Dev Series Episode 17: Dean Attali](https://www.youtube.com/watch?v=yRGJDtOUP3Y)
-  - [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)   
+  - [R-Podcast Episode 16: Interview with Dean Attali](https://r-podcast.org/posts/the-r-podcast-episode-16-interview-with-dean-attali.html)
   - [R-Podcast Episode 19](https://r-podcast.org/episode/019-talking-shiny-at-rstudio-conf-with-barbara-borges-and-dean-attali/)  
   - [Appsilon Shiny Conference: Consulting with Shiny Panel Discussion](https://www.youtube.com/watch?v=v0hk5xteYjQ)
   - [Ask-me-anything at CodeForCash](https://codefor.cash/dean_attali_ama.php)  
 - **Meetups:**  
-  - 2016-08 Simon Fraser University Meetup (Vancouver, Canada)     
+  - 2016-08 Simon Fraser University Meetup (Vancouver, Canada)
   - 2017-07 Budapest Users of R Network (Budapest, Hungary)  
   - 2018-05 R Israel Meetup (Tel Aviv, Israel)  
   - 2018-09 Seattle useR Group (Seattle, USA)  
