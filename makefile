@@ -1,9 +1,11 @@
 install:
 	bundle install
 
-dev:
+env_config:
+	ruby _scripts/generate_env_config.rb
+
+dev: env_config
 	bundle exec jekyll serve --livereload
 
-build:
-	ruby _scripts/generate_env_config.rb
+build: env_config
 	bundle exec jekyll build --future --config=_config.yml,_env.yml
