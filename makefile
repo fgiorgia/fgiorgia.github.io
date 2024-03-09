@@ -3,9 +3,18 @@ install:
 
 env_config:
 	ruby _scripts/generate_env_config.rb
+	ruby _scripts/merge_configs.rb
 
-dev: env_config
-	bundle exec jekyll serve --livereload --config=_config.yml,_env.yml
+clean_env_config:
+	rm _env.yml
+	rm _config.yml
 
-build: env_config
-	bundle exec jekyll build --future --config=_config.yml,_env.yml
+jekyll-serve:
+	bundle exec jekyll serve --livereload
+
+jekyll-build:
+	bundle exec jekyll build --future
+
+dev: env_config jekyll-serve clean_env_config
+
+build: env_config jekyll-build clean_env_config
