@@ -3,6 +3,10 @@ _site
 .sass-cache
 .vagrant
 _env.yml
+_config.yml
+
+# dotenv file
+.env
 
 # general
 .DS_Store
@@ -12,7 +16,3 @@ ehthumbs.db
 Gemfile.lock
 
 beautiful-jekyll-theme-*.gem
-
-# dotenv file
-.env
-_env.yml
