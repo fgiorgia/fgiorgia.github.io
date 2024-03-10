@@ -8,5 +8,5 @@ source "https://rubygems.org"
 
 gemspec
 
-# Additional project gems
-gem 'jekyll-environment-variables'
+# Plugin dependencies
+gem 'dotenv', groups: [:development, :test]

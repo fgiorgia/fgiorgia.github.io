@@ -2,8 +2,6 @@
 _site
 .sass-cache
 .vagrant
-_env.yml
-_config.yml
 
 # dotenv file
 .env
