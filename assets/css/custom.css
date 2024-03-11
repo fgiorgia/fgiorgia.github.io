@@ -1,0 +1,35 @@
+.content-with-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.text-content {
+    flex: 1 1 60%; /* Adjust the width as needed */
+    padding-right: 2rem; /* Adds some space between the text and the image */
+}
+
+.image-content {
+    flex: 1 1 40%; /* Adjust the width as needed */
+    text-align: right; /* Aligns the image to the right */
+}
+
+.image-content img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .content-with-image {
+        flex-direction: column;
+    }
+
+    .text-content, .image-content {
+        flex-basis: 100%;
+    }
+
+    .image-content * {
+        margin-top: 2rem; /* Adds some space between the text and the image on smaller screens */
+    }
+}
+
