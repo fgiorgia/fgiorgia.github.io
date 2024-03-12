@@ -4,6 +4,8 @@ css: assets/css/projects.css
 
 <div class="projects-container-grid">
   {% for project in site.projects %}
+    {% assign github-username = site.social-network-links.github %}
+    {% assign github-project = project.github-name %}
     {% capture github-project-link %}
       https://github.com/{{ github-username }}/{{ github-project }}
     {% endcapture %}
@@ -26,8 +28,6 @@ css: assets/css/projects.css
         </div>
       </div>
       <div class="project-github-container">
-        {% assign github-username = site.social-network-links.github %}
-        {% assign github-project = project.github-name %}
         <a class="project-github-link" href="{{ github-project-link }}" target="__blank">
           <i class="fab fa-github"></i> {{ github-project }}
         </a>
