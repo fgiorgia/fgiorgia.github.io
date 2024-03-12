@@ -9,12 +9,11 @@ css: "/assets/css/custom.css"
         Hi there! I'm from the beautiful island of Sardinia in Italy. I started my journey studying Psychology at the University of Cagliari, where I discovered my love for data analysis. I did a lot of courses on Statistics, and one of my favorite projects was creating and analyzing surveys to understand what motivates people.
     </div>
     <div class="media-content">
-        <img src="/assets/img/cagliari-sardinia-italy.jpg">
+        <img src="/assets/img/cagliari-sardinia-italy.jpg" alt="Cagliari, Sardinia">
     </div>
 </div>
 
 Despite life's unexpected turns leading me from Italy to Finland and finally Sweden, my commitment to advancing my career remained unwavering. This transition inspired a pivotal shift in my career path toward Data Analysis—a field where my statistical skills and passion for discovery converge. I seized the opportunity to enhance my expertise through several courses, including a comprehensive program from ReDI School, which fortified my foundation in this dynamic field.
-
 
 <div class="content-with-media">
     <div class="text-content">
