@@ -36,7 +36,7 @@ css: assets/css/projects.css
             <i class="fab fa-github"></i> {{ github-project }}
           </a>
           {% capture github-watch-button-url %}
-            https://ghbtns.com/github-btn.html?{{ github-username }}=twbs&repo={{ github-project }}&type=watch&v=2
+            https://ghbtns.com/github-btn.html?user={{ github-username }}=twbs&repo={{ github-project }}&type=watch&v=2
           {% endcapture %}
           <iframe src="{{ github-watch-button-url }}" frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
         </div>
