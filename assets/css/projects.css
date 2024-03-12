@@ -1,6 +1,6 @@
 .projects-container-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
   grid-gap: 1.5rem;
 
   margin-top: 1.5rem;
@@ -9,7 +9,7 @@
 
 @media (width >= 768px) {
   .projects-container-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -73,21 +73,21 @@
 }
 
 .project-tag {
-    font-size: 12px;
-    display: inline-block;
-    text-decoration: none;
-    font-family: monospace;
-    color: teal;
-    
-    border: 1px solid #666;
-    border-radius: 10px;
-    padding: 0.05em 0.45em;
+  font-size: 12px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: monospace;
+  color: teal;
+  
+  border: 1px solid #666;
+  border-radius: 10px;
+  padding: 0.05em 0.45em;
 
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
+  margin-right: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .project-tag:hover {
-    text-decoration: none;
-    background-color: #f8f8f8;
+  text-decoration: none;
+  background-color: #f8f8f8;
 }
