@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Giorgia Faedda | Copyright © 2024 | All rights reserved. -->
-<!-- Version: c8abcc26b5a7d18a1b28673fa14af3c72f534e48 -->
+<!-- Version: a4d86a1920af6b0e629fca83f3fa1bf0ee7a923d -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +19,7 @@
   <meta name="author" content="Giorgia Faedda">
   
 
-  <meta name="description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?{{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
+  <meta name="description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?user={{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
 
   
 
@@ -100,7 +100,7 @@
   
   <meta property="og:site_name" content="Giorgia Faedda">
   <meta property="og:title" content="Giorgia Faedda">
-  <meta property="og:description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?{{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
+  <meta property="og:description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?user={{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
 
   
   <meta property="og:image" content="/assets/img/my_profile_pic.jpeg">
@@ -119,7 +119,7 @@
   <meta name="twitter:creator" content="@">
 
   <meta property="twitter:title" content="Giorgia Faedda">
-  <meta property="twitter:description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?{{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
+  <meta property="twitter:description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?user={{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
 
   
   <meta name="twitter:image" content="/assets/img/my_profile_pic.jpeg">
@@ -315,86 +315,88 @@
     
     
     <div class="project-item">
-      <a class="project-title-link" href="
+      <div class="project-item-img-container">
+        <img class="project-item-content-img-background" src="/assets/img/project/customer_feedback_dashboard.png" alt="Project thumbnail" />
+        <img class="project-item-content-img" src="/assets/img/project/customer_feedback_dashboard.png" alt="Project thumbnail" />
+      </div>
+      <div class="project-item-content-container">
+        <div class="project-item-text-container">
+          <a class="project-title-link" href="
       https://github.com/fgiorgia/customer-feedback-analysis
     " target="__blank">
-        <h2>Customer Feedback Analysis</h2>
-      </a>
-      <div class="project-item-content-container-wrapper">
-        <div class="project-item-content-container">
+            <h2>Customer Feedback Analysis</h2>
+          </a>
           <div class="project-item-content-text">
             <p>For the first assignment in the Introduction to Data Analytics Course at the ReDI School Malmö, we were tasked with a fascinating project: analyze customer feedback for a fictional startup in the natural beauty sector. The goal was to use data analytics to understand customers’ perceptions of products and services, simulating real-world business analytics practices.</p>
 
           </div>
-          <div class="project-item-content-img-container">
-            <img class="project-item-content-img" src="/assets/img/project/customer_feedback_dashboard.png" alt="Project thumbnail" />
-          </div>
         </div>
-      </div>
-      <div class="project-github-container">
-        <a class="project-github-link" href="
+        <div class="project-github-container">
+          <a class="project-github-link" href="
       https://github.com/fgiorgia/customer-feedback-analysis
     " target="__blank">
-          <i class="fab fa-github"></i> customer-feedback-analysis
-        </a>
-        
-        <iframe src="
-          https://ghbtns.com/github-btn.html?fgiorgia=twbs&amp;repo=customer-feedback-analysis&amp;type=watch&amp;v=2
-        " frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-      </div>
-      
-        <div class="project-tags-container">
+            <i class="fab fa-github"></i> customer-feedback-analysis
+          </a>
           
-            <a class="project-tag" href="/tags#Sentiment Analysis">Sentiment Analysis</a>
-          
-            <a class="project-tag" href="/tags#MS Excel">MS Excel</a>
-          
+          <iframe src="
+            https://ghbtns.com/github-btn.html?user=fgiorgia=twbs&amp;repo=customer-feedback-analysis&amp;type=watch&amp;v=2
+          " frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
         </div>
-      
+        
+          <div class="project-tags-container">
+            
+              <a class="project-tag" href="/tags#Sentiment Analysis">Sentiment Analysis</a>
+            
+              <a class="project-tag" href="/tags#MS Excel">MS Excel</a>
+            
+          </div>
+        
+      </div>
     </div>
   
     
     
     
     <div class="project-item">
-      <a class="project-title-link" href="
+      <div class="project-item-img-container">
+        <img class="project-item-content-img-background" src="/assets/img/thumb.png" alt="Project thumbnail" />
+        <img class="project-item-content-img" src="/assets/img/thumb.png" alt="Project thumbnail" />
+      </div>
+      <div class="project-item-content-container">
+        <div class="project-item-text-container">
+          <a class="project-title-link" href="
       https://github.com/fgiorgia/ikea-app-reviews-analysis
     " target="__blank">
-        <h2>IKEA App Review Analysis</h2>
-      </a>
-      <div class="project-item-content-container-wrapper">
-        <div class="project-item-content-container">
+            <h2>IKEA App Review Analysis</h2>
+          </a>
           <div class="project-item-content-text">
             <p>Check ho well an nice are users when submitting reviews on the Play Store.
 Check ho well an nice are users when submitting reviews on the Play Store.
 Check ho well an nice are users when submitting reviews on the Play Store.</p>
 
           </div>
-          <div class="project-item-content-img-container">
-            <img class="project-item-content-img" src="/assets/img/thumb.png" alt="Project thumbnail" />
-          </div>
         </div>
-      </div>
-      <div class="project-github-container">
-        <a class="project-github-link" href="
+        <div class="project-github-container">
+          <a class="project-github-link" href="
       https://github.com/fgiorgia/ikea-app-reviews-analysis
     " target="__blank">
-          <i class="fab fa-github"></i> ikea-app-reviews-analysis
-        </a>
-        
-        <iframe src="
-          https://ghbtns.com/github-btn.html?fgiorgia=twbs&amp;repo=ikea-app-reviews-analysis&amp;type=watch&amp;v=2
-        " frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
-      </div>
-      
-        <div class="project-tags-container">
+            <i class="fab fa-github"></i> ikea-app-reviews-analysis
+          </a>
           
-            <a class="project-tag" href="/tags#IKEA">IKEA</a>
-          
-            <a class="project-tag" href="/tags#Reviews">Reviews</a>
-          
+          <iframe src="
+            https://ghbtns.com/github-btn.html?user=fgiorgia=twbs&amp;repo=ikea-app-reviews-analysis&amp;type=watch&amp;v=2
+          " frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
         </div>
-      
+        
+          <div class="project-tags-container">
+            
+              <a class="project-tag" href="/tags#IKEA">IKEA</a>
+            
+              <a class="project-tag" href="/tags#Reviews">Reviews</a>
+            
+          </div>
+        
+      </div>
     </div>
   
 </div>
