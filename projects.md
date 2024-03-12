@@ -23,11 +23,13 @@ css: assets/css/projects.css
         >
       </div>
       <div class="project-item-content-container">
-        <a class="project-title-link" href="{{ github-project-link }}" target="__blank">
-          <h2>{{ project.title }}</h2>
-        </a>
-        <div class="project-item-content-text">
-          {{ project.content | markdownify }}
+        <div class="project-item-text-container">
+          <a class="project-title-link" href="{{ github-project-link }}" target="__blank">
+            <h2>{{ project.title }}</h2>
+          </a>
+          <div class="project-item-content-text">
+            {{ project.content | markdownify }}
+          </div>
         </div>
         <div class="project-github-container">
           <a class="project-github-link" href="{{ github-project-link }}" target="__blank">

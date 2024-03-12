@@ -54,7 +54,16 @@ layout: null
 }
 
 .project-item-content-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   padding: 1.5rem;
+}
+
+.project-item-text-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .project-title-link {
