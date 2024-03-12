@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- Giorgia Faedda | Copyright © 2024 | All rights reserved. -->
-<!-- Version: 62a5dcd63142d70c86a55ce499eeedc9c752c912 -->
+<!-- Version: 0df69284510c41a4bf100ee53080d81d91a579ef -->
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,14 +12,14 @@
 
   
 
-  <title>Giorgia Faedda - Data Analyst | Giorgia Faedda</title>
+  <title>Giorgia Faedda</title>
 
   
   
   <meta name="author" content="Giorgia Faedda">
   
 
-  <meta name="description" content="Data Analyst">
+  <meta name="description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?{{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
 
   
 
@@ -82,12 +82,16 @@
   
 
   
+    
+      <link rel="stylesheet" href="/assets/css/custom.css">
+    
+  
 
   
   
   
     
-      <link rel="stylesheet" href="/assets/css/index.css">
+      <link rel="stylesheet" href="/assets/css/projects.css">
     
   
 
@@ -95,11 +99,11 @@
 
   
   <meta property="og:site_name" content="Giorgia Faedda">
-  <meta property="og:title" content="Giorgia Faedda - Data Analyst | Giorgia Faedda">
-  <meta property="og:description" content="Data Analyst">
+  <meta property="og:title" content="Giorgia Faedda">
+  <meta property="og:description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?{{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
 
   
-  <meta property="og:image" content="/assets/img/deanimg.jpeg">
+  <meta property="og:image" content="/assets/img/my_profile_pic.jpeg">
   
 
   
@@ -109,16 +113,16 @@
   
 
   
-  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:card" content="summary">
   
   <meta name="twitter:site" content="@">
   <meta name="twitter:creator" content="@">
 
-  <meta property="twitter:title" content="Giorgia Faedda - Data Analyst | Giorgia Faedda">
-  <meta property="twitter:description" content="Data Analyst">
+  <meta property="twitter:title" content="Giorgia Faedda">
+  <meta property="twitter:description" content="{% for project in site.projects %} {% assign github-username = site.social-network-links.github %} {% assign github-project = project.github-name %} {% capture github-project-link %} https://github.com/{{ github-username }}/{{ github-project }} {% endcapture %} {{ project.title }} {{ project.content | markdownify }} {{ github-project }} {% capture github-watch-button-url %} https://ghbtns.com/github-btn.html?{{ github-username }}=twbs&amp;repo={{ github-project }}&amp;type=watch&amp;v=2...">
 
   
-  <meta name="twitter:image" content="/assets/img/deanimg.jpeg">
+  <meta name="twitter:image" content="/assets/img/my_profile_pic.jpeg">
   
 
   
@@ -255,8 +259,8 @@
         }, \
        \
         { \
-          "title"    : "Projects", \
-          "desc"     : "Projects", \
+          "title"    : "", \
+          "desc"     : "", \
           "category" : "page", \
           "url"      : "/projects/", \
           "date"     : "January 1, 1970" \
@@ -288,188 +292,11 @@
   
 
 
-  <div id="header-big-imgs" data-num-img=20
-    
-    
-    
-    
-      data-img-src-1="/assets/img/big-imgs/copenhagen-denmark.jpg"
-      data-img-desc-1="Copenhagen, Denmark (2021)"
-    
-    
-    
-    
-    
-    
-      data-img-src-2="/assets/img/big-imgs/folgarida-italy.jpg"
-      data-img-desc-2="Folgarida, Italy (2000)"
-    
-    
-    
-    
-    
-    
-      data-img-src-3="/assets/img/big-imgs/helsinki-finland.jpg"
-      data-img-desc-3="Helsinki, Finland (2017)"
-    
-    
-    
-    
-    
-    
-      data-img-src-4="/assets/img/big-imgs/innsbruck-austria.jpg"
-      data-img-desc-4="Innsbruck, Austria (2004)"
-    
-    
-    
-    
-    
-    
-      data-img-src-5="/assets/img/big-imgs/krakow-poland.jpg"
-      data-img-desc-5="Kraków, Poland (2013)"
-    
-    
-    
-    
-    
-    
-      data-img-src-6="/assets/img/big-imgs/kyoto-bamboo-forest-japan.jpg"
-      data-img-desc-6="Kyoto, Japan (2017)"
-    
-    
-    
-    
-    
-    
-      data-img-src-7="/assets/img/big-imgs/kyoto-japan-2.jpg"
-      data-img-desc-7="Kyoto, Japan (2017)"
-    
-    
-    
-    
-    
-    
-      data-img-src-8="/assets/img/big-imgs/library-of-celsus-ephesus-turkey.jpg"
-      data-img-desc-8="Ephesus, Turkey (2012)"
-    
-    
-    
-    
-    
-    
-      data-img-src-9="/assets/img/big-imgs/malmo-sweden.jpg"
-      data-img-desc-9="Malmö, Sweden (2021)"
-    
-    
-    
-    
-    
-    
-      data-img-src-10="/assets/img/big-imgs/milan-italy.jpg"
-      data-img-desc-10="Milan, Italy (2010)"
-    
-    
-    
-    
-    
-    
-      data-img-src-11="/assets/img/big-imgs/naples-italy.jpg"
-      data-img-desc-11="Naples, Italy (2022)"
-    
-    
-    
-    
-    
-    
-      data-img-src-12="/assets/img/big-imgs/pan-di-zucchero-sardinia.jpg"
-      data-img-desc-12="Pan di Zucchero, Sardinia, Italy (2023)"
-    
-    
-    
-    
-    
-    
-      data-img-src-13="/assets/img/big-imgs/prague-czech-republic.jpg"
-      data-img-desc-13="Prague, Czech Republic (2008)"
-    
-    
-    
-    
-    
-    
-      data-img-src-14="/assets/img/big-imgs/rome-italy-1.jpg"
-      data-img-desc-14="Rome, Italy (2022)"
-    
-    
-    
-    
-    
-    
-      data-img-src-15="/assets/img/big-imgs/rome-italy-2.jpg"
-      data-img-desc-15="Rome, Italy (2022)"
-    
-    
-    
-    
-    
-    
-      data-img-src-16="/assets/img/big-imgs/santa-maria-navarrese-sardinia.jpg"
-      data-img-desc-16="Santa Maria Navarrese, Sardinia, Italy (2020)"
-    
-    
-    
-    
-    
-    
-      data-img-src-17="/assets/img/big-imgs/santorini-greek.jpg"
-      data-img-desc-17="Santorini, Greek (2012)"
-    
-    
-    
-    
-    
-    
-      data-img-src-18="/assets/img/big-imgs/stockholm-sweden-1.jpg"
-      data-img-desc-18="Stockholm, Sweden (2019)"
-    
-    
-    
-    
-    
-    
-      data-img-src-19="/assets/img/big-imgs/stockholm-sweden-2.jpg"
-      data-img-desc-19="Stockholm, Sweden (2019)"
-    
-    
-    
-    
-    
-    
-      data-img-src-20="/assets/img/big-imgs/tokyo-japan.jpg"
-      data-img-desc-20="Tokyo, Japan (2017)"
-    
-    
-    
-  ></div>
 
-
-<header class="header-section has-img">
-<div class="intro-header  big-img ">
+<header class="header-section ">
+<div class="intro-header ">
   
-  <div class="container-md">
-    <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="page-heading">
-          <h1>Projects</h1>
-          
-          
-          
-        </div>
-      </div>
-    </div>
-  </div>
   
-  <span class='img-desc'></span>
 </div>
 
 
@@ -482,127 +309,95 @@
     <div class=" col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 ">
       
 
-      <div class="list-filters">
-  <a href="/projects/" class="list-filter filter-selected">All posts</a>
-  <a href="/popular" class="list-filter">Most Popular</a>
-</div>
-
-
-
-<div class="posts-list">
+      <div class="projects-container-grid">
   
-  <article class="post-preview">
     
-
     
-
-    <a href="/2023-09-25-analysing-customer-sentiments/">
-      <h2 class="post-title">Analysing Customer Sentiments</h2>
-
-      
-        <h3 class="post-subtitle">
-        A Homework Project on Natural Beauty Product Feedback Analysis
-        </h3>
-      
-    </a>
-
-    <p class="post-meta">
-      
-      Posted on September 25, 2023
-    </p>
-
     
-    <div class="post-image post-image-small">
-      <a href="/2023-09-25-analysing-customer-sentiments/" aria-label="Thumbnail">
-        <img src="/assets/img/thumb.png" alt="Post thumbnail">
+    <div class="project-item">
+      <a class="project-title-link" href="
+      https://github.com/fgiorgia/customer-feedback-analysis
+    " target="__blank">
+        <h2>Customer Feedback Analysis</h2>
       </a>
+      <div class="project-item-content-container-wrapper">
+        <div class="project-item-content-container">
+          <div class="project-item-content-text">
+            <p>For the first assignment in the Introduction to Data Analytics Course at the ReDI School Malmö, we were tasked with a fascinating project: analyze customer feedback for a fictional startup in the natural beauty sector. The goal was to use data analytics to understand customers’ perceptions of products and services, simulating real-world business analytics practices.</p>
+
+          </div>
+          <div class="project-item-content-img-container">
+            <img class="project-item-content-img" src="/assets/img/project/customer_feedback_dashboard.png" alt="Project thumbnail" />
+          </div>
+        </div>
+      </div>
+      <div class="project-github-container">
+        <a class="project-github-link" href="
+      https://github.com/fgiorgia/customer-feedback-analysis
+    " target="__blank">
+          <i class="fab fa-github"></i> customer-feedback-analysis
+        </a>
+        
+        <iframe src="
+          https://ghbtns.com/github-btn.html?fgiorgia=twbs&amp;repo=customer-feedback-analysis&amp;type=watch&amp;v=2
+        " frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+      </div>
+      
+        <div class="project-tags-container">
+          
+            <a class="project-tag" href="/tags#Sentiment Analysis">Sentiment Analysis</a>
+          
+            <a class="project-tag" href="/tags#MS Excel">MS Excel</a>
+          
+        </div>
+      
     </div>
-    
-
-    
-    
-    <div class="post-image post-image-short">
-      <a href="/2023-09-25-analysing-customer-sentiments/" aria-label="Thumbnail">
-        <img src="/assets/img/thumb.png" alt="Post thumbnail">
-      </a>
-    </div>
-    
-
-    <div class="post-entry">
-      
-      Explore how a data analytics homework assignment unraveled crucial insights into customer satisfaction for a hypothetical natural beauty startup, guiding potential strategies to enhance product and service quality.
-
-
-      
-      
-        <a href="/2023-09-25-analysing-customer-sentiments/" class="post-read-more">[Read&nbsp;More]</a>
-      
-    </div>
-    
-
-    
-    <div class="blog-tags">
-      Tags:
-      
-      <a href="/tags#Sentiment Analysis">Sentiment Analysis</a>
-      
-      <a href="/tags#MS Excel">MS Excel</a>
-      
-    </div>
-    
-
-   </article>
   
-  <article class="post-preview">
-    
-
-    
-
-    <a href="/2020-02-28-sample-markdown/">
-      <h2 class="post-title">Sample blog post to learn markdown tips</h2>
-
-      
-        <h3 class="post-subtitle">
-        There's lots to learn!
-        </h3>
-      
-    </a>
-
-    <p class="post-meta">
-      
-      Posted on February 28, 2020
-    </p>
-
-    
-
     
     
+    
+    <div class="project-item">
+      <a class="project-title-link" href="
+      https://github.com/fgiorgia/ikea-app-reviews-analysis
+    " target="__blank">
+        <h2>IKEA App Review Analysis</h2>
+      </a>
+      <div class="project-item-content-container-wrapper">
+        <div class="project-item-content-container">
+          <div class="project-item-content-text">
+            <p>Check ho well an nice are users when submitting reviews on the Play Store.
+Check ho well an nice are users when submitting reviews on the Play Store.
+Check ho well an nice are users when submitting reviews on the Play Store.</p>
 
-    <div class="post-entry">
+          </div>
+          <div class="project-item-content-img-container">
+            <img class="project-item-content-img" src="/assets/img/thumb.png" alt="Project thumbnail" />
+          </div>
+        </div>
+      </div>
+      <div class="project-github-container">
+        <a class="project-github-link" href="
+      https://github.com/fgiorgia/ikea-app-reviews-analysis
+    " target="__blank">
+          <i class="fab fa-github"></i> ikea-app-reviews-analysis
+        </a>
+        
+        <iframe src="
+          https://ghbtns.com/github-btn.html?fgiorgia=twbs&amp;repo=ikea-app-reviews-analysis&amp;type=watch&amp;v=2
+        " frameborder="0" scrolling="0" width="150" height="20" title="GitHub"></iframe>
+      </div>
       
-      This is a demo post to show you how to write blog posts with markdown. I strongly encourage you to take 5 minutes to learn how to write in markdown - it’ll teach you how to transform regular text into bold/italics/tables/etc.I also encourage you to look at the code that...
-      
-      
-        <a href="/2020-02-28-sample-markdown/" class="post-read-more">[Read&nbsp;More]</a>
+        <div class="project-tags-container">
+          
+            <a class="project-tag" href="/tags#IKEA">IKEA</a>
+          
+            <a class="project-tag" href="/tags#Reviews">Reviews</a>
+          
+        </div>
       
     </div>
-    
-
-    
-    <div class="blog-tags">
-      Tags:
-      
-      <a href="/tags#test">test</a>
-      
-    </div>
-    
-
-   </article>
   
 </div>
-
-
-
 
 
       
