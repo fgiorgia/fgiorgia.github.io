@@ -292,6 +292,7 @@ exclude:
   - README.md
   - screenshot.png
   - docs/
+  - next/
 
 plugins:
   - jekyll-paginate
