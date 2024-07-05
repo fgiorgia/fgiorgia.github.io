@@ -1,0 +1,11 @@
+{
+  "name": "beautiful-next-theme",
+  "description": "Port for Next of Beautiful Jekyll, a ready-to-use Jekyll theme",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "*",
+    "react-dom": "*",
+    "next": "*"
+  }
+}
