@@ -4,8 +4,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "next": "*",
     "react": "*",
-    "react-dom": "*",
-    "next": "*"
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "typescript": "*",
+    "@types/jquery": "^3.5.30",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "eslint": "*",
+    "eslint-config-next": "*"
   }
 }
