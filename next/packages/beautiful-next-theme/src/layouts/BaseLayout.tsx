@@ -1,10 +1,42 @@
 import { getConfig } from "../config/getConfig"
 import React from "react"
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../styles/theme';
+import { ThemeGlobalStyles } from "../styles/themeGlobalStyles";
 
-// import "../assets/css/bootstrap-social.css"
-// import "../assets/css/beautifuljekyll.css"
-// import "../assets/css/pygment_highlights.css"
+import "../assets/css/bootstrap-social.css"
+import "../assets/css/beautifuljekyll-minimal.css"
+import "../assets/css/pygment_highlights.css"
+import "../assets/css/index.css"
 
+interface PageConfig {
+  language?: string
+}
+
+const page: PageConfig = {}
+
+
+const BaseLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+  const mainConfig = getConfig()
+  const { site } = mainConfig
+  return (
+    <html lang={page.language ?? site?.language ?? 'en'}>
+      <body>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+
+            <ThemeGlobalStyles />
+            {children}
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
+    </html >
+  )
+}
+
+
+// TODO: check how to load external fonts and scripts
 const frontMatter = {
   "common-css": [
     "/assets/css/bootstrap-social.css",
@@ -36,25 +68,6 @@ const frontMatter = {
   "common-js": [
     "/assets/js/beautifuljekyll.js"
   ]
-}
-
-interface PageConfig {
-  language?: string
-}
-
-const page: PageConfig = {}
-
-
-const BaseLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const mainConfig = getConfig()
-  const { site } = mainConfig
-  return (
-    <html lang={page.language ?? site?.language ?? 'en'}>
-      <body>
-        {children}
-      </body>
-    </html >
-  )
 }
 
 export default BaseLayout

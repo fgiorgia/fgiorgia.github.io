@@ -4,17 +4,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "next": "*",
-    "react": "*",
-    "react-dom": "*"
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "5.0.0",
+    "@mui/material-nextjs": "^5.15.11",
+    "add": "^2.0.6",
+    "next": "14.2.4",
+    "react": "^18",
+    "react-dom": "^18",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
-    "typescript": "*",
     "@types/jquery": "^3.5.30",
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
     "eslint": "*",
-    "eslint-config-next": "*"
+    "eslint-config-next": "*",
+    "typescript": "*"
   }
 }
