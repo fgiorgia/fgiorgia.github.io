@@ -11,17 +11,26 @@ import "../assets/css/pygment_highlights.css"
 import "../assets/css/index.css"
 import GtmBody from "../components/includes/GtmBody";
 import Nav from "../components/includes/Nav";
+import { ContextProps, PageConfig } from "../../types";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { MainConfig } from "../config/types";
 
-interface PageConfig {
-  language?: string
+export const getStaticProps = (async (context) => {
+  return { props: { config: getConfig() } }
+}) satisfies GetStaticProps<{
+  config: MainConfig
+}>
+
+interface OwnProps {
+  page: PageConfig
 }
 
-const page: PageConfig = {}
+type StaticProps = InferGetStaticPropsType<typeof getStaticProps>
+type Props = OwnProps & StaticProps
 
 
-const BaseLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  const mainConfig = getConfig()
-  const { site } = mainConfig
+const BaseLayout: React.FC<React.PropsWithChildren<Props>> = ({ children, config, page }) => {
+  const { site } = config
   return (
     <html lang={page.language ?? site?.language ?? 'en'}>
       <body>
@@ -29,7 +38,7 @@ const BaseLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
           <ThemeProvider theme={theme}>
             <ThemeGlobalStyles />
             <GtmBody />
-            <Nav />
+            <Nav {...{ config, page }} />
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>

@@ -1,13 +1,8 @@
-import { getConfig } from "../../config/getConfig"
 import { relativeUrl } from "../../utils/links"
+import { ContextProps, } from "../../../types"
 
-// TODO understand how to get this
-const page: { showAvatar?: boolean } = {}
-
-
-const Nav = () => {
-  const mainConfig = getConfig()
-  const { site } = mainConfig
+const Nav: React.FC<ContextProps> = ({ config, page }) => {
+  const { site } = config
   return (
     // TODO fix later
     <nav className="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
@@ -95,5 +90,7 @@ const Nav = () => {
     </nav>
   )
 }
+
+
 
 export default Nav
