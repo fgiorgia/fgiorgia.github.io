@@ -2,11 +2,7 @@
 import CssBaseline from '@mui/material/CssBaseline';
 import GlobalStyles from '@mui/material/GlobalStyles';
 import { getConfig } from '../config/getConfig';
-
-// Implemented as identity, may be needed later
-const relativeUrl = (url: string): string => {
-  return url
-}
+import { relativeUrl } from '../utils/links';
 
 const { site } = getConfig()
 

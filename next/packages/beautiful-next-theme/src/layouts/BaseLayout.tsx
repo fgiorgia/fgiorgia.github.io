@@ -9,6 +9,8 @@ import "../assets/css/bootstrap-social.css"
 import "../assets/css/beautifuljekyll-minimal.css"
 import "../assets/css/pygment_highlights.css"
 import "../assets/css/index.css"
+import GtmBody from "../components/includes/GtmBody";
+import Nav from "../components/includes/Nav";
 
 interface PageConfig {
   language?: string
@@ -25,8 +27,9 @@ const BaseLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
       <body>
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
-
             <ThemeGlobalStyles />
+            <GtmBody />
+            <Nav />
             {children}
           </ThemeProvider>
         </AppRouterCacheProvider>
