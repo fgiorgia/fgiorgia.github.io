@@ -10,18 +10,22 @@
   },
   "dependencies": {
     "@emotion/cache": "*",
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
     "@mui/material-nextjs": "*",
-    "react": "*",
-    "react-dom": "*",
+    "@next/mdx": "^14.2.5",
+    "@types/mdx": "^2.0.13",
+    "beautiful-next-theme": "*",
     "next": "*",
-    "beautiful-next-theme": "*"
+    "react": "*",
+    "react-dom": "*"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4"
+    "eslint-config-next": "14.2.4",
+    "typescript": "^5"
   }
 }
