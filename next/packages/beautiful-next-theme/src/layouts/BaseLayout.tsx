@@ -11,23 +11,13 @@ import "../assets/css/pygment_highlights.css"
 import "../assets/css/index.css"
 import GtmBody from "../components/includes/GtmBody";
 import Nav from "../components/includes/Nav";
-import { ContextProps, PageConfig } from "../../types";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { PageConfig } from "../../types";
 import { MainConfig } from "../config/types";
 
-export const getStaticProps = (async (context) => {
-  return { props: { config: getConfig() } }
-}) satisfies GetStaticProps<{
+interface Props {
   config: MainConfig
-}>
-
-interface OwnProps {
   page: PageConfig
 }
-
-type StaticProps = InferGetStaticPropsType<typeof getStaticProps>
-type Props = OwnProps & StaticProps
-
 
 const BaseLayout: React.FC<React.PropsWithChildren<Props>> = ({ children, config, page }) => {
   const { site } = config

@@ -9,4 +9,5 @@ export interface ContextProps {
 export interface PageConfig {
   language?: string
   showAvatar?: boolean
+  navShort?: boolean
 }

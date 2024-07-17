@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
-  return <BaseLayout>{children}</BaseLayout>
+  return <BaseLayout config={{}} page={{}}>{children}</BaseLayout>
 }
 
 export default RootLayout

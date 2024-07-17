@@ -7,11 +7,13 @@ export interface Link {
   path: string
 }
 
-export interface NavbarLink extends Link {
-  subPaths?: {
-    linkParts?: Link[]
-  }[]
-}
+// export interface NavbarLink extends Link {
+//   subPaths?: {
+//     linkParts?: Link[]
+//   }[]
+// }
+
+type NavbarLinks = Record<string, string | Record<string, string>>
 
 export interface SiteConfig {
   title?: string
@@ -29,7 +31,7 @@ export interface SiteConfig {
   pageImg?: string
   linkColor?: string
   hoverColor?: string
-  navbarLinks?: NavbarLink[]
+  navbarLinks?: NavbarLinks
   navbarColor?: string
   navbarBorderColor?: string
   navbarImg?: string

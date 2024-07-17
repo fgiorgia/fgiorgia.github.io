@@ -1,16 +1,20 @@
-import { relativeUrl } from "../../utils/links"
+import { absoluteUrl, relativeUrl } from "../../utils/links"
 import { ContextProps, } from "../../../types"
+
+const isExternalLink = (linkPath: string) => linkPath.split(':').length > 0
 
 const Nav: React.FC<ContextProps> = ({ config, page }) => {
   const { site } = config
   return (
     // TODO fix later
-    <nav className="navbar navbar-expand-xl navbar-light fixed-top navbar-custom {% if page.nav-short %}top-nav-short-permanent{% else %}top-nav-regular{% endif %}">
+    <nav className={`navbar navbar-expand-xl navbar-light fixed-top navbar-custom ${page.navShort ? 'top-nav-short-permanent' : 'top-nav-regular'}`}>
 
       {site?.titleImg ? (
-        <a className="navbar-brand navbar-brand-logo" href="{{ '/' | absolute_url }}"><img alt="{{ site?title }} Logo" src="{{ site?title-img | relative_url}}" /></a>
+        <a className="navbar-brand navbar-brand-logo" href={absoluteUrl('/')}>
+          <img alt={`${site?.title} Logo`} src={relativeUrl(site.titleImg)} />
+        </a>
       ) : site?.title ? (
-        <a className="navbar-brand" href="{{ '/' | absolute_url }}">{site?.title}</a>
+        <a className="navbar-brand" href={absoluteUrl('/')}>{site?.title}</a>
       ) : null}
 
       <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,40 +23,42 @@ const Nav: React.FC<ContextProps> = ({ config, page }) => {
 
       <div className="collapse navbar-collapse" id="main-navbar">
         <ul className="navbar-nav ml-auto">
-          {site?.navbarLinks?.map((link, i) => {
-            const nColonSplits = link.path[0].split(':').length
-            const isExternalLink = nColonSplits > 1
+          {Object.entries(site?.navbarLinks ?? {}).map(([linkName, linkPath], i) => {
 
             if (i === 0) {
               return (
                 <li className="nav-item dropdown">
-                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{link.name}</a>
-                  <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    {link.subPaths?.map((subPath) => {
-                      return subPath?.linkParts?.map((linkPart) => {
+                  <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{linkName}</a>
+                  {typeof linkPath !== 'string' && (
+                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      {Object.entries(linkPath)?.map(([linkEntryName, linkEntryPath]) => {
                         return (
                           <a
                             className="dropdown-item"
-                            href={relativeUrl(linkPart.path)}
-                            target={isExternalLink ? '_blank' : undefined}
+                            href={relativeUrl(linkEntryPath)}
+                            target={isExternalLink(linkEntryPath) ? '_blank' : undefined}
                           >
-                            {linkPart.name}
+                            {linkEntryName}
                           </a>
                         )
-                      })
-                    })}
-                  </div>
+
+                      })}
+                    </div>
+                  )}
                 </li>
               )
+            }
+            if (typeof linkPath !== 'string') {
+              throw new Error(`'${linkName}' has a path that is not a string`)
             }
             return (
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  href="{{ link[1] | relative_url }}"
-                  target={isExternalLink ? '_blank' : undefined}
+                  href={relativeUrl(linkPath)}
+                  target={isExternalLink(linkPath) ? '_blank' : undefined}
                 >
-                  {link.name}
+                  {linkName}
                 </a>
               </li>
             )
@@ -78,7 +84,7 @@ const Nav: React.FC<ContextProps> = ({ config, page }) => {
       {(site?.avatar && page?.showAvatar !== false) && (
         <div className="avatar-container">
           <div className="avatar-img-border">
-            <a href="{{ '/' | absolute_url }}">
+            <a href={absoluteUrl('/')}>
               <img alt="Navigation bar avatar" className="avatar-img" src="{{ site?avatar | relative_url }}" />
             </a>
           </div>
