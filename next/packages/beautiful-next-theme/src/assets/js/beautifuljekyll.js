@@ -10,7 +10,7 @@ let BeautifulJekyllJS = {
 
   /** @type {JQuery<HTMLElement> | null} */
   bigImgEl: null,
-  /** @type {string | undefined | null} */
+  /** @type {number | undefined | null} */
   numImgs: null,
 
   init: function () {
@@ -18,7 +18,7 @@ let BeautifulJekyllJS = {
 
     // Shorten the navbar after scrolling a little bit down
     $(window).scroll(function () {
-      if ($(".navbar")?.offset()?.top > 50) {
+      if (($(".navbar")?.offset?.()?.top ?? 0) > 50) {
         $(".navbar").addClass("top-nav-short");
       } else {
         $(".navbar").removeClass("top-nav-short");
@@ -58,7 +58,8 @@ let BeautifulJekyllJS = {
     // If the page was large images to randomly select from, choose an image
     if ($("#header-big-imgs").length > 0) {
       BeautifulJekyllJS.bigImgEl = $("#header-big-imgs");
-      BeautifulJekyllJS.numImgs = BeautifulJekyllJS.bigImgEl.attr("data-num-img");
+      const numImgsString = BeautifulJekyllJS.bigImgEl.attr("data-num-img");
+      BeautifulJekyllJS.numImgs = numImgsString ? Number(numImgsString) : undefined
 
       // 2fc73a3a967e97599c9763d05e564189
       // set an initial image
@@ -74,7 +75,7 @@ let BeautifulJekyllJS = {
         const desc = imgInfo.desc;
 
         const prefetchImg = new Image();
-        prefetchImg.src = src;
+        prefetchImg.src = src ?? '';
         // if I want to do something once the image is ready: `prefetchImg.onload = function(){}`
 
         setTimeout(function () {
@@ -94,16 +95,16 @@ let BeautifulJekyllJS = {
       };
 
       // If there are multiple images, cycle through them
-      if (BeautifulJekyllJS.numImgs > 1) {
+      if (BeautifulJekyllJS.numImgs ?? 0 > 1) {
         getNextImg();
       }
     }
   },
 
   getImgInfo: function () {
-    const randNum = Math.floor((Math.random() * BeautifulJekyllJS.numImgs) + 1);
-    const src = BeautifulJekyllJS.bigImgEl.attr("data-img-src-" + randNum);
-    const desc = BeautifulJekyllJS.bigImgEl.attr("data-img-desc-" + randNum);
+    const randNum = Math.floor((Math.random() * (BeautifulJekyllJS?.numImgs ?? 0)) + 1);
+    const src = BeautifulJekyllJS.bigImgEl?.attr("data-img-src-" + randNum);
+    const desc = BeautifulJekyllJS.bigImgEl?.attr("data-img-desc-" + randNum);
 
     return {
       src: src,
