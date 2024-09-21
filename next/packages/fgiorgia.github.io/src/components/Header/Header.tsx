@@ -3,11 +3,17 @@ import Stack from "../Stack/Stack"
 import Avatar from "./Avatar"
 import Link from "next/link"
 
-const linkClasses = 'font-extrabold text-lg'
+const linkClasses = 'font-extrabold text-gray-800 hover:text-cyan-800'
 
-const HeaderLink: React.FC<{ children: string, href: string }> = ({ href, children }) => {
+const HeaderLink: React.FC<{ children: string, href: string, openInNewTab?: boolean }> = ({ href, children, openInNewTab }) => {
   return (
-    <Link className='font-extrabold text-lg' href={href}>{children}</Link>
+    <Link
+      className={classNames(linkClasses, 'text-sm uppercase')}
+      href={href}
+      target={openInNewTab === true ? '_blank' : undefined}
+    >
+      {children}
+    </Link>
   )
 }
 
@@ -17,16 +23,17 @@ const Header: React.FC = () => {
       <Stack direction="row" className="w-full min-h-20 bg-gray-100 px-4">
         {/* Left side */}
         <Stack className="flex-row justify-center items-center">
-          <HeaderLink href="/">Giorgia Faedda</HeaderLink>
+          <Link className={classNames(linkClasses, 'text-lg')} href="/">{'Giorgia Faedda'}</Link>
         </Stack>
         <Stack className="flex-1 relative justify-center">
           <Avatar />
         </Stack>
         {/* Right side */}
-        <Stack direction="row" className="justify-center items-center gap-2">
+        <Stack direction="row" className="justify-center items-center gap-8">
           <HeaderLink href="/projects">Projects</HeaderLink>
-          <HeaderLink href="https://github.com/fgiorgia">GitHub</HeaderLink>
+          <HeaderLink href="https://github.com/fgiorgia" openInNewTab>GitHub</HeaderLink>
           <HeaderLink href="/about">About Me</HeaderLink>
+          {/* TODO: Add search button */}
         </Stack>
       </Stack>
     </header>
