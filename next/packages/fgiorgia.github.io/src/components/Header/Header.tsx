@@ -22,14 +22,14 @@ const Header: React.FC = () => {
     <header>
       <Stack direction="row" className="w-full min-h-20 bg-gray-100 px-4">
         {/* Left side */}
-        <Stack className="flex-row justify-center items-center">
+        <Stack direction="row" className="w-1/3 justify-start items-center">
           <Link className={classNames(linkClasses, 'text-lg')} href="/">{'Giorgia Faedda'}</Link>
         </Stack>
-        <Stack className="flex-1 relative justify-center">
+        <Stack className="w-1/3 relative justify-center">
           <Avatar />
         </Stack>
         {/* Right side */}
-        <Stack direction="row" className="justify-center items-center gap-8">
+        <Stack direction="row" className="w-1/3 justify-center items-center gap-8">
           <HeaderLink href="/projects">Projects</HeaderLink>
           <HeaderLink href="https://github.com/fgiorgia" openInNewTab>GitHub</HeaderLink>
           <HeaderLink href="/about">About Me</HeaderLink>
