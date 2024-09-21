@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/Header/Header";
+import Carousel from "@fgiorgia-site/components/Carousel/Carousel";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,6 +31,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-grow flex-col`}
       >
         <Header />
+        <Carousel />
         <main className="flex flex-grow flex-col">
           {children}
         </main>
