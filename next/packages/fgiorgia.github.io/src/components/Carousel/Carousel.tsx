@@ -8,7 +8,7 @@ import { classNames } from '@fgiorgia-site/utils/style/classNames';
 import Stack from '../Stack/Stack';
 
 const imageLoadingTimeMs = 1000;
-const imageAnimationSleepMs = 10000;
+const imageAnimationSleepMs = 8000;
 
 const getIndex = (index: number) => {
   return (images.length + index) % images.length
@@ -36,7 +36,7 @@ const Carousel = () => {
         <Stack style={{ height: '100%', width: '200%', position: 'absolute' }}>
           {indeces.map((i) => {
             return (
-              <Image src={images[i].image} alt=""
+              <Image key={images[i].image.src} src={images[i].image} alt={images[i].description}
                 className={classNames('object-cover w-1/2 ',
                   isAnimationActive ? `transition-transform duration-1000 -translate-x-full` : '-translate-x-0'
                 )} />
