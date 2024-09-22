@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/Header/Header";
 import Carousel from "@fgiorgia-site/components/Carousel/Carousel";
+import Footer from "@fgiorgia-site/components/Footer/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,9 +39,7 @@ export default function RootLayout({
         <main className="flex flex-grow flex-col">
           {children}
         </main>
-        <footer>
-          <div className="flex-row w-full min-h-32 bg-red-50"></div>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
