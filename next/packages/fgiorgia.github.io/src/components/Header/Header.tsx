@@ -25,7 +25,7 @@ const Header: React.FC = () => {
         <Stack direction="row" className="w-1/3 justify-start items-center">
           <Link className={classNames(linkClasses, 'text-lg')} href="/">{'Giorgia Faedda'}</Link>
         </Stack>
-        <Stack className="w-1/3 relative justify-center">
+        <Stack direction="row" className="w-1/3 relative justify-center">
           <Avatar />
         </Stack>
         {/* Right side */}

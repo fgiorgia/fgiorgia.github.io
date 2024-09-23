@@ -8,7 +8,7 @@ interface Props extends DivProps {
 }
 
 const Stack: React.FC<Props> = ({ direction, className, children, ...otherProps }) => {
-  const classFlexDirection = direction === 'column' ? 'flex-colummn' : 'flex-row';
+  const classFlexDirection = direction === 'row' ? 'flex-row' : 'flex-col';
   const classes = classNames('flex', classFlexDirection, className);
 
   return (<div className={classes} {...otherProps}>{children}</div>)
