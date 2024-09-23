@@ -33,6 +33,37 @@ const Carousel = () => {
   return (
     <Stack className='justify-center'>
       <Stack style={{ height: '32rem', width: '100%', position: 'relative', overflowX: 'hidden' }}>
+        <Stack direction='column' style={{
+          height: "100%",
+          width: '100%',
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          zIndex: 10,
+          justifyContent: 'center',
+          alignItems: 'center',
+          color: 'white'
+        }}>
+          <p style={{
+            fontSize: '5.5rem',
+            fontWeight: 800,
+            filter: 'drop-shadow(0px 0px 4px #010101)'
+          }}>Hi, I'm Giorgia</p>
+          <hr style={{
+            borderBottom: '0.25rem solid white',
+            width: '8rem',
+            borderRadius: '5rem',
+            backgroundColor: 'white',
+            color: 'white',
+            marginBottom: '1rem',
+            filter: 'drop-shadow(0px 0px 4px #000)'
+          }} />
+          <p style={{
+            fontSize: '1.5rem',
+            fontWeight: 800,
+            filter: 'drop-shadow(0px 0px 4px #010101)'
+          }}>This is where I will tell my friends way too much about me</p>
+        </Stack>
         <Stack direction="row" style={{ height: '100%', width: '200%', position: 'absolute' }}>
           {indeces.map((i) => {
             return (
