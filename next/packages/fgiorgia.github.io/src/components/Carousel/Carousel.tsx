@@ -33,7 +33,7 @@ const Carousel = () => {
   return (
     <Stack className='justify-center'>
       <Stack style={{ height: '32rem', width: '100%', position: 'relative', overflowX: 'hidden' }}>
-        <Stack style={{ height: '100%', width: '200%', position: 'absolute' }}>
+        <Stack direction="row" style={{ height: '100%', width: '200%', position: 'absolute' }}>
           {indeces.map((i) => {
             return (
               <Image key={images[i].image.src} src={images[i].image} alt={images[i].description}
