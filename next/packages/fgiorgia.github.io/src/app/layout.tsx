@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/Header/Header";
 import Carousel from "@fgiorgia-site/components/Carousel/Carousel";
 import Footer from "@fgiorgia-site/components/Footer/Footer";
+import Stack from "@fgiorgia-site/components/Stack/Stack";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -37,7 +38,9 @@ export default function RootLayout({
         <Header />
         <Carousel />
         <main className="flex flex-grow flex-col">
-          {children}
+          <Stack direction="column" className="w-full p-8">
+            {children}
+          </Stack>
         </main>
         <Footer />
       </body>
