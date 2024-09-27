@@ -1,8 +1,8 @@
 import Stack from "@fgiorgia-site/components/Stack/Stack";
-import Image from "next/image";
 import Link from "next/link";
 
-import styles from './page.module.css'
+import styles from './page.module.scss'
+
 
 export default function Home() {
   return (
