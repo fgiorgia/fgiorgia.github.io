@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 import { images } from './images';
 import Image from 'next/image';
-import { classNames } from '@fgiorgia-site/utils/style/classNames';
+import { classNames } from '@/utils/style/classNames';
 import Stack from '../Stack/Stack';
 
 const imageLoadingTimeMs = 1000;

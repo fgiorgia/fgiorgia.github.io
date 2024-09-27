@@ -1,4 +1,4 @@
-import { classNames } from "@fgiorgia-site/utils/style/classNames"
+import { classNames } from "@/utils/style/classNames"
 import Stack from "../Stack/Stack"
 import Avatar from "./Avatar"
 import Link from "next/link"

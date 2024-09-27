@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/Header/Header";
-import Carousel from "@fgiorgia-site/components/Carousel/Carousel";
-import Footer from "@fgiorgia-site/components/Footer/Footer";
-import Stack from "@fgiorgia-site/components/Stack/Stack";
+import Carousel from "@/components/Carousel/Carousel";
+import Footer from "@/components/Footer/Footer";
+import Stack from "@/components/Stack/Stack";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,11 +36,8 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-grow flex-col`}
       >
         <Header />
-        <Carousel />
         <main className="flex flex-grow flex-col">
-          <Stack direction="column" className="w-full p-8">
-            {children}
-          </Stack>
+          {children}
         </main>
         <Footer />
       </body>

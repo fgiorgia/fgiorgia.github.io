@@ -1,0 +1,11 @@
+@use 'styles/colors';
+@use 'styles/text';
+
+.body1 {
+  color: colors.$textMain;
+  font-size: text.$body1FontSize;
+}
+
+.body1Gutter {
+  margin-bottom: text.$body1Gutter;
+}
