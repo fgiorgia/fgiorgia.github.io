@@ -69,9 +69,8 @@ const Page: React.FC = () => {
           </Stack>
           <Stack style={{ flex: 0.4 }}>
             <video muted autoPlay loop style={{ backgroundColor: 'black' }}>
-              <source src={soccerImageDetectionVideo} type="video/mp4">
-                {/* Your browser does not support the video tag. */}
-              </source>
+              <source src={soccerImageDetectionVideo} type="video/mp4" />
+              Your browser does not support the video tag.
             </video>
           </Stack>
         </Stack>
