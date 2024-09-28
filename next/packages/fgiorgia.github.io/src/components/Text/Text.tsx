@@ -1,14 +1,17 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 import styles from './Text.module.scss'
 import { classNames } from "@/utils/style/classNames";
+import { CoreProps } from "../types";
+import { getUtilityClasses } from "@/utils/style/getUtilityClasses";
 
-interface Props {
+interface Props extends CoreProps {
   variant?: "h1" | "h2" | "body1";
   nested?: boolean;
   gutter?: boolean,
-  className?: string;
-  style?: React.CSSProperties;
+  align?: "left" | "center" | "right";
+  fontSize?: number;
+  color?: CSSProperties['color']
 }
 
 const Text: React.FC<React.PropsWithChildren<Props>> = ({
@@ -16,15 +19,37 @@ const Text: React.FC<React.PropsWithChildren<Props>> = ({
   variant = 'body1',
   nested,
   gutter,
+  align,
+  fontSize,
+  color,
   className: classNameProp,
-  style
+  style: styleProp
 }) => {
-  const className = classNames(styles[variant], gutter === true ? styles[`${variant}Gutter`] : undefined, classNameProp)
+  const className = classNames(
+    styles['base'],
+    styles[variant],
+    ...getUtilityClasses(
+      styles, {
+      gutter,
+    }, { prefix: variant }),
+    ...getUtilityClasses(
+      styles, {
+      align,
+    }),
+    classNameProp
+  )
+
+  const style = {
+    color,
+    ...(fontSize && { fontSize: `${fontSize}rem` }),
+    ...styleProp
+  }
+
   if (nested) {
     return <span className={className} style={style}>{children} </span>;
   }
 
-  return (<p className={className}>{children} </p>);
+  return (<p className={className} style={style}>{children} </p>);
 }
 
 export default Text

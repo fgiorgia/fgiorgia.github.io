@@ -1,7 +1,7 @@
 import Stack from "@/components/Stack/Stack";
 import Link from "next/link";
 
-import styles from './page.module.scss'
+import styles from './home.module.scss'
 import Carousel from "@/components/Carousel/Carousel";
 import MainContent from "@/components/MainContent/MainContent";
 

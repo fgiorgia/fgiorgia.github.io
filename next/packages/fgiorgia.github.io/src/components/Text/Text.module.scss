@@ -1,11 +1,38 @@
 @use 'styles/colors';
 @use 'styles/text';
 
-.body1 {
+.base {
   color: colors.$textMain;
-  font-size: text.$body1FontSize;
 }
 
-.body1Gutter {
-  margin-bottom: text.$body1Gutter;
+.align {
+  &-center {
+    text-align: center;
+  }
+
+  &-left {
+    text-align: left;
+  }
+
+  &-right {
+    text-align: right;
+  }
+}
+
+
+
+.body1 {
+  font-size: text.$body1FontSize;
+
+  &-gutter {
+    margin-bottom: text.$body1Gutter;
+  }
+}
+
+.body1 {
+  font-size: text.$body1FontSize;
+
+  &-gutter {
+    margin-bottom: text.$body1Gutter;
+  }
 }
