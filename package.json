@@ -6,7 +6,8 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace fgiorgia.github.io dev"
+    "dev": "yarn workspace fgiorgia.github.io dev",
+    "build": "yarn workspace fgiorgia.github.io build"
   },
   "dependencies": {},
   "devDependencies": {

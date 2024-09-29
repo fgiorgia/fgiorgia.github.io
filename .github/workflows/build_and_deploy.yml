@@ -1,8 +1,17 @@
 name: Build and Deploy Personal Website
 on: [push, pull_request]
 jobs:
-  build_and_deploy:
-    name: Build and Deploy Jekyll
+  build_deploy_next:
+    name: Build and Deploy Next
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+    # Add node
+    
+  build_jekyll:
+    name: Build Jekyll
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -18,9 +27,9 @@ jobs:
           GOOGLE_ANALYTICS_GTAG: ${{ secrets.GOOGLE_ANALYTICS_GTAG }}
           PAGES_REPO_NWO: ${{ github.repository }}
           GIT_HASH: ${{ github.sha }}
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/jekyll/_site
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: ./packages/jekyll/_site

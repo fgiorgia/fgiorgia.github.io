@@ -5,6 +5,11 @@ const __dirname = import.meta.dirname;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
   sassOptions: {
     // Allow Sass absolute import
     includePaths: [path.join(__dirname, 'src/')],

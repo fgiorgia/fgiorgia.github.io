@@ -8,8 +8,8 @@ interface ScreenSize {
 
 const useScreenSize = (): ScreenSize => {
   const [screenSize, setScreenSize] = useState<ScreenSize>({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 0,
+    height: 0,
   });
 
   useEffect(() => {
@@ -20,6 +20,7 @@ const useScreenSize = (): ScreenSize => {
       });
     };
 
+    handleResize();
     window.addEventListener('resize', handleResize);
 
     return () => {
