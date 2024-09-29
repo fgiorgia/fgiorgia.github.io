@@ -46,9 +46,9 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
               ))}
             </div>
           )}
-          <div className={styles.projectItemContentText}>
+          {/* <div className={styles.projectItemContentText}>
             <Text>{project.content}</Text>
-          </div>
+          </div> */}
           <a className={styles.projectItemContentReadmore} href={projectLink} target="_blank">
             <p>Read More</p>
           </a>
@@ -75,7 +75,15 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 const Page: React.FC = () => {
   return (
     <MainContent>
-      <Stack spacing={1} style={{ marginTop: '4rem', marginBottom: '4rem', maxWidth: '40rem' }}>
+      <Stack
+        spacing={1}
+        alignItems="center"
+        style={{
+          margin: 'max(4rem, 4vw) 0',
+          padding: '0 4vw',
+          width: '100%'
+        }}
+      >
         <div className={styles.projectsContainerGrid}>
           {projects.map((project) =>
             <ProjectItem project={project} key={project.githubName} />
