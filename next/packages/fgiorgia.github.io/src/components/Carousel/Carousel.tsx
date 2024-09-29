@@ -47,7 +47,8 @@ const Carousel = () => {
           <p style={{
             fontSize: '5.5rem',
             fontWeight: 800,
-            filter: 'drop-shadow(0px 0px 4px #010101)'
+            filter: 'drop-shadow(0px 0px 4px #010101)',
+            textAlign: 'center'
           }}>Hi, I'm Giorgia</p>
           <hr style={{
             borderBottom: '0.25rem solid white',
@@ -61,7 +62,8 @@ const Carousel = () => {
           <p style={{
             fontSize: '1.5rem',
             fontWeight: 800,
-            filter: 'drop-shadow(0px 0px 4px #010101)'
+            filter: 'drop-shadow(0px 0px 4px #010101)',
+            textAlign: 'center'
           }}>This is where I will tell my friends way too much about me</p>
         </Stack>
         <Stack direction="row" style={{ height: '100%', width: '200%', position: 'absolute' }}>
