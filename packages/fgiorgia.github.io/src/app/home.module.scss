@@ -1,0 +1,21 @@
+@use 'styles/colors';
+
+.inverse {
+  background-color: colors.$accentMain;
+  color: white;
+}
+
+.homeLink {
+  div {
+    border: 1px solid #343a40;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    color: colors.$accentMain;
+    font-size: 18px;
+
+    &:hover {
+      background-color: hsl(210, 10%, 23%);
+      color: white;
+    }
+  }
+}

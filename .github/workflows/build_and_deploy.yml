@@ -2,18 +2,18 @@ name: Build and Deploy Personal Website
 on: [push, pull_request]
 jobs:
   build_and_deploy:
-    name: Build and Deploy
+    name: Build and Deploy Jekyll
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Install dependencies
         run: |
           sudo apt install ruby ruby-dev ruby-bundler
-          make install
+          cd packages/jekyll && make install
       - name: Build the site
         run: |
           echo "Building version $GIT_HASH"
-          make build
+          cd packages/jekyll && make build
         env: # Export secret as an environment variable
           GOOGLE_ANALYTICS_GTAG: ${{ secrets.GOOGLE_ANALYTICS_GTAG }}
           PAGES_REPO_NWO: ${{ github.repository }}
@@ -23,4 +23,4 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./packages/jekyll/_site
