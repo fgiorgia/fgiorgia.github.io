@@ -3,6 +3,8 @@ import Stack from "@/components/Stack/Stack";
 import Text from "@/components/Text/Text";
 import React from "react";
 
+import styles from './about.module.scss'
+
 import soccerImageDetectionVideo from './media/aboutme-soccer-image-detection.mp4'
 import cagliariImage from './media/cagliari-sardinia-italy.jpg'
 import Image from "next/image";
@@ -10,10 +12,10 @@ import Image from "next/image";
 const Page: React.FC = () => {
   return (
     <MainContent>
-      <Stack spacing={1} style={{ marginTop: '2rem', marginBottom: '4rem', maxWidth: '40rem' }}>
+      <Stack spacing={1} style={{ marginTop: '4rem', marginBottom: '4rem', maxWidth: '40rem' }}>
 
         <Stack style={{ marginBottom: '1rem' }}>
-          <Text fontSize={6} variant="h1" align="center" style={{ fontWeight: 'bold' }}>
+          <Text fontSize={6} variant="h1" align="center" style={{ fontWeight: 'bold', lineHeight: 0.8 }}>
             About me
           </Text>
         </Stack>
@@ -23,6 +25,7 @@ const Page: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           spacing={1}
+          className={styles.responsiveColumn}
         >
           <Stack style={{ flex: 0.6 }}>
             <Text>
@@ -55,6 +58,7 @@ const Page: React.FC = () => {
           justifyContent='center'
           alignItems='center'
           spacing={1}
+          className={styles.responsiveColumn}
         >
           <Stack style={{ flex: 0.6 }}>
             <Text>
