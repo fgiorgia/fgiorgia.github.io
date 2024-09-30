@@ -32,7 +32,7 @@ const Carousel = () => {
 
   return (
     <Stack className='justify-center'>
-      <Stack style={{ height: '32rem', maxHeight: '45vh', width: '100%', position: 'relative', overflowX: 'hidden' }}>
+      <Stack style={{ height: '32rem', maxHeight: '70vh', width: '100%', position: 'relative', overflowX: 'hidden' }}>
         <Stack direction='column' style={{
           height: "100%",
           width: '100%',
