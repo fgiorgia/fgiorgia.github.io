@@ -1,5 +1,5 @@
 import Image from "next/image";
-import avatar from "./avatar.jpeg";
+import avatar from "./images/profile_square_zoomed.jpg";
 
 const Avatar: React.FC = () => {
   return (
