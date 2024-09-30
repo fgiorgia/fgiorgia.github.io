@@ -65,10 +65,11 @@
   margin-right: 0.5em;
   margin-bottom: 0.5em;
 
-  &:hover {
-    text-decoration: none;
-    background-color: #f8f8f8;
-  }
+  // TODO: enable again when we convert them to tag links
+  // &:hover {
+  //   text-decoration: none;
+  //   background-color: #f8f8f8;
+  // }
 }
 
 .projectItemContentContainer {
