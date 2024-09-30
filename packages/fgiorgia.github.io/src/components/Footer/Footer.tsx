@@ -30,9 +30,16 @@ const Footer: React.FC = () => {
           </Link>
         </Stack>
 
-        <p>Giorgia Faedda  •  Copyright © 2024  •  <Link className="hover:text-cyan-800" href="/">fgiorgia.github.io</Link></p>
+        <p style={{ textAlign: 'center' }}>Giorgia Faedda  •  Copyright © 2024  •  <Link className="hover:text-cyan-800" href="/">
+          fgiorgia.github.io</Link>
+        </p>
 
-        <p className="text-sm font-serif">Inspired by <Link className="hover:text-cyan-800" href="https://beautifuljekyll.com/" target="_blank">Beautiful Jekyll</Link></p>
+        <p style={{ textAlign: 'center' }} className="text-sm font-serif">
+          Inspired by
+          <Link className="hover:text-cyan-800" href="https://beautifuljekyll.com/" target="_blank">
+            Beautiful Jekyll
+          </Link>
+        </p>
 
       </Stack>
     </footer>

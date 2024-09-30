@@ -12,6 +12,8 @@
     border-radius: 1rem;
     color: colors.$accentMain;
     font-size: 18px;
+    height: 4rem;
+    justify-content: center;
 
     &:hover {
       background-color: hsl(210, 10%, 23%);
