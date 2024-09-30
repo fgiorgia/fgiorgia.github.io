@@ -68,7 +68,7 @@ const NavbarLinkArea = () => {
                       position: 'absolute',
                       backgroundColor: '#F3F4F6',
                       padding: '2rem',
-                      zIndex: 99999,
+                      zIndex: 5,
                       alignItems: 'flex-end',
                       gap: '0.5rem'
                     }}>
