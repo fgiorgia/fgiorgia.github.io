@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "../components/Header/Header";
-import Carousel from "@/components/Carousel/Carousel";
 import Footer from "@/components/Footer/Footer";
-import Stack from "@/components/Stack/Stack";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import Stack from '@mui/material/Stack';
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,11 +36,13 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-grow flex-col`}
       >
-        <Header />
-        <main className="flex flex-grow flex-col">
-          {children}
-        </main>
-        <Footer />
+        <AppRouterCacheProvider>
+          <Header />
+          <Stack component="main" flexGrow={1}>
+            {children}
+          </Stack>
+          <Footer />
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
