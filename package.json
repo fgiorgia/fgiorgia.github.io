@@ -9,13 +9,17 @@
     "dev": "yarn workspace fgiorgia.github.io dev",
     "build": "yarn workspace fgiorgia.github.io build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "next": "^14.2.11",
+    "react": "^18",
+    "react-dom": "^18"
+  },
   "devDependencies": {
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.4",
+    "eslint-config-next": "^14.2.11",
     "typescript": "^5"
   }
 }
