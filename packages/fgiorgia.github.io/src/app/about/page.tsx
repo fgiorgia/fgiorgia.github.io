@@ -29,11 +29,11 @@ const Page: React.FC = () => {
         >
           <Stack style={{ flex: 0.6 }}>
             <Text>
-              Hi there! I'm from the beautiful island of Sardinia in Italy.
+              {`Hi there! I'm from the beautiful island of Sardinia in Italy.
               I started my journey studying Psychology at the University of Cagliari,
               where I discovered my love for data analysis. I did a lot of courses on Statistics,
               and one of my favorite projects was creating and analyzing surveys
-              to understand what motivates people.
+              to understand what motivates people.`}
             </Text>
           </Stack>
           <Stack style={{ flex: 0.4 }}>
@@ -43,13 +43,13 @@ const Page: React.FC = () => {
 
         <Stack>
           <Text>
-            Despite life's unexpected turns leading me from Italy to Finland and finally Sweden,
+            {`Despite life's unexpected turns leading me from Italy to Finland and finally Sweden,
             my commitment to advancing my career remained unwavering.
             This transition inspired a pivotal shift in my career path toward
             Data Analysis—a field where my statistical skills and passion for discovery converge.
             I seized the opportunity to enhance my expertise through several courses,
             including a comprehensive program from ReDI School,
-            which fortified my foundation in this dynamic field.
+            which fortified my foundation in this dynamic field.`}
           </Text>
         </Stack>
 
@@ -81,22 +81,22 @@ const Page: React.FC = () => {
 
         <Stack>
           <Text>
-            Currently, I'm applying my skills in an internship at ReFab Lab, Malmö,
-            where I continue to learn and grow as a data analyst.
+            {`Currently, I'm applying my skills in an internship at ReFab Lab, Malmö,
+            where I continue to learn and grow as a data analyst.`}
           </Text>
         </Stack>
 
         <Stack>
           <Text>
-            I love what I do because it lets me solve puzzles with data,
+            {`I love what I do because it lets me solve puzzles with data,
             and I'm always excited to learn more and get better at my job.
-            I'm looking forward to using my skills to help understand and solve new challenges.
+            I'm looking forward to using my skills to help understand and solve new challenges.`}
           </Text>
         </Stack>
 
         <Stack>
           <Text>
-            Let's see what we can discover together with data!
+            {`Let's see what we can discover together with data!`}
           </Text>
         </Stack>
       </Stack>

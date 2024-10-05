@@ -49,7 +49,7 @@ const Carousel = () => {
             fontWeight: 800,
             filter: 'drop-shadow(0px 0px 4px #010101)',
             textAlign: 'center'
-          }}>Hi, I'm Giorgia</p>
+          }}>{`Hi, I'm Giorgia`}</p>
           <hr style={{
             borderBottom: '0.25rem solid white',
             width: '8rem',
