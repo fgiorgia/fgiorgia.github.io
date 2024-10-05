@@ -41,18 +41,13 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt install ruby ruby-dev ruby-bundler
-          cd packages/jekyll && make install
+          cd packages/legacy && make install
       - name: Build the site
         run: |
           echo "Building version $GIT_HASH"
-          cd packages/jekyll && make build
+          cd packages/legacy && make build
         env: # Export secret as an environment variable
           GOOGLE_ANALYTICS_GTAG: ${{ secrets.GOOGLE_ANALYTICS_GTAG }}
           PAGES_REPO_NWO: ${{ github.repository }}
           GIT_HASH: ${{ github.sha }}
-      # - name: Deploy
-      #   uses: peaceiris/actions-gh-pages@v3
-      #   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./packages/jekyll/_site
+
