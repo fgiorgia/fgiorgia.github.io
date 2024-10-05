@@ -1,7 +1,6 @@
 'use client'
 
 import Stack from "../Stack/Stack"
-import Text from "../Text/Text"
 import { classNames } from "@/utils/style/classNames"
 import useScreenSize from "@/utils/style/useScreenSize"
 import Link from "next/link"

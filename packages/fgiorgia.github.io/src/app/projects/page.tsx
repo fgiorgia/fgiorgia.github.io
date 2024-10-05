@@ -3,7 +3,7 @@ import Stack from "@/components/Stack/Stack";
 import React from "react";
 
 import styles from './projects.module.scss';
-import { Project, projects } from "./projectsData";
+import { projects } from "./projectsData";
 import ProjectItem from "./ProjectItem";
 
 const Page: React.FC = () => {
