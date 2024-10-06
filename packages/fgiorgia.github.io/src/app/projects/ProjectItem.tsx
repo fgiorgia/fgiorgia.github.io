@@ -1,30 +1,32 @@
-import { Project } from "./projectsData";
-import Text from "@/components/Text/Text";
-import styles from './projects.module.scss';
-import Link from "next/link";
-import { useCallback } from "react";
+import { Project } from './projectsData'
+import Text from '@/components/Text/Text'
+import styles from './projects.module.scss'
+import Link from 'next/link'
+import { useCallback } from 'react'
 
 interface Props {
-  project: Project,
-  extended?: boolean,
+  project: Project
+  extended?: boolean
 }
 
 const ProjectItem: React.FC<Props> = ({ project, extended }) => {
-  const projectLink = `https://github.com/fgiorgia/${project.githubName}/`;
+  const projectLink = `https://github.com/fgiorgia/${project.githubName}/`
 
-  const ImageLinkOrFragment = useCallback(({ children }: React.PropsWithChildren) => {
-    if (extended) {
-      return <>{children}</>
-    }
+  const ImageLinkOrFragment = useCallback(
+    ({ children }: React.PropsWithChildren) => {
+      if (extended) {
+        return <>{children}</>
+      }
 
-    return <Link href={`/projects/${project.githubName}`}>{children}</Link>
-  }, [extended])
+      return <Link href={`/projects/${project.githubName}`}>{children}</Link>
+    },
+    [extended]
+  )
 
   return (
     <div className={styles.projectItem}>
       <ImageLinkOrFragment>
         <div className={styles.projectItemImgContainer}>
-
           <img
             className={styles.projectItemContentImgBackground}
             src={project.thumbnailImg}
@@ -40,7 +42,10 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
       <div className={styles.projectItemContentContainer}>
         <div className={styles.projectItemTextContainer}>
           {!extended && (
-            <Link className={styles.projectItemContentReadmore} href={`/projects/${project.githubName}`}>
+            <Link
+              className={styles.projectItemContentReadmore}
+              href={`/projects/${project.githubName}`}
+            >
               <h4>{project.title}</h4>
             </Link>
           )}
@@ -64,19 +69,24 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
               ))}
             </div>
           )}
-          {extended && (<div className={styles.projectItemContentText}>
-            <Text>{project.content}</Text>
-          </div>)}
-
+          {extended && (
+            <div className={styles.projectItemContentText}>
+              <Text>{project.content}</Text>
+            </div>
+          )}
         </div>
         <div className={styles.projectGithubContainer}>
-          <a className={styles.projectGithubLink} href={projectLink} target="_blank">
+          <a
+            className={styles.projectGithubLink}
+            href={projectLink}
+            target="_blank"
+          >
             <i className="fab fa-github"></i> {project.githubName}
           </a>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectItem;
+export default ProjectItem

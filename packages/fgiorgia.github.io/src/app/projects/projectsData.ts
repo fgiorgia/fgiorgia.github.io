@@ -14,7 +14,7 @@ export const projects = [
     we were tasked with a fascinating project: analyze customer feedback for a fictional 
     startup in the natural beauty sector. The goal was to use data analytics to understand 
     customers' perceptions of products and services, simulating real-world business analytics practices.
-    `
+    `,
   },
   {
     githubName: 'ikea-app-reviews-analysis',
@@ -30,8 +30,8 @@ export const projects = [
     the impact of app versions on review sentiment scores. This approach not only allowed 
     for the identification of subtle but significant trends in user feedback but also exemplified 
     the application of statistical methods in deriving actionable insights from real-world data.
-    `
-  }
-];
+    `,
+  },
+]
 
-export type Project = typeof projects[number];
+export type Project = (typeof projects)[number]

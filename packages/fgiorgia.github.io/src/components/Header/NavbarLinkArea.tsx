@@ -1,16 +1,16 @@
 'use client'
 
-import Stack from "../Stack/Stack"
-import { classNames } from "@/utils/style/classNames"
-import useScreenSize from "@/utils/style/useScreenSize"
-import Link from "next/link"
-import { useState } from "react"
+import Stack from '../Stack/Stack'
+import { classNames } from '@/utils/style/classNames'
+import useScreenSize from '@/utils/style/useScreenSize'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export const linkClasses = 'font-extrabold text-gray-800 hover:text-cyan-800'
 
 const HeaderLink: React.FC<{
-  children: string,
-  href: string,
+  children: string
+  href: string
   openInNewTab?: boolean
   onClick?: () => void
 }> = ({ href, children, openInNewTab, onClick }) => {
@@ -28,24 +28,36 @@ const HeaderLink: React.FC<{
 
 const HeaderLinkGroup: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
   <>
-    <HeaderLink onClick={onClick} href="/projects">Projects</HeaderLink>
-    <HeaderLink onClick={onClick} href="https://github.com/fgiorgia" openInNewTab>GitHub</HeaderLink>
-    <HeaderLink onClick={onClick} href="/about">About Me</HeaderLink>
+    <HeaderLink onClick={onClick} href="/projects">
+      Projects
+    </HeaderLink>
+    <HeaderLink
+      onClick={onClick}
+      href="https://github.com/fgiorgia"
+      openInNewTab
+    >
+      GitHub
+    </HeaderLink>
+    <HeaderLink onClick={onClick} href="/about">
+      About Me
+    </HeaderLink>
     {/* TODO: Add search button */}
   </>
 )
 
 const NavbarLinkArea = () => {
-  const isLargeScreen = useScreenSize().width > 600;
-  const [isOpen, setIsOpen] = useState(false);
+  const isLargeScreen = useScreenSize().width > 600
+  const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-      {isLargeScreen ? (
-        <Stack direction="row" className="w-1/3 justify-center items-center gap-8">
+      {isLargeScreen ?
+        <Stack
+          direction="row"
+          className="w-1/3 justify-center items-center gap-8"
+        >
           <HeaderLinkGroup />
         </Stack>
-      ) : (
-        <Stack direction="row" className="w-1/3 justify-end items-center gap-8">
+      : <Stack direction="row" className="w-1/3 justify-end items-center gap-8">
           <Stack>
             <p
               role="button"
@@ -57,30 +69,27 @@ const NavbarLinkArea = () => {
             >
               =
             </p>
-            {
-              isOpen && (
-                <Stack style={{ position: 'relative' }}>
-                  <Stack
-                    style={{
-                      top: 0,
-                      right: '-1.5rem',
-                      position: 'absolute',
-                      backgroundColor: '#F3F4F6',
-                      padding: '2rem',
-                      zIndex: 5,
-                      alignItems: 'flex-end',
-                      gap: '0.5rem'
-                    }}>
-                    <HeaderLinkGroup onClick={() => setIsOpen(false)} />
-                  </Stack>
+            {isOpen && (
+              <Stack style={{ position: 'relative' }}>
+                <Stack
+                  style={{
+                    top: 0,
+                    right: '-1.5rem',
+                    position: 'absolute',
+                    backgroundColor: '#F3F4F6',
+                    padding: '2rem',
+                    zIndex: 5,
+                    alignItems: 'flex-end',
+                    gap: '0.5rem',
+                  }}
+                >
+                  <HeaderLinkGroup onClick={() => setIsOpen(false)} />
                 </Stack>
-              )
-            }
+              </Stack>
+            )}
           </Stack>
-
-
         </Stack>
-      )}
+      }
     </>
   )
 }

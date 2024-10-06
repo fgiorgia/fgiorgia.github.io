@@ -1,25 +1,41 @@
-import { CSSProperties } from "react";
-import { classNames } from "../../utils/style/classNames";
+import { CSSProperties } from 'react'
+import { classNames } from '../../utils/style/classNames'
 
-import styles from './Stack.module.scss';
-import { CoreProps } from "../types";
-import { getUtilityClasses } from "@/utils/style/getUtilityClasses";
+import styles from './Stack.module.scss'
+import { CoreProps } from '../types'
+import { getUtilityClasses } from '@/utils/style/getUtilityClasses'
 
 interface Props extends CoreProps {
-  direction?: 'row' | "column",
-  justifyContent?: 'flexStart' | 'flexEnd' | 'center' | 'spaceBetween' | 'spaceAround' | 'spaceEvenly' | 'initial' | 'inherit';
-  alignItems?: 'normal' | 'stretch' | 'center' | 'flexStart' | 'flexEnd' | 'baseline' | 'initial' | 'inherit';
-  spacing?: number;
+  direction?: 'row' | 'column'
+  justifyContent?:
+    | 'flexStart'
+    | 'flexEnd'
+    | 'center'
+    | 'spaceBetween'
+    | 'spaceAround'
+    | 'spaceEvenly'
+    | 'initial'
+    | 'inherit'
+  alignItems?:
+    | 'normal'
+    | 'stretch'
+    | 'center'
+    | 'flexStart'
+    | 'flexEnd'
+    | 'baseline'
+    | 'initial'
+    | 'inherit'
+  spacing?: number
 }
 
 const Stack: React.FC<React.PropsWithChildren<Props>> = ({
-  direction = "column",
+  direction = 'column',
   justifyContent,
   alignItems,
   spacing,
   children,
   className,
-  style: styleProp
+  style: styleProp,
 }) => {
   const classes = classNames(
     styles.stack,
@@ -29,14 +45,18 @@ const Stack: React.FC<React.PropsWithChildren<Props>> = ({
       alignItems,
     }),
     className
-  );
+  )
 
   const style: CSSProperties = {
     ...(spacing && { gap: `${spacing}rem` }),
-    ...styleProp
+    ...styleProp,
   }
 
-  return (<div className={classes} style={style}>{children}</div>)
-};
+  return (
+    <div className={classes} style={style}>
+      {children}
+    </div>
+  )
+}
 
-export default Stack;
+export default Stack
