@@ -3,6 +3,7 @@
     "unused-imports"
   ],
   "extends": [
+    "plugin:prettier/recommended",
     "next/core-web-vitals",
     "next/typescript"
   ],
