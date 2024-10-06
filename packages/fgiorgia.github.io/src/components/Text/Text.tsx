@@ -1,8 +1,8 @@
-import React, { CSSProperties } from 'react'
+import React, { type CSSProperties } from 'react'
 
 import styles from './Text.module.scss'
 import { classNames } from '@/utils/style/classNames'
-import { CoreProps } from '../types'
+import { type CoreProps } from '../types'
 import { getUtilityClasses } from '@/utils/style/getUtilityClasses'
 
 interface Props extends CoreProps {
@@ -26,7 +26,7 @@ const Text: React.FC<React.PropsWithChildren<Props>> = ({
   style: styleProp,
 }) => {
   const className = classNames(
-    styles['base'],
+    styles.base,
     styles[variant],
     ...getUtilityClasses(
       styles,
@@ -43,11 +43,11 @@ const Text: React.FC<React.PropsWithChildren<Props>> = ({
 
   const style = {
     color,
-    ...(fontSize && { fontSize: `${fontSize}rem` }),
+    ...(fontSize != null && { fontSize: `${fontSize}rem` }),
     ...styleProp,
   }
 
-  if (nested) {
+  if (nested != null) {
     return (
       <span className={className} style={style}>
         {children}{' '}

@@ -1,4 +1,4 @@
-import { Project } from './projectsData'
+import { type Project } from './projectsData'
 import Text from '@/components/Text/Text'
 import styles from './projects.module.scss'
 import Link from 'next/link'
@@ -14,7 +14,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
 
   const ImageLinkOrFragment = useCallback(
     ({ children }: React.PropsWithChildren) => {
-      if (extended) {
+      if (extended === true) {
         return <>{children}</>
       }
 
@@ -41,7 +41,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
       </ImageLinkOrFragment>
       <div className={styles.projectItemContentContainer}>
         <div className={styles.projectItemTextContainer}>
-          {!extended && (
+          {extended !== true && (
             <Link
               className={styles.projectItemContentReadmore}
               href={`/projects/${project.githubName}`}
@@ -69,7 +69,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
               ))}
             </div>
           )}
-          {extended && (
+          {extended !== true && (
             <div className={styles.projectItemContentText}>
               <Text>{project.content}</Text>
             </div>

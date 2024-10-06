@@ -19,7 +19,7 @@ export const getUtilityClasses = (
   utilityProps: Record<string, UtilityClassValue | undefined>,
   options: { prefix?: string } = {}
 ): string[] => {
-  const utilityClasses = Object.entries(utilityProps).reduce(
+  const utilityClasses = Object.entries(utilityProps).reduce<string[]>(
     (classNames, [key, value]) => {
       if (value == null || value === false) {
         return classNames
@@ -40,7 +40,7 @@ export const getUtilityClasses = (
 
       return [...classNames, styledClassName]
     },
-    [] as string[]
+    []
   )
   return utilityClasses
 }

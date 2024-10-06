@@ -1,8 +1,8 @@
-import { CSSProperties } from 'react'
+import { type CSSProperties } from 'react'
 import { classNames } from '../../utils/style/classNames'
 
 import styles from './Stack.module.scss'
-import { CoreProps } from '../types'
+import { type CoreProps } from '../types'
 import { getUtilityClasses } from '@/utils/style/getUtilityClasses'
 
 interface Props extends CoreProps {
@@ -48,7 +48,7 @@ const Stack: React.FC<React.PropsWithChildren<Props>> = ({
   )
 
   const style: CSSProperties = {
-    ...(spacing && { gap: `${spacing}rem` }),
+    ...(spacing != null && { gap: `${spacing}rem` }),
     ...styleProp,
   }
 

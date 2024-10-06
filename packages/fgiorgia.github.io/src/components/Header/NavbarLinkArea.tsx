@@ -64,7 +64,9 @@ const NavbarLinkArea = () => {
               // For some reason the following logic works (cyan when open)
               // TODO: investigate why
               className={linkClasses + (isOpen ? '' : 'text-cyan-800')}
-              onClick={() => setIsOpen(!isOpen)}
+              onClick={() => {
+                setIsOpen(!isOpen)
+              }}
               style={{ fontSize: '1.5rem' }}
             >
               =
@@ -83,7 +85,11 @@ const NavbarLinkArea = () => {
                     gap: '0.5rem',
                   }}
                 >
-                  <HeaderLinkGroup onClick={() => setIsOpen(false)} />
+                  <HeaderLinkGroup
+                    onClick={() => {
+                      setIsOpen(false)
+                    }}
+                  />
                 </Stack>
               </Stack>
             )}

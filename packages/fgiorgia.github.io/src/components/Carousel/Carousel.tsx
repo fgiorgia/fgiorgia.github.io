@@ -22,10 +22,14 @@ const Carousel = () => {
     const intervalId = setInterval(() => {
       setIsAnimationActive(false)
       setActiveIndex((prevIndex) => getIndex(prevIndex + 1))
-      setTimeout(() => setIsAnimationActive(true), imageLoadingTimeMs)
+      setTimeout(() => {
+        setIsAnimationActive(true)
+      }, imageLoadingTimeMs)
     }, imageAnimationSleepMs)
 
-    return () => clearInterval(intervalId)
+    return () => {
+      clearInterval(intervalId)
+    }
   }, [images])
 
   const indeces = [getIndex(activeIndex - 1), getIndex(activeIndex)]
