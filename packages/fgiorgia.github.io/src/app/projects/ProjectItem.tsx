@@ -3,6 +3,7 @@ import Text from '@/components/Text/Text'
 import styles from './projects.module.scss'
 import Link from 'next/link'
 import { useCallback } from 'react'
+import Image from 'next/image'
 
 interface Props {
   project: Project
@@ -27,12 +28,12 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
     <div className={styles.projectItem}>
       <ImageLinkOrFragment>
         <div className={styles.projectItemImgContainer}>
-          <img
+          <Image
             className={styles.projectItemContentImgBackground}
             src={project.thumbnailImg}
             alt="Project thumbnail"
           />
-          <img
+          <Image
             className={styles.projectItemContentImg}
             src={project.thumbnailImg}
             alt="Project thumbnail"
@@ -69,7 +70,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
               ))}
             </div>
           )}
-          {extended !== true && (
+          {extended === true && (
             <div className={styles.projectItemContentText}>
               <Text>{project.content}</Text>
             </div>

@@ -6,7 +6,7 @@ export const projects = [
     githubName: 'customer-feedback-analysis',
     title: 'Customer Feedback Analysis',
     subtitle: 'A Homework Project on Natural Beauty Product Feedback Analysis',
-    thumbnailImg: ikeaAppReviewsImage.src,
+    thumbnailImg: ikeaAppReviewsImage,
     shareImg: '/assets/img/path.jpg',
     tags: ['Sentiment Analysis', 'MS Excel'],
     content: `
@@ -20,7 +20,7 @@ export const projects = [
     githubName: 'ikea-app-reviews-analysis',
     title: 'IKEA App Review Analysis',
     subtitle: 'An analysis on customer Android IKEA App reviews',
-    thumbnailImg: customerFeedbackDashboardImage.src,
+    thumbnailImg: customerFeedbackDashboardImage,
     shareImg: '/assets/img/path.jpg',
     tags: ['MS Excel', 'Correlation', 'Prediction'],
     content: `
