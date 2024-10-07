@@ -3,7 +3,7 @@ import { projects } from '../projectsData'
 import ProjectItem from '../ProjectItem'
 import Stack from '@/components/Stack/Stack'
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return projects.map((project) => ({ slug: project.githubName }))
 }
 
