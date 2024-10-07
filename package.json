@@ -1,14 +1,14 @@
 {
-  "name": "main",
+  "name": "fgiorgia.github.io",
   "version": "0.1.0",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace fgiorgia.github.io dev",
-    "build": "yarn workspace fgiorgia.github.io build",
-    "lint": "yarn workspace fgiorgia.github.io lint"
+    "dev": "yarn workspace website dev",
+    "build": "yarn workspace website build",
+    "lint": "yarn workspace website lint"
   },
   "dependencies": {
     "next": "^14.2.11",

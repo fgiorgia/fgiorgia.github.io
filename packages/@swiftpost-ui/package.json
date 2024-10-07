@@ -2,7 +2,9 @@
   "name": "@swiftpost/ui",
   "version": "0.1.0",
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "lint": "yarn eslint ."
+  },
   "dependencies": {
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
