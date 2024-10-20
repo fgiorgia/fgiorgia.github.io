@@ -21,6 +21,7 @@
         "argsIgnorePattern": "^_"
       }
     ],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@next/next/no-html-link-for-pages": "off"
   }
 }
