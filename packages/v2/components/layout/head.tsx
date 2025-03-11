@@ -13,7 +13,8 @@ const Header: React.FC = () => {
     { label: 'About', href: '/about' },
     { label: 'Skills', href: '/skills' },
     { label: 'Projects', href: '/projects' },
-    { label: 'Contact', href: '/contact' }
+    { label: 'Contact', href: '/contact' },
+    { label: 'CV', href: '#' },
   ];
   
   // Handle scroll effect
@@ -31,15 +32,13 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-md' : 'bg-transparent'
-    }`}>
+    <nav className={`sticky top-0 z-50 transition-all duration-300 bg-white shadow-md`}>
       <div className="container-wide">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Link href="/">
-              <span className={`text-xl font-bold ${isScrolled || isMenuOpen ? 'text-indigo-600' : 'text-white'}`}>
-                DataPortfolio
+              <span className={`text-xl font-bold ${isScrolled || isMenuOpen ? 'text-indigo-600' : 'text-indigo-600'}`}>
+                GF Analytics
               </span>
             </Link>
           </div>
@@ -53,7 +52,7 @@ const Header: React.FC = () => {
                 className={`font-medium ${
                   item.active 
                     ? (isScrolled ? 'text-indigo-600' : 'text-white')
-                    : (isScrolled ? 'text-gray-500 hover:text-indigo-600' : 'text-indigo-100 hover:text-white')
+                    : 'text-gray-500 hover:text-indigo-600'
                 }`}
               >
                 {item.label}
@@ -65,9 +64,7 @@ const Header: React.FC = () => {
           <div className="md:hidden flex items-center">
             <button 
               onClick={toggleMenu}
-              className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isScrolled ? 'text-gray-500 hover:text-indigo-600' : 'text-white hover:text-indigo-200'
-              }`}
+              className={`inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-indigo-600`}
               aria-expanded={isMenuOpen}
             >
               <span className="sr-only">Open main menu</span>
