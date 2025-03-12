@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { NavItem } from '@/types';
 
 const Header: React.FC = () => {
@@ -13,8 +13,7 @@ const Header: React.FC = () => {
     { label: 'About', href: '/about' },
     { label: 'Skills', href: '/skills' },
     { label: 'Projects', href: '/projects' },
-    { label: 'Contact', href: '/contact' },
-    { label: 'CV', href: '#' },
+    { label: 'Contact', href: '/contact' }
   ];
   
   // Handle scroll effect
@@ -58,6 +57,18 @@ const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
+            
+            {/* CV Button */}
+            <a 
+              href="/resume.pdf" 
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              <Download size={18} className="mr-2" />
+              CV
+            </a>
           </div>
           
           {/* Mobile menu button */}
@@ -70,7 +81,6 @@ const Header: React.FC = () => {
               <span className="sr-only">Open main menu</span>
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
-          </div>
         </div>
       </div>
       
@@ -92,9 +102,22 @@ const Header: React.FC = () => {
                 {item.label}
               </Link>
             ))}
+            
+            {/* CV Button */}
+            <a 
+              href="/resume.pdf" 
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+            >
+              <Download size={18} className="mr-2" />
+              CV
+            </a>
           </div>
         </div>
       )}
+    </div>
     </nav>
   );
 };
