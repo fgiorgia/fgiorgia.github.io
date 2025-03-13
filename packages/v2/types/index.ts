@@ -16,6 +16,8 @@ export interface Project {
   client: string;
   completedDate: string;
   featured: boolean;
+  thumbnail?: string; // Path to project thumbnail image
+  image?: string; // Path to project image
   mainImageUrl?: string | null;
   outcomes?: {
     title: string;
