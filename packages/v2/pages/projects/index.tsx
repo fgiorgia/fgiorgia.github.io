@@ -287,7 +287,6 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                   setActiveFilter('sql');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                cl
                 className="text-purple-700 font-medium hover:text-purple-900 flex items-center mt-auto"
               >
                 View SQL Projects

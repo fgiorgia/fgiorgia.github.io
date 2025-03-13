@@ -2,6 +2,7 @@ import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { defaultSEO } from '../lib/seo';
+import CookieConsent from '../components/ui/cookie_consent';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       )}
       <Component {...pageProps} />
+      <CookieConsent />
     </>
   );
 }
