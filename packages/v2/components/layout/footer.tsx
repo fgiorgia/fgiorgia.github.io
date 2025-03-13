@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from "next/image";
 import { Mail, Github, Linkedin } from 'lucide-react';
 
 interface SocialLink {
@@ -43,10 +44,27 @@ const Footer: React.FC = () => {
       <div className="container-wide">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link href="/" legacyBehavior>
-              <a className="inline-block">
-                <span className="text-xl font-bold text-white">GF Analytics</span>
-              </a>
+          <Link href="/">
+              <div className="flex items-center">
+                {/* Logo Image */}
+                <div className="flex justify-center mb-4">
+                  <div className="relative w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full overflow-hidden mr-2 sm:mr-3">
+                    <Image
+                      src="/images/GF-Data-Analytics.webp"
+                      alt="GF Analytics Logo"
+                      fill
+                      sizes="(max-width: 640px) 32px, (max-width: 768px) 36px, 40px"
+                      className="object-cover"
+                      priority
+                    />
+                  </div>
+                  <span
+                    className="text-xl font-bold text-white flex items-center"
+                  >
+                    GF Analytics
+                  </span>
+                </div>
+              </div>
             </Link>
             <p className="mt-2 text-sm text-gray-400">Data Analyst | Statistics | BI Developer | Azure AI Certified</p>
           </div>
