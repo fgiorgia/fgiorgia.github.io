@@ -60,8 +60,8 @@ const Contact: NextPage = () => {
       {/* Page Header */}
       <div className="bg-indigo-700 text-white">
         <div className="container-wide py-16">
-          <h1 className="text-3xl md:text-4xl font-bold">Get In Touch</h1>
-          <p className="mt-4 text-lg text-indigo-200 max-w-3xl">
+          <h1 className="text-3xl md:text-4xl text-indigo-100 font-bold">Get In Touch</h1>
+          <p className="mt-4 text-lg text-indigo-100 max-w-3xl">
             Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
           </p>
         </div>

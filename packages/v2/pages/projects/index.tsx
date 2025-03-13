@@ -50,13 +50,13 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
   const getCategoryColor = (category: string) => {
     switch(category.toLowerCase()) {
       case 'excel':
-        return 'bg-yellow-100 text-yellow-800 border-yellow-200 hover:bg-yellow-200';
+        return 'bg-green-100 text-green-800 border-green-200 hover:bg-green-200';
       case 'python':
         return 'bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200';
       case 'sql':
         return 'bg-purple-100 text-purple-800 border-purple-200 hover:bg-purple-200';
       case 'power bi':
-        return 'bg-green-100 text-green-800 border-green-200 hover:bg-green-200';
+        return 'bg-yellow-100 text-yellow-800 border-yellow-200 hover:bg-yellow-200';
       default:
         return 'bg-gray-100 text-gray-800 border-gray-200 hover:bg-gray-200';
     }
@@ -67,15 +67,15 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
     if (category === activeFilter) {
       switch(category) {
         case 'excel':
-          return 'bg-yellow-200 text-yellow-800 border-yellow-400';
+          return 'bg-green-200 text-green-800 border-green-400';
         case 'python':
           return 'bg-blue-200 text-blue-800 border-blue-400';
         case 'sql':
           return 'bg-purple-200 text-purple-800 border-purple-400';
         case 'power bi':
-          return 'bg-green-200 text-green-800 border-green-400';
+          return 'bg-yellow-200 text-yellow-800 border-yellow-400';
         case 'all':
-          return 'bg-indigo-200 text-indigo-800 border-indigo-400';
+          return 'bg-slate-200 text-gray-800 border-gray-400';
         default:
           return 'bg-gray-200 text-gray-800 border-gray-400';
       }
@@ -95,7 +95,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
       <div className="bg-indigo-700 text-white">
         <div className="container-wide py-16">
           <h1 className="text-3xl md:text-4xl font-bold text-indigo-100">My Projects</h1>
-          <p className="mt-4 text-lg text-indigo-200 max-w-3xl">
+          <p className="mt-4 text-lg text-indigo-100 max-w-3xl">
             A collection of my work in data analysis, visualization, and business intelligence
           </p>
         </div>
@@ -116,9 +116,13 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                   className={`flex items-center px-3 py-2 rounded-full text-sm font-medium border whitespace-nowrap transition-colors ${getActiveFilterClass(category)}`}
                 >
                   {category !== 'all' && (
-                    <span className="mr-2">{getCategoryIcon(category)}</span>
+                  <span className="mr-2">{getCategoryIcon(category)}</span>
                   )}
-                  {category === 'all' ? 'All Projects' : category.charAt(0).toUpperCase() + category.slice(1)}
+                  {category === 'all' ? 'All Projects' : 
+                  category.toLowerCase() === 'sql' ? 'SQL' :
+                  category.toLowerCase() === 'power bi' ? 'Power BI' :
+                  category.charAt(0).toUpperCase() + category.slice(1)
+                  }
                 </button>
               ))}
             </div>
@@ -160,19 +164,22 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
           <h2 className="text-2xl font-bold text-center mb-10">Project Categories</h2>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-yellow-50 border border-yellow-100 p-6 rounded-lg">
+            <div className="bg-green-50 border border-green-100 p-6 rounded-lg">
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-yellow-100 rounded-full mr-4">
-                  <FileSpreadsheet size={24} className="text-yellow-700" />
+                <div className="p-3 bg-green-100 rounded-full mr-4">
+                  <FileSpreadsheet size={24} className="text-green-700" />
                 </div>
-                <h3 className="text-xl font-semibold text-yellow-800">Excel Projects</h3>
+                <h3 className="text-xl font-semibold text-green-800">Excel Projects</h3>
               </div>
               <p className="text-gray-600 mb-4">
                 Advanced dashboards, data models, and automated reporting solutions built with Excel and Google Sheets.
               </p>
               <button
-                onClick={() => setActiveFilter('excel')}
-                className="text-yellow-700 font-medium hover:text-yellow-800 flex items-center"
+                onClick={() => {
+                  setActiveFilter('excel');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="text-green-700 font-medium hover:text-green-900 flex items-center"
               >
                 View Excel Projects
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
@@ -193,8 +200,12 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                 Data analysis, machine learning, and visualization projects developed with Python and its data science libraries.
               </p>
               <button
-                onClick={() => setActiveFilter('python')}
-                className="text-blue-700 font-medium hover:text-blue-800 flex items-center"
+                onClick={() => {
+                  setActiveFilter('python');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="text-blue-700 font-medium hover:text-blue-900 flex items-center"
+                role="link"
               >
                 View Python Projects
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
@@ -215,8 +226,11 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                 Database optimization, complex query development, and data extraction solutions using SQL.
               </p>
               <button
-                onClick={() => setActiveFilter('sql')}
-                className="text-purple-700 font-medium hover:text-purple-800 flex items-center"
+                onClick={() => {
+                  setActiveFilter('sql');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="text-purple-700 font-medium hover:text-purple-900 flex items-center"
               >
                 View SQL Projects
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
@@ -226,19 +240,22 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               </button>
             </div>
             
-            <div className="bg-green-50 border border-green-100 p-6 rounded-lg">
+            <div className="bg-yellow-50 border border-yellow-100 p-6 rounded-lg">
               <div className="flex items-center mb-4">
-                <div className="p-3 bg-green-100 rounded-full mr-4">
-                  <BarChart2 size={24} className="text-green-700" />
+                <div className="p-3 bg-yellow-100 rounded-full mr-4">
+                  <BarChart2 size={24} className="text-yellow-700" />
                 </div>
-                <h3 className="text-xl font-semibold text-green-800">Power BI Projects</h3>
+                <h3 className="text-xl font-semibold text-yellow-800">Power BI Projects</h3>
               </div>
               <p className="text-gray-600 mb-4">
                 Interactive dashboards and reports created with Power BI, Tableau, and other business intelligence tools.
               </p>
               <button
-                onClick={() => setActiveFilter('power bi')}
-                className="text-green-700 font-medium hover:text-green-800 flex items-center"
+                onClick={() => {
+                  setActiveFilter('power bi');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="text-yellow-700 font-medium hover:text-yellow-900 flex items-center"
               >
                 View BI Projects
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1">
@@ -254,7 +271,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
       {/* Call to Action */}
       <section className="py-12 bg-indigo-700 text-white">
         <div className="container-narrow text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Want to Work Together?</h2>
+          <h2 className="text-2xl md:text-3xl text-indigo-100 font-bold mb-4">Want to Work Together?</h2>
           <p className="text-lg text-indigo-100 mb-8 max-w-2xl mx-auto">
             If you like my work and want to discuss a potential project or position, I'd love to hear from you.
           </p>

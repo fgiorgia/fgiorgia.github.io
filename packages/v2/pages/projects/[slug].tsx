@@ -65,10 +65,10 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
                   <span key={index} className="px-3 py-1 text-xs font-semibold bg-indigo-800 text-indigo-200 rounded-full">{tag}</span>
                 ))}
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold leading-tight">
+              <h1 className="text-3xl md:text-4xl text-indigo-100 font-bold leading-tight">
                 {project.title}
               </h1>
-              <p className="mt-4 text-lg text-indigo-200 max-w-3xl">
+              <p className="mt-4 text-lg text-indigo-100 max-w-3xl">
                 {project.description}
               </p>
             </div>

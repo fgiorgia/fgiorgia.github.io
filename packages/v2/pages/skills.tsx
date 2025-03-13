@@ -37,8 +37,8 @@ const Skills: NextPage = () => {
       {/* Page Header */}
       <div className="bg-indigo-700 text-white">
         <div className="container-wide py-16">
-          <h1 className="text-3xl md:text-4xl font-bold">Skills & Expertise</h1>
-          <p className="mt-4 text-lg text-indigo-200 max-w-3xl">
+          <h1 className="text-3xl md:text-4xl text-indigo-100 font-bold">Skills & Expertise</h1>
+          <p className="mt-4 text-lg text-indigo-100 max-w-3xl">
             My technical toolkit for transforming data into insights and solutions
           </p>
         </div>
@@ -247,7 +247,7 @@ const Skills: NextPage = () => {
       {/* CTA Section */}
       <section className="py-12 bg-indigo-700 text-white">
         <div className="container-narrow text-center">
-          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Collaborate?</h2>
+          <h2 className="text-2xl text-indigo-100 md:text-3xl font-bold mb-4">Ready to Collaborate?</h2>
           <p className="text-lg text-indigo-100 mb-8 max-w-2xl mx-auto">
             Whether you need help with data analysis, visualization, or building a complete BI solution,
             I have the skills to help you turn your data into actionable insights.

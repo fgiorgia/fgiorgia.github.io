@@ -69,7 +69,7 @@
 // export default ProjectTabs;
 
 
-// Updated components/projects/ProjectTabs.tsx
+// Components/projects/ProjectTabs.tsx
 import React, { useState } from 'react';
 import { ProjectTabsProps } from '@/types';
 import ProjectDetails from './project_details';
@@ -80,39 +80,11 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
   // Check if project has a category that matches our specialized components
   const hasSpecializedView = ['excel', 'python', 'sql', 'power bi'].includes(project.category.toLowerCase());
 
-  // Define color scheme based on project category
-  const getColorScheme = () => {
-    const category = project.category.toLowerCase();
-    switch (category) {
-      case 'excel':
-        return {
-          active: 'border-yellow-600 text-yellow-800',
-          hover: 'hover:text-yellow-700 hover:border-yellow-300'
-        };
-      case 'python':
-        return {
-          active: 'border-blue-600 text-blue-800',
-          hover: 'hover:text-blue-700 hover:border-blue-300'
-        };
-      case 'sql':
-        return {
-          active: 'border-purple-600 text-purple-800',
-          hover: 'hover:text-purple-700 hover:border-purple-300'
-        };
-      case 'power bi':
-        return {
-          active: 'border-green-600 text-green-800',
-          hover: 'hover:text-green-700 hover:border-green-300'
-        };
-      default:
-        return {
-          active: 'border-indigo-600 text-indigo-600',
-          hover: 'hover:text-gray-700 hover:border-gray-300'
-        };
-    }
+  // Define color scheme
+  const colorScheme = {
+    active: 'border-indigo-600 text-indigo-600',
+    hover: 'hover:text-gray-700 hover:border-gray-300'
   };
-
-  const colorScheme = getColorScheme();
 
   return (
     <div>

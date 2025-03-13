@@ -45,10 +45,10 @@ const Footer: React.FC = () => {
           <div className="mb-6 md:mb-0">
             <Link href="/" legacyBehavior>
               <a className="inline-block">
-                <span className="text-xl font-bold text-white">DataPortfolio</span>
+                <span className="text-xl font-bold text-white">GF Analytics</span>
               </a>
             </Link>
-            <p className="mt-2 text-sm text-gray-400">Data Analyst & BI Developer</p>
+            <p className="mt-2 text-sm text-gray-400">Data Analyst | Statistics | BI Developer | Azure AI Certified</p>
           </div>
           
           <div className="flex space-x-6">
@@ -69,7 +69,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col md:flex-row md:justify-between">
           <p className="text-sm text-gray-400">
-            © {currentYear} Your Name. All rights reserved.
+            © {currentYear} Giorgia Faedda. All rights reserved.
           </p>
           
           <div className="mt-4 md:mt-0 flex space-x-4">

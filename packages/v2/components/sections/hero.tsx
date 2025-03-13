@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row sm:space-x-4">
               <Button
-                href="#projects"
+                href="projects"
                 variant="outline"
                 className="w-full sm:w-auto text-center"
               >

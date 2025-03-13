@@ -26,7 +26,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
       description: "Database design, complex queries, optimization, and data extraction",
       icon: <Database size={32} className="text-indigo-600" />,
       level: 85,
-      tools: ["MySQL", "PostgreSQL", "SQL Server", "Joins", "Database Design"]
+      tools: ["MySQL", "PostgreSQL", "SQL Server", "Joins", "Database Design", "Window Functions"]
     },
     {
       id: 'bi',
