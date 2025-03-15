@@ -29,7 +29,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         >
           {project.thumbnail ? (
             // Improved image handling with perfect centering for all screen sizes
-            <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+            <div className="absolute inset-0 flex items-center justify-center bg-green-100">
               <div className="relative w-full h-full">
                 <Image
                   src={project.thumbnail}
