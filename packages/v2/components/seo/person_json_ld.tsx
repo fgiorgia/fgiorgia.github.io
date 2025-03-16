@@ -1,8 +1,8 @@
 // components/seo/person_json_ld.tsx
-import React from 'react';
-import Head from 'next/head';
-import { siteUrl } from '@/lib/seo';
-import { getAssetPath } from '@/lib/utils';
+import React from 'react'
+import Head from 'next/head'
+import { siteUrl } from '@/lib/seo'
+import { getAssetPath } from '@/lib/utils'
 
 const PersonJsonLd: React.FC = () => {
   const personSchema = {
@@ -12,12 +12,13 @@ const PersonJsonLd: React.FC = () => {
     jobTitle: 'Data Analyst & Business Intelligence Developer',
     url: siteUrl,
     sameAs: [
-      'https://github.com/yourusername',
-      'https://linkedin.com/in/yourusername',
+      'https://github.com/fgiorgia',
+      'https://www.linkedin.com/in/fgiorgia/',
     ],
     // Update the image path
     image: `${siteUrl}${getAssetPath('/images/profile.jpg')}`,
-    description: 'Data Analyst specializing in Excel, Python, SQL, and Business Intelligence solutions.',
+    description:
+      'Data Analyst specializing in Excel, Python, SQL, and Business Intelligence solutions.',
     knowsAbout: [
       'Data Analysis',
       'Business Intelligence',
@@ -26,13 +27,13 @@ const PersonJsonLd: React.FC = () => {
       'SQL',
       'Tableau',
       'Power BI',
-      'Data Visualization'
+      'Data Visualization',
     ],
     worksFor: {
       '@type': 'Organization',
-      name: 'Your Current Company'
-    }
-  };
+      name: 'Your Current Company',
+    },
+  }
 
   return (
     <Head>
@@ -41,7 +42,7 @@ const PersonJsonLd: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
     </Head>
-  );
-};
+  )
+}
 
-export default PersonJsonLd;
+export default PersonJsonLd

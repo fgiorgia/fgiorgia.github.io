@@ -541,7 +541,7 @@ const DataAnalystPortfolio = () => {
                   <Mail className="mr-4 mt-1" />
                   <div>
                     <p className="font-semibold">Email</p>
-                    <p>your.email@example.com</p>
+                    <p>gfanalyticslab@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">

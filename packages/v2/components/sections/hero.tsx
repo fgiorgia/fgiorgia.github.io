@@ -1,9 +1,9 @@
-import React from "react";
-import { Mail, Github, Linkedin } from "lucide-react";
-import Image from "next/image";
-import { getAssetPath } from "@/lib/utils";
-import Button from "../ui/button";
-import { colors } from "@/styles/colors";
+import React from 'react'
+import { Mail, Github, Linkedin } from 'lucide-react'
+import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
+import Button from '../ui/button'
+import { colors } from '@/styles/colors'
 
 const Hero: React.FC = () => {
   return (
@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               <div className="flex justify-center mb-4">
                 <div className="h-24 w-24 sm:h-32 sm:w-32 rounded-full overflow-hidden bg-white relative">
                   <Image
-                    src={getAssetPath("/images/giorgia_faedda.png")}
+                    src={getAssetPath('/images/giorgia_faedda.png')}
                     alt="Giorgia Faedda - Profile Photo"
                     fill
                     sizes="(max-width: 640px) 96px, 128px"
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
                 </p>
                 <div className="mt-4 flex justify-center space-x-4">
                   <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/fgiorgia"
                     className="text-indigo-200 hover:text-white transition-colors"
                     aria-label="GitHub"
                     target="_blank"
@@ -77,7 +77,7 @@ const Hero: React.FC = () => {
                     <Github size={20} />
                   </a>
                   <a
-                    href="https://linkedin.com/in/yourusername"
+                    href="https://www.linkedin.com/in/fgiorgia/"
                     className="text-indigo-200 hover:text-white transition-colors"
                     aria-label="LinkedIn"
                     target="_blank"
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
                     <Linkedin size={20} />
                   </a>
                   <a
-                    href="mailto:your.email@example.com"
+                    href="mailto:gfanalyticslab@gmail.com"
                     className="text-indigo-200 hover:text-white transition-colors"
                     aria-label="Email"
                   >
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero
