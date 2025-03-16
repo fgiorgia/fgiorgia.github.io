@@ -6,9 +6,9 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "yarn workspace v1 dev",
-    "build": "yarn workspace v1 build",
-    "lint": "yarn workspace v1 lint"
+    "dev": "yarn workspace v2 dev",
+    "build": "yarn workspace v2 build",
+    "lint": "yarn workspace v2 lint"
   },
   "dependencies": {
     "next": "^14.2.11",
