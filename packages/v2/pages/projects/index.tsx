@@ -13,6 +13,7 @@ import SEO from "../../components/seo/SEO";
 import ProjectCard from "../../components/ui/project_card";
 import { getProjects } from "../../lib/projects";
 import { Project } from "@/types";
+import ComingSoonCard from "../../components/ui/coming_soon_card";
 
 interface ProjectsPageProps {
   projects: Project[];
@@ -180,6 +181,25 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
         </div>
       </section>
 
+      {/* Coming soon placeholders */}
+      <ComingSoonCard
+        category="Excel"
+        title="Financial Dashboard Project"
+        className="h-full transition-all duration-300 hover:translate-y-[-8px]"
+      />
+
+      <ComingSoonCard
+        category="Python"
+        title="Machine Learning Analysis"
+        className="h-full transition-all duration-300 hover:translate-y-[-8px]"
+      />
+
+      <ComingSoonCard
+        category="SQL"
+        title="Database Optimization Case Study"
+        className="h-full transition-all duration-300 hover:translate-y-[-8px]"
+      />
+
       {/* Project Categories Section */}
       <section className="py-16 bg-white">
         <div className="container-wide">
@@ -205,7 +225,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               <button
                 onClick={() => {
                   setActiveFilter("excel");
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 className="text-green-700 font-medium hover:text-green-900 flex items-center mt-auto"
               >
@@ -245,7 +265,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               <button
                 onClick={() => {
                   setActiveFilter("python");
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 className="text-blue-700 font-medium hover:text-blue-900 flex items-center mt-auto"
               >
@@ -284,8 +304,8 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               </p>
               <button
                 onClick={() => {
-                  setActiveFilter('sql');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  setActiveFilter("sql");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 className="text-purple-700 font-medium hover:text-purple-900 flex items-center mt-auto"
               >
@@ -324,8 +344,8 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               </p>
               <button
                 onClick={() => {
-                  setActiveFilter('power bi');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  setActiveFilter("power bi");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
                 }}
                 className="text-yellow-700 font-medium hover:text-yellow-900 flex items-center mt-auto"
               >
