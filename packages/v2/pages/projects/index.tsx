@@ -120,10 +120,10 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
       <div className="bg-white border-b">
         <div className="container-wide py-4">
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-gray-500 order-2 md:order-1">
               Showing {filteredProjects.length} of {projects.length} projects
             </div>
-            <div className="flex flex-wrap gap-2 w-full">
+            <div className="flex flex-wrap gap-2 w-full md:w-auto justify-start md:justify-end order-1 md:order-2">
               {categories.map((category) => (
                 <button
                   key={category}
