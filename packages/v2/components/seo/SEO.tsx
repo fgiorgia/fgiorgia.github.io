@@ -1,7 +1,8 @@
-import React from 'react';
-import { NextSeo, ArticleJsonLd } from 'next-seo';
-import { SEOProps } from '@/types';
-import { siteUrl } from '@/lib/seo';
+import React from "react";
+import { NextSeo, ArticleJsonLd } from "next-seo";
+import { getAssetPath } from '@/lib/utils';
+import { SEOProps } from "@/types";
+import { siteUrl } from "@/lib/seo";
 
 const SEO: React.FC<SEOProps> = ({
   title,
@@ -13,8 +14,12 @@ const SEO: React.FC<SEOProps> = ({
   article,
 }) => {
   const pageUrl = canonical || siteUrl;
-  const imageUrl = ogImage ? (ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`) : `${siteUrl}/images/og-image.png`;
-  
+  const imageUrl = ogImage
+    ? ogImage.startsWith("http")
+      ? ogImage
+      : `${siteUrl}${getAssetPath(ogImage)}`
+    : `${siteUrl}${getAssetPath("/images/og-image.png")}`;
+
   return (
     <>
       <NextSeo
@@ -31,11 +36,11 @@ const SEO: React.FC<SEOProps> = ({
               url: imageUrl,
               width: 1200,
               height: 630,
-              alt: ogImageAlt || title || 'Page image',
+              alt: ogImageAlt || title || "Page image",
             },
           ],
           ...(article && {
-            type: 'article',
+            type: "article",
             article: {
               publishedTime: article.publishedTime,
               modifiedTime: article.modifiedTime,
@@ -48,14 +53,14 @@ const SEO: React.FC<SEOProps> = ({
         <ArticleJsonLd
           type="BlogPosting"
           url={pageUrl}
-          title={title || ''}
+          title={title || ""}
           images={[imageUrl]}
           datePublished={article.publishedTime}
           dateModified={article.modifiedTime || article.publishedTime}
           authorName="Your Name"
           publisherName="Your Name"
           publisherLogo={`${siteUrl}/logo.png`}
-          description={description || ''}
+          description={description || ""}
         />
       )}
     </>

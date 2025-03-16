@@ -1,6 +1,8 @@
+// components/seo/person_json_ld.tsx
 import React from 'react';
 import Head from 'next/head';
 import { siteUrl } from '@/lib/seo';
+import { getAssetPath } from '@/lib/utils';
 
 const PersonJsonLd: React.FC = () => {
   const personSchema = {
@@ -13,7 +15,8 @@ const PersonJsonLd: React.FC = () => {
       'https://github.com/yourusername',
       'https://linkedin.com/in/yourusername',
     ],
-    image: `${siteUrl}/images/profile.jpg`,
+    // Update the image path
+    image: `${siteUrl}${getAssetPath('/images/profile.jpg')}`,
     description: 'Data Analyst specializing in Excel, Python, SQL, and Business Intelligence solutions.',
     knowsAbout: [
       'Data Analysis',

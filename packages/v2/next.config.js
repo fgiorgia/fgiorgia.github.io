@@ -4,10 +4,12 @@ const nextConfig = {
     images: {
       formats: ['image/avif', 'image/webp'],
     },
-    i18n: {
-      locales: ['en'],
-      defaultLocale: 'en',
-    },
+    // GitHub Pages
+    output: 'export',
+    // Set the base path if you're deploying to a repo that's not your username.github.io
+    basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
+    
     swcMinify: true,
     // Configure headers for better security and performance
     async headers() {

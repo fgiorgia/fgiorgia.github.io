@@ -5,7 +5,8 @@ import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo/SEO';
 import Breadcrumbs from '../../components/seo/breadcrumbs';
 import ProjectTabs from '../../components/projects/project_tabs';
-import { getAllProjectSlugs, getProjects } from '../../lib/projects';
+import { getAllProjectSlugs, getProjects } from '../../lib/projects'
+import { getAssetPath } from '@/lib/utils';
 import { Project } from '@/types';
 
 interface ProjectDetailProps {
@@ -42,7 +43,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
       <SEO 
         title={project.title}
         description={project.description}
-        ogImage={project.mainImageUrl || `/images/projects/${project.slug}.png`}
+        ogImage={project.mainImageUrl || getAssetPath(`/images/projects/${project.slug}.png`)}
         ogImageAlt={`${project.title} - ${project.category}`}
         article={{
           publishedTime,

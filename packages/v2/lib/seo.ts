@@ -1,4 +1,6 @@
 import { DefaultSeoProps } from 'next-seo';
+import { getAssetPath } from './utils';
+
 
 // Base URL for your site (used for canonical URLs and OG images)
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://yourportfoliosite.com';
@@ -16,7 +18,7 @@ export const defaultSEO: DefaultSeoProps = {
     siteName: 'Your Name - Portfolio',
     images: [
       {
-        url: `${siteUrl}/images/og-image.png`,
+        url: `${siteUrl}${getAssetPath("/images/og-image.png")}`,
         width: 1200,
         height: 630,
         alt: 'Your Name - Data Analyst & Business Intelligence Developer',

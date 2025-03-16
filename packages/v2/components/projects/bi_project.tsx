@@ -1,6 +1,7 @@
 // components/projects/BiProject.tsx
 import React from 'react';
 import Image from 'next/image';
+import { getAssetPath } from "@/lib/utils";
 import Card from '../ui/card';
 import { ProjectContentProps } from '@/types';
 
@@ -113,11 +114,14 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
             <p className="text-gray-500 italic">KPI Summary would be displayed here</p>
             {/* Uncomment when you have an actual image 
             <Image 
-              src="/images/projects/bi-dashboard1.jpg" 
+              src={getAssetPath("/images/projects/bi-dashboard1.jpg")}
               alt="KPI Summary Dashboard" 
+              fill
               width={400} 
               height={300}
               className="rounded-lg shadow-md"
+              priority
+              unoptimized
             /> */}
           </div>
           
@@ -125,11 +129,14 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
             <p className="text-gray-500 italic">Sales Analysis would be displayed here</p>
             {/* Uncomment when you have an actual image 
             <Image 
-              src="/images/projects/bi-dashboard2.jpg" 
+              src={getAssetPath("/images/projects/bi-dashboard2.jpg")}
               alt="Sales Analysis Dashboard" 
+              fill
               width={400} 
               height={300}
               className="rounded-lg shadow-md"
+              priority
+              unoptimized
             /> */}
           </div>
         </div>

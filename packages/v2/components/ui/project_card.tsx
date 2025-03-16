@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import Card from "./card";
 import { ProjectCardProps } from "@/types";
@@ -32,12 +33,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
             <div className="absolute inset-0 flex items-center justify-center bg-green-100">
               <div className="relative w-full h-full">
                 <Image
-                  src={project.thumbnail}
+                  src={getAssetPath(project.thumbnail)}
                   alt={`${project.title} thumbnail`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
                   className="object-contain p-1 xs:p-2 sm:p-3"
                   priority
+                  unoptimized 
                 />
               </div>
             </div>

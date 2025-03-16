@@ -1,6 +1,7 @@
 // components/projects/PythonProject.tsx
 import React from 'react';
 import Image from 'next/image';
+import { getAssetPath } from "@/lib/utils";
 import Card from '../ui/card';
 import { ProjectContentProps } from '@/types';
 
@@ -94,11 +95,14 @@ const PythonProject: React.FC<ProjectContentProps> = ({ project }) => {
             <p className="text-gray-500 italic">Distribution plot would be displayed here</p>
             {/* Uncomment when you have an actual image 
             <Image 
-              src="/images/projects/python-plot1.jpg" 
-              alt="Data Distribution Visualization" 
+              src={getAssetPath("/images/projects/python-plot1.jpg")}
+              alt="Data Distribution Visualization"
+              fill 
               width={400} 
               height={300}
               className="rounded-lg shadow-md"
+              priority
+              unoptimized 
             /> */}
           </div>
           
@@ -106,11 +110,14 @@ const PythonProject: React.FC<ProjectContentProps> = ({ project }) => {
             <p className="text-gray-500 italic">Correlation matrix would be displayed here</p>
             {/* Uncomment when you have an actual image 
             <Image 
-              src="/images/projects/python-plot2.jpg" 
+              src={getAssetPath("/images/projects/python-plot2.jpg")}
               alt="Correlation Matrix" 
+              fill
               width={400} 
               height={300}
               className="rounded-lg shadow-md"
+              priority
+              unoptimized 
             /> */}
           </div>
         </div>

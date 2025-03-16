@@ -7,6 +7,7 @@ import Skills from '../components/sections/skills';
 import ProjectsGrid from '../components/sections/projects_grid';
 import ContactSection from '../components/sections/contact_section';
 import { getProjects } from '../lib/projects';
+import { getAssetPath } from '@/lib/utils';
 import { Project } from '@/types';
 
 interface HomeProps {
@@ -19,7 +20,7 @@ const Home: React.FC<HomeProps> = ({ featuredProjects }) => {
       <SEO 
         title="Home"
         description="Data Analyst specializing in Excel, Python, SQL, and Business Intelligence solutions. View my portfolio showcasing data analysis and visualization projects."
-        ogImage="/images/home-og.png"
+        ogImage={getAssetPath("/images/home-og.png")}
       />
       <Hero />
       <Skills />

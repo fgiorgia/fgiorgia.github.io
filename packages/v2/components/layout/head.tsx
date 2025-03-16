@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { getAssetPath } from "@/lib/utils";
 import { Menu, X, Download } from "lucide-react";
 import { NavItem } from "@/types";
 
@@ -44,12 +45,13 @@ const Header: React.FC = () => {
                 <div className="flex justify-center mb-4">
                   <div className="relative w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full overflow-hidden mr-2 sm:mr-3">
                     <Image
-                      src="/images/GF-Data-Analytics.webp"
+                      src={getAssetPath("/images/GF-Data-Analytics.webp")}
                       alt="GF Analytics Logo"
                       fill
                       sizes="(max-width: 640px) 32px, (max-width: 768px) 36px, 40px"
                       className="object-cover"
                       priority
+                      unoptimized
                     />
                   </div>
                   <span
@@ -86,7 +88,7 @@ const Header: React.FC = () => {
 
             {/* CV Button */}
             <a
-              href="/resume.pdf"
+              href={getAssetPath("/resume.pdf")}
               className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200"
               target="_blank"
               rel="noopener noreferrer"
@@ -131,7 +133,7 @@ const Header: React.FC = () => {
 
               {/* CV Button */}
               <a
-                href="/resume.pdf"
+                href={getAssetPath("/resume.pdf")}
                 className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
