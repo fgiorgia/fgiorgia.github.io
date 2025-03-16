@@ -34,18 +34,18 @@ jobs:
 
 
   build_jekyll:
-    name: Build Jekyll
+    name: Build v0 (Jekyll)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Install dependencies
         run: |
           sudo apt install ruby ruby-dev ruby-bundler
-          cd packages/legacy && make install
+          cd packages/v0 && make install
       - name: Build the site
         run: |
           echo "Building version $GIT_HASH"
-          cd packages/legacy && make build
+          cd packages/v0 && make build
         env: # Export secret as an environment variable
           GOOGLE_ANALYTICS_GTAG: ${{ secrets.GOOGLE_ANALYTICS_GTAG }}
           PAGES_REPO_NWO: ${{ github.repository }}
