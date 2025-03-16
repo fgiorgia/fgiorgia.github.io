@@ -119,11 +119,11 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
       {/* Filter Section */}
       <div className="bg-white border-b">
         <div className="container-wide py-4">
-          <div className="flex items-center justify-between">
-            <div className="text-sm text-gray-500 hidden md:block">
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+            <div className="text-sm text-gray-500">
               Showing {filteredProjects.length} of {projects.length} projects
             </div>
-            <div className="flex overflow-x-auto py-2 space-x-2 w-full md:w-auto scrollbar-hide">
+            <div className="flex flex-wrap gap-2 w-full">
               {categories.map((category) => (
                 <button
                   key={category}

@@ -2,6 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
+      unoptimized: true,
       formats: ['image/avif', 'image/webp'],
     },
     // GitHub Pages
@@ -9,7 +10,7 @@ const nextConfig = {
     // Set the base path if you're deploying to a repo that's not your username.github.io
     basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
     assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-    
+
     swcMinify: true,
     // Configure headers for better security and performance
     async headers() {
