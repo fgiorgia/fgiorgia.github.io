@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[26],{7120:(_,e,n)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/projects/category/python",function(){return n(9133)}])},9133:(_,e,n)=>{"use strict";n.r(e),n.d(e,{default:()=>t}),n(4232);let t=()=>null}},_=>{var e=e=>_(_.s=e);_.O(0,[636,593,792],()=>e(7120)),_N_E=_.O()}]);

@@ -1,0 +1,1 @@
+(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[939],{1382:(_,e,u)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/projects/category/bi",function(){return u(4320)}])},4320:(_,e,u)=>{"use strict";u.r(e),u.d(e,{default:()=>n}),u(4232);let n=()=>null}},_=>{var e=e=>_(_.s=e);_.O(0,[636,593,792],()=>e(1382)),_N_E=_.O()}]);
