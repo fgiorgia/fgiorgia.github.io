@@ -27,7 +27,7 @@ const ComingSoonCard: React.FC<ComingSoonCardProps> = ({
   return (
     <article className={`flex flex-col h-full opacity-80 ${className}`}>
       <Card className="h-full flex flex-col border-2 border-dashed border-gray-300">
-        <div className="h-40 sm:h-48 bg-gray-100 flex items-center justify-center rounded-t-lg">
+        <div className="h-40 sm:h-28 bg-gray-100 flex items-center justify-center rounded-t-lg">
           <div className="text-gray-400">
             <Clock size={48} className="mx-auto mb-2" />
             <p className="text-sm font-medium">Coming Soon</p>

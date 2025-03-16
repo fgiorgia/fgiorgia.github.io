@@ -188,18 +188,6 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
         className="h-full transition-all duration-300 hover:translate-y-[-8px]"
       />
 
-      <ComingSoonCard
-        category="Python"
-        title="Machine Learning Analysis"
-        className="h-full transition-all duration-300 hover:translate-y-[-8px]"
-      />
-
-      <ComingSoonCard
-        category="SQL"
-        title="Database Optimization Case Study"
-        className="h-full transition-all duration-300 hover:translate-y-[-8px]"
-      />
-
       {/* Project Categories Section */}
       <section className="py-16 bg-white">
         <div className="container-wide">

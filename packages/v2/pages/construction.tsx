@@ -82,30 +82,32 @@ const Construction: NextPage = () => {
             <div className="relative pl-10 space-y-8 before:absolute before:left-5 before:top-2 before:h-full before:border-l-2 before:border-indigo-200">
               
               <div className="relative">
-                <div className="absolute left-[-30px] top-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                </div>
-                <h4 className="text-lg font-medium text-gray-800">Initial Setup</h4>
-                <p className="text-gray-600 mb-1">Core structure and main pages</p>
-                <p className="text-sm text-gray-500">Completed</p>
-              </div>
-              
-              <div className="relative">
-                <div className="absolute left-[-30px] top-0 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                  <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                </div>
-                <h4 className="text-lg font-medium text-gray-800">About & Skills</h4>
-                <p className="text-gray-600 mb-1">About page and skills showcase</p>
-                <p className="text-sm text-gray-500">Completed</p>
-              </div>
-              
-              <div className="relative">
                 <div className="absolute left-[-30px] top-0 w-6 h-6 bg-indigo-100 rounded-full flex items-center justify-center">
                   <div className="w-3 h-3 bg-indigo-400 rounded-full animate-pulse"></div>
                 </div>
+                <h4 className="text-lg font-medium text-gray-800">Initial Setup</h4>
+                <p className="text-gray-600 mb-1">Core structure and main pages</p>
+                <p className="text-sm text-gray-500">In Progress</p>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute left-[-30px] top-0 w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
+                   {/* <div className="w-3 h-3 bg-green-400 rounded-full"></div> */}
+                  <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                </div>
+                <h4 className="text-lg font-medium text-gray-800">About & Skills</h4>
+                <p className="text-gray-600 mb-1">About page and skills showcase</p>
+                <p className="text-sm text-gray-500">Coming Soon</p>
+              </div>
+              
+              <div className="relative">
+                <div className="absolute left-[-30px] top-0 w-6 h-6 bg-gray-100 rounded-full flex items-center justify-center">
+                  {/* <div className="w-3 h-3 bg-gray-400 rounded-full animate-pulse"></div> */}
+                  <div className="w-3 h-3 bg-gray-400 rounded-full"></div>
+                </div>
                 <h4 className="text-lg font-medium text-gray-800">Projects Development</h4>
                 <p className="text-gray-600 mb-1">Adding project content and case studies</p>
-                <p className="text-sm text-gray-500">In Progress</p>
+                <p className="text-sm text-gray-500">Coming Soon</p>
               </div>
               
               <div className="relative">
