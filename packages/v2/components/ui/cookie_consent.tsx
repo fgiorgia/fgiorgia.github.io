@@ -352,13 +352,6 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 </button>
               </div>
             </div>
-
-            {/* Powered by */}
-            <div className="px-6 py-2 bg-gray-50 border-t border-gray-200 text-right">
-              <p className="text-xs text-gray-500">
-                Powered by <span className="font-semibold">CookieYes</span>
-              </p>
-            </div>
           </div>
         </div>
       )}
