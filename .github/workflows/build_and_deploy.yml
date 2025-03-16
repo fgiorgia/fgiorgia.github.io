@@ -30,7 +30,7 @@ jobs:
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./packages/v1/out
+          publish_dir: ./packages/v2/out
 
 
   build_jekyll:
