@@ -32,24 +32,57 @@ const Contact: NextPage = () => {
   }
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormStatus({ isSubmitting: true, isSubmitted: false, isError: false })
 
-    // Here you would typically send the form data to your backend or a form service
-    // This is a simulated submission
-    setTimeout(() => {
-      // For demo purposes, assume submission was successful
-      setFormStatus({ isSubmitting: false, isSubmitted: true, isError: false })
+    try {
+      // FormSubmit endpoint
+      const endpoint = 'https://formsubmit.co/ajax/gfanalyticslab@gmail.com'
 
-      // Reset form after successful submission
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
+      // Send the data to FormSubmit
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: 'New portfolio contact submission',
+          _template: 'table',
+        }),
       })
-    }, 1500)
+
+      if (response.ok) {
+        // Success! Show the thank you message
+        setFormStatus({
+          isSubmitting: false,
+          isSubmitted: true,
+          isError: false,
+        })
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: '',
+        })
+      } else {
+        // Error handling
+        setFormStatus({
+          isSubmitting: false,
+          isSubmitted: false,
+          isError: true,
+        })
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setFormStatus({ isSubmitting: false, isSubmitted: false, isError: true })
+    }
   }
 
   return (
@@ -99,7 +132,15 @@ const Contact: NextPage = () => {
                   </div>
                 : null}
 
+                {/* Form with AJAX submission */}
                 <form onSubmit={handleSubmit}>
+                  {/* Honeypot field for spam protection */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    style={{ display: 'none' }}
+                  />
+
                   <div className="grid md:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label
@@ -111,6 +152,7 @@ const Contact: NextPage = () => {
                       <input
                         type="text"
                         id="name"
+                        name="name"
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 outline-none transition-colors"
@@ -127,6 +169,7 @@ const Contact: NextPage = () => {
                       <input
                         type="email"
                         id="email"
+                        name="email"
                         value={formData.email}
                         onChange={handleChange}
                         className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 outline-none transition-colors"
@@ -144,6 +187,7 @@ const Contact: NextPage = () => {
                     <input
                       type="text"
                       id="subject"
+                      name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-300 focus:border-indigo-500 outline-none transition-colors"
@@ -159,6 +203,7 @@ const Contact: NextPage = () => {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={4}
                       value={formData.message}
                       onChange={handleChange}
@@ -169,7 +214,7 @@ const Contact: NextPage = () => {
                   <button
                     type="submit"
                     className="bg-indigo-600 text-white px-6 py-2 rounded-md hover:bg-indigo-700 transition-colors disabled:bg-indigo-400"
-                    disabled={formStatus.isSubmitting || true}
+                    disabled={formStatus.isSubmitting}
                   >
                     {formStatus.isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
@@ -196,19 +241,6 @@ const Contact: NextPage = () => {
                       </a>
                     </div>
                   </div>
-
-                  {/* <div className="flex items-start">
-                    <Phone className="text-indigo-600 mt-1 mr-3" size={20} />
-                    <div>
-                      <h3 className="font-medium">Phone</h3>
-                      <a
-                        href="tel:+1234567890"
-                        className="text-indigo-600 hover:text-indigo-800"
-                      >
-                        +1 (234) 567-890
-                      </a>
-                    </div>
-                  </div> */}
 
                   <div className="flex items-start">
                     <MapPin className="text-indigo-600 mt-1 mr-3" size={20} />
@@ -243,16 +275,6 @@ const Contact: NextPage = () => {
                     <Github className="text-gray-800 mr-2" size={20} />
                     <span>GitHub</span>
                   </a>
-
-                  {/* <a
-                    href="https://twitter.com/yourusername"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
-                  >
-                    <Twitter className="text-blue-400 mr-2" size={20} />
-                    <span>Twitter</span>
-                  </a> */}
 
                   <a
                     href="mailto:gfanalyticslab@gmail.com"
@@ -294,7 +316,7 @@ const Contact: NextPage = () => {
         </div>
       </section>
 
-      {/* FAQ Section (Optional) */}
+      {/* FAQ Section */}
       <section className="py-16 bg-gray-50">
         <div className="container-wide">
           <h2 className="text-2xl font-bold text-center mb-8">
