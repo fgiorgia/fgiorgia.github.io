@@ -69,7 +69,7 @@ const About: NextPage = () => {
                   <Github size={24} />
                 </a>
                 <a
-                  href="mailto:gfanalyticslab@gmail.com"
+                  href="mailto:giorgia.faedda@gfanalytics.se"
                   className="text-indigo-600 hover:text-indigo-800"
                   aria-label="Email"
                 >

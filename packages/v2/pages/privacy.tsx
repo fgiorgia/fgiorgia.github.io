@@ -354,13 +354,10 @@ const Privacy: NextPage = () => {
             </p>
             <div className="bg-gray-50 p-6 rounded-lg mb-8">
               <p className="text-gray-700 mb-2">
-                <strong>Email:</strong> gfanalyticslab@gmail.com
-              </p>
-              <p className="text-gray-700 mb-2">
-                <strong>Phone:</strong> +1 (234) 567-890
+                <strong>Email:</strong> giorgia.faedda@gfanalytics.se
               </p>
               <p className="text-gray-700">
-                <strong>Address:</strong> Your City, State/Country
+                <strong>Address:</strong> Malmö, Sweden
               </p>
             </div>
           </div>

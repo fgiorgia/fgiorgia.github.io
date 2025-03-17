@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
     },
     {
       name: 'Email',
-      href: 'mailto:gfanalyticslab@gmail.com',
+      href: 'mailto:giorgia.faedda@gfanalytics.se',
       icon: <Mail size={20} />,
       label: 'Email Me',
     },

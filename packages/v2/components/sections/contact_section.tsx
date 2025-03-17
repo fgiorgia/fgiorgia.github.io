@@ -15,7 +15,7 @@ const ContactSection: React.FC = () => {
           Looking for data analysis expertise? I'm currently available for
           freelance projects and full-time opportunities.
         </p>
-        <a href="mailto:gfanalyticslab@gmail.com" className="inline-block">
+        <a href="mailto:giorgia.faedda@gfanalytics.se" className="inline-block">
           <Button
             variant="secondary"
             className="px-8 py-3 text-base md:text-lg"

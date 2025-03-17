@@ -38,7 +38,8 @@ const Contact: NextPage = () => {
 
     try {
       // FormSubmit endpoint
-      const endpoint = 'https://formsubmit.co/ajax/gfanalyticslab@gmail.com'
+      const endpoint =
+        'https://formsubmit.co/ajax/giorgia.faedda@gfanalytics.se'
 
       // Send the data to FormSubmit
       const response = await fetch(endpoint, {
@@ -234,10 +235,10 @@ const Contact: NextPage = () => {
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <a
-                        href="mailto:gfanalyticslab@gmail.com"
+                        href="mailto:giorgia.faedda@gfanalytics.se"
                         className="text-indigo-600 hover:text-indigo-800"
                       >
-                        gfanalyticslab@gmail.com
+                        giorgia.faedda@gfanalytics.se
                       </a>
                     </div>
                   </div>
@@ -277,7 +278,7 @@ const Contact: NextPage = () => {
                   </a>
 
                   <a
-                    href="mailto:gfanalyticslab@gmail.com"
+                    href="mailto:giorgia.faedda@gfanalytics.se"
                     className="flex items-center p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
                   >
                     <Mail className="text-indigo-600 mr-2" size={20} />
