@@ -165,16 +165,16 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
               </div>
               <div className="flex flex-wrap xs:flex-nowrap sm:flex-nowrap gap-2 whitespace-nowrap">
                 <button
+                  onClick={openPreferences}
+                  className="flex-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-indigo-700 bg-indigo-100 rounded-md hover:bg-indigo-200 transition-colors"
+                >
+                  Customize
+                </button>
+                <button
                   onClick={handleRejectAll}
                   className="flex-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-gray-700 bg-gray-100 rounded-md hover:bg-gray-200 transition-colors"
                 >
                   Reject All
-                </button>
-                <button
-                  onClick={openPreferences}
-                  className="flex-1 px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium text-indigo-700 bg-indigo-100 rounded-md hover:bg-indigo-200 transition-colors"
-                >
-                  Preferences
                 </button>
                 <button
                   onClick={handleAcceptAll}
@@ -191,19 +191,18 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
       {/* Preferences Modal (centered with transparent background) */}
       {(showPreferences || (isVisible && showPreferences)) && (
         <div
-          className="fixed inset-0 z-[1100] overflow-y-auto bg-slate-800/70 flex items-center justify-center"
+          className="fixed inset-0 z-[1100] overflow-hidden bg-slate-800/70 flex items-center justify-center"
           onClick={(e) => {
-            console.log('backdrop click')
             handlePreferenceClose()
           }}
         >
           <div
-            className="relative max-w-lg w-full mx-4 bg-white rounded-lg shadow-lg"
+            className="relative w-[448px] max-w-full mx-auto bg-white rounded-lg shadow-lg flex flex-col h-[560px]"
             onClick={(e) => {
               e.stopPropagation() // Prevent clicks inside the modal from closing it
             }}
           >
-            {/* Modal Header */}
+            {/* Modal Header - Fixed */}
             <div className="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
               <h2 className="text-xl font-bold text-gray-800">
                 Customize Consent Preferences
@@ -217,8 +216,11 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
               </button>
             </div>
 
-            {/* Modal Content */}
-            <div className="px-6 py-4">
+            {/* Modal Content - Scrollable */}
+            <div
+              className="px-6 py-4 overflow-y-auto"
+              style={{ height: '380px' }}
+            >
               <p className="text-gray-600 text-sm mb-4">
                 We use cookies to help you navigate efficiently and perform
                 certain functions. You will find detailed information about all
@@ -339,21 +341,20 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
               </div>
             </div>
 
-            {/* Modal Footer */}
-            <div className="px-6 py-4 bg-gray-50 flex flex-col sm:flex-row justify-between items-center border-t border-gray-200">
-              <button
-                onClick={handleRejectAll}
-                className="px-4 py-2 text-xs sm:text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
-              >
-                Reject All
-              </button>
-
-              <div className="space-x-2">
+            {/* Modal Footer - Fixed */}
+            <div className="px-6 py-4 bg-gray-50 border-t border-gray-200">
+              <div className="grid grid-cols-3 gap-2">
                 <button
                   onClick={handleSavePreferences}
                   className="px-4 py-2 text-xs sm:text-sm font-medium text-indigo-700 bg-indigo-100 rounded-md hover:bg-indigo-200 transition-colors"
                 >
-                  Save My Preferences
+                  Confirm my choices
+                </button>
+                <button
+                  onClick={handleRejectAll}
+                  className="px-4 py-2 text-xs sm:text-sm font-medium text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 transition-colors"
+                >
+                  Reject All
                 </button>
                 <button
                   onClick={handleAcceptAll}
