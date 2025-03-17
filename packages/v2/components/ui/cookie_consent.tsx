@@ -1,135 +1,146 @@
 // components/ui/cookie_consent.tsx
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { Cookie, X, ChevronRight } from "lucide-react";
+import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { Cookie, X, ChevronRight } from 'lucide-react'
 
 interface CookieConsentProps {
-  privacyPolicyUrl?: string;
+  privacyPolicyUrl?: string
 }
 
 const CookieConsent: React.FC<CookieConsentProps> = ({
-  privacyPolicyUrl = "/privacy",
+  privacyPolicyUrl = '/privacy',
 }) => {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [showPreferences, setShowPreferences] = useState<boolean>(false);
-  const [showSettingsButton, setShowSettingsButton] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false)
+  const [showPreferences, setShowPreferences] = useState<boolean>(false)
+  const [showSettingsButton, setShowSettingsButton] = useState<boolean>(false)
   const [expandedSections, setExpandedSections] = useState<{
-    necessary: boolean;
-    analytics: boolean;
-    preferences: boolean;
+    necessary: boolean
+    analytics: boolean
+    preferences: boolean
   }>({
     necessary: true,
     analytics: false,
     preferences: false,
-  });
+  })
   const [preferences, setPreferences] = useState<{
-    necessary: boolean;
-    analytics: boolean;
-    preferences: boolean;
+    necessary: boolean
+    analytics: boolean
+    preferences: boolean
   }>({
     necessary: true, // Always required
     analytics: false,
     preferences: false,
-  });
+  })
 
   useEffect(() => {
     // Check if user has already set cookie preferences
-    const consentStatus = localStorage.getItem("cookie-consent-status");
+    const consentStatus = localStorage.getItem('cookie-consent-status')
 
     // If no consent has been saved yet, show the banner after a short delay
     if (!consentStatus) {
       const timer = setTimeout(() => {
-        setIsVisible(true);
-      }, 500);
+        setIsVisible(true)
+      }, 500)
 
-      return () => clearTimeout(timer);
+      return () => clearTimeout(timer)
     } else {
       // If consent exists, show the settings button and parse the saved preferences
-      setShowSettingsButton(true);
+      setShowSettingsButton(true)
       try {
-        const savedPreferences = JSON.parse(consentStatus);
-        setPreferences(savedPreferences);
+        const savedPreferences = JSON.parse(consentStatus)
+        setPreferences(savedPreferences)
       } catch (e) {
-        console.error("Error parsing saved cookie preferences", e);
+        console.error('Error parsing saved cookie preferences', e)
       }
     }
-  }, []);
+  }, [])
 
   const handleAcceptAll = () => {
     const allConsent = {
       necessary: true,
       analytics: true,
       preferences: true,
-    };
+    }
 
-    localStorage.setItem("cookie-consent-status", JSON.stringify(allConsent));
-    setPreferences(allConsent);
-    setIsVisible(false);
-    setShowPreferences(false);
-    setShowSettingsButton(true);
-  };
+    localStorage.setItem('cookie-consent-status', JSON.stringify(allConsent))
+    setPreferences(allConsent)
+    setIsVisible(false)
+    setShowPreferences(false)
+    setShowSettingsButton(true)
+    // Dispatch event to notify construction banner
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('cookieConsentUpdated'))
+    }, 150)
+  }
 
   const handleSavePreferences = () => {
-    localStorage.setItem("cookie-consent-status", JSON.stringify(preferences));
-    setIsVisible(false);
-    setShowPreferences(false);
-    setShowSettingsButton(true);
-  };
+    localStorage.setItem('cookie-consent-status', JSON.stringify(preferences))
+    setIsVisible(false)
+    setShowPreferences(false)
+    setShowSettingsButton(true)
+    // Dispatch event to notify construction banner
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('cookieConsentUpdated'))
+    }, 150)
+  }
 
   const handleRejectAll = () => {
     const minimalConsent = {
       necessary: true, // Always required
       analytics: false,
       preferences: false,
-    };
+    }
 
     localStorage.setItem(
-      "cookie-consent-status",
+      'cookie-consent-status',
       JSON.stringify(minimalConsent)
-    );
-    setPreferences(minimalConsent);
-    setIsVisible(false);
-    setShowPreferences(false);
-    setShowSettingsButton(true);
-  };
+    )
+    setPreferences(minimalConsent)
+    setIsVisible(false)
+    setShowPreferences(false)
+    setShowSettingsButton(true)
+    setTimeout(() => {
+      window.dispatchEvent(new CustomEvent('cookieConsentUpdated'))
+    }, 150)
+  }
 
   const handlePreferenceChange = (key: keyof typeof preferences) => {
     // Don't allow changing necessary cookies
-    if (key === "necessary") return;
+    if (key === 'necessary') return
 
     setPreferences({
       ...preferences,
       [key]: !preferences[key],
-    });
-  };
+    })
+  }
 
   const toggleSection = (key: keyof typeof expandedSections) => {
     setExpandedSections({
       ...expandedSections,
       [key]: !expandedSections[key],
-    });
-  };
+    })
+  }
 
   const openPreferences = () => {
-    setShowPreferences(true);
-  };
+    setShowPreferences(true)
+  }
 
   const reopenCookieSettings = () => {
-    setIsVisible(true);
-    setShowPreferences(true);
-  };
+    setIsVisible(true)
+    setShowPreferences(true)
+  }
 
   const handlePreferenceClose = () => {
-    setShowPreferences(false);
+    setShowPreferences(false)
     // If initial view, go back to banner, otherwise close completely
-    if (!localStorage.getItem("cookie-consent-status")) {
-      setIsVisible(true);
+    if (!localStorage.getItem('cookie-consent-status')) {
+      setIsVisible(true)
     } else {
-      setIsVisible(false);
+      setIsVisible(false)
     }
-  };
+  }
 
-  if (!isVisible && !showSettingsButton) return null;
+  if (!isVisible && !showSettingsButton) return null
 
   return (
     <>
@@ -142,7 +153,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 <p className="text-gray-300 text-sm md:text-base">
                   This website uses cookies to enhance your browsing experience
                   and provide personalized services. By continuing to use this
-                  site, you consent to our use of cookies in accordance with our{" "}
+                  site, you consent to our use of cookies in accordance with our{' '}
                   <Link
                     href={privacyPolicyUrl}
                     className="text-gray-300 hover:text-gray-50 underline"
@@ -180,16 +191,16 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
       {/* Preferences Modal (centered with transparent background) */}
       {(showPreferences || (isVisible && showPreferences)) && (
         <div
-          className="fixed inset-0 z-[1001] overflow-y-auto bg-slate-800/70 flex items-center justify-center"
+          className="fixed inset-0 z-[1100] overflow-y-auto bg-slate-800/70 flex items-center justify-center"
           onClick={(e) => {
             console.log('backdrop click')
             handlePreferenceClose()
           }}
         >
-          <div 
+          <div
             className="relative max-w-lg w-full mx-4 bg-white rounded-lg shadow-lg"
             onClick={(e) => {
-              e.stopPropagation(); // Prevent clicks inside the modal from closing it
+              e.stopPropagation() // Prevent clicks inside the modal from closing it
             }}
           >
             {/* Modal Header */}
@@ -220,13 +231,13 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 <div className="border border-gray-200 rounded-md overflow-hidden">
                   <div
                     className="bg-gray-50 px-4 py-3 flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleSection("necessary")}
+                    onClick={() => toggleSection('necessary')}
                   >
                     <div className="flex items-center space-x-2">
                       <ChevronRight
                         size={18}
                         className={`text-gray-400 transition-transform ${
-                          expandedSections.necessary ? "rotate-90" : ""
+                          expandedSections.necessary ? 'rotate-90' : ''
                         }`}
                       />
                       <span className="font-medium">Necessary</span>
@@ -260,13 +271,13 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 <div className="border border-gray-200 rounded-md overflow-hidden">
                   <div
                     className="bg-gray-50 px-4 py-3 flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleSection("analytics")}
+                    onClick={() => toggleSection('analytics')}
                   >
                     <div className="flex items-center space-x-2">
                       <ChevronRight
                         size={18}
                         className={`text-gray-400 transition-transform ${
-                          expandedSections.analytics ? "rotate-90" : ""
+                          expandedSections.analytics ? 'rotate-90' : ''
                         }`}
                       />
                       <span className="font-medium">Analytics</span>
@@ -274,7 +285,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                     <input
                       type="checkbox"
                       checked={preferences.analytics}
-                      onChange={() => handlePreferenceChange("analytics")}
+                      onChange={() => handlePreferenceChange('analytics')}
                       className="form-checkbox h-5 w-5 text-blue-600 border-gray-300 rounded"
                     />
                   </div>
@@ -295,13 +306,13 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 <div className="border border-gray-200 rounded-md overflow-hidden">
                   <div
                     className="bg-gray-50 px-4 py-3 flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleSection("preferences")}
+                    onClick={() => toggleSection('preferences')}
                   >
                     <div className="flex items-center space-x-2">
                       <ChevronRight
                         size={18}
                         className={`text-gray-400 transition-transform ${
-                          expandedSections.preferences ? "rotate-90" : ""
+                          expandedSections.preferences ? 'rotate-90' : ''
                         }`}
                       />
                       <span className="font-medium">Functional</span>
@@ -309,7 +320,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                     <input
                       type="checkbox"
                       checked={preferences.preferences}
-                      onChange={() => handlePreferenceChange("preferences")}
+                      onChange={() => handlePreferenceChange('preferences')}
                       className="form-checkbox h-5 w-5 text-blue-600 border-gray-300 rounded"
                     />
                   </div>
@@ -368,7 +379,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
         </button>
       )}
     </>
-  );
-};
+  )
+}
 
-export default CookieConsent;
+export default CookieConsent
