@@ -12,7 +12,7 @@ export const projects: Project[] = [
     category: "Excel",
     tags: ["Data Analysis", "Dashboard", "Sales Analytics"],
     categoryColor: "bg-green-100 text-green-800",
-    thumbnail: "/images/projects/thumbnail/customer_feedback-dashboardv-2023.png",
+    thumbnail: "/images/projects/thumbnail/customer_feedback-dashboardv-2023.webp",
     icon: null, // React.createElement(FileSpreadsheet, { size: 48, className: "text-indigo-700" }),
     iconBgColor: "bg-green-200",
     technologies: ["Excel", "Power Query", "DAX", "VBA"],

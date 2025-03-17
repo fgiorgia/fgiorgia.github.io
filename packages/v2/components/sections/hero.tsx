@@ -48,7 +48,7 @@ const Hero: React.FC = () => {
               <div className="flex justify-center mb-4">
                 <div className="h-24 w-24 sm:h-32 sm:w-32 rounded-full overflow-hidden bg-white relative">
                   <Image
-                    src={getAssetPath('/images/giorgia_faedda.png')}
+                    src={getAssetPath('/images/giorgia_faedda.webp')}
                     alt="Giorgia Faedda - Profile Photo"
                     fill
                     sizes="(max-width: 640px) 96px, 128px"
