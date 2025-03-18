@@ -93,7 +93,7 @@ const Privacy: NextPage = () => {
             </ul>
             <p className="text-gray-700 mb-4">This information may include:</p>
             <ul className="list-disc pl-6 text-gray-700 mb-6">
-              <li>Your name</li>
+              <li>Giorgia Faedda</li>
               <li>Email address</li>
               <li>Phone number</li>
               <li>Company or organization</li>

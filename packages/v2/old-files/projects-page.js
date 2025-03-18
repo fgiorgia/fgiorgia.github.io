@@ -335,7 +335,7 @@ for k in k_range:
             </div>
           </div>
           <div className="mt-8 border-t border-gray-700 pt-8">
-            <p className="text-sm">© 2025 Your Name. All rights reserved.</p>
+            <p className="text-sm">© 2025 Giorgia Faedda. All rights reserved.</p>
           </div>
         </div>
       </footer>

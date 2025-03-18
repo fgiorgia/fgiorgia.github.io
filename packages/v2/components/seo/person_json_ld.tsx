@@ -8,7 +8,7 @@ const PersonJsonLd: React.FC = () => {
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Your Name',
+    name: 'Giorgia Faedda',
     jobTitle: 'Data Analyst & Business Intelligence Developer',
     url: siteUrl,
     sameAs: [

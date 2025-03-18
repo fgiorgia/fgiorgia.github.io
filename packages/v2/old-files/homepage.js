@@ -266,7 +266,7 @@ const PortfolioHomepage = () => {
             </div>
           </div>
           <div className="mt-8 border-t border-gray-700 pt-8 flex flex-col md:flex-row md:justify-between">
-            <p className="text-sm">© 2025 Your Name. All rights reserved.</p>
+            <p className="text-sm">© 2025 Giorgia Faedda. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-4">
               <a href="#" className="text-sm text-gray-400 hover:text-white">Privacy Policy</a>
               <a href="#" className="text-sm text-gray-400 hover:text-white">Terms of Service</a>

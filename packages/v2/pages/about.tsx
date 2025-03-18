@@ -33,21 +33,18 @@ const About: NextPage = () => {
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h2 className="text-2xl font-semibold mb-4">Hej, I'm Giorgia</h2>
               <p className="text-gray-600 mb-4">
-                I'm a data analyst with expertise in transforming complex
-                datasets into actionable insights. With a background in business
-                analytics and statistics, I specialize in using data to solve
-                business problems and drive strategic decisions.
+                I’m a data analyst dedicated to converting complex datasets into
+                actionable insights. With a background in analytics, psychology
+                and statistics, I help organizations make informed decisions.
               </p>
               <p className="text-gray-600 mb-4">
-                My analytical journey began when I discovered my passion for
-                finding patterns in data during my university studies. Since
-                then, I've helped various organizations leverage their data to
-                make informed decisions and achieve their business goals.
+                I’m passionate about data visualization, predictive analytics,
+                and process automation, and I’m always exploring new
+                technologies to refine my data toolkit.
               </p>
               <p className="text-gray-600 mb-4">
-                I'm passionate about data visualization, predictive analytics,
-                and process automation, and I'm continuously expanding my data
-                science toolkit with new technologies and methodologies.
+                Ready to leverage data for real impact? <br />
+                <strong>Let's connect!</strong>
               </p>
               <div className="flex space-x-4 mt-6">
                 <a
@@ -96,14 +93,13 @@ const About: NextPage = () => {
                   <h3 className="font-semibold text-lg mb-2">Certifications</h3>
                   <p className="text-gray-600">Microsoft Azure AI-900</p>
                   <p className="text-gray-500">Google Data Analytics</p>
-                  <p className="text-gray-600">English conversation practice</p>
+                  <p className="text-gray-600">Cambly</p>
                 </div>
                 <div className="bg-gray-50 p-6 rounded-lg shadow-sm">
                   <h3 className="font-semibold text-lg mb-2">Interests</h3>
-                  <p className="text-gray-600">Statistics</p>
-                  <p className="text-gray-600">Data Analytics</p>
-                  <p className="text-gray-600">Process Automation</p>
-                  <p className="text-gray-600">Business Intelligence</p>
+                  <p className="text-gray-600">Travel & Food</p>
+                  <p className="text-gray-600">Statistics & Data Analytics</p>
+                  <p className="text-gray-600">Science & Psychology</p>
                 </div>
               </div>
             </div>
@@ -127,24 +123,24 @@ const About: NextPage = () => {
               <ul className="space-y-2 text-gray-600">
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Data Analysis & Visualization
+                  Data & Statistical Modeling
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Statistical Modeling
+                  Data Collection, Preparation & Automation
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Database Management
+                  Data Visualization & Storytelling
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Machine Learning
+                  Data Analytics
                 </li>
-                <li className="flex items-center">
+                {/* <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
                   ETL Processes
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -160,16 +156,16 @@ const About: NextPage = () => {
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  SQL (MySQL, PostgreSQL)
+                  SQL (PostgreSQL, MySQL, BigQuery)
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
                   R (tidyverse, ggplot2)
                 </li>
-                <li className="flex items-center">
+                {/* <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
                   JavaScript (for data visualization)
-                </li>
+                </li> */}
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
                   VBA (for Excel automation)
@@ -185,15 +181,15 @@ const About: NextPage = () => {
               <ul className="space-y-2 text-gray-600">
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Power BI & Tableau
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
                   Excel & Google Sheets
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Jupyter Notebook
+                  Tableau & Power BI
+                </li>
+                <li className="flex items-center">
+                  <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
+                  VS Code & Jupyter Notebook
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
@@ -201,7 +197,7 @@ const About: NextPage = () => {
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Azure Data Factory & AWS
+                  Azure Portal
                 </li>
               </ul>
             </div>
@@ -218,15 +214,15 @@ const About: NextPage = () => {
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Data Storytelling
+                  Adaptability & Curiosity
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Project Management
+                  Collaboration & Teamwork
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-                  Cross-functional Collaboration
+                  Attention to Detail
                 </li>
                 <li className="flex items-center">
                   <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
@@ -251,28 +247,34 @@ const About: NextPage = () => {
               <div className="md:flex md:justify-between md:items-start">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800">
-                    Senior Data Analyst
+                    Data Analyst & Engineer Intern
                   </h3>
-                  <p className="text-lg text-indigo-600">Company Name</p>
+                  <p className="text-lg text-indigo-600">ReFab Lab</p>
                 </div>
-                <p className="text-gray-500 mt-1 md:mt-0">Jan 2022 - Present</p>
+                <p className="text-gray-500 mt-1 md:mt-0">Jan 2024 - Present</p>
               </div>
               <ul className="mt-4 space-y-2 text-gray-600 list-disc list-inside">
                 <li>
-                  Led the development of interactive dashboards that increased
-                  executive decision-making efficiency by 40%
+                  Developing and maintaining ETL pipelines to streamline data
+                  collection from multiple retail data sources.
                 </li>
                 <li>
-                  Implemented automated data pipelines that reduced reporting
-                  time from 2 days to 2 hours
+                  Conducting hypothesis-driven analyses using advanced
+                  statistical methods (<strong>Linear Models</strong>,{' '}
+                  <strong>T-tests</strong>,{' '}
+                  <strong>Time Series Analysis</strong>) to understand user
+                  engagement patterns.
                 </li>
                 <li>
-                  Conducted customer segmentation analysis that led to a 25%
-                  increase in marketing campaign effectiveness
+                  Creating interactive dashboards in Tableau and Looker,
+                  enabling stakeholders to track improvements, and make informed
+                  decisions.
                 </li>
                 <li>
-                  Collaborated with cross-functional teams to implement
-                  data-driven solutions for business challenges
+                  <strong>Achievement:</strong> Provided data-driven insights
+                  that shaped marketing strategies, reporting improved sales and
+                  conversion rates by respectively 23% and 26% (last 6 months vs
+                  previous 6 months).
                 </li>
               </ul>
             </div>
@@ -282,31 +284,34 @@ const About: NextPage = () => {
               <div className="md:flex md:justify-between md:items-start">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800">
-                    Data Analyst
+                    Team Leader
                   </h3>
-                  <p className="text-lg text-indigo-600">Previous Company</p>
+                  <p className="text-lg text-indigo-600"> Øredev Conference</p>
                 </div>
                 <p className="text-gray-500 mt-1 md:mt-0">
-                  Mar 2020 - Dec 2021
+                  Oct 2024 - Nov 2024
                 </p>
               </div>
               <ul className="mt-4 space-y-2 text-gray-600 list-disc list-inside">
                 <li>
-                  Analyzed sales data to identify trends and opportunities,
-                  resulting in a 15% revenue increase
+                  Led a team at one of Scandinavia's largest developer
+                  conferences, focusing on attendee data collection, environment
+                  setup, speakers coordination to ensure seamless session
+                  operations, and authoring summaries of sessions for social
+                  media posts.
                 </li>
                 <li>
-                  Created automated Excel reports that saved the team 10 hours
-                  per week
+                  Fostered team cohesion by promoting open communication, trust,
+                  and shared ownership of deliverables.
                 </li>
-                <li>
+                {/* <li>
                   Designed SQL queries to extract and analyze data from various
                   database systems
                 </li>
                 <li>
                   Presented data insights to stakeholders through clear
                   visualizations and reports
-                </li>
+                </li> */}
               </ul>
             </div>
 
@@ -315,20 +320,19 @@ const About: NextPage = () => {
               <div className="md:flex md:justify-between md:items-start">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800">
-                    Data Analysis Intern
+                    Private English Tutor
                   </h3>
-                  <p className="text-lg text-indigo-600">Internship Company</p>
+                  <p className="text-lg text-indigo-600">Self-employed</p>
                 </div>
                 <p className="text-gray-500 mt-1 md:mt-0">
-                  May 2019 - Aug 2019
+                  Nov 2020 - Feb 2022
                 </p>
               </div>
               <ul className="mt-4 space-y-2 text-gray-600 list-disc list-inside">
                 <li>
-                  Assisted in data cleaning and preparation for analysis
-                  projects
+                  Led university students from scratch to pass the B1 exam.
                 </li>
-                <li>
+                {/* <li>
                   Developed visualization dashboards using Tableau to track key
                   performance indicators
                 </li>
@@ -339,7 +343,7 @@ const About: NextPage = () => {
                 <li>
                   Learned and applied statistical analysis techniques to
                   real-world business problems
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>

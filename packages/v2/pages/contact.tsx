@@ -299,18 +299,18 @@ const Contact: NextPage = () => {
               Current Availability
             </h2>
             <p className="text-gray-700 mb-4">
-              I'm currently available for freelance projects, contract work, and
-              full-time positions in data analysis and business intelligence.
+              I'm currently available for full-time positions, contract work,
+              and freelance projects in data analysis and business intelligence.
             </p>
             <div className="flex flex-wrap gap-3">
               <div className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                Freelance Projects
+                Full-time Opportunities
               </div>
               <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
                 Contract Work
               </div>
               <div className="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
-                Full-time Opportunities
+                Freelance Projects
               </div>
             </div>
           </div>

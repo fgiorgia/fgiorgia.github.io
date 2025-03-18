@@ -161,7 +161,7 @@ const DataAnalystPortfolio = () => {
           
           <div className="md:flex md:space-x-12 items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
-              <h3 className="text-2xl font-semibold mb-4">Hi, I'm [Your Name]</h3>
+              <h3 className="text-2xl font-semibold mb-4">Hi, I'm [Giorgia Faedda]</h3>
               <p className="text-gray-600 mb-4">
                 I'm a data analyst with expertise in transforming complex datasets into actionable insights. With a background in [your background, e.g., business analytics, statistics], I specialize in using data to solve business problems and drive strategic decisions.
               </p>
@@ -476,7 +476,7 @@ const DataAnalystPortfolio = () => {
                   </div>
                 </div>
                 <blockquote className="text-gray-600 italic mb-4">
-                  "[Your name]'s analytical skills and attention to detail transformed our data into actionable insights that directly improved our business outcomes."
+                  "[Giorgia Faedda]'s analytical skills and attention to detail transformed our data into actionable insights that directly improved our business outcomes."
                 </blockquote>
                 <div className="flex items-center">
                   <div className="w-10 h-10 bg-gray-300 rounded-full mr-3"></div>
