@@ -18,10 +18,10 @@ const Construction: NextPage = () => {
   const sectionProgress = [
     { name: 'Homepage', progress: 100, icon: <CheckCircle size={20} /> },
     { name: 'About Page', progress: 100, icon: <CheckCircle size={20} /> },
-    { name: 'Excel Projects', progress: 10, icon: <Calendar size={20} /> },
-    { name: 'Python Projects', progress: 10, icon: <Code size={20} /> },
-    { name: 'SQL Projects', progress: 10, icon: <Database size={20} /> },
-    { name: 'BI Dashboards', progress: 10, icon: <BarChart2 size={20} /> },
+    { name: 'Excel Projects', progress: 0, icon: <Calendar size={20} /> },
+    { name: 'Python Projects', progress: 0, icon: <Code size={20} /> },
+    { name: 'SQL Projects', progress: 0, icon: <Database size={20} /> },
+    { name: 'BI Dashboards', progress: 0, icon: <BarChart2 size={20} /> },
     { name: 'Contact Form', progress: 100, icon: <CheckCircle size={20} /> },
   ]
 
