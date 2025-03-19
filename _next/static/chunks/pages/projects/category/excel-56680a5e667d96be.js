@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[389],{5904:(e,_,u)=>{"use strict";u.r(_),u.d(_,{default:()=>n}),u(4232);let n=()=>null},7784:(e,_,u)=>{(window.__NEXT_P=window.__NEXT_P||[]).push(["/projects/category/excel",function(){return u(5904)}])}},e=>{var _=_=>e(e.s=_);e.O(0,[636,593,792],()=>_(7784)),_N_E=e.O()}]);
