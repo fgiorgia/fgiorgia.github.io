@@ -1,4 +1,4 @@
-// components/seo/person_json_ld.tsx
+// packages/v2/components/seo/person_json_ld.tsx
 import React from 'react'
 import Head from 'next/head'
 import { siteUrl } from '@/lib/seo'
@@ -15,8 +15,7 @@ const PersonJsonLd: React.FC = () => {
       'https://github.com/fgiorgia',
       'https://www.linkedin.com/in/fgiorgia/',
     ],
-    // Update the image path
-    image: `${siteUrl}${getAssetPath('/images/profile.jpg')}`,
+    image: `${siteUrl}${getAssetPath('/images/giorgia_faedda.webp')}`,
     description:
       'Data Analyst specializing in Excel, Python, SQL, and Business Intelligence solutions.',
     knowsAbout: [
@@ -31,7 +30,7 @@ const PersonJsonLd: React.FC = () => {
     ],
     worksFor: {
       '@type': 'Organization',
-      name: 'Your Current Company',
+      name: 'GF Analytics',
     },
   }
 

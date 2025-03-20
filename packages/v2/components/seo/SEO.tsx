@@ -1,8 +1,9 @@
+// packages/v2/components/seo/SEO.tsx
 import React from 'react'
 import { NextSeo, ArticleJsonLd } from 'next-seo'
 import { getAssetPath } from '@/lib/utils'
 import { SEOProps } from '@/types'
-import { siteUrl } from '@/lib/seo'
+import { siteUrl, defaultSEO } from '@/lib/seo'
 
 const SEO: React.FC<SEOProps> = ({
   title,
@@ -19,7 +20,7 @@ const SEO: React.FC<SEOProps> = ({
       ogImage.startsWith('http') ?
         ogImage
       : `${siteUrl}${getAssetPath(ogImage)}`
-    : `${siteUrl}${getAssetPath('/images/og-image.png')}`
+    : `${siteUrl}${getAssetPath('./images/gfanalytics-og.png')}`
 
   return (
     <>
@@ -28,9 +29,10 @@ const SEO: React.FC<SEOProps> = ({
         description={description}
         canonical={pageUrl}
         noindex={noindex}
+        titleTemplate={defaultSEO.titleTemplate} // Explicitly use the titleTemplate from defaultSEO
         openGraph={{
           url: pageUrl,
-          title: title,
+          title: title, // This will be used as-is for OpenGraph
           description: description,
           images: [
             {
@@ -54,7 +56,12 @@ const SEO: React.FC<SEOProps> = ({
         <ArticleJsonLd
           type="BlogPosting"
           url={pageUrl}
-          title={title || ''}
+          title={
+            title ?
+              `${title} | Giorgia Faedda - Data Analyst & BI Developer`
+            : defaultSEO.defaultTitle ||
+              'Giorgia Faedda - Data Analyst & BI Developer'
+          } // Ensure consistent formatting
           images={[imageUrl]}
           datePublished={article.publishedTime}
           dateModified={article.modifiedTime || article.publishedTime}
