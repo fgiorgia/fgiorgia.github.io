@@ -16,6 +16,7 @@ export interface Project {
   client: string;
   completedDate: string;
   featured: boolean;
+  isDemo?: boolean; // Flag to indicate if this is a demo/placeholder project
   thumbnail?: string; // Path to project thumbnail image
   image?: string; // Path to project image
   mainImageUrl?: string | null;

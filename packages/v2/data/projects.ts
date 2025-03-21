@@ -19,6 +19,7 @@ export const projects: Project[] = [
     client: "Retail Corporation",
     completedDate: "January 2023",
     featured: true,
+    isDemo: true, // Mark as demo project
     outcomes: [
       {
         title: "15%",
@@ -89,6 +90,7 @@ End Sub`
     client: "E-commerce Retailer",
     completedDate: "March 2023",
     featured: true,
+    isDemo: true,
     outcomes: [
       {
         title: "5",
@@ -199,6 +201,7 @@ df['cluster'] = clusters
     client: "Manufacturing Company",
     completedDate: "February 2023",
     featured: true,
+    isDemo: true,
     outcomes: [
       {
         title: "12+",
@@ -255,6 +258,7 @@ CALCULATE(
     client: "Distribution Company",
     completedDate: "December 2022",
     featured: false,
+    isDemo: true,
     outcomes: [
       {
         title: "24%",
@@ -287,6 +291,7 @@ CALCULATE(
     client: "Financial Services Company",
     completedDate: "November 2022",
     featured: false,
+    isDemo: true,
     outcomes: [
       {
         title: "85%",
@@ -353,6 +358,7 @@ ORDER BY o.TotalSpent DESC;`
     client: "Subscription Service",
     completedDate: "October 2022",
     featured: false,
+    isDemo: true,
     outcomes: [
       {
         title: "32%",

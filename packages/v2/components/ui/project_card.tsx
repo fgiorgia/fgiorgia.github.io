@@ -1,14 +1,14 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { getAssetPath } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import Card from "./card";
-import { ProjectCardProps } from "@/types";
+import React from 'react'
+import Link from 'next/link'
+import Image from 'next/image'
+import { getAssetPath } from '@/lib/utils'
+import { ArrowRight } from 'lucide-react'
+import Card from './card'
+import { ProjectCardProps } from '@/types'
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
-  className = "",
+  className = '',
   ...props
 }) => {
   const {
@@ -19,7 +19,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     categoryColor,
     icon,
     iconBgColor,
-  } = project;
+  } = project
 
   return (
     <article className={`flex flex-col h-full ${className}`} {...props}>
@@ -28,31 +28,40 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="h-40 sm:h-48 relative overflow-hidden rounded-t-lg"
           aria-hidden="true"
         >
-          {project.thumbnail ? (
-            // Improved image handling with perfect centering for all screen sizes
-            <div className="absolute inset-0 flex items-center justify-center bg-green-100">
-              <div className="relative w-full h-full">
-                <Image
-                  src={getAssetPath(project.thumbnail)}
-                  alt={`${project.title} thumbnail`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
-                  className="object-contain p-1 xs:p-2 sm:p-3"
-                  priority
-                  unoptimized 
-                />
+          {
+            project.thumbnail ?
+              // Improved image handling with perfect centering for all screen sizes
+              <div className="absolute inset-0 flex items-center justify-center bg-green-100">
+                <div className="relative w-full h-full">
+                  <Image
+                    src={getAssetPath(project.thumbnail)}
+                    alt={`${project.title} thumbnail`}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, 33vw"
+                    className="object-contain p-1 xs:p-2 sm:p-3"
+                    priority
+                    unoptimized
+                  />
+                </div>
               </div>
-            </div>
-          ) : (
-            // Fall back to colored background with icon
-            <div
-              className={`w-full h-full ${iconBgColor} flex items-center justify-center`}
-            >
-              {icon}
-            </div>
-          )}
+              // Fall back to colored background with icon
+            : <div
+                className={`w-full h-full ${iconBgColor} flex items-center justify-center`}
+              >
+                {icon}
+              </div>
+
+          }
         </div>
         <div className="p-5 sm:p-6 flex flex-col flex-grow">
+          {/* Demo/Example Project Warning Banner - Only shown for demo projects */}
+          {project.isDemo && (
+            <div className="mb-3 bg-amber-50 border border-amber-200 text-amber-800 px-3 py-2 rounded-md text-xs">
+              <span className="font-semibold">Note:</span> This is a demo
+              project. Real projects coming soon.
+            </div>
+          )}
+
           <header>
             <div className="flex items-center mb-2">
               <span
@@ -70,7 +79,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                 className="text-indigo-600 font-medium flex items-center hover:text-indigo-800 transition-colors"
                 aria-label={`View details about ${title} project`}
               >
-                View Project{" "}
+                View Project{' '}
                 <ArrowRight size={16} className="ml-1" aria-hidden="true" />
               </a>
             </Link>
@@ -78,7 +87,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </div>
       </Card>
     </article>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard
