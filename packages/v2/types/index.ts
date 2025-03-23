@@ -18,7 +18,6 @@ export interface Project {
   featured: boolean;
   isDemo?: boolean; // Flag to indicate if this is a demo/placeholder project
   thumbnail?: string; // Path to project thumbnail image
-  imageGallery?: string[]; // Array of images for the carousel
   image?: string; // Path to project image
   mainImageUrl?: string | null;
   outcomes?: {
