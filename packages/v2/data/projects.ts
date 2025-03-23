@@ -13,6 +13,11 @@ export const projects: Project[] = [
     tags: ["Data Analysis", "Dashboard", "Sales Analytics"],
     categoryColor: "bg-green-100 text-green-800",
     thumbnail: "/images/projects/thumbnail/customer_feedback-dashboardv-2023.webp",
+    imageGallery: [
+      "/images/projects/thumbnail/customer_feedback-dashboardv-2023.webp",
+      "/images/projects/thumbnail/unnamed.png",  // Add additional images
+      "/images/projects/thumbnail/Infruid's_Self-Service_BI_Tool_Dashboard.jpg"
+    ],
     icon: null, // React.createElement(FileSpreadsheet, { size: 48, className: "text-indigo-700" }),
     iconBgColor: "bg-green-200",
     technologies: ["Excel", "Power Query", "DAX", "VBA"],
@@ -84,6 +89,11 @@ End Sub`
     category: "Python",
     tags: ["Data Analysis", "Machine Learning", "Customer Analytics"],
     categoryColor: "bg-blue-100 text-blue-800",
+    imageGallery: [
+      "/images/projects/thumbnail/customer_feedback-dashboardv-2023.webp",
+      "/images/projects/thumbnail/unnamed.png",  // Add additional images
+      "/images/projects/thumbnail/Infruid's_Self-Service_BI_Tool_Dashboard.jpg"
+    ],
     icon: null, // React.createElement(Code, { size: 48, className: "text-blue-700" }),
     iconBgColor: "bg-blue-200",
     technologies: ["Python", "pandas", "scikit-learn", "matplotlib", "seaborn"],
@@ -195,6 +205,11 @@ df['cluster'] = clusters
     category: "Power BI",
     tags: ["Dashboard", "Business Intelligence", "KPI Tracking"],
     categoryColor: "bg-yellow-100 text-yellow-800",
+    imageGallery: [
+      "/images/projects/thumbnail/customer_feedback-dashboardv-2023.webp",
+      "/images/projects/thumbnail/unnamed.png",  // Add additional images
+      "/images/projects/thumbnail/Infruid's_Self-Service_BI_Tool_Dashboard.jpg"
+    ],
     icon: null, // React.createElement(BarChart2, { size: 48, className: "text-green-700" }),
     iconBgColor: "bg-yellow-200",
     technologies: ["Power BI", "DAX", "SQL", "Power Query", "M Language"],
@@ -285,6 +300,11 @@ CALCULATE(
     category: "SQL",
     tags: ["Database Design", "Performance Tuning", "Query Optimization"],
     categoryColor: "bg-purple-100 text-purple-800",
+    imageGallery: [
+      "/images/projects/thumbnail/customer_feedback-dashboardv-2023.webp",
+      "/images/projects/thumbnail/unnamed.png",  // Add additional images
+      "/images/projects/thumbnail/Infruid's_Self-Service_BI_Tool_Dashboard.jpg"
+    ],
     icon: null, // React.createElement(Database, { size: 48, className: "text-purple-700" }),
     iconBgColor: "bg-purple-200",
     technologies: ["SQL Server", "Indexing", "Query Optimization", "Execution Plans", "Normalization"],
