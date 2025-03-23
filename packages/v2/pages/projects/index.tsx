@@ -1,100 +1,100 @@
 // pages/projects.tsx
-import { useState, useEffect } from "react";
-import type { GetStaticProps, NextPage } from "next";
+import { useState, useEffect } from 'react'
+import type { GetStaticProps, NextPage } from 'next'
 import {
   FileSpreadsheet,
   Code,
   Database,
   BarChart2,
   Filter,
-} from "lucide-react";
-import Layout from "../../components/layout/layout";
-import SEO from "../../components/seo/SEO";
-import ProjectCard from "../../components/ui/project_card";
-import { getProjects } from "../../lib/projects";
-import { Project } from "@/types";
-import ComingSoonCard from "../../components/ui/coming_soon_card";
+} from 'lucide-react'
+import Layout from '../../components/layout/layout'
+import SEO from '../../components/seo/SEO'
+import ProjectCard from '../../components/ui/project_card'
+import { getProjects } from '../../lib/projects'
+import { Project } from '@/types'
+import ComingSoonCard from '../../components/ui/coming_soon_card'
 
 interface ProjectsPageProps {
-  projects: Project[];
+  projects: Project[]
 }
 
 const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
-  const [activeFilter, setActiveFilter] = useState<string>("all");
-  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+  const [activeFilter, setActiveFilter] = useState<string>('all')
+  const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects)
 
   // Get unique categories
   const categories = [
-    "all",
+    'all',
     ...new Set(projects.map((project) => project.category.toLowerCase())),
-  ];
+  ]
 
   // Filter projects when category changes
   useEffect(() => {
-    if (activeFilter === "all") {
-      setFilteredProjects(projects);
+    if (activeFilter === 'all') {
+      setFilteredProjects(projects)
     } else {
       setFilteredProjects(
         projects.filter(
           (project) => project.category.toLowerCase() === activeFilter
         )
-      );
+      )
     }
-  }, [activeFilter, projects]);
+  }, [activeFilter, projects])
 
   // Get icon for each category
   const getCategoryIcon = (category: string) => {
     switch (category.toLowerCase()) {
-      case "excel":
-        return <FileSpreadsheet size={18} />;
-      case "python":
-        return <Code size={18} />;
-      case "sql":
-        return <Database size={18} />;
-      case "power bi":
-        return <BarChart2 size={18} />;
+      case 'excel':
+        return <FileSpreadsheet size={18} />
+      case 'python':
+        return <Code size={18} />
+      case 'sql':
+        return <Database size={18} />
+      case 'power bi':
+        return <BarChart2 size={18} />
       default:
-        return <Filter size={18} />;
+        return <Filter size={18} />
     }
-  };
+  }
 
   // Get color for each category
   const getCategoryColor = (category: string) => {
     switch (category.toLowerCase()) {
-      case "excel":
-        return "bg-green-100 text-green-800 border-green-200 hover:bg-green-200";
-      case "python":
-        return "bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200";
-      case "sql":
-        return "bg-purple-100 text-purple-800 border-purple-200 hover:bg-purple-200";
-      case "power bi":
-        return "bg-yellow-100 text-yellow-800 border-yellow-200 hover:bg-yellow-200";
+      case 'excel':
+        return 'bg-green-100 text-green-800 border-green-200 hover:bg-green-200'
+      case 'python':
+        return 'bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200'
+      case 'sql':
+        return 'bg-purple-100 text-purple-800 border-purple-200 hover:bg-purple-200'
+      case 'power bi':
+        return 'bg-yellow-100 text-yellow-800 border-yellow-200 hover:bg-yellow-200'
       default:
-        return "bg-gray-100 text-gray-800 border-gray-200 hover:bg-gray-200";
+        return 'bg-gray-100 text-gray-800 border-gray-200 hover:bg-gray-200'
     }
-  };
+  }
 
   // Get color for active filter
   const getActiveFilterClass = (category: string) => {
     if (category === activeFilter) {
       switch (category) {
-        case "excel":
-          return "bg-green-200 text-green-800 border-green-400";
-        case "python":
-          return "bg-blue-200 text-blue-800 border-blue-400";
-        case "sql":
-          return "bg-purple-200 text-purple-800 border-purple-400";
-        case "power bi":
-          return "bg-yellow-200 text-yellow-800 border-yellow-400";
-        case "all":
-          return "bg-slate-200 text-gray-800 border-gray-400";
+        case 'excel':
+          return 'bg-green-200 text-green-800 border-green-400'
+        case 'python':
+          return 'bg-blue-200 text-blue-800 border-blue-400'
+        case 'sql':
+          return 'bg-purple-200 text-purple-800 border-purple-400'
+        case 'power bi':
+          return 'bg-yellow-200 text-yellow-800 border-yellow-400'
+        case 'all':
+          return 'bg-slate-200 text-gray-800 border-gray-400'
         default:
-          return "bg-gray-200 text-gray-800 border-gray-400";
+          return 'bg-gray-200 text-gray-800 border-gray-400'
       }
     }
 
-    return getCategoryColor(category);
-  };
+    return getCategoryColor(category)
+  }
 
   return (
     <Layout>
@@ -132,16 +132,16 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                     category
                   )}`}
                 >
-                  {category !== "all" && (
+                  {category !== 'all' && (
                     <span className="mr-2">{getCategoryIcon(category)}</span>
                   )}
-                  {category === "all"
-                    ? "All Projects"
-                    : category.toLowerCase() === "sql"
-                    ? "SQL"
-                    : category.toLowerCase() === "power bi"
-                    ? "Power BI"
-                    : category.charAt(0).toUpperCase() + category.slice(1)}
+                  {category === 'all' ?
+                    'All Projects'
+                  : category.toLowerCase() === 'sql' ?
+                    'SQL'
+                  : category.toLowerCase() === 'power bi' ?
+                    'Power BI'
+                  : category.charAt(0).toUpperCase() + category.slice(1)}
                 </button>
               ))}
             </div>
@@ -152,7 +152,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
       {/* Projects Grid */}
       <section className="py-12 bg-gray-50">
         <div className="container-wide">
-          {filteredProjects.length > 0 ? (
+          {filteredProjects.length > 0 ?
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {filteredProjects.map((project) => (
                 <ProjectCard
@@ -162,8 +162,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                 />
               ))}
             </div>
-          ) : (
-            <div className="text-center py-16">
+          : <div className="text-center py-16">
               <h3 className="text-xl font-semibold text-gray-800 mb-2">
                 No projects found
               </h3>
@@ -171,13 +170,13 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                 No projects match the selected filter.
               </p>
               <button
-                onClick={() => setActiveFilter("all")}
+                onClick={() => setActiveFilter('all')}
                 className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
               >
                 View All Projects
               </button>
             </div>
-          )}
+          }
         </div>
       </section>
 
@@ -212,8 +211,8 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               </p>
               <button
                 onClick={() => {
-                  setActiveFilter("excel");
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setActiveFilter('excel')
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
                 }}
                 className="text-green-700 font-medium hover:text-green-900 flex items-center mt-auto"
               >
@@ -252,8 +251,8 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               </p>
               <button
                 onClick={() => {
-                  setActiveFilter("python");
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setActiveFilter('python')
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
                 }}
                 className="text-blue-700 font-medium hover:text-blue-900 flex items-center mt-auto"
               >
@@ -292,8 +291,8 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               </p>
               <button
                 onClick={() => {
-                  setActiveFilter("sql");
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setActiveFilter('sql')
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
                 }}
                 className="text-purple-700 font-medium hover:text-purple-900 flex items-center mt-auto"
               >
@@ -332,8 +331,8 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
               </p>
               <button
                 onClick={() => {
-                  setActiveFilter("power bi");
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  setActiveFilter('power bi')
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
                 }}
                 className="text-yellow-700 font-medium hover:text-yellow-900 flex items-center mt-auto"
               >
@@ -378,17 +377,17 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
         </div>
       </section>
     </Layout>
-  );
-};
+  )
+}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const projects = getProjects();
+  const projects = getProjects()
 
   return {
     props: {
       projects,
     },
-  };
-};
+  }
+}
 
-export default Projects;
+export default Projects
