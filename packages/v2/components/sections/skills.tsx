@@ -98,14 +98,14 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
               </p>
 
               {/* Skill level indicator */}
-              <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+              {/* <div className="w-full bg-gray-200 rounded-full h-2.5 mb-2">
                 <div
                   className="bg-indigo-600 h-2.5 rounded-full"
                   style={{ width: `${skill.level}%` }}
                   aria-label={`Skill level: ${skill.level}%`}
                 ></div>
               </div>
-              <p className="text-xs text-gray-500 text-right">{skill.level}%</p>
+              <p className="text-xs text-gray-500 text-right">{skill.level}%</p> */}
 
               {/* Skill tags */}
               <div className="mt-4 flex flex-wrap gap-2">

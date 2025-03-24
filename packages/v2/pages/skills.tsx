@@ -29,7 +29,7 @@ const Skills: NextPage = () => {
     { name: 'Python', percentage: 75 },
     { name: 'SQL', percentage: 65 },
     { name: 'Tableau & Power BI', percentage: 70 },
-    { name: 'Data Analysis', percentage: 90 },
+    { name: 'Data Analysis', percentage: 80 },
     { name: 'R', percentage: 40 },
   ]
 
@@ -202,7 +202,7 @@ const Skills: NextPage = () => {
         </div>
       </section>
 
-      {/* Skill Levels */}
+      {/* Skill Levels
       <section className="py-16 bg-gray-50">
         <div className="container-wide">
           <h2 className="text-2xl font-bold text-center mb-10">
@@ -233,10 +233,10 @@ const Skills: NextPage = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Tools & Software */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gray-50">
         <div className="container-wide">
           <h2 className="text-2xl font-bold text-center mb-10">
             Tools & Software
