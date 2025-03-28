@@ -11,7 +11,6 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
 
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const tabRefs = useRef<{ [key: string]: HTMLButtonElement | null }>({})
-  const indicatorRef = useRef<HTMLDivElement>(null)
 
   // Check if project has a category that matches our specialized components
   const hasSpecializedView = ['excel', 'python', 'sql', 'power bi'].includes(
@@ -29,15 +28,6 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
     : []),
   ]
 
-  // Position the indicator under the active tab
-  const updateIndicator = () => {
-    if (indicatorRef.current && tabRefs.current[activeTab]) {
-      const activeTabElement = tabRefs.current[activeTab]
-      indicatorRef.current.style.left = `${activeTabElement.offsetLeft}px`
-      indicatorRef.current.style.width = `${activeTabElement.offsetWidth}px`
-    }
-  }
-
   // Check if scroll arrows should be shown
   const checkScrollPosition = () => {
     if (scrollContainerRef.current) {
@@ -48,10 +38,35 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
     }
   }
 
-  // Function to handle tab selection without automatic scrolling
+  // Function to handle tab selection and auto-scroll to make the tab visible
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId)
-    // No automatic scrolling - just update the active tab
+
+    // Optional: Scroll the active tab into view
+    if (tabRefs.current[tabId] && scrollContainerRef.current) {
+      const tab = tabRefs.current[tabId]
+      const container = scrollContainerRef.current
+
+      const tabLeft = tab.offsetLeft
+      const tabRight = tabLeft + tab.offsetWidth
+      const containerLeft = container.scrollLeft
+      const containerRight = containerLeft + container.clientWidth
+
+      // If tab is not fully visible in the container
+      if (tabLeft < containerLeft) {
+        // Tab is to the left of the visible area
+        container.scrollTo({
+          left: tabLeft - 16, // Add some padding
+          behavior: 'smooth',
+        })
+      } else if (tabRight > containerRight) {
+        // Tab is to the right of the visible area
+        container.scrollTo({
+          left: tabRight - container.clientWidth + 16, // Add some padding
+          behavior: 'smooth',
+        })
+      }
+    }
   }
 
   // Scroll handler to control arrow visibility
@@ -77,12 +92,7 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
     }
   }
 
-  // Update the indicator and arrow visibility when the active tab changes
-  useEffect(() => {
-    updateIndicator()
-  }, [activeTab])
-
-  // Set up event listeners and check for arrows (without initial scroll positioning)
+  // Set up event listeners and check for arrows
   useEffect(() => {
     if (scrollContainerRef.current) {
       const container = scrollContainerRef.current
@@ -93,15 +103,11 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
       // Add scroll event listener
       container.addEventListener('scroll', handleScroll)
 
-      // Add resize listener to recheck arrows and indicator
-      window.addEventListener('resize', () => {
-        updateIndicator()
-        checkScrollPosition()
-      })
+      // Add resize listener to recheck arrows
+      window.addEventListener('resize', checkScrollPosition)
 
       return () => {
         container.removeEventListener('scroll', handleScroll)
-        window.removeEventListener('resize', updateIndicator)
         window.removeEventListener('resize', checkScrollPosition)
       }
     }
@@ -140,7 +146,7 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
                 className={`py-3 px-5 md:py-3 md:px-6 font-medium whitespace-nowrap flex-shrink-0 relative
                   ${
                     activeTab === tab.id ?
-                      'text-indigo-600 font-medium'
+                      'text-indigo-600 font-medium after:absolute after:bottom-0 after:left-0 after:w-full after:h-1 after:bg-indigo-600 after:transition-all after:duration-300'
                     : 'text-gray-600 hover:text-gray-800'
                   }
                 `}
@@ -151,12 +157,6 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
                 {tab.label}
               </button>
             ))}
-
-            {/* Active tab indicator */}
-            <div
-              ref={indicatorRef}
-              className="absolute bottom-0 h-1 bg-indigo-600 transition-all duration-300 ease-in-out"
-            />
           </div>
 
           {/* Right Scroll Arrow */}
