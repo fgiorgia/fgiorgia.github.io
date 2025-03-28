@@ -332,9 +332,9 @@ const Terms: NextPage = () => {
               <p className="text-gray-700 mb-2">
                 <strong>Email:</strong> giorgia.faedda@gfanalytics.se
               </p>
-              <p className="text-gray-700">
+              {/* <p className="text-gray-700">
                 <strong>Address:</strong> Malmö, Sweden
-              </p>
+              </p> */}
             </div>
 
             <h2 className="text-2xl font-bold text-gray-800 mb-4">

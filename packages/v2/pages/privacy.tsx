@@ -88,17 +88,16 @@ const Privacy: NextPage = () => {
             <ul className="list-disc pl-6 text-gray-700 mb-4">
               <li>Fill out the contact form</li>
               <li>Send an email through the provided contact details</li>
-              <li>Subscribe to newsletters (if applicable)</li>
-              <li>Apply for opportunities listed on this website</li>
+              {/* <li>Subscribe to newsletters (if applicable)</li>
+              <li>Apply for opportunities listed on this website</li> */}
             </ul>
             <p className="text-gray-700 mb-4">This information may include:</p>
             <ul className="list-disc pl-6 text-gray-700 mb-6">
-              <li>Giorgia Faedda</li>
+              <li>Your Name</li>
               <li>Email address</li>
               <li>Phone number</li>
               <li>Company or organization</li>
               <li>Message content or inquiries</li>
-              <li>Resume or CV (if submitted)</li>
             </ul>
 
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
@@ -356,9 +355,9 @@ const Privacy: NextPage = () => {
               <p className="text-gray-700 mb-2">
                 <strong>Email:</strong> giorgia.faedda@gfanalytics.se
               </p>
-              <p className="text-gray-700">
+              {/* <p className="text-gray-700">
                 <strong>Address:</strong> Malmö, Sweden
-              </p>
+              </p> */}
             </div>
           </div>
 
