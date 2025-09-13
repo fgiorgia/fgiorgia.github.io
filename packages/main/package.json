@@ -11,13 +11,13 @@
   },
   "dependencies": {
     "@swiftpost/elysium": "*",
-    "@mui/icons-material": "^7"
+    "@mui/icons-material": "^7",
+    "next": "^15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
   },
   "peerDependencies": {
-    "@mui/material": "^7",
-    "next": "*",
-    "react": "*",
-    "react-dom": "*"
+    "@mui/material": "^7"
   },
   "devDependencies": {
     "@swiftpost/config": "*",
