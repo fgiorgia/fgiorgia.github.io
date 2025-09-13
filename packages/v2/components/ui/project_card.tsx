@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { getAssetPath } from '@/lib/utils'
+import React, { useState } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 import {
   ArrowRight,
   Maximize,
@@ -9,91 +9,91 @@ import {
   Code,
   Database,
   BarChart2,
-} from 'lucide-react'
-import Card from './card'
-import ProjectLightboxModal from './project_lightbox_modal'
-import { ProjectCardProps } from '@/types'
+} from 'lucide-react';
+import Card from './card';
+import ProjectLightboxModal from './project_lightbox_modal';
+import { ProjectCardProps } from '@/types';
 
 // Helper function to get the appropriate background color based on category
 const getCategoryBackgroundColor = (category: string): string => {
-  const categoryLower = category.toLowerCase()
+  const categoryLower = category.toLowerCase();
 
   if (
     categoryLower.includes('excel') ||
     categoryLower.includes('spreadsheet')
   ) {
-    return 'bg-green-50' // Excel - light green
+    return 'bg-green-50'; // Excel - light green
   } else if (categoryLower.includes('python')) {
-    return 'bg-blue-50' // Python - light blue
+    return 'bg-blue-50'; // Python - light blue
   } else if (
     categoryLower.includes('sql') ||
     categoryLower.includes('database')
   ) {
-    return 'bg-purple-50' // SQL - light purple
+    return 'bg-purple-50'; // SQL - light purple
   } else if (
     categoryLower.includes('power bi') ||
     categoryLower.includes('tableau') ||
     categoryLower.includes('bi')
   ) {
-    return 'bg-yellow-50' // BI tools - light yellow
+    return 'bg-yellow-50'; // BI tools - light yellow
   }
 
-  return 'bg-white' // Default fallback
-}
+  return 'bg-white'; // Default fallback
+};
 
 // Helper function to get dot color based on category
 const getCategoryIconColor = (category: string): string => {
-  const categoryLower = category.toLowerCase()
+  const categoryLower = category.toLowerCase();
 
   if (
     categoryLower.includes('excel') ||
     categoryLower.includes('spreadsheet')
   ) {
-    return 'text-green-800' // Excel - green
+    return 'text-green-800'; // Excel - green
   } else if (categoryLower.includes('python')) {
-    return 'text-blue-800' // Python - blue
+    return 'text-blue-800'; // Python - blue
   } else if (
     categoryLower.includes('sql') ||
     categoryLower.includes('database')
   ) {
-    return 'text-purple-800' // SQL - purple
+    return 'text-purple-800'; // SQL - purple
   } else if (
     categoryLower.includes('power bi') ||
     categoryLower.includes('tableau') ||
     categoryLower.includes('bi')
   ) {
-    return 'text-yellow-800' // BI tools - yellow
+    return 'text-yellow-800'; // BI tools - yellow
   }
 
-  return 'text-gray-600' // Default fallback
-}
+  return 'text-gray-600'; // Default fallback
+};
 
 // Helper function to get category icon
 const getCategoryIcon = (category: string) => {
-  const categoryLower = category.toLowerCase()
+  const categoryLower = category.toLowerCase();
 
   if (
     categoryLower.includes('excel') ||
     categoryLower.includes('spreadsheet')
   ) {
-    return <FileSpreadsheet size={16} />
+    return <FileSpreadsheet size={16} />;
   } else if (categoryLower.includes('python')) {
-    return <Code size={16} />
+    return <Code size={16} />;
   } else if (
     categoryLower.includes('sql') ||
     categoryLower.includes('database')
   ) {
-    return <Database size={16} />
+    return <Database size={16} />;
   } else if (
     categoryLower.includes('power bi') ||
     categoryLower.includes('tableau') ||
     categoryLower.includes('bi')
   ) {
-    return <BarChart2 size={16} />
+    return <BarChart2 size={16} />;
   }
 
-  return <FileSpreadsheet size={16} /> // Default fallback
-}
+  return <FileSpreadsheet size={16} />; // Default fallback
+};
 
 const ProjectCard: React.FC<ProjectCardProps> = ({
   project,
@@ -110,29 +110,29 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     iconBgColor,
     isDemo,
     imageGallery = [],
-  } = project
+  } = project;
 
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
-  const [selectedImageIndex, setSelectedImageIndex] = useState(0)
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
   // Handle navigation in the lightbox
   const handleNext = () => {
-    if (imageGallery.length <= 1) return
-    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % imageGallery.length)
-  }
+    if (imageGallery.length <= 1) return;
+    setSelectedImageIndex((prevIndex) => (prevIndex + 1) % imageGallery.length);
+  };
 
   const handlePrev = () => {
-    if (imageGallery.length <= 1) return
+    if (imageGallery.length <= 1) return;
     setSelectedImageIndex(
       (prevIndex) =>
         (prevIndex - 1 + imageGallery.length) % imageGallery.length,
-    )
-  }
+    );
+  };
 
   // Open lightbox
   const openLightbox = () => {
-    setIsLightboxOpen(true)
-  }
+    setIsLightboxOpen(true);
+  };
 
   // Browser header component
   const BrowserHeader = () => (
@@ -152,9 +152,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
       {imageGallery.length > 0 && (
         <button
           onClick={(e) => {
-            e.preventDefault()
-            e.stopPropagation()
-            openLightbox()
+            e.preventDefault();
+            e.stopPropagation();
+            openLightbox();
           }}
           className="text-gray-500 hover:text-gray-700 transition-colors"
           aria-label="View fullscreen"
@@ -163,7 +163,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         </button>
       )}
     </div>
-  )
+  );
 
   return (
     <>
@@ -199,9 +199,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                       <>
                         <button
                           onClick={(e) => {
-                            e.preventDefault()
-                            e.stopPropagation()
-                            handlePrev()
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handlePrev();
                           }}
                           className="absolute left-1 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 shadow-md text-gray-700 hover:bg-white hover:text-gray-900 transition-colors z-10"
                           aria-label="Previous image"
@@ -223,9 +223,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         </button>
                         <button
                           onClick={(e) => {
-                            e.preventDefault()
-                            e.stopPropagation()
-                            handleNext()
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleNext();
                           }}
                           className="absolute right-1 top-1/2 transform -translate-y-1/2 bg-white/80 rounded-full p-1 shadow-md text-gray-700 hover:bg-white hover:text-gray-900 transition-colors z-10"
                           aria-label="Next image"
@@ -329,7 +329,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default ProjectCard
+export default ProjectCard;

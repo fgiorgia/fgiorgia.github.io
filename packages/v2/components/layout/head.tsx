@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { getAssetPath } from '@/lib/utils'
-import { Menu, X, Download } from 'lucide-react'
-import { NavItem } from '@/types'
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
+import { Menu, X, Download } from 'lucide-react';
+import { NavItem } from '@/types';
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
-  const [isScrolled, setIsScrolled] = useState<boolean>(false)
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   // Navigation items with types
   const navItems: NavItem[] = [
@@ -16,21 +16,21 @@ const Header: React.FC = () => {
     { label: 'Skills', href: '/skills' },
     { label: 'Projects', href: '/projects' },
     { label: 'Contact', href: '/contact' },
-  ]
+  ];
 
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = (): void => {
-      setIsScrolled(window.scrollY > 10)
-    }
+      setIsScrolled(window.scrollY > 10);
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = (): void => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <nav
@@ -148,7 +148,7 @@ const Header: React.FC = () => {
         )}
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -1,5 +1,5 @@
-import { type PropsWithChildren } from 'react'
-import Stack from '../Stack/Stack'
+import { type PropsWithChildren } from 'react';
+import Stack from '../Stack/Stack';
 
 const MainContent: React.FC<PropsWithChildren> = ({ children }) => (
   <Stack
@@ -9,6 +9,6 @@ const MainContent: React.FC<PropsWithChildren> = ({ children }) => (
   >
     {children}
   </Stack>
-)
+);
 
-export default MainContent
+export default MainContent;

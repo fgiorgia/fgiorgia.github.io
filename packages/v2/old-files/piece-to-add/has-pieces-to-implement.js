@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   Menu,
   X,
@@ -14,10 +14,10 @@ import {
   Download,
   ChevronRight,
   ExternalLink,
-} from 'lucide-react'
+} from 'lucide-react';
 
 const DataAnalystPortfolio = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   // Sample data for projects - would be replaced with your actual projects
   const projects = {
@@ -95,7 +95,7 @@ const DataAnalystPortfolio = () => {
         link: '#',
       },
     ],
-  }
+  };
 
   return (
     <div className="font-sans text-gray-800 min-h-screen bg-gray-50">
@@ -889,7 +889,7 @@ const DataAnalystPortfolio = () => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default DataAnalystPortfolio
+export default DataAnalystPortfolio;

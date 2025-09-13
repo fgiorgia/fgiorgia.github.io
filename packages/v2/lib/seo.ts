@@ -1,10 +1,10 @@
 // packages/v2/lib/seo.ts
-import { DefaultSeoProps } from 'next-seo'
-import { getAssetPath } from './utils'
+import { DefaultSeoProps } from 'next-seo';
+import { getAssetPath } from './utils';
 
 // Base URL for your site (used for canonical URLs and OG images)
 export const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://gfanalytics.se'
+  process.env.NEXT_PUBLIC_SITE_URL || 'https://gfanalytics.se';
 
 // Default SEO configuration
 export const defaultSEO: DefaultSeoProps = {
@@ -45,4 +45,4 @@ export const defaultSEO: DefaultSeoProps = {
       content: 'Giorgia Faedda',
     },
   ],
-}
+};

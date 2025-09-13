@@ -7,7 +7,7 @@
  */
 const config = {
   tabWidth: 2,
-  semi: false,
+  semi: true,
   singleQuote: true,
   experimentalTernaries: true,
 };

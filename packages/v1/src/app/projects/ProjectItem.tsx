@@ -1,28 +1,28 @@
-import { type Project } from './projectsData'
-import Text from '@/components/Text/Text'
-import styles from './projects.module.scss'
-import Link from 'next/link'
-import { useCallback } from 'react'
-import Image from 'next/image'
+import { type Project } from './projectsData';
+import Text from '@/components/Text/Text';
+import styles from './projects.module.scss';
+import Link from 'next/link';
+import { useCallback } from 'react';
+import Image from 'next/image';
 
 interface Props {
-  project: Project
-  extended?: boolean
+  project: Project;
+  extended?: boolean;
 }
 
 const ProjectItem: React.FC<Props> = ({ project, extended }) => {
-  const projectLink = `https://github.com/fgiorgia/${project.githubName}/`
+  const projectLink = `https://github.com/fgiorgia/${project.githubName}/`;
 
   const ImageLinkOrFragment = useCallback(
     ({ children }: React.PropsWithChildren) => {
       if (extended === true) {
-        return <>{children}</>
+        return <>{children}</>;
       }
 
-      return <Link href={`/projects/${project.githubName}`}>{children}</Link>
+      return <Link href={`/projects/${project.githubName}`}>{children}</Link>;
     },
     [extended],
-  )
+  );
 
   return (
     <div className={styles.projectItem}>
@@ -87,7 +87,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectItem
+export default ProjectItem;

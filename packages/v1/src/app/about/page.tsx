@@ -1,13 +1,13 @@
-import MainContent from '@/components/MainContent/MainContent'
-import Stack from '@/components/Stack/Stack'
-import Text from '@/components/Text/Text'
-import React from 'react'
+import MainContent from '@/components/MainContent/MainContent';
+import Stack from '@/components/Stack/Stack';
+import Text from '@/components/Text/Text';
+import React from 'react';
 
-import styles from './about.module.scss'
+import styles from './about.module.scss';
 
-import soccerImageDetectionVideo from './media/aboutme-soccer-image-detection.mp4'
-import cagliariImage from './media/cagliari-sardinia-italy.jpg'
-import Image from 'next/image'
+import soccerImageDetectionVideo from './media/aboutme-soccer-image-detection.mp4';
+import cagliariImage from './media/cagliari-sardinia-italy.jpg';
+import Image from 'next/image';
 
 const Page: React.FC = () => {
   return (
@@ -106,7 +106,7 @@ const Page: React.FC = () => {
         </Stack>
       </Stack>
     </MainContent>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

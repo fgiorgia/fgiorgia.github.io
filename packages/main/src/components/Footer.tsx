@@ -1,15 +1,15 @@
-import { staticTheme } from '@/styles/staticTheme'
-import Text from '@swiftpost/elysium/ui/base/Text'
-import ContentFittedStack from '@swiftpost/elysium/ui/ContentFittedStack'
-import type { ContentFittedStackProps } from '@swiftpost/elysium/ui/ContentFittedStack'
-import Link from '@swiftpost/elysium/ui/Link'
-import { customConfig } from '@/customConfig'
+import { staticTheme } from '@/styles/staticTheme';
+import Text from '@swiftpost/elysium/ui/base/Text';
+import ContentFittedStack from '@swiftpost/elysium/ui/ContentFittedStack';
+import type { ContentFittedStackProps } from '@swiftpost/elysium/ui/ContentFittedStack';
+import Link from '@swiftpost/elysium/ui/Link';
+import { customConfig } from '@/customConfig';
 
 interface Props {
-  contentMaxWidth: ContentFittedStackProps['contentMaxWidth']
+  contentMaxWidth: ContentFittedStackProps['contentMaxWidth'];
 }
 
-const currentYear = new Date().getFullYear()
+const currentYear = new Date().getFullYear();
 
 const Attribution = () => (
   <Text color="primary.contrastText" gutterBottom>
@@ -22,7 +22,7 @@ const Attribution = () => (
       {`SwiftPost template.`}
     </Link>
   </Text>
-)
+);
 
 const Footer: React.FC<Props> = ({ contentMaxWidth }) => {
   return (
@@ -46,8 +46,8 @@ const Footer: React.FC<Props> = ({ contentMaxWidth }) => {
       </Text>
       <Attribution />
     </ContentFittedStack>
-  )
-}
+  );
+};
 
-export type FooterProps = Props
-export default Footer
+export type FooterProps = Props;
+export default Footer;

@@ -1,8 +1,8 @@
-import { classNames } from '@/utils/style/classNames'
-import Stack from '../Stack/Stack'
-import Avatar from './Avatar'
-import Link from 'next/link'
-import NavbarLinkArea, { linkClasses } from './NavbarLinkArea'
+import { classNames } from '@/utils/style/classNames';
+import Stack from '../Stack/Stack';
+import Avatar from './Avatar';
+import Link from 'next/link';
+import NavbarLinkArea, { linkClasses } from './NavbarLinkArea';
 
 const Header: React.FC = () => {
   return (
@@ -21,7 +21,7 @@ const Header: React.FC = () => {
         <NavbarLinkArea />
       </Stack>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

@@ -1,7 +1,7 @@
-import React from 'react'
-import ProjectCard from '../ui/project_card'
-import Button from '../ui/button'
-import { ProjectsGridProps } from '@/types'
+import React from 'react';
+import ProjectCard from '../ui/project_card';
+import Button from '../ui/button';
+import { ProjectsGridProps } from '@/types';
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
   if (!projects || projects.length === 0) {
@@ -11,7 +11,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
           No projects available at the moment.
         </p>
       </div>
-    )
+    );
   }
 
   return (
@@ -43,7 +43,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectsGrid
+export default ProjectsGrid;

@@ -1,7 +1,7 @@
-import React from 'react'
-import Link from 'next/link'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo/SEO'
+import React from 'react';
+import Link from 'next/link';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/SEO';
 
 const NotFound: React.FC = () => {
   return (
@@ -29,7 +29,7 @@ const NotFound: React.FC = () => {
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;

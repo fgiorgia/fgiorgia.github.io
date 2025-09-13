@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const SimplePythonProject = () => {
   return (
@@ -244,7 +244,7 @@ df['cluster'] = final_kmeans.fit_predict(df_scaled)`}</pre>
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SimplePythonProject
+export default SimplePythonProject;

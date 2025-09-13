@@ -1,7 +1,7 @@
 // components/projects/SqlProject.tsx
-import React from 'react'
-import Card from '../ui/card'
-import { ProjectContentProps } from '@/types'
+import React from 'react';
+import Card from '../ui/card';
+import { ProjectContentProps } from '@/types';
 
 const SqlProject: React.FC<ProjectContentProps> = ({ project }) => {
   // SQL uses purple color scheme
@@ -12,7 +12,7 @@ const SqlProject: React.FC<ProjectContentProps> = ({ project }) => {
     border: 'border-purple-200',
     accent: 'bg-purple-100',
     bullet: 'text-purple-600',
-  }
+  };
 
   return (
     <div className="space-y-8">
@@ -226,7 +226,7 @@ ORDER BY o.order_date DESC;`}
         </div>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default SqlProject
+export default SqlProject;

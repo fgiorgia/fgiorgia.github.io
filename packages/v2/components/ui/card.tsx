@@ -1,5 +1,5 @@
-import React from 'react'
-import { CardProps } from '@/types'
+import React from 'react';
+import { CardProps } from '@/types';
 
 const Card: React.FC<CardProps> = ({ children, className = '', ...props }) => {
   return (
@@ -9,7 +9,7 @@ const Card: React.FC<CardProps> = ({ children, className = '', ...props }) => {
     >
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

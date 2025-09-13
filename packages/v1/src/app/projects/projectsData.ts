@@ -1,5 +1,5 @@
-import customerFeedbackDashboardImage from './images/customer_feedback_dashboard.png'
-import ikeaAppReviewsImage from './images/ikea-app-review-functions-v1.png'
+import customerFeedbackDashboardImage from './images/customer_feedback_dashboard.png';
+import ikeaAppReviewsImage from './images/ikea-app-review-functions-v1.png';
 
 export const projects = [
   {
@@ -32,6 +32,6 @@ export const projects = [
     the application of statistical methods in deriving actionable insights from real-world data.
     `,
   },
-]
+];
 
-export type Project = (typeof projects)[number]
+export type Project = (typeof projects)[number];

@@ -1,6 +1,6 @@
-import React from 'react'
-import Card from '../ui/card'
-import { ProjectContentProps } from '@/types'
+import React from 'react';
+import Card from '../ui/card';
+import { ProjectContentProps } from '@/types';
 
 const ProjectOverview: React.FC<ProjectContentProps> = ({ project }) => {
   return (
@@ -66,7 +66,7 @@ const ProjectOverview: React.FC<ProjectContentProps> = ({ project }) => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ProjectOverview
+export default ProjectOverview;

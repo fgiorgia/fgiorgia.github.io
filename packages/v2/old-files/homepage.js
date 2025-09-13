@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import {
   Menu,
   X,
@@ -8,14 +8,14 @@ import {
   BarChart2,
   FileSpreadsheet,
   Code,
-} from 'lucide-react'
+} from 'lucide-react';
 
 const PortfolioHomepage = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
@@ -451,7 +451,7 @@ const PortfolioHomepage = () => {
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default PortfolioHomepage
+export default PortfolioHomepage;

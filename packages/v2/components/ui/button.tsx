@@ -1,6 +1,6 @@
-import React from 'react'
-import Link from 'next/link'
-import { ButtonProps } from '@/types'
+import React from 'react';
+import Link from 'next/link';
+import { ButtonProps } from '@/types';
 
 const Button: React.FC<ButtonProps> = ({
   href,
@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseClasses =
-    'font-medium py-3 px-6 rounded-lg shadow-md transition-colors duration-200'
+    'font-medium py-3 px-6 rounded-lg shadow-md transition-colors duration-200';
 
   const variantClasses: Record<string, string> = {
     primary:
@@ -22,16 +22,16 @@ const Button: React.FC<ButtonProps> = ({
       'bg-white text-indigo-700 hover:bg-indigo-50 disabled:bg-gray-100 disabled:text-gray-500',
     outline:
       'bg-transparent border border-white text-white hover:bg-indigo-600 disabled:opacity-50',
-  }
+  };
 
-  const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${className}`
+  const buttonClasses = `${baseClasses} ${variantClasses[variant]} ${className}`;
 
   if (href) {
     return (
       <Link href={href} className={buttonClasses} {...props}>
         {children}
       </Link>
-    )
+    );
   }
 
   return (
@@ -44,7 +44,7 @@ const Button: React.FC<ButtonProps> = ({
     >
       {children}
     </button>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

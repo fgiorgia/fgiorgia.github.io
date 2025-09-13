@@ -1,9 +1,9 @@
 // components/projects/PythonProject.tsx
-import React from 'react'
-import Image from 'next/image'
-import { getAssetPath } from '@/lib/utils'
-import Card from '../ui/card'
-import { ProjectContentProps } from '@/types'
+import React from 'react';
+import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
+import Card from '../ui/card';
+import { ProjectContentProps } from '@/types';
 
 const PythonProject: React.FC<ProjectContentProps> = ({ project }) => {
   // Python uses blue color scheme
@@ -14,7 +14,7 @@ const PythonProject: React.FC<ProjectContentProps> = ({ project }) => {
     border: 'border-blue-200',
     accent: 'bg-blue-100',
     bullet: 'text-blue-600',
-  }
+  };
 
   return (
     <div className="space-y-8">
@@ -204,7 +204,7 @@ const PythonProject: React.FC<ProjectContentProps> = ({ project }) => {
         )}
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default PythonProject
+export default PythonProject;

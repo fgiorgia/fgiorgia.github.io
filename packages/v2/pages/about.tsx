@@ -1,9 +1,9 @@
 // pages/about.tsx
-import type { NextPage } from 'next'
-import Image from 'next/image'
-import { Linkedin, Github, Mail } from 'lucide-react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo/SEO'
+import type { NextPage } from 'next';
+import Image from 'next/image';
+import { Linkedin, Github, Mail } from 'lucide-react';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/SEO';
 
 const About: NextPage = () => {
   return (
@@ -350,7 +350,7 @@ const About: NextPage = () => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default About
+export default About;

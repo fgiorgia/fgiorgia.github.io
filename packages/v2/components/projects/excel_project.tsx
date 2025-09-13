@@ -1,9 +1,9 @@
 // components/projects/ExcelProject.tsx
-import React from 'react'
-import Image from 'next/image'
-import { getAssetPath } from '@/lib/utils'
-import Card from '../ui/card'
-import { ProjectContentProps } from '@/types'
+import React from 'react';
+import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
+import Card from '../ui/card';
+import { ProjectContentProps } from '@/types';
 
 const ExcelProject: React.FC<ProjectContentProps> = ({ project }) => {
   // Excel uses yellow color scheme
@@ -14,7 +14,7 @@ const ExcelProject: React.FC<ProjectContentProps> = ({ project }) => {
     border: 'border-yellow-200',
     accent: 'bg-yellow-100',
     bullet: 'text-yellow-600',
-  }
+  };
 
   return (
     <div className="space-y-8">
@@ -136,7 +136,7 @@ const ExcelProject: React.FC<ProjectContentProps> = ({ project }) => {
         </div>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default ExcelProject
+export default ExcelProject;

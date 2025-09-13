@@ -1,9 +1,9 @@
-import { AppProps } from 'next/app'
-import { DefaultSeo } from 'next-seo'
-import { GoogleAnalytics } from '@next/third-parties/google'
-import { defaultSEO } from '../lib/seo'
-import CookieConsent from '../components/ui/cookie_consent'
-import '../styles/globals.css'
+import { AppProps } from 'next/app';
+import { DefaultSeo } from 'next-seo';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { defaultSEO } from '../lib/seo';
+import CookieConsent from '../components/ui/cookie_consent';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <CookieConsent />
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

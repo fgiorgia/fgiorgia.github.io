@@ -1,6 +1,6 @@
-import React from 'react'
-import Card from '../ui/card'
-import { ProjectContentProps } from '@/types'
+import React from 'react';
+import Card from '../ui/card';
+import { ProjectContentProps } from '@/types';
 
 const ProjectCode: React.FC<ProjectContentProps> = ({ project }) => {
   return (
@@ -55,7 +55,7 @@ def visualize_results(results):
         </p>
       </div>
     </Card>
-  )
-}
+  );
+};
 
-export default ProjectCode
+export default ProjectCode;

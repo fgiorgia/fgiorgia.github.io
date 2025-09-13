@@ -1,5 +1,5 @@
-import React from 'react'
-import Button from '../ui/button'
+import React from 'react';
+import Button from '../ui/button';
 
 const ContactSection: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const ContactSection: React.FC = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;

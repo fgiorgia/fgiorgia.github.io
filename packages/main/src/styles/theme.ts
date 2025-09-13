@@ -1,1 +1,1 @@
-export { theme, mainFont } from '@swiftpost/elysium/themes/gamut'
+export { theme, mainFont } from '@swiftpost/elysium/themes/gamut';

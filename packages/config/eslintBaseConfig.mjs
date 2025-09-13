@@ -1,10 +1,10 @@
 // @ts-check
 
-import eslint from '@eslint/js'
-import { defineConfig } from 'eslint/config'
-import tseslint from 'typescript-eslint'
-import reactPlugin from 'eslint-plugin-react'
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended'
+import eslint from '@eslint/js';
+import { defineConfig } from 'eslint/config';
+import tseslint from 'typescript-eslint';
+import reactPlugin from 'eslint-plugin-react';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 
 export const eslintBaseConfig = defineConfig(
   eslint.configs.recommended,
@@ -46,4 +46,4 @@ export const eslintBaseConfig = defineConfig(
     },
     ignores: ['node_modules', 'dist'],
   },
-)
+);

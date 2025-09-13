@@ -1,8 +1,8 @@
 // packages/v2/components/seo/person_json_ld.tsx
-import React from 'react'
-import Head from 'next/head'
-import { siteUrl } from '@/lib/seo'
-import { getAssetPath } from '@/lib/utils'
+import React from 'react';
+import Head from 'next/head';
+import { siteUrl } from '@/lib/seo';
+import { getAssetPath } from '@/lib/utils';
 
 const PersonJsonLd: React.FC = () => {
   const personSchema = {
@@ -32,7 +32,7 @@ const PersonJsonLd: React.FC = () => {
       '@type': 'Organization',
       name: 'GF Analytics',
     },
-  }
+  };
 
   return (
     <Head>
@@ -41,7 +41,7 @@ const PersonJsonLd: React.FC = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
     </Head>
-  )
-}
+  );
+};
 
-export default PersonJsonLd
+export default PersonJsonLd;

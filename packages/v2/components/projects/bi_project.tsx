@@ -1,9 +1,9 @@
 // components/projects/BiProject.tsx
-import React from 'react'
-import Image from 'next/image'
-import { getAssetPath } from '@/lib/utils'
-import Card from '../ui/card'
-import { ProjectContentProps } from '@/types'
+import React from 'react';
+import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
+import Card from '../ui/card';
+import { ProjectContentProps } from '@/types';
 
 const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
   // BI uses green color scheme
@@ -14,7 +14,7 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
     border: 'border-green-200',
     accent: 'bg-green-100',
     bullet: 'text-green-600',
-  }
+  };
 
   return (
     <div className="space-y-8">
@@ -265,7 +265,7 @@ RETURN
         </div>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default BiProject
+export default BiProject;

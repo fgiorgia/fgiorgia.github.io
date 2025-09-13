@@ -1,12 +1,12 @@
 // components/ui/coming_soon_card.tsx
-import React from 'react'
-import { Clock } from 'lucide-react'
-import Card from './card'
+import React from 'react';
+import { Clock } from 'lucide-react';
+import Card from './card';
 
 interface ComingSoonCardProps {
-  category?: string
-  title?: string
-  className?: string
+  category?: string;
+  title?: string;
+  className?: string;
 }
 
 const ComingSoonCard: React.FC<ComingSoonCardProps> = ({
@@ -16,14 +16,14 @@ const ComingSoonCard: React.FC<ComingSoonCardProps> = ({
 }) => {
   // Define color schemes based on category
   const getCategoryColor = (cat: string) => {
-    const lowerCat = cat.toLowerCase()
-    if (lowerCat.includes('excel')) return 'bg-green-100 text-green-800'
-    if (lowerCat.includes('python')) return 'bg-blue-100 text-blue-800'
-    if (lowerCat.includes('sql')) return 'bg-purple-100 text-purple-800'
+    const lowerCat = cat.toLowerCase();
+    if (lowerCat.includes('excel')) return 'bg-green-100 text-green-800';
+    if (lowerCat.includes('python')) return 'bg-blue-100 text-blue-800';
+    if (lowerCat.includes('sql')) return 'bg-purple-100 text-purple-800';
     if (lowerCat.includes('bi') || lowerCat.includes('power'))
-      return 'bg-yellow-100 text-yellow-800'
-    return 'bg-gray-100 text-gray-800'
-  }
+      return 'bg-yellow-100 text-yellow-800';
+    return 'bg-gray-100 text-gray-800';
+  };
 
   return (
     <article className={`flex flex-col h-full opacity-80 ${className}`}>
@@ -63,7 +63,7 @@ const ComingSoonCard: React.FC<ComingSoonCardProps> = ({
         </div>
       </Card>
     </article>
-  )
-}
+  );
+};
 
-export default ComingSoonCard
+export default ComingSoonCard;

@@ -1,6 +1,6 @@
 // pages/construction.tsx
-import React from 'react'
-import type { NextPage } from 'next'
+import React from 'react';
+import type { NextPage } from 'next';
 import {
   Calendar,
   Code,
@@ -8,10 +8,10 @@ import {
   BarChart2,
   Clock,
   CheckCircle,
-} from 'lucide-react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo/SEO'
-import Link from 'next/link'
+} from 'lucide-react';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/SEO';
+import Link from 'next/link';
 
 const Construction: NextPage = () => {
   // Progress indicators for different sections
@@ -23,7 +23,7 @@ const Construction: NextPage = () => {
     { name: 'SQL Projects', progress: 0, icon: <Database size={20} /> },
     { name: 'BI Dashboards', progress: 0, icon: <BarChart2 size={20} /> },
     { name: 'Contact Form', progress: 100, icon: <CheckCircle size={20} /> },
-  ]
+  ];
 
   return (
     <Layout>
@@ -175,7 +175,7 @@ const Construction: NextPage = () => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default Construction
+export default Construction;

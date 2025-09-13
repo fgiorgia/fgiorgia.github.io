@@ -1,7 +1,7 @@
 // @ts-check
 
-import path from 'node:path'
-const __dirname = import.meta.dirname
+import path from 'node:path';
+const __dirname = import.meta.dirname;
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -18,7 +18,7 @@ const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     // Add support for video imports
     // From: https://stackoverflow.com/a/73729543
-    const prefix = config.assetPrefix ?? config.basePath ?? ''
+    const prefix = config.assetPrefix ?? config.basePath ?? '';
     config.module.rules.push({
       test: /\.mp4$/,
       use: [
@@ -31,10 +31,10 @@ const nextConfig = {
           },
         },
       ],
-    })
+    });
 
-    return config
+    return config;
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;

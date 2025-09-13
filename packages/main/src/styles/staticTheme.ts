@@ -1,3 +1,3 @@
-import { staticThemeOptions } from '@swiftpost/elysium/themes/gamut/static'
+import { staticThemeOptions } from '@swiftpost/elysium/themes/gamut/static';
 
-export const staticTheme = staticThemeOptions
+export const staticTheme = staticThemeOptions;

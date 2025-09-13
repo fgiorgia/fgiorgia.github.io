@@ -55,14 +55,14 @@
 
 // export default Breadcrumbs;
 
-import React from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
-import { BreadcrumbsProps } from '@/types'
+import React from 'react';
+import Link from 'next/link';
+import Head from 'next/head';
+import { BreadcrumbsProps } from '@/types';
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   // Site URL for schema
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gfanalytics.se'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://gfanalytics.se';
 
   // Generate JSON-LD for breadcrumbs
   const breadcrumbsJsonLd = {
@@ -76,7 +76,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
         name: item.label,
       },
     })),
-  }
+  };
 
   return (
     <>
@@ -115,7 +115,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
         </ol>
       </nav>
     </>
-  )
-}
+  );
+};
 
-export default Breadcrumbs
+export default Breadcrumbs;

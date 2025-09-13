@@ -1,9 +1,9 @@
 // pages/contact.tsx
-import { useState } from 'react'
-import type { NextPage } from 'next'
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo/SEO'
+import { useState } from 'react';
+import type { NextPage } from 'next';
+import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/SEO';
 
 const Contact: NextPage = () => {
   // Form state
@@ -12,34 +12,34 @@ const Contact: NextPage = () => {
     email: '',
     subject: '',
     message: '',
-  })
+  });
 
   const [formStatus, setFormStatus] = useState({
     isSubmitting: false,
     isSubmitted: false,
     isError: false,
-  })
+  });
 
   // Handle form input changes
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
-    const { id, value } = e.target
+    const { id, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,
-    }))
-  }
+    }));
+  };
 
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setFormStatus({ isSubmitting: true, isSubmitted: false, isError: false })
+    e.preventDefault();
+    setFormStatus({ isSubmitting: true, isSubmitted: false, isError: false });
 
     try {
       // FormSubmit endpoint
       const endpoint =
-        'https://formsubmit.co/ajax/giorgia.faedda@gfanalytics.se'
+        'https://formsubmit.co/ajax/giorgia.faedda@gfanalytics.se';
 
       // Send the data to FormSubmit
       const response = await fetch(endpoint, {
@@ -56,7 +56,7 @@ const Contact: NextPage = () => {
           _subject: 'New portfolio contact submission',
           _template: 'table',
         }),
-      })
+      });
 
       if (response.ok) {
         // Success! Show the thank you message
@@ -64,27 +64,27 @@ const Contact: NextPage = () => {
           isSubmitting: false,
           isSubmitted: true,
           isError: false,
-        })
+        });
         // Reset form
         setFormData({
           name: '',
           email: '',
           subject: '',
           message: '',
-        })
+        });
       } else {
         // Error handling
         setFormStatus({
           isSubmitting: false,
           isSubmitted: false,
           isError: true,
-        })
+        });
       }
     } catch (error) {
-      console.error('Error submitting form:', error)
-      setFormStatus({ isSubmitting: false, isSubmitted: false, isError: true })
+      console.error('Error submitting form:', error);
+      setFormStatus({ isSubmitting: false, isSubmitted: false, isError: true });
     }
-  }
+  };
 
   return (
     <Layout>
@@ -373,7 +373,7 @@ const Contact: NextPage = () => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

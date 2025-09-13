@@ -1,24 +1,24 @@
-import copenhagenDenmark from './images/copenhagen-denmark.jpg'
-import folgaridaItaly from './images/folgarida-italy.jpg'
-import helsinkiFinland from './images/helsinki-finland.jpg'
-import innsbruckAustria from './images/innsbruck-austria.jpg'
-import krakowPoland from './images/krakow-poland.jpg'
-import kyotoBambooForestJapan from './images/kyoto-bamboo-forest-japan.jpg'
-import kyotoJapan2 from './images/kyoto-japan-2.jpg'
-import libraryOfCelsusEphesusTurkey from './images/library-of-celsus-ephesus-turkey.jpg'
-import malmoSweden from './images/malmo-sweden.jpg'
-import milanItaly from './images/milan-italy.jpg'
-import naplesItaly from './images/naples-italy.jpg'
-import osloNorway from './images/oslo-norway.jpg'
-import panDiZuccheroSardinia from './images/pan-di-zucchero-sardinia.jpg'
-import pragueCzechRepublic from './images/prague-czech-republic.jpg'
-import romeItaly1 from './images/rome-italy-1.jpg'
-import romeItaly2 from './images/rome-italy-2.jpg'
-import santaMariaNavarreseSardinia from './images/santa-maria-navarrese-sardinia.jpg'
-import santoriniGreek from './images/santorini-greek.jpg'
-import stockholmSweden1 from './images/stockholm-sweden-1.jpg'
-import stockholmSweden2 from './images/stockholm-sweden-2.jpg'
-import tokyoJapan from './images/tokyo-japan.jpg'
+import copenhagenDenmark from './images/copenhagen-denmark.jpg';
+import folgaridaItaly from './images/folgarida-italy.jpg';
+import helsinkiFinland from './images/helsinki-finland.jpg';
+import innsbruckAustria from './images/innsbruck-austria.jpg';
+import krakowPoland from './images/krakow-poland.jpg';
+import kyotoBambooForestJapan from './images/kyoto-bamboo-forest-japan.jpg';
+import kyotoJapan2 from './images/kyoto-japan-2.jpg';
+import libraryOfCelsusEphesusTurkey from './images/library-of-celsus-ephesus-turkey.jpg';
+import malmoSweden from './images/malmo-sweden.jpg';
+import milanItaly from './images/milan-italy.jpg';
+import naplesItaly from './images/naples-italy.jpg';
+import osloNorway from './images/oslo-norway.jpg';
+import panDiZuccheroSardinia from './images/pan-di-zucchero-sardinia.jpg';
+import pragueCzechRepublic from './images/prague-czech-republic.jpg';
+import romeItaly1 from './images/rome-italy-1.jpg';
+import romeItaly2 from './images/rome-italy-2.jpg';
+import santaMariaNavarreseSardinia from './images/santa-maria-navarrese-sardinia.jpg';
+import santoriniGreek from './images/santorini-greek.jpg';
+import stockholmSweden1 from './images/stockholm-sweden-1.jpg';
+import stockholmSweden2 from './images/stockholm-sweden-2.jpg';
+import tokyoJapan from './images/tokyo-japan.jpg';
 
 export const images = [
   {
@@ -105,4 +105,4 @@ export const images = [
     image: tokyoJapan,
     description: 'tokyo-japan',
   },
-]
+];

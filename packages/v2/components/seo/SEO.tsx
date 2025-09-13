@@ -1,9 +1,9 @@
 // packages/v2/components/seo/SEO.tsx
-import React from 'react'
-import { NextSeo, ArticleJsonLd } from 'next-seo'
-import { getAssetPath } from '@/lib/utils'
-import { SEOProps } from '@/types'
-import { siteUrl, defaultSEO } from '@/lib/seo'
+import React from 'react';
+import { NextSeo, ArticleJsonLd } from 'next-seo';
+import { getAssetPath } from '@/lib/utils';
+import { SEOProps } from '@/types';
+import { siteUrl, defaultSEO } from '@/lib/seo';
 
 const SEO: React.FC<SEOProps> = ({
   title,
@@ -14,13 +14,13 @@ const SEO: React.FC<SEOProps> = ({
   noindex = false,
   article,
 }) => {
-  const pageUrl = canonical || siteUrl
+  const pageUrl = canonical || siteUrl;
   const imageUrl =
     ogImage ?
       ogImage.startsWith('http') ?
         ogImage
       : `${siteUrl}${getAssetPath(ogImage)}`
-    : `${siteUrl}${getAssetPath('./images/gfanalytics-og.png')}`
+    : `${siteUrl}${getAssetPath('./images/gfanalytics-og.png')}`;
 
   return (
     <>
@@ -72,7 +72,7 @@ const SEO: React.FC<SEOProps> = ({
         />
       )}
     </>
-  )
-}
+  );
+};
 
-export default SEO
+export default SEO;

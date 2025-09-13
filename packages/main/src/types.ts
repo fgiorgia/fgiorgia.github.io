@@ -1,18 +1,18 @@
-import type { ImageSourceData } from '@swiftpost/elysium/ui/Image'
+import type { ImageSourceData } from '@swiftpost/elysium/ui/Image';
 
 export interface CustomConfig {
   author: {
-    name: string
-    email: string
-  }
+    name: string;
+    email: string;
+  };
 }
 
 export interface PostData {
-  title: string
-  content: string
-  date: string
-  image?: string | ImageSourceData
+  title: string;
+  content: string;
+  date: string;
+  image?: string | ImageSourceData;
   author?: {
-    name: string
-  }
+    name: string;
+  };
 }

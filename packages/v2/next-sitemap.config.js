@@ -21,14 +21,14 @@ const config = {
   // Add all project pages dynamically
   transform: async (config, path) => {
     // Customize priority based on path
-    let priority = 0.7
+    let priority = 0.7;
 
     if (path === '/') {
-      priority = 1.0
+      priority = 1.0;
     } else if (path.startsWith('/projects/')) {
-      priority = 0.8
+      priority = 0.8;
     } else if (path === '/about' || path === '/skills' || path === '/contact') {
-      priority = 0.9
+      priority = 0.9;
     }
 
     // Return the sitemap entry
@@ -40,8 +40,8 @@ const config = {
         : 'monthly',
       priority,
       lastmod: new Date().toISOString(),
-    }
+    };
   },
-}
+};
 
-module.exports = config
+module.exports = config;

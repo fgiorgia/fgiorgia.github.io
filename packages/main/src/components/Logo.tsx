@@ -1,8 +1,8 @@
-import Text from '@swiftpost/elysium/ui/base/Text'
+import Text from '@swiftpost/elysium/ui/base/Text';
 
 interface Props {
-  fontSize?: number
-  nested?: boolean
+  fontSize?: number;
+  nested?: boolean;
 }
 
 const Logo: React.FC<Props> = ({ fontSize, nested }) => (
@@ -32,6 +32,6 @@ const Logo: React.FC<Props> = ({ fontSize, nested }) => (
     </Text>
     ost
   </Text>
-)
+);
 
-export default Logo
+export default Logo;

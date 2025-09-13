@@ -1,18 +1,18 @@
-'use client'
+'use client';
 
-import Stack from '../Stack/Stack'
-import { classNames } from '@/utils/style/classNames'
-import useScreenSize from '@/utils/style/useScreenSize'
-import Link from 'next/link'
-import { useState } from 'react'
+import Stack from '../Stack/Stack';
+import { classNames } from '@/utils/style/classNames';
+import useScreenSize from '@/utils/style/useScreenSize';
+import Link from 'next/link';
+import { useState } from 'react';
 
-export const linkClasses = 'font-extrabold text-gray-800 hover:text-cyan-800'
+export const linkClasses = 'font-extrabold text-gray-800 hover:text-cyan-800';
 
 const HeaderLink: React.FC<{
-  children: string
-  href: string
-  openInNewTab?: boolean
-  onClick?: () => void
+  children: string;
+  href: string;
+  openInNewTab?: boolean;
+  onClick?: () => void;
 }> = ({ href, children, openInNewTab, onClick }) => {
   return (
     <Link
@@ -23,8 +23,8 @@ const HeaderLink: React.FC<{
     >
       {children}
     </Link>
-  )
-}
+  );
+};
 
 const HeaderLinkGroup: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
   <>
@@ -43,11 +43,11 @@ const HeaderLinkGroup: React.FC<{ onClick?: () => void }> = ({ onClick }) => (
     </HeaderLink>
     {/* TODO: Add search button */}
   </>
-)
+);
 
 const NavbarLinkArea = () => {
-  const isLargeScreen = useScreenSize().width > 600
-  const [isOpen, setIsOpen] = useState(false)
+  const isLargeScreen = useScreenSize().width > 600;
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       {isLargeScreen ?
@@ -65,7 +65,7 @@ const NavbarLinkArea = () => {
               // TODO: investigate why
               className={linkClasses + (isOpen ? '' : 'text-cyan-800')}
               onClick={() => {
-                setIsOpen(!isOpen)
+                setIsOpen(!isOpen);
               }}
               style={{ fontSize: '1.5rem' }}
             >
@@ -87,7 +87,7 @@ const NavbarLinkArea = () => {
                 >
                   <HeaderLinkGroup
                     onClick={() => {
-                      setIsOpen(false)
+                      setIsOpen(false);
                     }}
                   />
                 </Stack>
@@ -97,7 +97,7 @@ const NavbarLinkArea = () => {
         </Stack>
       }
     </>
-  )
-}
+  );
+};
 
-export default NavbarLinkArea
+export default NavbarLinkArea;

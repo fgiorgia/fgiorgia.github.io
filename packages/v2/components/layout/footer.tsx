@@ -1,18 +1,18 @@
-import React from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { getAssetPath } from '@/lib/utils'
-import { Mail, Github, Linkedin } from 'lucide-react'
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
+import { Mail, Github, Linkedin } from 'lucide-react';
 
 interface SocialLink {
-  name: string
-  href: string
-  icon: React.ReactNode
-  label: string
+  name: string;
+  href: string;
+  icon: React.ReactNode;
+  label: string;
 }
 
 const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const socialLinks: SocialLink[] = [
     {
@@ -33,12 +33,12 @@ const Footer: React.FC = () => {
       icon: <Mail size={20} />,
       label: 'Email Me',
     },
-  ]
+  ];
 
   const footerLinks = [
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
-  ]
+  ];
 
   return (
     <footer className="bg-gray-800 text-gray-300 py-8">
@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

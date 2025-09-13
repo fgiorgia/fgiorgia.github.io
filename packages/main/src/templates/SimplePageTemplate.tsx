@@ -1,15 +1,15 @@
-import StackLayout from '@swiftpost/elysium/layouts/StackLayout'
-import Stack from '@swiftpost/elysium/ui/base/Stack'
-import Footer from '@/components/Footer'
-import { staticTheme } from '@/styles/staticTheme'
-import Header from '@/components/Header'
-import TopBar from '@/components/TopBar'
-import ContentFittedStack from '@swiftpost/elysium/ui/ContentFittedStack'
+import StackLayout from '@swiftpost/elysium/layouts/StackLayout';
+import Stack from '@swiftpost/elysium/ui/base/Stack';
+import Footer from '@/components/Footer';
+import { staticTheme } from '@/styles/staticTheme';
+import Header from '@/components/Header';
+import TopBar from '@/components/TopBar';
+import ContentFittedStack from '@swiftpost/elysium/ui/ContentFittedStack';
 
-const contentMaxWidth = staticTheme.breakpoints.values.lg
+const contentMaxWidth = staticTheme.breakpoints.values.lg;
 
 interface Props {
-  children: React.ReactNode
+  children: React.ReactNode;
 }
 
 const SimplePageTemplate: React.FC<Props> = ({ children }) => {
@@ -37,7 +37,7 @@ const SimplePageTemplate: React.FC<Props> = ({ children }) => {
         },
       }}
     />
-  )
-}
+  );
+};
 
-export default SimplePageTemplate
+export default SimplePageTemplate;

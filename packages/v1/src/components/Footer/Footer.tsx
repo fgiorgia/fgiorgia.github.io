@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import Stack from '../Stack/Stack'
+import Link from 'next/link';
+import Stack from '../Stack/Stack';
 
 const Footer: React.FC = () => {
   return (
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
         </p>
       </Stack>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

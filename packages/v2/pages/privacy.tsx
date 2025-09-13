@@ -1,10 +1,10 @@
 // pages/privacy.tsx
-import React from 'react'
-import type { NextPage } from 'next'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo/SEO'
-import Breadcrumbs from '../components/seo/breadcrumbs'
-import Link from 'next/link'
+import React from 'react';
+import type { NextPage } from 'next';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/SEO';
+import Breadcrumbs from '../components/seo/breadcrumbs';
+import Link from 'next/link';
 
 const Privacy: NextPage = () => {
   // Get the current date to display when the policy was last updated
@@ -12,7 +12,7 @@ const Privacy: NextPage = () => {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
-  })
+  });
 
   return (
     <Layout>
@@ -372,7 +372,7 @@ const Privacy: NextPage = () => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default Privacy
+export default Privacy;

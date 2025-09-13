@@ -1,30 +1,30 @@
-import React, { useState, useEffect } from 'react'
-import { Hammer, X } from 'lucide-react'
-import Link from 'next/link'
+import React, { useState, useEffect } from 'react';
+import { Hammer, X } from 'lucide-react';
+import Link from 'next/link';
 
 const ConstructionBanner: React.FC = () => {
-  const [isVisible, setIsVisible] = useState<boolean>(false)
-  const [showButton, setShowButton] = useState<boolean>(false)
-  const [initialized, setInitialized] = useState<boolean>(false)
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const [showButton, setShowButton] = useState<boolean>(false);
+  const [initialized, setInitialized] = useState<boolean>(false);
 
   useEffect(() => {
     // Only run this effect on client-side
-    if (typeof window === 'undefined') return
+    if (typeof window === 'undefined') return;
 
     // Initial check - run after a small delay to ensure DOM is ready
-    setTimeout(checkBannerState, 300)
-    setInitialized(true)
+    setTimeout(checkBannerState, 300);
+    setInitialized(true);
 
     // Function to check and update banner state
     function checkBannerState() {
       // Check if cookie consent exists
-      const cookieConsentSet = !!localStorage.getItem('cookie-consent-status')
+      const cookieConsentSet = !!localStorage.getItem('cookie-consent-status');
 
       if (!cookieConsentSet) {
         // No consent yet, hide both
-        setIsVisible(false)
-        setShowButton(false)
-        return
+        setIsVisible(false);
+        setShowButton(false);
+        return;
       }
 
       // Check if any cookie-related UI is visible
@@ -34,36 +34,36 @@ const ConstructionBanner: React.FC = () => {
             '[class*="fixed bottom-0"][class*="bg-slate-800"], ' + // Cookie banner (alternate)
             '[class*="fixed inset-0"][class*="bg-slate-800"], ' + // Preferences modal
             '[class*="fixed inset-0"][class*="z-[1001]"]', // Any modal with high z-index
-        ) !== null
+        ) !== null;
 
       if (cookieUIVisible) {
         // Cookie UI is visible, hide construction UI
-        setIsVisible(false)
-        setShowButton(false)
-        return
+        setIsVisible(false);
+        setShowButton(false);
+        return;
       }
 
       // Cookie consent set and no cookie UI visible - check if banner was dismissed
       const bannerDismissed =
-        localStorage.getItem('construction-banner-dismissed') === 'true'
+        localStorage.getItem('construction-banner-dismissed') === 'true';
 
       if (bannerDismissed) {
-        setIsVisible(false)
-        setShowButton(true)
+        setIsVisible(false);
+        setShowButton(true);
       } else {
-        setIsVisible(true)
-        setShowButton(false)
+        setIsVisible(true);
+        setShowButton(false);
       }
     }
 
     // Handler for cookie consent updates
     const handleCookieUpdate = () => {
       // Use a delay to ensure DOM is updated
-      setTimeout(checkBannerState, 300)
-    }
+      setTimeout(checkBannerState, 300);
+    };
 
     // Listen for custom event from cookie consent component
-    window.addEventListener('cookieConsentUpdated', handleCookieUpdate)
+    window.addEventListener('cookieConsentUpdated', handleCookieUpdate);
 
     // Set up MutationObserver to watch for DOM changes
     const observer = new MutationObserver((mutations) => {
@@ -81,23 +81,23 @@ const ConstructionBanner: React.FC = () => {
                 '[class*="fixed bottom-0"][class*="bg-slate-800"], ' +
                 '[class*="fixed inset-0"][class*="bg-slate-800"], ' +
                 '[class*="fixed inset-0"][class*="z-[1001]"]',
-            ) !== null
+            ) !== null;
 
           if (
             !cookieUIVisible &&
             localStorage.getItem('cookie-consent-status')
           ) {
-            checkBannerState()
+            checkBannerState();
           }
-        }, 150)
+        }, 150);
       }
-    })
+    });
 
     observer.observe(document.body, {
       childList: true,
       subtree: true,
       attributes: true,
-    })
+    });
 
     // Listen for storage changes (for cross-tab consistency)
     const handleStorageChange = (e: StorageEvent) => {
@@ -105,34 +105,34 @@ const ConstructionBanner: React.FC = () => {
         e.key === 'cookie-consent-status' ||
         e.key === 'construction-banner-dismissed'
       ) {
-        setTimeout(checkBannerState, 300)
+        setTimeout(checkBannerState, 300);
       }
-    }
-    window.addEventListener('storage', handleStorageChange)
+    };
+    window.addEventListener('storage', handleStorageChange);
 
     // Cleanup
     return () => {
-      window.removeEventListener('cookieConsentUpdated', handleCookieUpdate)
-      window.removeEventListener('storage', handleStorageChange)
-      observer.disconnect()
-    }
-  }, [])
+      window.removeEventListener('cookieConsentUpdated', handleCookieUpdate);
+      window.removeEventListener('storage', handleStorageChange);
+      observer.disconnect();
+    };
+  }, []);
 
   const dismissBanner = () => {
-    setIsVisible(false)
-    setShowButton(true)
-    localStorage.setItem('construction-banner-dismissed', 'true')
-  }
+    setIsVisible(false);
+    setShowButton(true);
+    localStorage.setItem('construction-banner-dismissed', 'true');
+  };
 
   const showBanner = () => {
-    setIsVisible(true)
-    setShowButton(false)
-    localStorage.setItem('construction-banner-dismissed', 'false')
-  }
+    setIsVisible(true);
+    setShowButton(false);
+    localStorage.setItem('construction-banner-dismissed', 'false');
+  };
 
   // Don't render anything until initialized
   if (!initialized) {
-    return null
+    return null;
   }
 
   // Check for cookie banner at bottom to determine positioning
@@ -140,10 +140,10 @@ const ConstructionBanner: React.FC = () => {
     typeof window !== 'undefined' &&
     document.querySelector(
       '[class*="fixed bottom-0"][class*="bg-gray-700"], [class*="fixed bottom-0"][class*="bg-slate-800"]',
-    ) !== null
+    ) !== null;
 
-  const bannerPosition = cookieBannerAtBottom ? 'bottom-20' : 'bottom-0'
-  const buttonPosition = cookieBannerAtBottom ? 'bottom-20' : 'bottom-18'
+  const bannerPosition = cookieBannerAtBottom ? 'bottom-20' : 'bottom-0';
+  const buttonPosition = cookieBannerAtBottom ? 'bottom-20' : 'bottom-18';
 
   return (
     <>
@@ -197,7 +197,7 @@ const ConstructionBanner: React.FC = () => {
         </button>
       )}
     </>
-  )
-}
+  );
+};
 
-export default ConstructionBanner
+export default ConstructionBanner;

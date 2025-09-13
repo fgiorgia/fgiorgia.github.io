@@ -1,34 +1,34 @@
-'use client'
-import { useState, useEffect } from 'react'
+'use client';
+import { useState, useEffect } from 'react';
 
 interface ScreenSize {
-  width: number
-  height: number
+  width: number;
+  height: number;
 }
 
 const useScreenSize = (): ScreenSize => {
   const [screenSize, setScreenSize] = useState<ScreenSize>({
     width: 0,
     height: 0,
-  })
+  });
 
   useEffect(() => {
     const handleResize = () => {
       setScreenSize({
         width: window.innerWidth,
         height: window.innerHeight,
-      })
-    }
+      });
+    };
 
-    handleResize()
-    window.addEventListener('resize', handleResize)
+    handleResize();
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  return screenSize
-}
+  return screenSize;
+};
 
-export default useScreenSize
+export default useScreenSize;

@@ -1,17 +1,17 @@
-import React from 'react'
-import Stack, { StackProps } from './base/Stack'
-import { InferSlotsFromSlotProps } from './types'
+import React from 'react';
+import Stack, { StackProps } from './base/Stack';
+import { InferSlotsFromSlotProps } from './types';
 
-type ContainerProps = StackProps
+type ContainerProps = StackProps;
 
 interface SlotProps {
-  container?: ContainerProps
+  container?: ContainerProps;
 }
 
 interface Props extends Exclude<StackProps, 'maxWidth' | 'width'> {
-  contentMaxWidth: StackProps['maxWidth']
-  slotProps?: SlotProps
-  slots?: InferSlotsFromSlotProps<SlotProps>
+  contentMaxWidth: StackProps['maxWidth'];
+  slotProps?: SlotProps;
+  slots?: InferSlotsFromSlotProps<SlotProps>;
 }
 
 /**
@@ -24,8 +24,8 @@ const ContentFittedStack: React.FC<Props> = ({
   children,
   ...otherContentStackProps
 }) => {
-  const Container = slots?.container ?? Stack
-  const containerProps = slotProps?.container
+  const Container = slots?.container ?? Stack;
+  const containerProps = slotProps?.container;
   return (
     <Container
       width="100%"
@@ -40,8 +40,8 @@ const ContentFittedStack: React.FC<Props> = ({
         {children}
       </Stack>
     </Container>
-  )
-}
+  );
+};
 
-export type ContentFittedStackProps = Props
-export default ContentFittedStack
+export type ContentFittedStackProps = Props;
+export default ContentFittedStack;

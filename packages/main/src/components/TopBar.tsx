@@ -1,5 +1,5 @@
-import { staticTheme } from '@/styles/staticTheme'
-import Stack from '@swiftpost/elysium/ui/base/Stack'
+import { staticTheme } from '@/styles/staticTheme';
+import Stack from '@swiftpost/elysium/ui/base/Stack';
 
 const TopBar = () => {
   return (
@@ -10,7 +10,7 @@ const TopBar = () => {
         backgroundColor: 'primary.dark',
       }}
     />
-  )
-}
+  );
+};
 
-export default TopBar
+export default TopBar;

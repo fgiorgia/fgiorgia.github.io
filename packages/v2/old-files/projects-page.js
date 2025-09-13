@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const ProjectDetailPage = () => {
-  const [activeTab, setActiveTab] = useState('overview')
+  const [activeTab, setActiveTab] = useState('overview');
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -567,7 +567,7 @@ for k in k_range:
         </div>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectDetailPage
+export default ProjectDetailPage;

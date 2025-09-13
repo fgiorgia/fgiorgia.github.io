@@ -1,16 +1,16 @@
-import React from 'react'
-import { GetStaticPaths, GetStaticProps } from 'next'
-import Link from 'next/link'
-import Layout from '../../components/layout/layout'
-import SEO from '../../components/seo/SEO'
-import Breadcrumbs from '../../components/seo/breadcrumbs'
-import ProjectTabs from '../../components/projects/project_tabs'
-import { getAllProjectSlugs, getProjects } from '../../lib/projects'
-import { getAssetPath } from '@/lib/utils'
-import { Project } from '@/types'
+import React from 'react';
+import { GetStaticPaths, GetStaticProps } from 'next';
+import Link from 'next/link';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo/SEO';
+import Breadcrumbs from '../../components/seo/breadcrumbs';
+import ProjectTabs from '../../components/projects/project_tabs';
+import { getAllProjectSlugs, getProjects } from '../../lib/projects';
+import { getAssetPath } from '@/lib/utils';
+import { Project } from '@/types';
 
 interface ProjectDetailProps {
-  project: Project
+  project: Project;
 }
 
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
@@ -35,14 +35,14 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           </Link>
         </div>
       </Layout>
-    )
+    );
   }
 
   // Prepare the publishedTime for SEO
-  const completedParts = project.completedDate.split(' ')
+  const completedParts = project.completedDate.split(' ');
   const month =
-    new Date(Date.parse(completedParts[0] + ' 1, 2000')).getMonth() + 1
-  const publishedTime = `${completedParts[1]}-${month.toString().padStart(2, '0')}-01T00:00:00Z`
+    new Date(Date.parse(completedParts[0] + ' 1, 2000')).getMonth() + 1;
+  const publishedTime = `${completedParts[1]}-${month.toString().padStart(2, '0')}-01T00:00:00Z`;
 
   return (
     <Layout>
@@ -209,32 +209,32 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
       <ProjectTabs project={project} />
     </Layout>
-  )
-}
+  );
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllProjectSlugs()
+  const paths = getAllProjectSlugs();
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const slug = params?.slug as string
-  const project = getProjects().find((project) => project.slug === slug)
+  const slug = params?.slug as string;
+  const project = getProjects().find((project) => project.slug === slug);
 
   if (!project) {
     return {
       notFound: true,
-    }
+    };
   }
 
   return {
     props: {
       project,
     },
-  }
-}
+  };
+};
 
-export default ProjectDetail
+export default ProjectDetail;

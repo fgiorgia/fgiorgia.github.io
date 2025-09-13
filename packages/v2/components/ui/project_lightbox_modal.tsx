@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { getAssetPath } from '@/lib/utils'
-import { ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react'
-import { Project } from '@/types'
+import React, { useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { getAssetPath } from '@/lib/utils';
+import { ArrowRight, ChevronLeft, ChevronRight, X } from 'lucide-react';
+import { Project } from '@/types';
 
 interface ProjectLightboxModalProps {
-  project: Project
-  images: string[]
-  selectedIndex: number
-  onClose: () => void
-  onNext: () => void
-  onPrev: () => void
+  project: Project;
+  images: string[];
+  selectedIndex: number;
+  onClose: () => void;
+  onNext: () => void;
+  onPrev: () => void;
 }
 
 const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
@@ -26,51 +26,51 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        onClose()
+        onClose();
       } else if (e.key === 'ArrowRight') {
-        onNext()
+        onNext();
       } else if (e.key === 'ArrowLeft') {
-        onPrev()
+        onPrev();
       }
-    }
+    };
 
     // Add event listener and disable body scroll
-    window.addEventListener('keydown', handleKeyDown)
-    document.body.style.overflow = 'hidden'
+    window.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
 
     // Clean up: remove event listener and restore body scroll
     return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = ''
-    }
-  }, [onClose, onNext, onPrev])
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+    };
+  }, [onClose, onNext, onPrev]);
 
   // Get background color based on category
   const getCategoryBackgroundColor = (category: string) => {
-    const categoryLower = category.toLowerCase()
+    const categoryLower = category.toLowerCase();
 
     if (
       categoryLower.includes('excel') ||
       categoryLower.includes('spreadsheet')
     ) {
-      return 'bg-green-50'
+      return 'bg-green-50';
     } else if (categoryLower.includes('python')) {
-      return 'bg-blue-50'
+      return 'bg-blue-50';
     } else if (
       categoryLower.includes('sql') ||
       categoryLower.includes('database')
     ) {
-      return 'bg-purple-50'
+      return 'bg-purple-50';
     } else if (
       categoryLower.includes('power bi') ||
       categoryLower.includes('tableau') ||
       categoryLower.includes('bi')
     ) {
-      return 'bg-yellow-50'
+      return 'bg-yellow-50';
     }
 
-    return 'bg-white'
-  }
+    return 'bg-white';
+  };
 
   // Modal uses a portal to render at root level to avoid z-index issues
   return (
@@ -110,8 +110,8 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
         <>
           <button
             onClick={(e) => {
-              e.stopPropagation()
-              onPrev()
+              e.stopPropagation();
+              onPrev();
             }}
             className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 rounded-full p-3 text-gray hover:bg-white/40 transition-colors z-[10000]"
             aria-label="Previous image"
@@ -120,8 +120,8 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
           </button>
           <button
             onClick={(e) => {
-              e.stopPropagation()
-              onNext()
+              e.stopPropagation();
+              onNext();
             }}
             className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 rounded-full p-3 text-gray hover:bg-white/40 transition-colors z-[10000]"
             aria-label="Next image"
@@ -136,7 +136,7 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
         {selectedIndex + 1} / {images.length}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProjectLightboxModal
+export default ProjectLightboxModal;

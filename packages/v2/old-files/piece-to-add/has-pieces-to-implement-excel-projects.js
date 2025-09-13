@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const SimpleExcelProject = () => {
   return (
@@ -162,7 +162,7 @@ const SimpleExcelProject = () => {
         </a>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SimpleExcelProject
+export default SimpleExcelProject;

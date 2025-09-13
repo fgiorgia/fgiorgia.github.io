@@ -1,10 +1,10 @@
-import MainContent from '@/components/MainContent/MainContent'
-import Stack from '@/components/Stack/Stack'
-import React from 'react'
+import MainContent from '@/components/MainContent/MainContent';
+import Stack from '@/components/Stack/Stack';
+import React from 'react';
 
-import styles from './projects.module.scss'
-import { projects } from './projectsData'
-import ProjectItem from './ProjectItem'
+import styles from './projects.module.scss';
+import { projects } from './projectsData';
+import ProjectItem from './ProjectItem';
 
 const Page: React.FC = () => {
   return (
@@ -25,7 +25,7 @@ const Page: React.FC = () => {
         </div>
       </Stack>
     </MainContent>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

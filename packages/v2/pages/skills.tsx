@@ -1,14 +1,14 @@
 // pages/skills.tsx
-import type { NextPage } from 'next'
+import type { NextPage } from 'next';
 import {
   FileSpreadsheet,
   Code,
   Database,
   BarChart2,
   CheckCircle,
-} from 'lucide-react'
-import Layout from '../components/layout/layout'
-import SEO from '../components/seo/SEO'
+} from 'lucide-react';
+import Layout from '../components/layout/layout';
+import SEO from '../components/seo/SEO';
 
 const Skills: NextPage = () => {
   // Additional skills list
@@ -21,7 +21,7 @@ const Skills: NextPage = () => {
     'Forecasting',
     'Data Governance',
     'Reporting',
-  ]
+  ];
 
   // Progress skills with percentages
   const progressSkills = [
@@ -31,7 +31,7 @@ const Skills: NextPage = () => {
     { name: 'Tableau & Power BI', percentage: 70 },
     { name: 'Data Analysis', percentage: 80 },
     { name: 'R', percentage: 40 },
-  ]
+  ];
 
   return (
     <Layout>
@@ -295,7 +295,7 @@ const Skills: NextPage = () => {
         </div>
       </section>
     </Layout>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

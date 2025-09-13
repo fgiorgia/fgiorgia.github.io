@@ -1,6 +1,6 @@
-import React from 'react'
-import { FileSpreadsheet, Code, Database, BarChart2 } from 'lucide-react'
-import { Skill, SkillsProps } from '@/types'
+import React from 'react';
+import { FileSpreadsheet, Code, Database, BarChart2 } from 'lucide-react';
+import { Skill, SkillsProps } from '@/types';
 
 const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const defaultSkills: Skill[] = [
@@ -69,9 +69,9 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
         'Data Blending',
       ],
     },
-  ]
+  ];
 
-  const displaySkills = skills || defaultSkills
+  const displaySkills = skills || defaultSkills;
 
   return (
     <div className="py-12 md:py-16 bg-white">
@@ -123,7 +123,7 @@ const Skills: React.FC<SkillsProps> = ({ skills }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Skills
+export default Skills;

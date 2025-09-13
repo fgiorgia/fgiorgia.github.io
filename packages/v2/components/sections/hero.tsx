@@ -1,9 +1,9 @@
-import React from 'react'
-import { Mail, Github, Linkedin } from 'lucide-react'
-import Image from 'next/image'
-import { getAssetPath } from '@/lib/utils'
-import Button from '../ui/button'
-import { colors } from '@/styles/colors'
+import React from 'react';
+import { Mail, Github, Linkedin } from 'lucide-react';
+import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
+import Button from '../ui/button';
+import { colors } from '@/styles/colors';
 
 const Hero: React.FC = () => {
   return (
@@ -99,7 +99,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

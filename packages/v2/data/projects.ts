@@ -1,7 +1,7 @@
 // data/projects.ts
-import React from 'react'
-import { FileSpreadsheet, Code, Database, BarChart2 } from 'lucide-react'
-import { Project } from '@/types'
+import React from 'react';
+import { FileSpreadsheet, Code, Database, BarChart2 } from 'lucide-react';
+import { Project } from '@/types';
 
 export const projects: Project[] = [
   {
@@ -420,19 +420,19 @@ ORDER BY o.TotalSpent DESC;`,
       },
     ],
   },
-]
+];
 
 // Utility functions to work with project data
 export function getProjects(): Project[] {
-  return projects
+  return projects;
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {
-  return projects.find((project) => project.slug === slug)
+  return projects.find((project) => project.slug === slug);
 }
 
 export function getAllProjectSlugs() {
   return projects.map((project) => ({
     params: { slug: project.slug },
-  }))
+  }));
 }
