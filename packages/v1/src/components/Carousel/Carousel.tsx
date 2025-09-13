@@ -103,7 +103,7 @@ const Carousel = () => {
                   'object-cover w-1/2 ',
                   isAnimationActive ?
                     `transition-transform duration-1000 -translate-x-full`
-                  : '-translate-x-0'
+                  : '-translate-x-0',
                 )}
               />
             )

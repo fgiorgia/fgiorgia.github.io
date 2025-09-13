@@ -44,7 +44,7 @@ const Stack: React.FC<React.PropsWithChildren<Props>> = ({
       justifyContent,
       alignItems,
     }),
-    className
+    className,
   )
 
   const style: CSSProperties = {

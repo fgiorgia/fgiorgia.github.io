@@ -3,7 +3,7 @@ type UtilityClassValue = string | boolean
 const getClassName = (
   prefix: string | undefined,
   key: string,
-  value: string | true
+  value: string | true,
 ): string => {
   const keyValueString = value === true ? key : `${key}-${value}`
 
@@ -17,7 +17,7 @@ const getClassName = (
 export const getUtilityClasses = (
   styles: Readonly<Record<string, string | undefined>>,
   utilityProps: Record<string, UtilityClassValue | undefined>,
-  options: { prefix?: string } = {}
+  options: { prefix?: string } = {},
 ): string[] => {
   const utilityClasses = Object.entries(utilityProps).reduce<string[]>(
     (classNames, [key, value]) => {
@@ -33,14 +33,14 @@ export const getUtilityClasses = (
             '\n' +
             `Avaliable: ${Object.keys(styles)
               .filter((k) => !k.startsWith('__'))
-              .join(', ')}`
+              .join(', ')}`,
         )
         return classNames
       }
 
       return [...classNames, styledClassName]
     },
-    []
+    [],
   )
   return utilityClasses
 }

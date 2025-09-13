@@ -33,12 +33,12 @@ const Text: React.FC<React.PropsWithChildren<Props>> = ({
       {
         gutter,
       },
-      { prefix: variant }
+      { prefix: variant },
     ),
     ...getUtilityClasses(styles, {
       align,
     }),
-    classNameProp
+    classNameProp,
   )
 
   const style = {

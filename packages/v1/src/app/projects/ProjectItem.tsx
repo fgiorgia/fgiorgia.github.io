@@ -21,7 +21,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
 
       return <Link href={`/projects/${project.githubName}`}>{children}</Link>
     },
-    [extended]
+    [extended],
   )
 
   return (
