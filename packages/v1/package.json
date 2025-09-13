@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
-    "@swiftpost/ui": "*",
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
@@ -20,17 +20,18 @@
     "react-dom": "^18"
   },
   "peerDependencies": {
-    "next": "*",
-    "react": "*",
-    "react-dom": "*",
-    "eslint": "*",
     "@types/node": "*",
     "@types/react": "*",
     "@types/react-dom": "*",
+    "eslint": "*",
     "eslint-config-next": "*",
+    "next": "*",
+    "react": "*",
+    "react-dom": "*",
     "typescript": "*"
   },
   "devDependencies": {
+    "@swiftpost/config": "*",
     "file-loader": "^6.2.0",
     "postcss": "^8",
     "sass": "^1.79.3",
