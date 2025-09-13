@@ -124,7 +124,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   const handlePrev = () => {
     if (imageGallery.length <= 1) return
     setSelectedImageIndex(
-      (prevIndex) => (prevIndex - 1 + imageGallery.length) % imageGallery.length
+      (prevIndex) =>
+        (prevIndex - 1 + imageGallery.length) % imageGallery.length,
     )
   }
 

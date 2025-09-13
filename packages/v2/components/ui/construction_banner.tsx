@@ -33,7 +33,7 @@ const ConstructionBanner: React.FC = () => {
           '[class*="fixed bottom-0"][class*="bg-gray-700"], ' + // Cookie banner
             '[class*="fixed bottom-0"][class*="bg-slate-800"], ' + // Cookie banner (alternate)
             '[class*="fixed inset-0"][class*="bg-slate-800"], ' + // Preferences modal
-            '[class*="fixed inset-0"][class*="z-[1001]"]' // Any modal with high z-index
+            '[class*="fixed inset-0"][class*="z-[1001]"]', // Any modal with high z-index
         ) !== null
 
       if (cookieUIVisible) {
@@ -70,7 +70,7 @@ const ConstructionBanner: React.FC = () => {
       // Only check if the DOM has changed significantly
       if (
         mutations.some(
-          (m) => m.addedNodes.length > 0 || m.removedNodes.length > 0
+          (m) => m.addedNodes.length > 0 || m.removedNodes.length > 0,
         )
       ) {
         // Check after a short delay to ensure DOM is settled
@@ -80,7 +80,7 @@ const ConstructionBanner: React.FC = () => {
               '[class*="fixed bottom-0"][class*="bg-gray-700"], ' +
                 '[class*="fixed bottom-0"][class*="bg-slate-800"], ' +
                 '[class*="fixed inset-0"][class*="bg-slate-800"], ' +
-                '[class*="fixed inset-0"][class*="z-[1001]"]'
+                '[class*="fixed inset-0"][class*="z-[1001]"]',
             ) !== null
 
           if (
@@ -139,7 +139,7 @@ const ConstructionBanner: React.FC = () => {
   const cookieBannerAtBottom =
     typeof window !== 'undefined' &&
     document.querySelector(
-      '[class*="fixed bottom-0"][class*="bg-gray-700"], [class*="fixed bottom-0"][class*="bg-slate-800"]'
+      '[class*="fixed bottom-0"][class*="bg-gray-700"], [class*="fixed bottom-0"][class*="bg-slate-800"]',
     ) !== null
 
   const bannerPosition = cookieBannerAtBottom ? 'bottom-20' : 'bottom-0'

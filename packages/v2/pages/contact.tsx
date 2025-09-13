@@ -22,7 +22,7 @@ const Contact: NextPage = () => {
 
   // Handle form input changes
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { id, value } = e.target
     setFormData((prevData) => ({

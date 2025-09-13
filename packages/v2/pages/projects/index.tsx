@@ -36,8 +36,8 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
     } else {
       setFilteredProjects(
         projects.filter(
-          (project) => project.category.toLowerCase() === activeFilter
-        )
+          (project) => project.category.toLowerCase() === activeFilter,
+        ),
       )
     }
   }, [activeFilter, projects])
@@ -129,7 +129,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
                   key={category}
                   onClick={() => setActiveFilter(category)}
                   className={`flex items-center px-3 py-2 rounded-full text-sm font-medium border whitespace-nowrap transition-colors ${getActiveFilterClass(
-                    category
+                    category,
                   )}`}
                 >
                   {category !== 'all' && (

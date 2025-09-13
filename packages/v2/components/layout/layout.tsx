@@ -1,9 +1,9 @@
-import React from "react";
-import Header from "./head";
-import Footer from "./footer";
-import PersonJsonLd from "../seo/person_json_ld";
-import ConstructionBanner from "../ui/construction_banner";
-import { LayoutProps } from "@/types";
+import React from 'react'
+import Header from './head'
+import Footer from './footer'
+import PersonJsonLd from '../seo/person_json_ld'
+import ConstructionBanner from '../ui/construction_banner'
+import { LayoutProps } from '@/types'
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
@@ -15,7 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Construction banner outside the main flow to overlay properly */}
       <ConstructionBanner />
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

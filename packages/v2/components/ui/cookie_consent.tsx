@@ -93,7 +93,7 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
 
     localStorage.setItem(
       'cookie-consent-status',
-      JSON.stringify(minimalConsent)
+      JSON.stringify(minimalConsent),
     )
     setPreferences(minimalConsent)
     setIsVisible(false)

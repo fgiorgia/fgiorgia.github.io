@@ -1,19 +1,15 @@
-import React from 'react';
-import { CardProps } from '@/types';
+import React from 'react'
+import { CardProps } from '@/types'
 
-const Card: React.FC<CardProps> = ({ 
-  children, 
-  className = '', 
-  ...props 
-}) => {
+const Card: React.FC<CardProps> = ({ children, className = '', ...props }) => {
   return (
-    <div 
-      className={`bg-white rounded-lg overflow-hidden shadow-md ${className}`} 
+    <div
+      className={`bg-white rounded-lg overflow-hidden shadow-md ${className}`}
       {...props}
     >
       {children}
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

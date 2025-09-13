@@ -14,7 +14,7 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
 
   // Check if project has a category that matches our specialized components
   const hasSpecializedView = ['excel', 'python', 'sql', 'power bi'].includes(
-    project.category.toLowerCase()
+    project.category.toLowerCase(),
   )
 
   // Define tab configuration for easier management
