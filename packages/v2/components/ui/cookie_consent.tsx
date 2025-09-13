@@ -7,26 +7,24 @@ interface CookieConsentProps {
   privacyPolicyUrl?: string;
 }
 
+interface CookieData {
+  necessary: boolean;
+  analytics: boolean;
+  preferences: boolean;
+}
+
 const CookieConsent: React.FC<CookieConsentProps> = ({
   privacyPolicyUrl = '/privacy',
 }) => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [showPreferences, setShowPreferences] = useState<boolean>(false);
   const [showSettingsButton, setShowSettingsButton] = useState<boolean>(false);
-  const [expandedSections, setExpandedSections] = useState<{
-    necessary: boolean;
-    analytics: boolean;
-    preferences: boolean;
-  }>({
+  const [expandedSections, setExpandedSections] = useState<CookieData>({
     necessary: true,
     analytics: false,
     preferences: false,
   });
-  const [preferences, setPreferences] = useState<{
-    necessary: boolean;
-    analytics: boolean;
-    preferences: boolean;
-  }>({
+  const [preferences, setPreferences] = useState<CookieData>({
     necessary: true, // Always required
     analytics: false,
     preferences: false,
@@ -42,12 +40,14 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
         setIsVisible(true);
       }, 500);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(timer);
+      };
     } else {
       // If consent exists, show the settings button and parse the saved preferences
       setShowSettingsButton(true);
       try {
-        const savedPreferences = JSON.parse(consentStatus);
+        const savedPreferences = JSON.parse(consentStatus) as CookieData;
         setPreferences(savedPreferences);
       } catch (e) {
         console.error('Error parsing saved cookie preferences', e);
@@ -106,7 +106,9 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
 
   const handlePreferenceChange = (key: keyof typeof preferences) => {
     // Don't allow changing necessary cookies
-    if (key === 'necessary') return;
+    if (key === 'necessary') {
+      return;
+    }
 
     setPreferences({
       ...preferences,
@@ -140,7 +142,9 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
     }
   };
 
-  if (!isVisible && !showSettingsButton) return null;
+  if (!isVisible && !showSettingsButton) {
+    return null;
+  }
 
   return (
     <>
@@ -233,7 +237,9 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 <div className="border border-gray-200 rounded-md overflow-hidden">
                   <div
                     className="bg-gray-50 px-4 py-3 flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleSection('necessary')}
+                    onClick={() => {
+                      toggleSection('necessary');
+                    }}
                   >
                     <div className="flex items-center space-x-2">
                       <ChevronRight
@@ -273,7 +279,9 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 <div className="border border-gray-200 rounded-md overflow-hidden">
                   <div
                     className="bg-gray-50 px-4 py-3 flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleSection('analytics')}
+                    onClick={() => {
+                      toggleSection('analytics');
+                    }}
                   >
                     <div className="flex items-center space-x-2">
                       <ChevronRight
@@ -287,7 +295,9 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                     <input
                       type="checkbox"
                       checked={preferences.analytics}
-                      onChange={() => handlePreferenceChange('analytics')}
+                      onChange={() => {
+                        handlePreferenceChange('analytics');
+                      }}
                       className="form-checkbox h-5 w-5 text-blue-600 border-gray-300 rounded"
                     />
                   </div>
@@ -308,7 +318,9 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                 <div className="border border-gray-200 rounded-md overflow-hidden">
                   <div
                     className="bg-gray-50 px-4 py-3 flex justify-between items-center cursor-pointer"
-                    onClick={() => toggleSection('preferences')}
+                    onClick={() => {
+                      toggleSection('preferences');
+                    }}
                   >
                     <div className="flex items-center space-x-2">
                       <ChevronRight
@@ -322,7 +334,9 @@ const CookieConsent: React.FC<CookieConsentProps> = ({
                     <input
                       type="checkbox"
                       checked={preferences.preferences}
-                      onChange={() => handlePreferenceChange('preferences')}
+                      onChange={() => {
+                        handlePreferenceChange('preferences');
+                      }}
                       className="form-checkbox h-5 w-5 text-blue-600 border-gray-300 rounded"
                     />
                   </div>

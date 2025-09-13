@@ -92,7 +92,9 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
       {/* Image container */}
       <div
         className={`relative w-[90vw] h-[80vh] ${getCategoryBackgroundColor(project.category)} rounded-lg p-4 flex items-center justify-center`}
-        onClick={(e) => e.stopPropagation()}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
       >
         <Image
           src={getAssetPath(images[selectedIndex])}

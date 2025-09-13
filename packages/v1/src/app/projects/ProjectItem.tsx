@@ -53,7 +53,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
 
           {project.tags.length > 0 && (
             <div className={styles.projectTagsContainer}>
-              {project.tags.map((tag, index) => (
+              {project.tags.map((tag) => (
                 <span key={tag} className={styles.projectTag}>
                   {/* 
                     TODO: we may want to update this at some point
@@ -81,6 +81,7 @@ const ProjectItem: React.FC<Props> = ({ project, extended }) => {
             className={styles.projectGithubLink}
             href={projectLink}
             target="_blank"
+            rel="noreferrer"
           >
             <i className="fab fa-github"></i> {project.githubName}
           </a>

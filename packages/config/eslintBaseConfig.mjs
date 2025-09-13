@@ -5,6 +5,7 @@ import { defineConfig } from 'eslint/config';
 import tseslint from 'typescript-eslint';
 import reactPlugin from 'eslint-plugin-react';
 import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
+import globals from 'globals';
 
 export const eslintBaseConfig = defineConfig(
   eslint.configs.recommended,
@@ -42,6 +43,10 @@ export const eslintBaseConfig = defineConfig(
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
+      },
+      globals: {
+        ...globals.node,
+        ...globals.browser,
       },
     },
     ignores: ['node_modules', 'dist'],

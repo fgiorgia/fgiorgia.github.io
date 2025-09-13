@@ -9,7 +9,9 @@ const ConstructionBanner: React.FC = () => {
 
   useEffect(() => {
     // Only run this effect on client-side
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined') {
+      return;
+    }
 
     // Initial check - run after a small delay to ensure DOM is ready
     setTimeout(checkBannerState, 300);

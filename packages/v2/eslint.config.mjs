@@ -1,31 +1,32 @@
 // @ts-check
-
-import eslint from '@eslint/js';
-import { fileURLToPath } from 'url';
+import { eslintBaseConfig } from '@swiftpost/config/eslintBaseConfig.mjs';
 import { FlatCompat } from '@eslint/eslintrc';
-import { dirname } from 'path';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import js from '@eslint/js';
 
 const compat = new FlatCompat({
-  baseDirectory: __dirname,
+  baseDirectory: import.meta.dirname,
+  recommendedConfig: js.configs.recommended,
 });
 
 const eslintConfig = [
-  eslint.configs.recommended,
-  ...compat.extends('next/core-web-vitals', 'next/typescript'),
-  eslintPluginPrettierRecommended,
+  ...eslintBaseConfig,
+  ...compat.config({
+    extends: ['plugin:@next/next/recommended'],
+  }),
   {
     rules: {
       '@next/next/no-html-link-for-pages': 'warn',
       '@typescript-eslint/no-unused-vars': 'warn',
       'react/no-unescaped-entities': 'warn',
+      '@typescript-eslint/no-deprecated': 'warn',
+      '@typescript-eslint/no-misused-promises': 'warn',
+      '@typescript-eslint/require-await': 'warn',
+      '@typescript-eslint/no-unsafe-argument': 'warn',
+      '@typescript-eslint/no-unnecessary-condition': 'warn',
     },
   },
   {
-    ignores: ['node_modules', '.next', 'next-env.d.ts', 'out'],
+    ignores: ['node_modules', '.next', 'next-env.d.ts', 'out', 'old-files'],
   },
 ];
 

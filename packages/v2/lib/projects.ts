@@ -48,7 +48,9 @@ export function getAllProjectSlugs(): { params: { slug: string } }[] {
 export function getRelatedProjects(currentSlug: string, limit = 3): Project[] {
   const currentProject = getProjectBySlug(currentSlug);
 
-  if (!currentProject) return [];
+  if (!currentProject) {
+    return [];
+  }
 
   return projectsData
     .filter(

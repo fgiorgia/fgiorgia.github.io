@@ -10,18 +10,17 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
-    "@swiftpost/elysium": "*",
     "@mui/icons-material": "^7",
     "next": "^15.5.2",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },
   "peerDependencies": {
-    "@mui/material": "^7"
-  },
-  "devDependencies": {
+    "@mui/material": "^7",
+    "@swiftpost/elysium": "*",
     "@swiftpost/config": "*",
     "typescript": "*",
     "typescript-eslint": "*"
-  }
+  },
+  "devDependencies": {}
 }

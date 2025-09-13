@@ -25,7 +25,9 @@ const Header: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const toggleMenu = (): void => {
@@ -126,7 +128,9 @@ const Header: React.FC = () => {
                       'text-white bg-indigo-600'
                     : 'text-gray-500 hover:bg-gray-100'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                  }}
                 >
                   {item.label}
                 </Link>

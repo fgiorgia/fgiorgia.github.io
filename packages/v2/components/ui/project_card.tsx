@@ -117,12 +117,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
 
   // Handle navigation in the lightbox
   const handleNext = () => {
-    if (imageGallery.length <= 1) return;
+    if (imageGallery.length <= 1) {
+      return;
+    }
     setSelectedImageIndex((prevIndex) => (prevIndex + 1) % imageGallery.length);
   };
 
   const handlePrev = () => {
-    if (imageGallery.length <= 1) return;
+    if (imageGallery.length <= 1) {
+      return;
+    }
     setSelectedImageIndex(
       (prevIndex) =>
         (prevIndex - 1 + imageGallery.length) % imageGallery.length,
@@ -323,7 +327,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           project={project}
           images={imageGallery}
           selectedIndex={selectedImageIndex}
-          onClose={() => setIsLightboxOpen(false)}
+          onClose={() => {
+            setIsLightboxOpen(false);
+          }}
           onNext={handleNext}
           onPrev={handlePrev}
         />

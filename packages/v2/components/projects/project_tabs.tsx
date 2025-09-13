@@ -122,7 +122,9 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
           {showLeftArrow && (
             <button
               className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 rounded-full p-1 shadow-md text-indigo-600 hover:bg-indigo-50 transition-colors"
-              onClick={() => handleScrollButton('left')}
+              onClick={() => {
+                handleScrollButton('left');
+              }}
               aria-label="Scroll tabs left"
             >
               <ChevronLeft size={20} />
@@ -142,7 +144,9 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
                 ref={(el: HTMLButtonElement | null) => {
                   tabRefs.current[tab.id] = el;
                 }}
-                onClick={() => handleTabClick(tab.id)}
+                onClick={() => {
+                  handleTabClick(tab.id);
+                }}
                 className={`py-3 px-5 md:py-3 md:px-6 font-medium whitespace-nowrap flex-shrink-0 relative
                   ${
                     activeTab === tab.id ?
@@ -163,7 +167,9 @@ const ProjectTabs: React.FC<ProjectTabsProps> = ({ project }) => {
           {showRightArrow && (
             <button
               className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/90 rounded-full p-1 shadow-md text-indigo-600 hover:bg-indigo-50 transition-colors"
-              onClick={() => handleScrollButton('right')}
+              onClick={() => {
+                handleScrollButton('right');
+              }}
               aria-label="Scroll tabs right"
             >
               <ChevronRight size={20} />

@@ -28,6 +28,8 @@
     }
   },
   "include": [
+    "eslint.config.mjs",
+    "postcss.config.mjs",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
