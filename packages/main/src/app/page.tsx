@@ -1,7 +1,7 @@
-import SimplePageTemplate from '@/templates/SimplePageTemplate';
+import SimplePageTemplate from '@/templates/SimplePageTemplate'
 
 const Home: React.FC = () => {
-  return <SimplePageTemplate>{`Content`}</SimplePageTemplate>;
-};
+  return <SimplePageTemplate>{`Content`}</SimplePageTemplate>
+}
 
-export default Home;
+export default Home

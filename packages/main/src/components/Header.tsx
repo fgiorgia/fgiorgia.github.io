@@ -1,13 +1,13 @@
-import { staticTheme } from '@/styles/staticTheme';
-import Stack from '@swiftpost/elysium/ui/base/Stack';
+import { staticTheme } from '@/styles/staticTheme'
+import Stack from '@swiftpost/elysium/ui/base/Stack'
 import ContentFittedStack, {
   ContentFittedStackProps,
-} from '@swiftpost/elysium/ui/ContentFittedStack';
-import Logo from './Logo';
-import Menu from './Menu';
+} from '@swiftpost/elysium/ui/ContentFittedStack'
+import Logo from './Logo'
+import Menu from './Menu'
 
 interface Props {
-  contentMaxWidth: ContentFittedStackProps['contentMaxWidth'];
+  contentMaxWidth: ContentFittedStackProps['contentMaxWidth']
 }
 
 const Header: React.FC<Props> = ({ contentMaxWidth }) => {
@@ -26,8 +26,8 @@ const Header: React.FC<Props> = ({ contentMaxWidth }) => {
       </Stack>
       <Menu />
     </ContentFittedStack>
-  );
-};
+  )
+}
 
-export type HeaderProps = Props;
-export default Header;
+export type HeaderProps = Props
+export default Header

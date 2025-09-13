@@ -1,13 +1,13 @@
-'use client';
+'use client'
 
-import Text from '@swiftpost/elysium/ui/base/Text';
-import Stack from '@swiftpost/elysium/ui/base/Stack';
-import MenuIcon from '@mui/icons-material/Menu';
-import { useState } from 'react';
-import { staticTheme } from '@/styles/staticTheme';
-import Box from '@mui/material/Box';
+import Text from '@swiftpost/elysium/ui/base/Text'
+import Stack from '@swiftpost/elysium/ui/base/Stack'
+import MenuIcon from '@mui/icons-material/Menu'
+import { useState } from 'react'
+import { staticTheme } from '@/styles/staticTheme'
+import Box from '@mui/material/Box'
 
-const menuItems = ['Home', 'Blog', 'Portfolio', 'About', 'Contact'];
+const menuItems = ['Home', 'Blog', 'Portfolio', 'About', 'Contact']
 
 const MenuBar: React.FC = () => {
   return (
@@ -16,12 +16,12 @@ const MenuBar: React.FC = () => {
         <Text key={item}>{item}</Text>
       ))}
     </Stack>
-  );
-};
+  )
+}
 
 const HamburgerMenu: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const paddingSize = 2;
+  const [isOpen, setIsOpen] = useState(false)
+  const paddingSize = 2
   const MenuButton = () => (
     <MenuIcon
       sx={{
@@ -30,10 +30,10 @@ const HamburgerMenu: React.FC = () => {
         },
       }}
       onClick={() => {
-        setIsOpen(!isOpen);
+        setIsOpen(!isOpen)
       }}
     />
-  );
+  )
 
   return (
     <Stack>
@@ -64,8 +64,8 @@ const HamburgerMenu: React.FC = () => {
         </Stack>
       </Stack>
     </Stack>
-  );
-};
+  )
+}
 
 const Menu: React.FC = () => {
   return (
@@ -91,7 +91,7 @@ const Menu: React.FC = () => {
         <HamburgerMenu />
       </Box>
     </>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu
