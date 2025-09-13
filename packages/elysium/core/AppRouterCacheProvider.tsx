@@ -1,9 +1,9 @@
-import React from 'react';
+import React from 'react'
 
 import {
   AppRouterCacheProvider as MUIAppRouterCacheProvider,
   AppRouterCacheProviderProps,
-} from '@mui/material-nextjs/v15-appRouter';
+} from '@mui/material-nextjs/v15-appRouter'
 
 const AppRouterCacheProvider: React.FC<AppRouterCacheProviderProps> = ({
   children,
@@ -17,7 +17,7 @@ const AppRouterCacheProvider: React.FC<AppRouterCacheProviderProps> = ({
     >
       {children}
     </MUIAppRouterCacheProvider>
-  );
-};
+  )
+}
 
-export default AppRouterCacheProvider;
+export default AppRouterCacheProvider

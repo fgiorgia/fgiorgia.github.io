@@ -1,34 +1,34 @@
-import type { InferSlotsFromSlotProps, SxProps } from '../ui/types';
-import { spreadSx } from '../utils/styles/sxProps';
-import Stack from '../ui/base/Stack';
-import Box from '../ui/base/Box';
-import { memo } from 'react';
+import type { InferSlotsFromSlotProps, SxProps } from '../ui/types'
+import { spreadSx } from '../utils/styles/sxProps'
+import Stack from '../ui/base/Stack'
+import Box from '../ui/base/Box'
+import { memo } from 'react'
 
-const componentBaseName = 'stack-layout';
+const componentBaseName = 'stack-layout'
 
 interface SlotProps {
   mainContainer: {
-    children: React.ReactNode;
-    sx?: SxProps;
-  };
+    children: React.ReactNode
+    sx?: SxProps
+  }
   footerContainer?: {
-    children: React.ReactNode;
-    sx?: SxProps;
-  };
+    children: React.ReactNode
+    sx?: SxProps
+  }
 }
 
 interface Props {
-  slots?: Partial<InferSlotsFromSlotProps<SlotProps>>;
-  slotProps: SlotProps;
-  sx?: SxProps;
+  slots?: Partial<InferSlotsFromSlotProps<SlotProps>>
+  slotProps: SlotProps
+  sx?: SxProps
 }
 
 /**
  * A simple stack layout with an optional footer sticked at the bottom.
  */
 const StackLayout: React.FC<Props> = ({ slots, slotProps, sx }) => {
-  const MainContainer = slots?.mainContainer ?? Box;
-  const FooterContainer = slots?.footerContainer ?? Box;
+  const MainContainer = slots?.mainContainer ?? Box
+  const FooterContainer = slots?.footerContainer ?? Box
 
   return (
     <Stack
@@ -53,8 +53,8 @@ const StackLayout: React.FC<Props> = ({ slots, slotProps, sx }) => {
         </FooterContainer>
       )}
     </Stack>
-  );
-};
+  )
+}
 
-export type StackLayoutProps = Props;
-export default memo(StackLayout);
+export type StackLayoutProps = Props
+export default memo(StackLayout)

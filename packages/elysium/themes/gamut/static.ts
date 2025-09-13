@@ -1,4 +1,4 @@
-const spacing = (factor: number) => `${0.5 * factor}rem`;
+const spacing = (factor: number) => `${0.5 * factor}rem`
 
 const breakpoints = {
   values: {
@@ -8,7 +8,7 @@ const breakpoints = {
     lg: 1200,
     xl: 1536,
   },
-} as const;
+} as const
 
 export const staticThemeOptions = {
   spacing,
@@ -23,4 +23,4 @@ export const staticThemeOptions = {
   typography: {
     fontFamily: 'var(--font-roboto)',
   },
-} as const;
+} as const

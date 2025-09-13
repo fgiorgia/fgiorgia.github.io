@@ -1,15 +1,15 @@
-import BaseLink from '@swiftpost/elysium/ui/base/Link';
-import NextLink from 'next/link';
-import type { SxProps } from '../ui/types';
-import { spreadSx } from '../utils/styles/sxProps';
+import BaseLink from '@swiftpost/elysium/ui/base/Link'
+import NextLink from 'next/link'
+import type { SxProps } from '../ui/types'
+import { spreadSx } from '../utils/styles/sxProps'
 
 interface Props {
-  href: string;
-  children: React.ReactNode;
-  inheritStyle?: boolean;
-  external?: boolean;
-  blank?: boolean;
-  sx?: SxProps;
+  href: string
+  children: React.ReactNode
+  inheritStyle?: boolean
+  external?: boolean
+  blank?: boolean
+  sx?: SxProps
 }
 
 const Link: React.FC<Props> = ({
@@ -40,8 +40,8 @@ const Link: React.FC<Props> = ({
     >
       {children}
     </BaseLink>
-  );
-};
+  )
+}
 
-export type LinkProps = Props;
-export default Link;
+export type LinkProps = Props
+export default Link
