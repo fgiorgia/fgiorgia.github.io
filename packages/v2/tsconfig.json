@@ -32,7 +32,7 @@
     "eslint.config.mjs",
     "postcss.config.mjs",
     "tailwind.config.js",
-    "data/skills.js",
+    "data/skills.ts",
     "lib/mdx.js",
     "next.config.mjs",
     "next-sitemap.config.js",
