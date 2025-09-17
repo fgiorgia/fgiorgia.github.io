@@ -6,8 +6,13 @@ import Document, {
   DocumentContext,
   DocumentProps,
 } from 'next/document';
+import {
+  DocumentHeadTags,
+  DocumentHeadTagsProps,
+  documentGetInitialProps,
+} from '@mui/material-nextjs/v15-pagesRouter';
 
-function MyDocument(_props: DocumentProps) {
+function MyDocument(props: DocumentProps & DocumentHeadTagsProps) {
   return (
     <Html lang="en">
       <Head>
@@ -52,6 +57,7 @@ function MyDocument(_props: DocumentProps) {
         <link rel="shortcut icon" href="/favicon//favicon.ico" />
         <meta name="msapplication-TileColor" content="#4f46e5" />
         <meta name="theme-color" content="#ffffff" />
+        <DocumentHeadTags {...props} />
       </Head>
       <body>
         <Main />
@@ -63,7 +69,9 @@ function MyDocument(_props: DocumentProps) {
 
 MyDocument.getInitialProps = async function (ctx: DocumentContext) {
   const initialProps = await Document.getInitialProps(ctx);
-  return { ...initialProps };
+  // @ts-expect-error FIXME: this is correct and most likely caused by type mismatches
+  const finalProps = await documentGetInitialProps(ctx);
+  return { ...initialProps, ...finalProps };
 };
 
 export default MyDocument;
