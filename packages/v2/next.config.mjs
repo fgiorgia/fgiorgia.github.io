@@ -2,6 +2,7 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  transpilePackages: ['@swiftpost/elysium'],
   reactStrictMode: true,
   images: {
     unoptimized: true,
