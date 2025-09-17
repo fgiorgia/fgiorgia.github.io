@@ -1,9 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/utils';
 import { Menu, X, Download } from 'lucide-react';
 import { NavItem } from '@/types';
+import Box from '@swiftpost/elysium/ui/base/Box';
+import IconButton from '@swiftpost/elysium/ui/base/IconButton';
+import Button from '@swiftpost/elysium/ui/base/Button';
+import Stack from '@swiftpost/elysium/ui/base/Stack';
+import Text from '@swiftpost/elysium/ui/base/Text';
+import Link from '@swiftpost/elysium/ui/base/Link';
+import { colors } from '@/styles/colors';
+import { compat } from '@/styles/legacyTheme';
+import { fontWeights, unit } from '@/styles/staticTheme';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -35,17 +44,47 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav
-      className={`sticky top-0 z-50 transition-all duration-300 bg-white shadow-md`}
+    <Box
+      component="nav"
+      sx={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 50,
+        transition: 'all 300ms',
+        bgcolor: colors.white,
+        boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
+      }}
     >
-      <div className="container-wide">
-        <div className="flex justify-between h-16 items-center">
-          <div className="flex items-center">
-            <Link href="/">
-              <div className="flex items-center">
+      <Box sx={compat.containerWide}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ height: unit(8) }}
+        >
+          <Stack direction="row" alignItems="center">
+            <NextLink href="/">
+              <Stack direction="row" alignItems="center">
                 {/* Logo Image */}
-                <div className="flex justify-center mb-4">
-                  <div className="relative w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full overflow-hidden mr-2 sm:mr-3">
+                <Stack
+                  direction="row"
+                  justifyContent="center"
+                  sx={{ marginBottom: unit(2) }}
+                >
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      width: { xs: unit(4), sm: unit(4.5), md: unit(5) }, // w-8=2rem, sm:w-9=2.25rem, md:w-10=2.5rem
+                      height: { xs: unit(4), sm: unit(4.5), md: unit(5) }, // same as width
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      mr: {
+                        xs: unit(1),
+                        sm: unit(1.5),
+                      }, // mr-2, sm:mr-3
+                      flexShrink: 0,
+                    }}
+                  >
                     <Image
                       src={getAssetPath('/images/GF-Data-Analytics.webp')}
                       alt="GF Analytics Logo"
@@ -55,103 +94,199 @@ const Header: React.FC = () => {
                       priority
                       unoptimized
                     />
-                  </div>
-                  <span
-                    className={`text-xl font-bold flex items-center ${
-                      isScrolled || isMenuOpen ? 'text-indigo-600' : (
-                        'text-indigo-600'
-                      )
-                    }`}
+                  </Box>
+                  <Text
+                    component="span"
+                    sx={{
+                      fontSize: unit(2.5),
+                      fontWeight: fontWeights.bold, // font-bold
+                      display: 'flex',
+                      alignItems: 'center',
+                      color: colors.indigo[600],
+                    }}
                   >
                     GF Analytics
-                  </span>
-                </div>
-              </div>
-            </Link>
-          </div>
+                  </Text>
+                </Stack>
+              </Stack>
+            </NextLink>
+          </Stack>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <Box
+            sx={{
+              display: { xs: 'none', md: 'flex' },
+              alignItems: 'center',
+              gap: unit(4),
+            }}
+          >
             {navItems.map((item) => (
-              <Link
+              <Box
                 key={item.href}
+                component={NextLink}
                 href={item.href}
-                className={`font-medium ${
-                  item.active ?
-                    isScrolled ? 'text-indigo-600'
-                    : 'text-white'
-                  : 'text-gray-500 hover:text-indigo-600'
-                }`}
+                sx={{
+                  fontWeight: fontWeights.medium,
+                  textDecoration: 'none',
+                  color:
+                    item.active ?
+                      isScrolled ? colors.indigo[600]
+                      : colors.white
+                    : colors.gray[500],
+                  '&:hover': {
+                    color: !item.active ? colors.indigo[600] : undefined,
+                  },
+                }}
               >
                 {item.label}
-              </Link>
+              </Box>
             ))}
-
             {/* CV Button */}
-            <a
+            <Link
               href={getAssetPath('/CV_Data_Analyst_Giorgia_Faedda.pdf')}
-              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200"
+              // className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200"
               target="_blank"
               rel="noopener noreferrer"
               download
+              sx={{
+                display: 'inline-flex', // inline-flex
+                alignItems: 'center', // items-center
+                paddingX: unit(2), // px-4 (unit(2) => 1rem)
+                paddingY: unit(1), // py-2 (unit(1) => 0.5rem)
+                backgroundColor: colors.indigo[600], // bg-indigo-600
+                color: 'white', // text-white
+                fontWeight: 500, // font-medium
+                textDecoration: 'none',
+                borderRadius: unit(0.75), // rounded-md (~0.375rem; theme borderRadius(1))
+                transition: (theme) =>
+                  theme.transitions.create('background-color', {
+                    // transition-colors
+                    duration: 200, // duration-200
+                  }),
+                '&:hover': {
+                  backgroundColor: colors.indigo[700], // hover:bg-indigo-700
+                },
+              }}
             >
-              <Download size={18} className="mr-2" />
+              <Box
+                component={Download}
+                size={unit(2.25)}
+                sx={{ marginRight: unit(1) }}
+              />
               CV
-            </a>
-          </div>
+            </Link>
+          </Box>
 
           {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
-            <button
+          <Stack // flex
+            direction="row"
+            alignItems="center" // items-center
+            sx={{
+              display: { md: 'none' }, // md:hidden
+            }}
+          >
+            <IconButton
               onClick={toggleMenu}
-              className={`inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-indigo-600`}
               aria-expanded={isMenuOpen}
+              sx={{
+                padding: unit(1), // p-2
+                color: colors.gray[500], // text-gray-500
+                '&:hover': {
+                  color: colors.indigo[600], // hover:text-indigo-600
+                },
+              }}
             >
-              <span className="sr-only">Open main menu</span>
+              <span style={{ position: 'absolute', left: '-9999px' }}>
+                Open main menu
+              </span>
               {isMenuOpen ?
-                <X size={24} />
-              : <Menu size={24} />}
-            </button>
-          </div>
-        </div>
+                <X size={unit(3)} />
+              : <Menu size={unit(3)} />}
+            </IconButton>
+          </Stack>
+        </Stack>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white shadow-lg">
-            <div className="pt-2 pb-3 space-y-1 px-4">
+          <Box
+            sx={{
+              display: { xs: 'block', md: 'none' }, // md:hidden
+              backgroundColor: colors.white, // bg-white
+              ...compat.shadowLg,
+            }}
+          >
+            <Box
+              sx={{
+                paddingTop: unit(1), // pt-2
+                paddingBottom: unit(1.5), // pb-3
+                paddingX: unit(2), // px-4
+                paddingRight: unit(4), // px-4
+                '& > *:not(:last-child)': {
+                  marginBottom: unit(0.5), // space-y-1
+                },
+              }}
+            >
               {navItems.map((item) => (
-                <Link
+                <Box
                   key={item.href}
+                  component={NextLink}
                   href={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium ${
-                    item.active ?
-                      'text-white bg-indigo-600'
-                    : 'text-gray-500 hover:bg-gray-100'
-                  }`}
                   onClick={() => {
                     setIsMenuOpen(false);
                   }}
+                  sx={{
+                    display: 'block', // block
+                    paddingX: unit(1.5), // px-3
+                    paddingY: unit(1), // py-2
+                    borderRadius: unit(2), // rounded-md
+                    fontSize: '1rem', // text-base
+                    fontWeight: fontWeights.medium, // font-medium
+                    color: item.active ? colors.white : colors.gray[500], // text-white or text-gray-500
+                    backgroundColor:
+                      item.active ? colors.indigo[600] : 'transparent', // bg-indigo-600
+                    textDecoration: 'none',
+                    '&:hover': {
+                      backgroundColor:
+                        !item.active ? colors.gray[100] : undefined, // hover:bg-gray-100
+                    },
+                  }}
                 >
                   {item.label}
-                </Link>
+                </Box>
               ))}
 
               {/* CV Button */}
-              <a
+              <Button
                 href={getAssetPath('/CV_Data_Analyst_Giorgia_Faedda.pdf')}
-                className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white font-medium rounded-md hover:bg-indigo-700 transition-colors duration-200"
                 target="_blank"
                 rel="noopener noreferrer"
                 download
+                sx={{
+                  display: 'inline-flex', // inline-flex
+                  alignItems: 'center', // items-center
+                  paddingX: unit(2), // px-4
+                  paddingY: unit(1), // py-2
+                  backgroundColor: colors.indigo[600], // bg-indigo-600
+                  color: colors.white, // text-white
+                  fontSize: unit(2),
+                  borderRadius: unit(0.75), // rounded-md
+                  textTransform: 'none', // preserve case
+                  transition: 'background-color 0.2s', // transition-colors duration-200
+                  '&:hover': {
+                    backgroundColor: colors.indigo[700], // hover:bg-indigo-700
+                  },
+                }}
               >
-                <Download size={18} className="mr-2" />
-                CV
-              </a>
-            </div>
-          </div>
+                <Stack direction="row" spacing={unit(1)} alignItems="center">
+                  <Download size={unit(2.25)} />
+                  <Text fontWeight={fontWeights.medium}>CV</Text>
+                </Stack>
+              </Button>
+            </Box>
+          </Box>
         )}
-      </div>
-    </nav>
+      </Box>
+    </Box>
   );
 };
 
