@@ -6,6 +6,9 @@ import { defaultSEO } from '../lib/seo';
 import CookieConsent from '../components/ui/cookie_consent';
 import '../styles/globals.css';
 
+import ThemeProvider from '@swiftpost/elysium/core/ThemeProvider';
+import { theme, mainFont } from '@/styles/theme';
+
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <AppCacheProvider {...pageProps}>
@@ -13,7 +16,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
       {process.env.NEXT_PUBLIC_GA_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
       )}
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <main className={mainFont.variable}>
+          <Component {...pageProps} />
+        </main>
+      </ThemeProvider>
       <CookieConsent />
     </AppCacheProvider>
   );
