@@ -69,7 +69,6 @@ function MyDocument(props: DocumentProps & DocumentHeadTagsProps) {
 
 MyDocument.getInitialProps = async function (ctx: DocumentContext) {
   const initialProps = await Document.getInitialProps(ctx);
-  // @ts-expect-error FIXME: this is correct and most likely caused by type mismatches
   const finalProps = await documentGetInitialProps(ctx);
   return { ...initialProps, ...finalProps };
 };

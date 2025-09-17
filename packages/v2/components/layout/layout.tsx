@@ -29,7 +29,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           minHeight: '0',
         }}
       >
-        {/* @ts-expect-error This is just a React versions mismatch */}
         {children}
       </Box>
       <Footer />

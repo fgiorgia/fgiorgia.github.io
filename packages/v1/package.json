@@ -20,18 +20,15 @@
     "react-dom": "^18"
   },
   "peerDependencies": {
-    "@types/node": "*",
-    "@types/react": "*",
-    "@types/react-dom": "*",
+    "@swiftpost/config": "*",
     "eslint": "*",
     "eslint-config-next": "*",
-    "next": "*",
-    "react": "*",
-    "react-dom": "*",
     "typescript": "*"
   },
   "devDependencies": {
-    "@swiftpost/config": "*",
+    "@types/node": "22",
+    "@types/react": "19",
+    "@types/react-dom": "19",
     "file-loader": "^6.2.0",
     "postcss": "^8",
     "sass": "^1.79.3",
