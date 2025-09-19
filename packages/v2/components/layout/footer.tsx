@@ -2,7 +2,10 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/utils';
-import { Mail, Github, Linkedin } from 'lucide-react';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailIcon from '@mui/icons-material/Mail';
+import { unit } from '@/styles/staticTheme';
 
 interface SocialLink {
   name: string;
@@ -18,19 +21,19 @@ const Footer: React.FC = () => {
     {
       name: 'GitHub',
       href: 'https://github.com/fgiorgia',
-      icon: <Github size={20} />,
+      icon: <GitHubIcon sx={{ fontSize: unit(2.5) }} />,
       label: 'GitHub Profile',
     },
     {
       name: 'LinkedIn',
       href: 'https://www.linkedin.com/in/fgiorgia/',
-      icon: <Linkedin size={20} />,
+      icon: <LinkedInIcon sx={{ fontSize: unit(2.5) }} />,
       label: 'LinkedIn Profile',
     },
     {
       name: 'Email',
       href: 'mailto:giorgia.faedda@gfanalytics.se',
-      icon: <Mail size={20} />,
+      icon: <MailIcon sx={{ fontSize: unit(2.5) }} />,
       label: 'Email Me',
     },
   ];
@@ -94,10 +97,12 @@ const Footer: React.FC = () => {
 
           <div className="mt-4 md:mt-0 flex space-x-4">
             {footerLinks.map((link) => (
-              <Link key={link.name} href={link.href} legacyBehavior>
-                <a className="text-sm text-gray-400 hover:text-white transition-colors">
-                  {link.name}
-                </a>
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                {link.name}
               </Link>
             ))}
           </div>

@@ -1,9 +1,13 @@
-// pages/contact.tsx
 import { useState } from 'react';
 import type { NextPage } from 'next';
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter } from 'lucide-react';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo/SEO';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailIconOutlined from '@mui/icons-material/MailOutlined';
+import MailIcon from '@mui/icons-material/Mail';
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+import { unit } from '@/styles/staticTheme';
 
 const Contact: NextPage = () => {
   // Form state
@@ -231,7 +235,10 @@ const Contact: NextPage = () => {
                 </h2>
                 <div className="space-y-4">
                   <div className="flex items-start">
-                    <Mail className="text-indigo-600 mt-1 mr-3" size={20} />
+                    <MailIconOutlined
+                      className="text-indigo-600 mt-1 mr-3"
+                      sx={{ fontSize: unit(2.5) }}
+                    />
                     <div>
                       <h3 className="font-medium">Email</h3>
                       <a
@@ -244,7 +251,10 @@ const Contact: NextPage = () => {
                   </div>
 
                   <div className="flex items-start">
-                    <MapPin className="text-indigo-600 mt-1 mr-3" size={20} />
+                    <PlaceOutlinedIcon
+                      className="text-indigo-600 mt-1 mr-3"
+                      sx={{ fontSize: unit(2.5) }}
+                    />
                     <div>
                       <h3 className="font-medium">Location</h3>
                       <p className="text-gray-600">Malmö, Sweden</p>
@@ -263,7 +273,10 @@ const Contact: NextPage = () => {
                     rel="noopener noreferrer"
                     className="flex items-center p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
                   >
-                    <Linkedin className="text-blue-700 mr-2" size={20} />
+                    <LinkedInIcon
+                      className="text-blue-700 mr-2"
+                      sx={{ fontSize: unit(2.5) }}
+                    />
                     <span>LinkedIn</span>
                   </a>
 
@@ -273,7 +286,10 @@ const Contact: NextPage = () => {
                     rel="noopener noreferrer"
                     className="flex items-center p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
                   >
-                    <Github className="text-gray-800 mr-2" size={20} />
+                    <GitHubIcon
+                      className="text-gray-800 mr-2"
+                      sx={{ fontSize: unit(2.5) }}
+                    />
                     <span>GitHub</span>
                   </a>
 
@@ -281,7 +297,10 @@ const Contact: NextPage = () => {
                     href="mailto:giorgia.faedda@gfanalytics.se"
                     className="flex items-center p-3 bg-gray-50 rounded-md hover:bg-gray-100 transition-colors"
                   >
-                    <Mail className="text-indigo-600 mr-2" size={20} />
+                    <MailIcon
+                      className="text-indigo-600 mr-2"
+                      sx={{ fontSize: unit(2.5) }}
+                    />
                     <span>Email</span>
                   </a>
                 </div>

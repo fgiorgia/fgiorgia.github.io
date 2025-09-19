@@ -1,9 +1,11 @@
 import React from 'react';
-import { Mail, Github, Linkedin } from 'lucide-react';
 import Image from 'next/image';
 import { getAssetPath } from '@/lib/utils';
 import Button from '../ui/button';
-import { colors } from '@/styles/colors';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailIcon from '@mui/icons-material/Mail';
+import { unit } from '@/styles/staticTheme';
 
 const Hero: React.FC = () => {
   return (
@@ -74,7 +76,7 @@ const Hero: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Github size={20} />
+                    <GitHubIcon sx={{ fontSize: unit(2.5) }} />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/fgiorgia/"
@@ -83,14 +85,14 @@ const Hero: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Linkedin size={20} />
+                    <LinkedInIcon sx={{ fontSize: unit(2.5) }} />
                   </a>
                   <a
                     href="mailto:giorgia.faedda@gfanalytics.se"
                     className="text-indigo-200 hover:text-white transition-colors"
                     aria-label="Email"
                   >
-                    <Mail size={20} />
+                    <MailIcon sx={{ fontSize: unit(2.5) }} />
                   </a>
                 </div>
               </div>

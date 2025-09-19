@@ -1,7 +1,8 @@
-// pages/about.tsx
 import type { NextPage } from 'next';
-import Image from 'next/image';
-import { Linkedin, Github, Mail } from 'lucide-react';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailIcon from '@mui/icons-material/Mail';
+import { unit } from '@/styles/staticTheme';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo/SEO';
 
@@ -54,7 +55,7 @@ const About: NextPage = () => {
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <Linkedin size={24} />
+                  <LinkedInIcon sx={{ fontSize: unit(3) }} />
                 </a>
                 <a
                   href="https://github.com/fgiorgia"
@@ -63,14 +64,14 @@ const About: NextPage = () => {
                   rel="noopener noreferrer"
                   aria-label="GitHub"
                 >
-                  <Github size={24} />
+                  <GitHubIcon sx={{ fontSize: unit(3) }} />
                 </a>
                 <a
                   href="mailto:giorgia.faedda@gfanalytics.se"
                   className="text-indigo-600 hover:text-indigo-800"
                   aria-label="Email"
                 >
-                  <Mail size={24} />
+                  <MailIcon sx={{ fontSize: unit(3) }} />
                 </a>
               </div>
             </div>
