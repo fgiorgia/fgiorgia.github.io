@@ -1,14 +1,28 @@
 import React from 'react';
-import { CardProps } from '@/types';
+import Box from '@swiftpost/elysium/ui/base/Box';
+import { colors } from '@/styles/colors';
+import { unit } from '@/styles/staticTheme';
+import { compat } from '@/styles/legacyTheme';
 
-const Card: React.FC<CardProps> = ({ children, className = '', ...props }) => {
+export interface CardProps {
+  children: React.ReactNode;
+  /** @deprecated Only kept for compatibility */
+  className?: string;
+}
+
+const Card: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div
-      className={`bg-white rounded-lg overflow-hidden shadow-md ${className}`}
-      {...props}
+    <Box
+      className={className}
+      sx={{
+        bgcolor: colors.white, // bg-white
+        borderRadius: unit(1), // rounded-lg
+        overflow: 'hidden', // overflow-hidden
+        ...compat.shadowMd, // shadow-md
+      }}
     >
       {children}
-    </div>
+    </Box>
   );
 };
 

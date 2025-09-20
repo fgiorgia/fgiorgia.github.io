@@ -70,11 +70,6 @@ export interface ButtonProps {
   disabled?: boolean;
 }
 
-export interface CardProps {
-  children: ReactNode;
-  className?: string;
-}
-
 export interface ProjectCardProps {
   project: Project;
   className?: string;
