@@ -51,7 +51,7 @@ const Header: React.FC = () => {
         top: 0,
         zIndex: 50,
         transition: 'all 300ms',
-        bgcolor: colors.white,
+        backgroundColor: colors.white,
         boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
       }}
     >

@@ -14,7 +14,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       direction="column"
       sx={{
         minHeight: '100vh',
-        bgcolor: colors.gray[50],
+        backgroundColor: colors.gray[50],
         color: colors.gray[800],
       }}
     >

@@ -1,4 +1,5 @@
-const spacing = (factor: number) => `${0.5 * factor}rem`;
+export type UnitValue = `${number}rem`;
+const unit = (factor: number): UnitValue => `${0.5 * factor}rem`;
 
 const breakpoints = {
   values: {
@@ -11,7 +12,7 @@ const breakpoints = {
 } as const;
 
 export const staticThemeOptions = {
-  spacing,
+  spacing: unit,
   breakpoints,
   components: {
     MuiUseMediaQuery: {

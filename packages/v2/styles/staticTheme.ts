@@ -1,4 +1,5 @@
 import { staticThemeOptions } from '@swiftpost/elysium/themes/gamut/static';
+export type { UnitValue } from '@swiftpost/elysium/themes/gamut/static';
 
 const breakpoints = {
   values: {

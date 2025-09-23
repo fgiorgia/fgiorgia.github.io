@@ -1,178 +1,353 @@
 // components/projects/BiProject.tsx
 import React from 'react';
-import Image from 'next/image';
-import { getAssetPath } from '@/lib/utils';
 import Card from '../ui/card';
+import Box from '@swiftpost/elysium/ui/base/Box';
+import Text from '@swiftpost/elysium/ui/base/Text';
+import Stack from '@swiftpost/elysium/ui/base/Stack';
 import { ProjectContentProps } from '@/types';
+import { colors } from '@/styles/colors';
+import { unit, fontWeights } from '@/styles/staticTheme';
+
+// BI uses green color scheme
+const colorScheme = {
+  primary: colors.green[800],
+  secondary: colors.green[700],
+  bg: colors.green[50],
+  basicBorder: colors.gray[800],
+  accentBorder: colors.green[200],
+  accent: colors.green[100],
+  bullet: colors.green[600],
+};
+
+const dataProcessSteps = [
+  {
+    title: 'Requirements Gathering',
+    detail: 'Understanding KPIs and business questions',
+  },
+  {
+    title: 'Data Modeling',
+    detail: 'Designing the data architecture',
+  },
+  {
+    title: 'Measure Development',
+    detail: 'Creating calculated metrics and KPIs',
+  },
+  {
+    title: 'Visualization Design',
+    detail: 'Creating intuitive and informative visuals',
+  },
+  {
+    title: 'Deployment & User Training',
+    detail: 'Publishing and onboarding stakeholders',
+  },
+];
+
+const SectionTitle: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Text
+      component="h2"
+      sx={{
+        fontSize: unit(3), // text-2xl
+        fontWeight: fontWeights.bold, // font-bold
+        color: colorScheme.primary, // text-[colorScheme.primary]
+        marginBottom: unit(2.5), // mb-6
+      }}
+    >
+      {children}
+    </Text>
+  );
+};
+
+const SubSectionTitle: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
+  return (
+    <Text
+      component="h3"
+      sx={{
+        fontSize: unit(2.5), // text-xl
+        fontWeight: 600, // font-semibold
+        color: colorScheme.primary, // text-[colorScheme.primary]
+        marginBottom: unit(2), // mb-4
+      }}
+    >
+      {children}
+    </Text>
+  );
+};
 
 const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
-  // BI uses green color scheme
-  const colorScheme = {
-    primary: 'text-green-800',
-    secondary: 'text-green-700',
-    bg: 'bg-green-50',
-    border: 'border-green-200',
-    accent: 'bg-green-100',
-    bullet: 'text-green-600',
-  };
-
   return (
-    <div className="space-y-8">
-      <Card className={`p-8 ${colorScheme.bg} border ${colorScheme.border}`}>
-        <h2 className={`text-2xl font-bold ${colorScheme.primary} mb-6`}>
-          Business Intelligence Dashboard
-        </h2>
+    <Stack spacing={unit(8)}>
+      <Card
+        padding={unit(4)} // p-8
+        borderWidthPx={1} // border
+        borderColor={colorScheme.accentBorder} // border-green-200
+      >
+        <SectionTitle>Business Intelligence Dashboard</SectionTitle>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h3 className={`text-xl font-semibold ${colorScheme.primary} mb-4`}>
-              BI Tools Expertise
-            </h3>
-            <ul className="list-disc pl-6 text-gray-600 space-y-2">
-              <li className="flex items-start">
-                <span className={`${colorScheme.bullet} mr-2`}>•</span>
-                <span>
-                  <span className="font-semibold">Power BI</span>: DAX formulas,
-                  calculated measures, custom visuals
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className={`${colorScheme.bullet} mr-2`}>•</span>
-                <span>
-                  <span className="font-semibold">Tableau</span>: Interactive
-                  dashboards, calculated fields, parameters
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className={`${colorScheme.bullet} mr-2`}>•</span>
-                <span>
-                  <span className="font-semibold">Looker</span>: LookML
-                  modeling, data exploration
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className={`${colorScheme.bullet} mr-2`}>•</span>
-                <span>
-                  <span className="font-semibold">Data Modeling</span>: Star
-                  schema design, relationships
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className={`${colorScheme.bullet} mr-2`}>•</span>
-                <span>
-                  <span className="font-semibold">ETL Processes</span>: Data
-                  transformation and preparation
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className={`text-xl font-semibold ${colorScheme.primary} mb-4`}>
-              Dashboard Development Process
-            </h3>
-            <div
-              className={`relative pl-8 space-y-6 before:absolute before:left-3 before:top-0 before:h-full before:border-l-2 before:${colorScheme.border}`}
+        <Box
+          sx={{
+            display: 'grid', // grid
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, // grid-cols-1 md:grid-cols-2
+            gap: unit(4), // gap-8
+          }}
+        >
+          <Box>
+            <SubSectionTitle>BI Tools Expertise</SubSectionTitle>
+            <Stack
+              component="ul"
+              spacing={unit(1)}
+              sx={{
+                listStyleType: 'disc', // list-disc
+                paddingLeft: '1.5rem', // pl-6
+                color: colors.gray[600], // text-gray-600
+              }}
             >
-              <div className="relative">
-                <div
-                  className={`absolute left-[-32px] top-0 w-6 h-6 ${colorScheme.bg} rounded-full flex items-center justify-center`}
+              <Box
+                component="li"
+                sx={{
+                  display: 'flex', // flex
+                  alignItems: 'flex-start', // items-start
+                }}
+              >
+                <Box
+                  component="span"
+                  sx={{
+                    color: colorScheme.bullet, // text-[colorScheme.bullet]
+                    marginRight: '0.5rem', // mr-2
+                  }}
                 >
-                  <div
-                    className={`w-3 h-3 ${colorScheme.accent} rounded-full`}
-                  ></div>
-                </div>
-                <h4 className="text-lg font-medium text-gray-800">
-                  Requirements Gathering
-                </h4>
-                <p className="text-gray-600 text-sm mt-1">
-                  Understanding KPIs and business questions
-                </p>
-              </div>
+                  •
+                </Box>
+                <Text component="span">
+                  <Text
+                    component="span"
+                    sx={{
+                      fontWeight: 600, // font-semibold
+                    }}
+                  >
+                    {' '}
+                    Power BI
+                  </Text>
+                  : DAX formulas, calculated measures, custom visuals
+                </Text>
+              </Box>
 
-              <div className="relative">
-                <div
-                  className={`absolute left-[-32px] top-0 w-6 h-6 ${colorScheme.bg} rounded-full flex items-center justify-center`}
+              <Box
+                component="li"
+                sx={{
+                  display: 'flex', // flex
+                  alignItems: 'flex-start', // items-start
+                }}
+              >
+                <Box
+                  component="span"
+                  sx={{
+                    color: colorScheme.bullet, // text-[colorScheme.bullet]
+                    marginRight: '0.5rem', // mr-2
+                  }}
                 >
-                  <div
-                    className={`w-3 h-3 ${colorScheme.accent} rounded-full`}
-                  ></div>
-                </div>
-                <h4 className="text-lg font-medium text-gray-800">
-                  Data Modeling
-                </h4>
-                <p className="text-gray-600 text-sm mt-1">
-                  Designing the data architecture
-                </p>
-              </div>
+                  •
+                </Box>
+                <Text component="span">
+                  <Text component="span" sx={{ fontWeight: 600 }}>
+                    {' '}
+                    {/* font-semibold */}
+                    Tableau
+                  </Text>
+                  : Interactive dashboards, calculated fields, parameters
+                </Text>
+              </Box>
 
-              <div className="relative">
-                <div
-                  className={`absolute left-[-32px] top-0 w-6 h-6 ${colorScheme.bg} rounded-full flex items-center justify-center`}
+              <Box
+                component="li"
+                sx={{
+                  display: 'flex', // flex
+                  alignItems: 'flex-start', // items-start
+                }}
+              >
+                <Box
+                  component="span"
+                  sx={{
+                    color: colorScheme.bullet, // text-[colorScheme.bullet]
+                    marginRight: '0.5rem', // mr-2
+                  }}
                 >
-                  <div
-                    className={`w-3 h-3 ${colorScheme.accent} rounded-full`}
-                  ></div>
-                </div>
-                <h4 className="text-lg font-medium text-gray-800">
-                  Measure Development
-                </h4>
-                <p className="text-gray-600 text-sm mt-1">
-                  Creating calculated metrics and KPIs
-                </p>
-              </div>
+                  •
+                </Box>
+                <Text component="span">
+                  <Text component="span" sx={{ fontWeight: 600 }}>
+                    {' '}
+                    {/* font-semibold */}
+                    Looker
+                  </Text>
+                  : LookML modeling, data exploration
+                </Text>
+              </Box>
 
-              <div className="relative">
-                <div
-                  className={`absolute left-[-32px] top-0 w-6 h-6 ${colorScheme.bg} rounded-full flex items-center justify-center`}
+              <Box
+                component="li"
+                sx={{
+                  display: 'flex', // flex
+                  alignItems: 'flex-start', // items-start
+                }}
+              >
+                <Box
+                  component="span"
+                  sx={{
+                    color: colorScheme.bullet, // text-[colorScheme.bullet]
+                    marginRight: '0.5rem', // mr-2
+                  }}
                 >
-                  <div
-                    className={`w-3 h-3 ${colorScheme.accent} rounded-full`}
-                  ></div>
-                </div>
-                <h4 className="text-lg font-medium text-gray-800">
-                  Visualization Design
-                </h4>
-                <p className="text-gray-600 text-sm mt-1">
-                  Creating intuitive and informative visuals
-                </p>
-              </div>
+                  •
+                </Box>
+                <Text component="span">
+                  <Text component="span" sx={{ fontWeight: 600 }}>
+                    {' '}
+                    {/* font-semibold */}
+                    Data Modeling
+                  </Text>
+                  : Star schema design, relationships
+                </Text>
+              </Box>
 
-              <div className="relative">
-                <div
-                  className={`absolute left-[-32px] top-0 w-6 h-6 ${colorScheme.bg} rounded-full flex items-center justify-center`}
+              <Box
+                component="li"
+                sx={{
+                  display: 'flex', // flex
+                  alignItems: 'flex-start', // items-start
+                }}
+              >
+                <Box
+                  component="span"
+                  sx={{
+                    color: colorScheme.bullet, // text-[colorScheme.bullet]
+                    marginRight: '0.5rem', // mr-2
+                  }}
                 >
-                  <div
-                    className={`w-3 h-3 ${colorScheme.accent} rounded-full`}
-                  ></div>
-                </div>
-                <h4 className="text-lg font-medium text-gray-800">
-                  Deployment & User Training
-                </h4>
-                <p className="text-gray-600 text-sm mt-1">
-                  Publishing and onboarding stakeholders
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+                  •
+                </Box>
+                <Text component="span">
+                  <Text
+                    component="span"
+                    sx={{
+                      fontWeight: 600, // font-semibold
+                    }}
+                  >
+                    {' '}
+                    ETL Processes
+                  </Text>
+                  : Data transformation and preparation
+                </Text>
+              </Box>
+            </Stack>
+          </Box>
 
-        <div className="mt-8">
-          <h3 className={`text-xl font-semibold ${colorScheme.primary} mb-4`}>
-            BI Project Approach
-          </h3>
-          <div
-            className={`${colorScheme.accent} border-l-4 ${colorScheme.border} p-4 rounded`}
+          <Box>
+            <SubSectionTitle>Dashboard Development Process</SubSectionTitle>
+            <Stack
+              spacing={
+                unit(3.25) // space-y-6
+              }
+              sx={{
+                position: 'relative', // relative
+                paddingLeft: unit(4), // pl-8
+                '&::before': {
+                  content: '""',
+                  position: 'absolute', // before:absolute
+                  left: unit(1.5), // before:left-3
+                  top: 0, // before:top-0
+                  height: '100%', // before:h-full
+                  borderLeft: `2px solid ${colorScheme.basicBorder}`, // before:border-l-2 before:[colorScheme.border]
+                },
+              }}
+            >
+              {dataProcessSteps.map(({ title, detail }) => (
+                <React.Fragment key={title}>
+                  <Box
+                    sx={{
+                      position: 'relative', // relative
+                    }}
+                  >
+                    {' '}
+                    <Box
+                      sx={{
+                        position: 'absolute', // absolute
+                        left: '-32px', // left-[-32px]
+                        top: 0, // top-0
+                        width: unit(3), // w-6
+                        height: unit(3), // h-6
+                        backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
+                        borderRadius: '100%', // rounded-full
+                        display: 'flex', // flex
+                        alignItems: 'center', // items-center
+                        justifyContent: 'center', // justify-center
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: unit(1.5), // w-3
+                          height: unit(1.5), // h-3
+                          backgroundColor: colorScheme.accent, // bg-[colorScheme.accent]
+                          borderRadius: '100%', // rounded-full
+                        }}
+                      />
+                    </Box>
+                    <Text
+                      component="h4"
+                      sx={{
+                        fontSize: unit(2.25), // text-lg
+                        fontWeight: fontWeights.medium, // font-medium
+                        color: colors.gray[800], // text-gray-800
+                        marginBottom: unit(0.25),
+                      }}
+                    >
+                      {title}
+                    </Text>
+                    <Text
+                      component="p"
+                      sx={{
+                        fontSize: unit(1.75), // text-sm
+                        color: colors.gray[600], // text-gray-600
+                      }}
+                    >
+                      {detail}
+                    </Text>
+                  </Box>
+                </React.Fragment>
+              ))}
+            </Stack>
+          </Box>
+        </Box>
+
+        <Box sx={{ marginTop: unit(4) }}>
+          {' '}
+          {/* mt-8 */}
+          <SubSectionTitle>BI Project Approach</SubSectionTitle>
+          <Box
+            sx={{
+              backgroundColor: colorScheme.accent, // bg-[colorScheme.accent]
+              borderLeft: `4px solid ${colorScheme.accentBorder}`, // border-l-4 border-[colorScheme.border]
+              padding: unit(2), // p-4
+            }}
           >
-            <p className="text-gray-700">
+            <Text
+              sx={{
+                fontSize: unit(2), // text-sm
+                color: colors.gray[600], // text-gray-600
+              }}
+            >
               This business intelligence project focused on transforming
               disparate data sources into a cohesive, interactive dashboard that
               provides executives with real-time insights into key performance
               indicators. The solution prioritizes intuitive design,
               performance, and actionable insights.
-            </p>
-          </div>
-        </div>
+            </Text>
+          </Box>
+        </Box>
       </Card>
 
       <Card className="p-8">
@@ -182,7 +357,7 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div
-            className={`${colorScheme.bg} h-64 flex items-center justify-center rounded-lg border ${colorScheme.border}`}
+            className={`${colorScheme.bg} h-64 flex items-center justify-center rounded-lg border ${colorScheme.basicBorder}`}
           >
             <p className="text-gray-500 italic">
               KPI Summary would be displayed here
@@ -201,7 +376,7 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
           </div>
 
           <div
-            className={`${colorScheme.bg} h-64 flex items-center justify-center rounded-lg border ${colorScheme.border}`}
+            className={`${colorScheme.bg} h-64 flex items-center justify-center rounded-lg border ${colorScheme.basicBorder}`}
           >
             <p className="text-gray-500 italic">
               Sales Analysis would be displayed here
@@ -264,7 +439,7 @@ RETURN
           }
         </div>
       </Card>
-    </div>
+    </Stack>
   );
 };
 
