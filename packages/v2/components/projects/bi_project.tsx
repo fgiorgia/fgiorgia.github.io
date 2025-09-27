@@ -351,36 +351,80 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
       </Card>
 
       <Card className="p-8">
-        <h2 className={`text-2xl font-bold ${colorScheme.primary} mb-6`}>
+        <Text
+          component="h2"
+          sx={{
+            fontSize: unit(3), // text-2xl
+            fontWeight: fontWeights.bold, // font-bold
+            color: colorScheme.primary, // text-[colorScheme.primary]
+            marginBottom: unit(3), // mb-6
+          }}
+        >
           Dashboard Showcase
-        </h2>
+        </Text>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <div
-            className={`${colorScheme.bg} h-64 flex items-center justify-center rounded-lg border ${colorScheme.basicBorder}`}
+        <Box
+          sx={{
+            display: 'grid', // grid
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, // grid-cols-1 md:grid-cols-2
+            gap: unit(2.5), // gap-6
+            marginBottom: unit(4), // mb-8
+          }}
+        >
+          <Box
+            sx={{
+              backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
+              height: unit(32), // h-64
+              display: 'flex', // flex
+              alignItems: 'center', // items-center
+              justifyContent: 'center', // justify-center
+              borderRadius: unit(2), // rounded-lg
+              border: `1px solid ${colorScheme.accentBorder}`, // border border-[colorScheme.basicBorder]
+            }}
           >
-            <p className="text-gray-500 italic">
+            <Text
+              component="p"
+              sx={{
+                color: colors.gray[500], // text-gray-500
+                fontStyle: 'italic', // italic
+              }}
+            >
               KPI Summary would be displayed here
-            </p>
+            </Text>
             {/* Uncomment when you have an actual image 
-            <Image 
-              src={getAssetPath("/images/projects/bi-dashboard1.jpg")}
-              alt="KPI Summary Dashboard" 
-              fill
-              width={400} 
-              height={300}
-              className="rounded-lg shadow-md"
-              priority
-              unoptimized
-            /> */}
-          </div>
+    <Image 
+      src={getAssetPath("/images/projects/bi-dashboard1.jpg")}
+      alt="KPI Summary Dashboard" 
+      fill
+      width={400} 
+      height={300}
+      className="rounded-lg shadow-md" // rounded-lg shadow-md
+      priority
+      unoptimized
+    /> */}
+          </Box>
 
-          <div
-            className={`${colorScheme.bg} h-64 flex items-center justify-center rounded-lg border ${colorScheme.basicBorder}`}
+          <Box
+            sx={{
+              backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
+              height: unit(32), // h-64
+              display: 'flex', // flex
+              alignItems: 'center', // items-center
+              justifyContent: 'center', // justify-center
+              borderRadius: unit(2), // rounded-lg
+              border: `1px solid ${colorScheme.accentBorder}`, // border border-[colorScheme.basicBorder]
+            }}
           >
-            <p className="text-gray-500 italic">
+            <Text
+              component="p"
+              sx={{
+                color: colors.gray[500], // text-gray-500
+                fontStyle: 'italic', // italic
+              }}
+            >
               Sales Analysis would be displayed here
-            </p>
+            </Text>
+
             {/* Uncomment when you have an actual image 
             <Image 
               src={getAssetPath("/images/projects/bi-dashboard2.jpg")}
@@ -392,26 +436,60 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
               priority
               unoptimized
             /> */}
-          </div>
-        </div>
+          </Box>
+        </Box>
 
-        <div>
-          <h3 className={`text-xl font-semibold ${colorScheme.primary} mb-4`}>
+        <Box>
+          <Text
+            component="h3"
+            sx={{
+              fontSize: unit(2.5), // text-xl
+              fontWeight: fontWeights.semiBold, // font-semibold
+              color: colorScheme.primary, // text-[colorScheme.primary]
+              marginBottom: unit(2), // mb-4
+            }}
+          >
             DAX Formula Examples
-          </h3>
+          </Text>
 
           {project.codeSnippets && project.codeSnippets.length > 0 ?
-            <div
-              className={`${colorScheme.bg} p-4 rounded-md font-mono text-sm overflow-x-auto`}
+            <Box
+              sx={{
+                backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
+                padding: unit(2), // p-4
+                borderRadius: unit(1), // rounded-md
+                fontFamily: 'monospace', // font-mono
+                fontSize: unit(1.75), // text-sm
+                overflowX: 'auto', // overflow-x-auto
+              }}
             >
-              <pre className="text-gray-800">
+              <Text
+                component="pre"
+                sx={{
+                  color: colors.gray[800], // text-gray-800
+                  fontFamily: 'monospace', // font-mono
+                }}
+              >
                 {project.codeSnippets[0].code}
-              </pre>
-            </div>
-          : <div
-              className={`${colorScheme.bg} p-4 rounded-md font-mono text-sm overflow-x-auto`}
+              </Text>
+            </Box>
+          : <Box
+              sx={{
+                backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
+                padding: unit(2), // p-4
+                borderRadius: unit(1), // rounded-md
+                fontFamily: 'monospace', // font-mono
+                fontSize: unit(1.75), // text-sm
+                overflowX: 'auto', // overflow-x-auto
+              }}
             >
-              <pre className="text-gray-800">
+              <Text
+                component="pre"
+                sx={{
+                  color: colors.gray[800], // text-gray-800
+                  fontFamily: 'monospace', // font-mono
+                }}
+              >
                 {`// Year-over-Year Growth Percentage
 YoY Growth % = 
 VAR CurrentYearSales = CALCULATE(
@@ -434,10 +512,10 @@ RETURN
         DIVIDE(CurrentYearSales - PreviousYearSales, PreviousYearSales),
         BLANK()
     )`}
-              </pre>
-            </div>
+              </Text>
+            </Box>
           }
-        </div>
+        </Box>
       </Card>
     </Stack>
   );
