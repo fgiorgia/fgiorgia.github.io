@@ -7,6 +7,7 @@ import Stack from '@swiftpost/elysium/ui/base/Stack';
 import { ProjectContentProps } from '@/types';
 import { colors } from '@/styles/colors';
 import { unit, fontWeights } from '@/styles/staticTheme';
+import SectionContainer from './SectionCard';
 
 // BI uses green color scheme
 const colorScheme = {
@@ -371,16 +372,10 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
             marginBottom: unit(4), // mb-8
           }}
         >
-          <Box
-            sx={{
-              backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
-              height: unit(32), // h-64
-              display: 'flex', // flex
-              alignItems: 'center', // items-center
-              justifyContent: 'center', // justify-center
-              borderRadius: unit(2), // rounded-lg
-              border: `1px solid ${colorScheme.accentBorder}`, // border border-[colorScheme.basicBorder]
-            }}
+          <SectionContainer
+            height={32}
+            backgroundColor={colorScheme.bg}
+            borderColor={colorScheme.accentBorder}
           >
             <Text
               component="p"
@@ -391,29 +386,12 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
             >
               KPI Summary would be displayed here
             </Text>
-            {/* Uncomment when you have an actual image 
-    <Image 
-      src={getAssetPath("/images/projects/bi-dashboard1.jpg")}
-      alt="KPI Summary Dashboard" 
-      fill
-      width={400} 
-      height={300}
-      className="rounded-lg shadow-md" // rounded-lg shadow-md
-      priority
-      unoptimized
-    /> */}
-          </Box>
+          </SectionContainer>
 
-          <Box
-            sx={{
-              backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
-              height: unit(32), // h-64
-              display: 'flex', // flex
-              alignItems: 'center', // items-center
-              justifyContent: 'center', // justify-center
-              borderRadius: unit(2), // rounded-lg
-              border: `1px solid ${colorScheme.accentBorder}`, // border border-[colorScheme.basicBorder]
-            }}
+          <SectionContainer
+            height={32}
+            backgroundColor={colorScheme.bg}
+            borderColor={colorScheme.accentBorder}
           >
             <Text
               component="p"
@@ -424,19 +402,7 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
             >
               Sales Analysis would be displayed here
             </Text>
-
-            {/* Uncomment when you have an actual image 
-            <Image 
-              src={getAssetPath("/images/projects/bi-dashboard2.jpg")}
-              alt="Sales Analysis Dashboard" 
-              fill
-              width={400} 
-              height={300}
-              className="rounded-lg shadow-md"
-              priority
-              unoptimized
-            /> */}
-          </Box>
+          </SectionContainer>
         </Box>
 
         <Box>
@@ -452,17 +418,13 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
             DAX Formula Examples
           </Text>
 
-          {project.codeSnippets && project.codeSnippets.length > 0 ?
-            <Box
-              sx={{
-                backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
-                padding: unit(2), // p-4
-                borderRadius: unit(1), // rounded-md
-                fontFamily: 'monospace', // font-mono
-                fontSize: unit(1.75), // text-sm
-                overflowX: 'auto', // overflow-x-auto
-              }}
-            >
+          <SectionContainer
+            // height={32}
+            backgroundColor={colorScheme.bg}
+            // backgroundColor={colorScheme.bg}
+            borderColor={colorScheme.accentBorder}
+          >
+            <Box sx={{ width: '100%', padding: unit(2) }}>
               <Text
                 component="pre"
                 sx={{
@@ -470,51 +432,10 @@ const BiProject: React.FC<ProjectContentProps> = ({ project }) => {
                   fontFamily: 'monospace', // font-mono
                 }}
               >
-                {project.codeSnippets[0].code}
+                {project.codeSnippets?.[0]?.code ?? 'Code to be filled'}
               </Text>
             </Box>
-          : <Box
-              sx={{
-                backgroundColor: colorScheme.bg, // bg-[colorScheme.bg]
-                padding: unit(2), // p-4
-                borderRadius: unit(1), // rounded-md
-                fontFamily: 'monospace', // font-mono
-                fontSize: unit(1.75), // text-sm
-                overflowX: 'auto', // overflow-x-auto
-              }}
-            >
-              <Text
-                component="pre"
-                sx={{
-                  color: colors.gray[800], // text-gray-800
-                  fontFamily: 'monospace', // font-mono
-                }}
-              >
-                {`// Year-over-Year Growth Percentage
-YoY Growth % = 
-VAR CurrentYearSales = CALCULATE(
-    SUM(Sales[Amount]),
-    FILTER(
-        ALL(Calendar),
-        Calendar[Year] = MAX(Calendar[Year])
-    )
-)
-VAR PreviousYearSales = CALCULATE(
-    SUM(Sales[Amount]),
-    FILTER(
-        ALL(Calendar),
-        Calendar[Year] = MAX(Calendar[Year]) - 1
-    )
-)
-RETURN
-    IF(
-        PreviousYearSales <> 0,
-        DIVIDE(CurrentYearSales - PreviousYearSales, PreviousYearSales),
-        BLANK()
-    )`}
-              </Text>
-            </Box>
-          }
+          </SectionContainer>
         </Box>
       </Card>
     </Stack>
