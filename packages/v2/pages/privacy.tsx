@@ -1,9 +1,8 @@
 // pages/privacy.tsx
-import React from 'react';
 import type { NextPage } from 'next';
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo/SEO';
-import Breadcrumbs from '../components/seo/breadcrumbs';
+import BaseLayout from '@/features/layout/components/BaseLayout';
+import SEO from '@/features/seo/components/SEO';
+import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
 import Link from 'next/link';
 
 const Privacy: NextPage = () => {
@@ -15,7 +14,7 @@ const Privacy: NextPage = () => {
   });
 
   return (
-    <Layout>
+    <BaseLayout>
       <SEO
         title="Privacy Policy"
         description="Learn how we collect, use, and protect your personal information in compliance with GDPR and CCPA regulations."
@@ -371,7 +370,7 @@ const Privacy: NextPage = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </BaseLayout>
   );
 };
 

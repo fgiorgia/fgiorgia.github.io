@@ -7,8 +7,8 @@ import {
   BarChart2,
   CheckCircle,
 } from 'lucide-react';
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo/SEO';
+import BaseLayout from  '@/features/layout/components/BaseLayout';
+import SEO from '@/features/seo/components/SEO';
 
 const Skills: NextPage = () => {
   // Additional skills list
@@ -34,7 +34,7 @@ const Skills: NextPage = () => {
   ];
 
   return (
-    <Layout>
+    <BaseLayout>
       <SEO
         title="Skills & Expertise"
         description="Explore my technical skills in data analysis, including Excel, Python, SQL, Business Intelligence tools, and more."
@@ -294,7 +294,7 @@ const Skills: NextPage = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </BaseLayout>
   );
 };
 

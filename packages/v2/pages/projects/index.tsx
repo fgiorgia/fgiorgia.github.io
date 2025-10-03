@@ -8,12 +8,12 @@ import {
   BarChart2,
   Filter,
 } from 'lucide-react';
-import Layout from '../../components/layout/layout';
-import SEO from '../../components/seo/SEO';
-import ProjectCard from '../../components/ui/project_card';
-import { getProjects } from '../../lib/projects';
-import { Project } from '@/types';
-import ComingSoonCard from '../../components/ui/coming_soon_card';
+import BaseLayout from '@/features//layout/components/BaseLayout';
+import SEO from '@/features/seo/components/SEO';
+import ProjectCard from '@/features/common/components/ProjectCard';
+import { getProjects } from '@/features/projects/projectUtils';
+import { Project } from '@/features/common/types';
+import ComingSoonCard from '@/features/common/components/ComingSoonCardProps';
 
 interface ProjectsPageProps {
   projects: Project[];
@@ -97,7 +97,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
   };
 
   return (
-    <Layout>
+    <BaseLayout>
       <SEO
         title="Projects"
         description="Explore my portfolio of data analysis and business intelligence projects, including Excel dashboards, Python analysis, SQL optimization, and Power BI visualizations."
@@ -380,7 +380,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
           </a>
         </div>
       </section>
-    </Layout>
+    </BaseLayout>
   );
 };
 

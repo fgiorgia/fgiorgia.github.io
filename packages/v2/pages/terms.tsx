@@ -1,9 +1,9 @@
 // pages/terms.tsx
 import React from 'react';
 import type { NextPage } from 'next';
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo/SEO';
-import Breadcrumbs from '../components/seo/breadcrumbs';
+import BaseLayout from  '@/features/layout/components/BaseLayout';
+import SEO from '@/features/seo/components/SEO';
+import Breadcrumbs from  '@/features/seo/components/Breadcrumbs';
 import Link from 'next/link';
 
 const Terms: NextPage = () => {
@@ -15,7 +15,7 @@ const Terms: NextPage = () => {
   });
 
   return (
-    <Layout>
+    <BaseLayout>
       <SEO
         title="Terms of Service"
         description="The terms and conditions governing your use of this website and the services provided."
@@ -384,7 +384,7 @@ const Terms: NextPage = () => {
           </div>
         </div>
       </section>
-    </Layout>
+    </BaseLayout>
   );
 };
 

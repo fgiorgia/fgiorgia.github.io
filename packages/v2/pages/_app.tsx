@@ -2,12 +2,12 @@ import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { AppCacheProvider } from '@mui/material-nextjs/v15-pagesRouter';
-import { defaultSEO } from '../lib/seo';
-import CookieConsent from '../components/ui/cookie_consent';
-import '../styles/globals.css';
+import { defaultSEO } from '@/features/seo/seo';
+import CookieConsent from '@/features/common/components/CookieConsent';
+import '@/features/common/styles/globals.css';
 
 import ThemeProvider from '@swiftpost/elysium/core/ThemeProvider';
-import { theme, mainFont } from '@/styles/theme';
+import { theme, mainFont } from '@/features/common/styles/theme';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (

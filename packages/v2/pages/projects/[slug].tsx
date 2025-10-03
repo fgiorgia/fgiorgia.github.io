@@ -1,13 +1,16 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import Layout from '../../components/layout/layout';
-import SEO from '../../components/seo/SEO';
-import Breadcrumbs from '../../components/seo/breadcrumbs';
-import ProjectTabs from '../../components/projects/project_tabs';
-import { getAllProjectSlugs, getProjects } from '../../lib/projects';
-import { getAssetPath } from '@/lib/utils';
-import { Project } from '@/types';
+import BaseLayout from '@/features/layout/components/BaseLayout';
+import SEO from '@/features/seo/components/SEO';
+import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
+import ProjectTabs from '@/features/projects/components/ProjectTabs';
+import {
+  getAllProjectSlugs,
+  getProjects,
+} from '@/features/projects/projectUtils';
+import { getAssetPath } from '@/features/common/utils';
+import { Project } from '@/features/common/types';
 
 interface ProjectDetailProps {
   project: Project;
@@ -16,7 +19,7 @@ interface ProjectDetailProps {
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   if (!project) {
     return (
-      <Layout>
+      <BaseLayout>
         <SEO
           title="Project Not Found"
           description="The project you're looking for doesn't exist or has been removed."
@@ -34,7 +37,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             View all projects
           </Link>
         </div>
-      </Layout>
+      </BaseLayout>
     );
   }
 
@@ -45,7 +48,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   const publishedTime = `${completedParts[1]}-${month.toString().padStart(2, '0')}-01T00:00:00Z`;
 
   return (
-    <Layout>
+    <BaseLayout>
       <SEO
         title={project.title}
         description={project.description}
@@ -208,7 +211,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
       </div>
 
       <ProjectTabs project={project} />
-    </Layout>
+    </BaseLayout>
   );
 };
 
