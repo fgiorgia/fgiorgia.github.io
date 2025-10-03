@@ -1,7 +1,16 @@
-import type { SxProps, Theme } from '@mui/material';
-import type { SystemStyleObject } from '@mui/system';
+import type { SxProps, Theme } from '@mui/material/styles';
 
-export { SxProps, SystemStyleObject, Theme };
+type InferSystemStyleObject<S, T = object> =
+  S extends ReadonlyArray<unknown> ? never
+  : S extends (theme: T) => unknown ? never
+  : S;
+
+export type SystemStyleObject<T extends object> = InferSystemStyleObject<
+  SxProps<T>,
+  T
+>;
+
+export { SxProps, Theme };
 export type SxArray<TTheme extends Theme = Theme> = ReadonlyArray<
   SystemStyleObject<TTheme> | ((theme: TTheme) => SystemStyleObject<TTheme>)
 >;
