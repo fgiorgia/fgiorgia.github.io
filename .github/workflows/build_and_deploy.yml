@@ -20,7 +20,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Link website
-        run: yarn lint --quiet
+        run: yarn lint:ci
 
       - name: Build website
         run: yarn build

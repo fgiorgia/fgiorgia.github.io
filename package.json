@@ -13,7 +13,7 @@
     "build": "yarn workspace v2 build",
     "start": "yarn workspace v2 start",
     "lint": "turbo lint",
-    "lint:ci": "turbo lint --ui stream",
+    "lint:ci": "turbo lint --ui stream -- --quiet",
     "lint:fix": "turbo lint:fix"
   },
   "dependencies": {
