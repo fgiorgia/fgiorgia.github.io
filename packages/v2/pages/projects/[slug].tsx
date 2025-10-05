@@ -1,16 +1,16 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import BaseLayout from '@/features/layout/components/BaseLayout';
-import SEO from '@/features/seo/components/SEO';
-import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
-import ProjectTabs from '@/features/projects/components/ProjectSection/ProjectTabs';
+import BaseLayout from '@/src/features/layout/components/BaseLayout';
+import SEO from '@/src/features/seo/components/SEO';
+import Breadcrumbs from '@/src/features/seo/components/Breadcrumbs';
+import ProjectTabs from '@/src/features/projects/components/ProjectSection/ProjectTabs';
 import {
   getAllProjectSlugs,
   getProjects,
-} from '@/features/projects/projectUtils';
-import { getAssetPath } from '@/features/common/utils';
-import { Project } from '@/features/common/types';
+} from '@/src/features/projects/projectUtils';
+import { getAssetPath } from '@/src/features/common/utils';
+import { Project } from '@/src/features/common/types';
 
 interface ProjectDetailProps {
   project: Project;

@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import type { NextPage } from 'next';
-import BaseLayout from '@/features/layout/components/BaseLayout';
-import SEO from '@/features/seo/components/SEO';
+import BaseLayout from '@/src/features/layout/components/BaseLayout';
+import SEO from '@/src/features/seo/components/SEO';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIconOutlined from '@mui/icons-material/MailOutlined';
 import MailIcon from '@mui/icons-material/Mail';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
-import { unit } from '@/features/common/styles/staticTheme';
+import { unit } from '@/src/features/common/styles/staticTheme';
 
 const Contact: NextPage = () => {
   // Form state

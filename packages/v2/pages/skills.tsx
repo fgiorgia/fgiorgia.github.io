@@ -7,8 +7,8 @@ import {
   BarChart2,
   CheckCircle,
 } from 'lucide-react';
-import BaseLayout from  '@/features/layout/components/BaseLayout';
-import SEO from '@/features/seo/components/SEO';
+import BaseLayout from '@/src/features/layout/components/BaseLayout';
+import SEO from '@/src/features/seo/components/SEO';
 
 const Skills: NextPage = () => {
   // Additional skills list

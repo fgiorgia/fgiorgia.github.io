@@ -8,12 +8,12 @@ import {
   BarChart2,
   Filter,
 } from 'lucide-react';
-import BaseLayout from '@/features//layout/components/BaseLayout';
-import SEO from '@/features/seo/components/SEO';
-import ProjectsGridCard from '@/features/projects/components/ProjectsGrid/ProjectsGridCard';
-import { getProjects } from '@/features/projects/projectUtils';
-import { Project } from '@/features/common/types';
-import ComingSoonCard from '@/features/workInProgress/components/ComingSoonCard';
+import BaseLayout from '@/src/features/layout/components/BaseLayout';
+import SEO from '@/src/features/seo/components/SEO';
+import ProjectsGridCard from '@/src/features/projects/components/ProjectsGrid/ProjectsGridCard';
+import { getProjects } from '@/src/features/projects/projectUtils';
+import { Project } from '@/src/features/common/types';
+import ComingSoonCard from '@/src/features/workInProgress/components/ComingSoonCard';
 
 interface ProjectsPageProps {
   projects: Project[];
