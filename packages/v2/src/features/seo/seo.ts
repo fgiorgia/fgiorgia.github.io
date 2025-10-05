@@ -1,6 +1,6 @@
 // packages/v2/lib/seo.ts
 import { DefaultSeoProps } from 'next-seo';
-import { getAssetPath } from '../common/utils';
+import { getAssetPath } from '@/features/common/utils';
 
 // Base URL for your site (used for canonical URLs and OG images)
 export const siteUrl =
