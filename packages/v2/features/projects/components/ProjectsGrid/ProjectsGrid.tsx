@@ -1,6 +1,6 @@
 import React from 'react';
-import ProjectCard from '../../common/components/ProjectCard';
-import Button from '../../common/components/Button';
+import ProjectsGridCard from './ProjectsGridCard';
+import Button from '../../../common/components/Button';
 import { ProjectsGridProps } from '@/features/common/types';
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
@@ -28,7 +28,7 @@ const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {projects.map((project) => (
-            <ProjectCard
+            <ProjectsGridCard
               key={project.slug}
               project={project}
               className="transition-all duration-300 hover:translate-y-[-8px]"

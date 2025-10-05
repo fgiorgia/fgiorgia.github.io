@@ -10,7 +10,7 @@ import {
   Database,
   BarChart2,
 } from 'lucide-react';
-import Card from './Card';
+import Card from '../../../common/components/Card';
 import ProjectLightboxModal from './ProjectLightboxModal';
 import { ProjectCardProps } from '@/features/common/types';
 
@@ -95,7 +95,7 @@ const getCategoryIcon = (category: string) => {
   return <FileSpreadsheet size={16} />; // Default fallback
 };
 
-const ProjectCard: React.FC<ProjectCardProps> = ({
+const ProjectsGridCard: React.FC<ProjectCardProps> = ({
   project,
   className = '',
   ...props
@@ -338,4 +338,4 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   );
 };
 
-export default ProjectCard;
+export default ProjectsGridCard;

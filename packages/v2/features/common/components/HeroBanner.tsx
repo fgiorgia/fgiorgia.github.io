@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { getAssetPath } from '@/features/common/utils';
-import Button from '../../common/components/Button';
+import Button from './Button';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';

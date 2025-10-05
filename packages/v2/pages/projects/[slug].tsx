@@ -4,7 +4,7 @@ import Link from 'next/link';
 import BaseLayout from '@/features/layout/components/BaseLayout';
 import SEO from '@/features/seo/components/SEO';
 import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
-import ProjectTabs from '@/features/projects/components/ProjectTabs';
+import ProjectTabs from '@/features/projects/components/ProjectSection/ProjectTabs';
 import {
   getAllProjectSlugs,
   getProjects,

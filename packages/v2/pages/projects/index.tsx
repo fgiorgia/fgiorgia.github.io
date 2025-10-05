@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import BaseLayout from '@/features//layout/components/BaseLayout';
 import SEO from '@/features/seo/components/SEO';
-import ProjectCard from '@/features/common/components/ProjectCard';
+import ProjectsGridCard from '@/features/projects/components/ProjectsGrid/ProjectsGridCard';
 import { getProjects } from '@/features/projects/projectUtils';
 import { Project } from '@/features/common/types';
 import ComingSoonCard from '@/features/workInProgress/components/ComingSoonCard';
@@ -157,7 +157,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
           {filteredProjects.length > 0 ?
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {filteredProjects.map((project) => (
-                <ProjectCard
+                <ProjectsGridCard
                   key={project.slug}
                   project={project}
                   className="h-full transition-all duration-300 hover:translate-y-[-8px]"
