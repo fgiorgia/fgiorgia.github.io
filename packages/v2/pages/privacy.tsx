@@ -1,8 +1,8 @@
 // pages/privacy.tsx
 import type { NextPage } from 'next';
-import BaseLayout from '@/features//layout/components/BaseLayout';
-import SEO from '@/features//seo/components/SEO';
-import Breadcrumbs from '@/features//seo/components/Breadcrumbs';
+import BaseLayout from '@/features/layout/components/BaseLayout';
+import SEO from '@/features/seo/components/SEO';
+import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
 import Link from 'next/link';
 
 const Privacy: NextPage = () => {

@@ -1,6 +1,25 @@
 import { ReactElement, ReactNode } from 'react';
 import { LucideProps as IconProps } from 'lucide-react';
 
+import type { ImageSourceData } from '@swiftpost/elysium/ui/Image';
+
+export interface CustomConfig {
+  author: {
+    name: string;
+    email: string;
+  };
+}
+
+export interface PostData {
+  title: string;
+  content: string;
+  date: string;
+  image?: string | ImageSourceData;
+  author?: {
+    name: string;
+  };
+}
+
 // Project Types
 export interface Project {
   slug: string;

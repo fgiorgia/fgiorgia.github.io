@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Head';
+import Header from './Header';
 import Footer from './Footer';
 import PersonJsonLd from '../../seo/components/PersonJsonLd';
 import ConstructionBanner from '../../workInProgress/components/ConstructionBanner';

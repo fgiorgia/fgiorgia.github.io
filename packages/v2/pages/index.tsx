@@ -1,14 +1,14 @@
 import React from 'react';
 import { GetStaticProps } from 'next';
-import BaseLayout from '@/features//layout/components/BaseLayout';
-import SEO from '@/features//seo/components/SEO';
-import HeroBanner from '@/features//common/components/HeroBanner';
-import Skills from '@/features//skills/components/Skills';
-import ProjectsGrid from '@/features//projects/components/ProjectsGrid/ProjectsGrid';
-import ContactSection from '@/features//contact/components/ContactSection';
-import { getProjects } from '@/features//projects/projectUtils';
-import { getAssetPath } from '@/features//common/utils';
-import { Project } from '@/features//common/types';
+import BaseLayout from '@/features/layout/components/BaseLayout';
+import SEO from '@/features/seo/components/SEO';
+import HeroBanner from '@/features/common/components/HeroBanner';
+import Skills from '@/features/skills/components/Skills';
+import ProjectsGrid from '@/features/projects/components/ProjectsGrid/ProjectsGrid';
+import ContactSection from '@/features/contact/components/ContactSection';
+import { getProjects } from '@/features/projects/projectUtils';
+import { getAssetPath } from '@/features/common/utils';
+import { Project } from '@/features/common/types';
 
 interface HomeProps {
   featuredProjects: Project[];
