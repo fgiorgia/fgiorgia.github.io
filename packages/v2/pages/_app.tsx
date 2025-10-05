@@ -3,7 +3,7 @@ import { DefaultSeo } from 'next-seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { AppCacheProvider } from '@mui/material-nextjs/v15-pagesRouter';
 import { defaultSEO } from '@/features/seo/seo';
-import CookieConsent from '@/features/common/components/CookieConsent';
+import CookieConsent from '@/features/analytics/components/CookieConsent';
 import '@/features/common/styles/globals.css';
 
 import ThemeProvider from '@swiftpost/elysium/core/ThemeProvider';

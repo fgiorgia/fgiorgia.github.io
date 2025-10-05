@@ -1,3 +1,9 @@
+/** 
+ * This is a CSS setup file.
+ * 
+ * Many parts of it are Tailwind related, and can be removed once Tailwind is removed.
+ */
+
 @import 'tailwindcss';
 @tailwind base;
 @tailwind components;

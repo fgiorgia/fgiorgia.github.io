@@ -2,7 +2,7 @@ import React from 'react';
 import Box from '@swiftpost/elysium/ui/base/Box';
 import { colors } from '@/features/common/styles/colors';
 import { unit, type UnitValue } from '@/features/common/styles/staticTheme';
-import { compat } from '@/features/common/styles/legacyTheme';
+import { compat } from '@/features/common/styles/tailwindMUICompat';
 
 export interface CardProps {
   children: React.ReactNode;

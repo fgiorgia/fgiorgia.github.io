@@ -13,7 +13,7 @@ import SEO from '@/features/seo/components/SEO';
 import ProjectCard from '@/features/common/components/ProjectCard';
 import { getProjects } from '@/features/projects/projectUtils';
 import { Project } from '@/features/common/types';
-import ComingSoonCard from '@/features/common/components/ComingSoonCardProps';
+import ComingSoonCard from '@/features/workInProgress/components/ComingSoonCard';
 
 interface ProjectsPageProps {
   projects: Project[];

@@ -2,7 +2,7 @@ import React from 'react';
 import Header from './Head';
 import Footer from './Footer';
 import PersonJsonLd from '../../seo/components/PersonJsonLd';
-import ConstructionBanner from '../../common/components/ConstructionBanner';
+import ConstructionBanner from '../../workInProgress/components/ConstructionBanner';
 import { LayoutProps } from '@/features/common/types';
 import Box from '@swiftpost/elysium/ui/base/Box';
 import Stack from '@swiftpost/elysium/ui/base/Stack';

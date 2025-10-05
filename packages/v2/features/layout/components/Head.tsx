@@ -11,7 +11,7 @@ import Stack from '@swiftpost/elysium/ui/base/Stack';
 import Text from '@swiftpost/elysium/ui/base/Text';
 import Link from '@swiftpost/elysium/ui/base/Link';
 import { colors } from '@/features/common/styles/colors';
-import { compat } from '@/features/common/styles/legacyTheme';
+import { compat } from '@/features/common/styles/tailwindMUICompat';
 import { fontWeights, unit } from '@/features/common/styles/staticTheme';
 
 const Header: React.FC = () => {
