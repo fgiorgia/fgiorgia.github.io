@@ -20,7 +20,7 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Link website
-        run: "yarn lint || echo \"Warning: Something went wrong with linting.\""
+        run: yarn lint --quiet
 
       - name: Build website
         run: yarn build
