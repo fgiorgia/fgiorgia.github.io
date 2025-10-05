@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '@/src/features/common/components/Button';
+import Button from '@/features//common/components/Button';
 
 const ContactSection: React.FC = () => {
   return (

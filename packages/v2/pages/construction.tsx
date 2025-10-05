@@ -9,8 +9,8 @@ import {
   Clock,
   CheckCircle,
 } from 'lucide-react';
-import BaseLayout from '@/src/features/layout/components/BaseLayout';
-import SEO from '@/src/features/seo/components/SEO';
+import BaseLayout from '@/features//layout/components/BaseLayout';
+import SEO from '@/features//seo/components/SEO';
 import Link from 'next/link';
 
 const Construction: NextPage = () => {

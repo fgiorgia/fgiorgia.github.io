@@ -1,5 +1,5 @@
 // lib/projects.ts
-import { Project } from '@/src/features/common/types';
+import { Project } from '@/features//common/types';
 import { projects as projectsData } from './projectData';
 
 /**

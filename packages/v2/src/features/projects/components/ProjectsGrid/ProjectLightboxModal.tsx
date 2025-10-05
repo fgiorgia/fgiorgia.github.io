@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import Image from 'next/image';
-import { getAssetPath } from '@/src/features/common/utils';
+import { getAssetPath } from '@/features//common/utils';
 import { ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { Project } from '@/src/features/common/types';
+import { Project } from '@/features//common/types';
 
 interface ProjectLightboxModalProps {
   project: Project;

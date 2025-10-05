@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
-import BaseLayout from '@/src/features/layout/components/BaseLayout';
-import SEO from '@/src/features/seo/components/SEO';
+import BaseLayout from '@/features//layout/components/BaseLayout';
+import SEO from '@/features//seo/components/SEO';
 
 const NotFound: React.FC = () => {
   return (

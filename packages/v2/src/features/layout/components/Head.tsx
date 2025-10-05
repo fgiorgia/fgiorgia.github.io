@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import NextLink from 'next/link';
 import Image from 'next/image';
-import { getAssetPath } from '@/src/features/common/utils';
+import { getAssetPath } from '@/features//common/utils';
 import { Menu, X, Download } from 'lucide-react';
-import { NavItem } from '@/src/features/common/types';
+import { NavItem } from '@/features//common/types';
 import Box from '@swiftpost/elysium/ui/base/Box';
 import IconButton from '@swiftpost/elysium/ui/base/IconButton';
 import Button from '@swiftpost/elysium/ui/base/Button';
 import Stack from '@swiftpost/elysium/ui/base/Stack';
 import Text from '@swiftpost/elysium/ui/base/Text';
 import Link from '@swiftpost/elysium/ui/base/Link';
-import { colors } from '@/src/features/common/styles/colors';
-import { compat } from '@/src/features/common/styles/tailwindMUICompat';
-import { fontWeights, unit } from '@/src/features/common/styles/staticTheme';
+import { colors } from '@/features//common/styles/colors';
+import { compat } from '@/features//common/styles/tailwindMUICompat';
+import { fontWeights, unit } from '@/features//common/styles/staticTheme';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);

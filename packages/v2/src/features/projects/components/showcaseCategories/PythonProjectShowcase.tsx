@@ -1,9 +1,9 @@
 // components/projects/PythonProject.tsx
 import React from 'react';
 import Image from 'next/image';
-import { getAssetPath } from '@/src/features/common/utils';
+import { getAssetPath } from '@/features//common/utils';
 import Card from '../../../common/components/Card';
-import { ProjectContentProps } from '@/src/features/common/types';
+import { ProjectContentProps } from '@/features//common/types';
 
 const PythonProjectShowcase: React.FC<ProjectContentProps> = ({ project }) => {
   // Python uses blue color scheme

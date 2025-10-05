@@ -4,9 +4,9 @@ import Card from '../../../common/components/Card';
 import Box from '@swiftpost/elysium/ui/base/Box';
 import Text from '@swiftpost/elysium/ui/base/Text';
 import Stack from '@swiftpost/elysium/ui/base/Stack';
-import { ProjectContentProps } from '@/src/features/common/types';
-import { colors } from '@/src/features/common/styles/colors';
-import { unit, fontWeights } from '@/src/features/common/styles/staticTheme';
+import { ProjectContentProps } from '@/features//common/types';
+import { colors } from '@/features//common/styles/colors';
+import { unit, fontWeights } from '@/features//common/styles/staticTheme';
 import SectionContainer from '../SectionCard';
 
 // BI uses green color scheme
