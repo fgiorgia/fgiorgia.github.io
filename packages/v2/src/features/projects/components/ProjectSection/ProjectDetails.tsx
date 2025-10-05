@@ -1,10 +1,10 @@
 // components/projects/ProjectDetails.tsx
 import React from 'react';
 import { ProjectContentProps } from '@/features//common/types';
-import ExcelProjectShowcase from './showcaseCategories/ExcelProjectShowcase';
-import PythonProjectShowcase from './showcaseCategories/PythonProjectShowcase';
-import SqlProjectShowcase from './showcaseCategories/SqlProjectShowcase';
-import BiProjectShowcase from './showcaseCategories/BiProjectShowcase';
+import ExcelProjectShowcase from '../showcaseCategories/ExcelProjectShowcase';
+import PythonProjectShowcase from '../showcaseCategories/PythonProjectShowcase';
+import SqlProjectShowcase from '../showcaseCategories/SqlProjectShowcase';
+import BiProjectShowcase from '../showcaseCategories/BiProjectShowcase';
 import ProjectOverview from './ProjectOverview';
 import ProjectApproach from './ProjectApproach';
 import ProjectCode from './ProjectCode';
