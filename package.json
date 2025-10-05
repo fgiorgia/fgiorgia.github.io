@@ -17,13 +17,19 @@
     "lint:fix": "turbo lint:fix"
   },
   "dependencies": {
+    "@swiftpost/elysium": "*",
+    "@mui/icons-material": "^7",
     "next": "^15.5.3",
     "react": "^19",
     "react-dom": "^19",
     "sharp": "^0.33.5",
     "tailwind-scrollbar-hide": "^2.0.0"
   },
+  "peerDependencies": {
+    "@mui/material": "^7"
+  },
   "devDependencies": {
+    "@swiftpost/config": "*",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
