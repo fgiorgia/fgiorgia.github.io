@@ -1,7 +1,7 @@
 import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
-import BaseLayout from '@/features/layout/components/BaseLayout';
+import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
 import SEO from '@/features/seo/components/SEO';
 import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
 import ProjectTabs from '@/features/projects/components/ProjectSection/ProjectTabs';
@@ -9,8 +9,8 @@ import {
   getAllProjectSlugs,
   getProjects,
 } from '@/features/projects/projectUtils';
-import { getAssetPath } from '@/features/common/utils';
-import { Project } from '@/features/common/types';
+import { getAssetPath } from '@/core/common/utils';
+import { Project } from '@/core/common/types';
 
 interface ProjectDetailProps {
   project: Project;
@@ -19,7 +19,7 @@ interface ProjectDetailProps {
 const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   if (!project) {
     return (
-      <BaseLayout>
+      <BaseLayoutTemplate>
         <SEO
           title="Project Not Found"
           description="The project you're looking for doesn't exist or has been removed."
@@ -37,7 +37,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
             View all projects
           </Link>
         </div>
-      </BaseLayout>
+      </BaseLayoutTemplate>
     );
   }
 
@@ -48,7 +48,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   const publishedTime = `${completedParts[1]}-${month.toString().padStart(2, '0')}-01T00:00:00Z`;
 
   return (
-    <BaseLayout>
+    <BaseLayoutTemplate>
       <SEO
         title={project.title}
         description={project.description}
@@ -211,7 +211,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
       </div>
 
       <ProjectTabs project={project} />
-    </BaseLayout>
+    </BaseLayoutTemplate>
   );
 };
 

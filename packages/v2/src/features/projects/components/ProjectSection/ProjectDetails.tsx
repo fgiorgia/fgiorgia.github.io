@@ -1,6 +1,6 @@
 // components/projects/ProjectDetails.tsx
 import React from 'react';
-import { ProjectContentProps } from '@/features/common/types';
+import { ProjectContentProps } from '@/core/common/types';
 import ExcelProjectShowcase from '../showcaseCategories/ExcelProjectShowcase';
 import PythonProjectShowcase from '../showcaseCategories/PythonProjectShowcase';
 import SqlProjectShowcase from '../showcaseCategories/SqlProjectShowcase';

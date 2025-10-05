@@ -1,5 +1,5 @@
 import Stack from '@swiftpost/elysium/ui/base/Stack';
-import { unit } from '@/features/common/styles/staticTheme';
+import { unit } from '@/core/styles/staticTheme';
 
 interface Props {
   children: React.ReactNode;

@@ -1,7 +1,7 @@
 // data/projects.ts
 import React from 'react';
 import { FileSpreadsheet, Code, Database, BarChart2 } from 'lucide-react';
-import { Project } from '@/features/common/types';
+import { Project } from '@/core/common/types';
 
 export const projects: Project[] = [
   {

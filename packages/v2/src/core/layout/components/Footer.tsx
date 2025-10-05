@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAssetPath } from '@/features/common/utils';
+import { getAssetPath } from '@/core/common/utils';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
-import { unit } from '@/features/common/styles/staticTheme';
+import { unit } from '@/core/styles/staticTheme';
 
 interface SocialLink {
   name: string;

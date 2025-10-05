@@ -1,9 +1,9 @@
 // components/projects/ExcelProject.tsx
 import React from 'react';
 import Image from 'next/image';
-import { getAssetPath } from '@/features/common/utils';
-import Card from '../../../common/components/Card';
-import { ProjectContentProps } from '@/features/common/types';
+import { getAssetPath } from '@/core/common/utils';
+import Card from '../../../../core/ui/components/Card';
+import { ProjectContentProps } from '@/core/common/types';
 
 const ExcelProjectShowcase: React.FC<ProjectContentProps> = ({ project }) => {
   // Excel uses yellow color scheme

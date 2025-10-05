@@ -1,12 +1,12 @@
 // components/projects/BiProject.tsx
 import React from 'react';
-import Card from '../../../common/components/Card';
+import Card from '../../../../core/ui/components/Card';
 import Box from '@swiftpost/elysium/ui/base/Box';
 import Text from '@swiftpost/elysium/ui/base/Text';
 import Stack from '@swiftpost/elysium/ui/base/Stack';
-import { ProjectContentProps } from '@/features/common/types';
-import { colors } from '@/features/common/styles/colors';
-import { unit, fontWeights } from '@/features/common/styles/staticTheme';
+import { ProjectContentProps } from '@/core/common/types';
+import { colors } from '@/core/styles/colors';
+import { unit, fontWeights } from '@/core/styles/staticTheme';
 import SectionContainer from '../SectionCard';
 
 // BI uses green color scheme

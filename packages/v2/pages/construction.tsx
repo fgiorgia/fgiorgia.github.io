@@ -9,7 +9,7 @@ import {
   Clock,
   CheckCircle,
 } from 'lucide-react';
-import BaseLayout from '@/features/layout/components/BaseLayout';
+import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
 import SEO from '@/features/seo/components/SEO';
 import Link from 'next/link';
 
@@ -26,7 +26,7 @@ const Construction: NextPage = () => {
   ];
 
   return (
-    <BaseLayout>
+    <BaseLayoutTemplate>
       <SEO
         title="Website Under Construction"
         description="This portfolio website is currently under construction. I'm adding new projects and features regularly."
@@ -174,7 +174,7 @@ const Construction: NextPage = () => {
           </div>
         </div>
       </section>
-    </BaseLayout>
+    </BaseLayoutTemplate>
   );
 };
 

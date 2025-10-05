@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import type { NextPage } from 'next';
-import BaseLayout from '@/features/layout/components/BaseLayout';
+import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
 import SEO from '@/features/seo/components/SEO';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIconOutlined from '@mui/icons-material/MailOutlined';
 import MailIcon from '@mui/icons-material/Mail';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
-import { unit } from '@/features/common/styles/staticTheme';
+import { unit } from '@/core/styles/staticTheme';
 
 const Contact: NextPage = () => {
   // Form state
@@ -91,7 +91,7 @@ const Contact: NextPage = () => {
   };
 
   return (
-    <BaseLayout>
+    <BaseLayoutTemplate>
       <SEO
         title="Contact Me"
         description="Get in touch with me for data analysis services, collaborations, or job opportunities. I'd love to hear from you!"
@@ -391,7 +391,7 @@ const Contact: NextPage = () => {
           </div>
         </div>
       </section>
-    </BaseLayout>
+    </BaseLayoutTemplate>
   );
 };
 

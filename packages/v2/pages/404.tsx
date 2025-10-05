@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
-import BaseLayout from '@/features/layout/components/BaseLayout';
+import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
 import SEO from '@/features/seo/components/SEO';
 
 const NotFound: React.FC = () => {
   return (
-    <BaseLayout>
+    <BaseLayoutTemplate>
       <SEO
         title="Page Not Found"
         description="Sorry, the page you are looking for does not exist."
@@ -28,7 +28,7 @@ const NotFound: React.FC = () => {
           </Link>
         </div>
       </div>
-    </BaseLayout>
+    </BaseLayoutTemplate>
   );
 };
 

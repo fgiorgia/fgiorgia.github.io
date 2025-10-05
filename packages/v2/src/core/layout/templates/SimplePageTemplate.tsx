@@ -1,9 +1,9 @@
 import StackLayout from '@swiftpost/elysium/layouts/StackLayout';
 import Stack from '@swiftpost/elysium/ui/base/Stack';
-import Footer from '@/features/layout/components/Footer';
-import { staticTheme } from '@/features/common/styles/staticTheme';
-import Header from '@/features/layout/components/Header';
-import TopBar from '@/features/layout/components/TopBar';
+import Footer from '@/core/layout/components/Footer';
+import { staticTheme } from '@/core/styles/staticTheme';
+import Header from '@/core/layout/components/Header';
+import TopBar from '@/core/layout/components/TopBar';
 import ContentFittedStack from '@swiftpost/elysium/ui/ContentFittedStack';
 
 const contentMaxWidth = staticTheme.breakpoints.values.lg;

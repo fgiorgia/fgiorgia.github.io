@@ -1,7 +1,7 @@
 // components/ui/coming_soon_card.tsx
 import React from 'react';
 import { Clock } from 'lucide-react';
-import Card from '@/features/common/components/Card';
+import Card from '@/core/ui/components/Card';
 
 interface ComingSoonCardProps {
   category?: string;

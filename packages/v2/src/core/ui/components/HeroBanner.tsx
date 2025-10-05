@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import { getAssetPath } from '@/features/common/utils';
+import { getAssetPath } from '@/core/common/utils';
 import Button from './Button';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
-import { unit } from '@/features/common/styles/staticTheme';
+import { unit } from '@/core/styles/staticTheme';
 
 const HeroBanner: React.FC = () => {
   return (

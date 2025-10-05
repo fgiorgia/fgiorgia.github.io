@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { getAssetPath } from '@/features/common/utils';
+import { getAssetPath } from '@/core/common/utils';
 import {
   ArrowRight,
   Maximize,
@@ -10,9 +10,9 @@ import {
   Database,
   BarChart2,
 } from 'lucide-react';
-import Card from '../../../common/components/Card';
+import Card from '../../../../core/ui/components/Card';
 import ProjectLightboxModal from './ProjectLightboxModal';
-import { ProjectCardProps } from '@/features/common/types';
+import { ProjectCardProps } from '@/core/common/types';
 
 // Helper function to get the appropriate background color based on category
 const getCategoryBackgroundColor = (category: string): string => {

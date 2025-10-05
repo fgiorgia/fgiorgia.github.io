@@ -1,4 +1,4 @@
-import { staticTheme } from '@/features/common/styles/staticTheme';
+import { staticTheme } from '@/core/styles/staticTheme';
 import Stack from '@swiftpost/elysium/ui/base/Stack';
 
 const TopBar = () => {

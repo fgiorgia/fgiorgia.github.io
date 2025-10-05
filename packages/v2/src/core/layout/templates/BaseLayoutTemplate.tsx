@@ -1,14 +1,14 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import PersonJsonLd from '../../seo/components/PersonJsonLd';
-import ConstructionBanner from '../../workInProgress/components/ConstructionBanner';
-import { LayoutProps } from '@/features/common/types';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import PersonJsonLd from '../../../features/seo/components/PersonJsonLd';
+import ConstructionBanner from '../../../features/workInProgress/components/ConstructionBanner';
+import { LayoutProps } from '@/core/common/types';
 import Box from '@swiftpost/elysium/ui/base/Box';
 import Stack from '@swiftpost/elysium/ui/base/Stack';
-import { colors } from '@/features/common/styles/colors';
+import { colors } from '@/core/styles/colors';
 
-const BaseLayout: React.FC<LayoutProps> = ({ children }) => {
+const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
   return (
     <Stack
       direction="column"
@@ -38,4 +38,4 @@ const BaseLayout: React.FC<LayoutProps> = ({ children }) => {
   );
 };
 
-export default BaseLayout;
+export default BaseLayoutTemplate;

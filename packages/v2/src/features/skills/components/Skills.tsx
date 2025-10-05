@@ -1,6 +1,6 @@
 import React from 'react';
 import { FileSpreadsheet, Code, Database, BarChart2 } from 'lucide-react';
-import { Skill, SkillsProps } from '@/features/common/types';
+import { Skill, SkillsProps } from '@/core/common/types';
 
 const Skills: React.FC<SkillsProps> = ({ skills }) => {
   const defaultSkills: Skill[] = [
