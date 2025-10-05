@@ -1,7 +1,7 @@
 // components/projects/SqlProject.tsx
 import React from 'react';
 import Card from '../../../common/components/Card';
-import { ProjectContentProps } from '@/features//common/types';
+import { ProjectContentProps } from '@/features/common/types';
 
 const SqlProjectShowcase: React.FC<ProjectContentProps> = ({ project }) => {
   // SQL uses purple color scheme

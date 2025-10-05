@@ -3,10 +3,10 @@ import Header from './Head';
 import Footer from './Footer';
 import PersonJsonLd from '../../seo/components/PersonJsonLd';
 import ConstructionBanner from '../../workInProgress/components/ConstructionBanner';
-import { LayoutProps } from '@/features//common/types';
+import { LayoutProps } from '@/features/common/types';
 import Box from '@swiftpost/elysium/ui/base/Box';
 import Stack from '@swiftpost/elysium/ui/base/Stack';
-import { colors } from '@/features//common/styles/colors';
+import { colors } from '@/features/common/styles/colors';
 
 const BaseLayout: React.FC<LayoutProps> = ({ children }) => {
   return (

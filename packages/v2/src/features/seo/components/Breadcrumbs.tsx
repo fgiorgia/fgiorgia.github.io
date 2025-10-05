@@ -58,7 +58,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import { BreadcrumbsProps } from '@/features//common/types';
+import { BreadcrumbsProps } from '@/features/common/types';
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
   // Site URL for schema

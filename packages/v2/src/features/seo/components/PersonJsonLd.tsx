@@ -2,7 +2,7 @@
 import React from 'react';
 import Head from 'next/head';
 import { siteUrl } from '../seo';
-import { getAssetPath } from '@/features//common/utils';
+import { getAssetPath } from '@/features/common/utils';
 
 const PersonJsonLd: React.FC = () => {
   const personSchema = {

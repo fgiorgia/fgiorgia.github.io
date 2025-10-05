@@ -1,6 +1,6 @@
 // Components/projects/ProjectTabs.tsx
 import React, { useState, useRef, useEffect } from 'react';
-import { ProjectTabsProps } from '@/features//common/types';
+import { ProjectTabsProps } from '@/features/common/types';
 import ProjectDetails from './ProjectDetails';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 

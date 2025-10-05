@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectsGridCard from './ProjectsGridCard';
 import Button from '../../../common/components/Button';
-import { ProjectsGridProps } from '@/features//common/types';
+import { ProjectsGridProps } from '@/features/common/types';
 
 const ProjectsGrid: React.FC<ProjectsGridProps> = ({ projects }) => {
   if (!projects || projects.length === 0) {

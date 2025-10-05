@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '@/features/common/components/Card';
-import { ProjectContentProps } from '@/features//common/types';
+import { ProjectContentProps } from '@/features/common/types';
 
 const ProjectCode: React.FC<ProjectContentProps> = ({ project }) => {
   return (

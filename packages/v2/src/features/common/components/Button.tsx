@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ButtonProps } from '@/features//common/types';
+import { ButtonProps } from '@/features/common/types';
 
 const Button: React.FC<ButtonProps> = ({
   href,

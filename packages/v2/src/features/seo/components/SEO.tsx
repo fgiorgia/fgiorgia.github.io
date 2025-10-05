@@ -1,8 +1,8 @@
 // packages/v2/components/seo/SEO.tsx
 import React from 'react';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
-import { getAssetPath } from '@/features//common/utils';
-import { SEOProps } from '@/features//common/types';
+import { getAssetPath } from '@/features/common/utils';
+import { SEOProps } from '@/features/common/types';
 import { siteUrl, defaultSEO } from '../seo';
 
 const SEO: React.FC<SEOProps> = ({
