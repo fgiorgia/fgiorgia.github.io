@@ -87,7 +87,6 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
       >
         <X size={24} />
       </button>
-
       {/* Image container */}
       <div
         className={`relative w-[90vw] h-[80vh] ${getCategoryBackgroundColor(project.category)} rounded-lg p-4 flex items-center justify-center`}
@@ -105,7 +104,6 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
           unoptimized
         />
       </div>
-
       {/* Navigation buttons */}
       {images.length > 1 && (
         <>
@@ -131,7 +129,6 @@ const ProjectLightboxModal: React.FC<ProjectLightboxModalProps> = ({
           </button>
         </>
       )}
-
       {/* Image counter */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/60 text-white px-3 py-1 rounded-full">
         {selectedIndex + 1} / {images.length}

@@ -62,7 +62,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           tags: [...project.tags, project.category, ...project.technologies],
         }}
       />
-
       {/* Project Header */}
       <div className="bg-indigo-700 text-white">
         <div className="container-wide py-16">
@@ -124,7 +123,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           </div>
         </div>
       </div>
-
       {/* Breadcrumbs */}
       <div className="container-wide">
         <Breadcrumbs
@@ -139,7 +137,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           ]}
         />
       </div>
-
       {/* Project Metadata */}
       <div className="bg-white border-b">
         <div className="container-wide py-4">
@@ -209,7 +206,6 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
           </div>
         </div>
       </div>
-
       <ProjectTabs project={project} />
     </BaseLayoutTemplate>
   );

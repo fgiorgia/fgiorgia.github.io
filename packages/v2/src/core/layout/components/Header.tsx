@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           sx={{ height: unit(8) }}
         >
           <Stack direction="row" alignItems="center">
-            <NextLink href="/">
+            <NextLink href="/" legacyBehavior>
               <Stack direction="row" alignItems="center">
                 {/* Logo Image */}
                 <Stack
