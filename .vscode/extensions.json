@@ -1,7 +1,7 @@
 {
     "recommendations": [
-        "sissel.shopify-liquid",
         "davidanson.vscode-markdownlint",
-        "dbaeumer.vscode-eslint"
+        "dbaeumer.vscode-eslint",
+        "gruntfuggly.todo-tree"
     ]
 }
