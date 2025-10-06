@@ -28,7 +28,7 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <Link href={href} className={buttonClasses} {...props}>
+      <Link href={href} className={buttonClasses} {...props} legacyBehavior>
         {children}
       </Link>
     );

@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
       <div className="container-wide">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <div className="flex items-center">
                 {/* Logo Image */}
                 <div className="flex justify-center mb-4">
@@ -101,6 +101,7 @@ const Footer: React.FC = () => {
                 key={link.name}
                 href={link.href}
                 className="text-sm text-gray-400 hover:text-white transition-colors"
+                legacyBehavior
               >
                 {link.name}
               </Link>
