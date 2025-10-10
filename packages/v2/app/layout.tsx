@@ -1,3 +1,9 @@
+import '@/core/styles/legacyGlobals.css';
+import './globals.css';
+import AppRouterCacheProvider from '@swiftpost/elysium/core/AppRouterCacheProvider';
+import ThemeProvider from '@swiftpost/elysium/core/ThemeProvider';
+import { theme, mainFont } from '@/core/styles/theme';
+
 interface Props {
   children: React.ReactNode;
 }
@@ -8,8 +14,17 @@ const RootLayout: React.FC<Props> = ({
   children,
 }) => {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className={mainFont.variable}>
+      <body>
+        <AppRouterCacheProvider
+          options={{
+            // Required while transitioning from Tailwind
+            enableCssLayer: true,
+          }}
+        >
+          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+        </AppRouterCacheProvider>
+      </body>
     </html>
   );
 };
