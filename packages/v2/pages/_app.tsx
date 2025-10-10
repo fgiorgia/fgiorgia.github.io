@@ -4,7 +4,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 import { AppCacheProvider } from '@mui/material-nextjs/v15-pagesRouter';
 import { defaultSEO } from '@/features/seo/seo';
 import CookieConsent from '@/features/analytics/components/CookieConsent';
-import '@/core/styles/globals.css';
+import '@/core/styles/legacyGlobals.css';
 
 import ThemeProvider from '@swiftpost/elysium/core/ThemeProvider';
 import { theme, mainFont } from '@/core/styles/theme';
