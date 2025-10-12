@@ -17,23 +17,20 @@
     "lint:fix": "turbo lint:fix"
   },
   "dependencies": {
+    "@mui/material": "^7",
     "@swiftpost/elysium": "*",
-    "@mui/icons-material": "^7",
     "next": "^15.5.3",
     "react": "^19",
-    "react-dom": "^19",
-    "sharp": "^0.33.5",
-    "tailwind-scrollbar-hide": "^2.0.0"
-  },
-  "peerDependencies": {
-    "@mui/material": "^7"
+    "react-dom": "^19"
   },
   "devDependencies": {
     "@swiftpost/config": "*",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^8.46",
+    "@typescript-eslint/eslint-plugin": "^8.46",
+    "eslint-config-next": ">=14",
     "eslint": "^9",
     "prettier": "^3.6",
     "turbo": "^2.5",

@@ -11,26 +11,31 @@
     "lint:fix": "yarn lint --fix"
   },
   "dependencies": {
-    "@emotion/cache": "^11.14.0",
-    "@emotion/server": "^11.11.0",
-    "@mui/material": "^7.3.2",
-    "@mui/material-nextjs": "^7.3.2",
+    "@mui/icons-material": "^7",
     "@next/third-parties": "^15.2.2",
+    "tailwind-scrollbar-hide": "^2.0.0",
     "lucide-react": "^0.479.0",
-    "next": "^15.5.3",
     "next-seo": "^6.6.0",
     "next-sitemap": "^4.2.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "sharp": "^0.33.5"
   },
-  "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
+  "peerDependencies": {
+    "@mui/material": "^7",
+    "@swiftpost/config": "*",
+    "@swiftpost/elysium": "*",
+    "next": "^15",
+    "react": "^19",
+    "react-dom": "^19",
     "@types/node": "^22",
     "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react-dom": "^19"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@typescript-eslint/eslint-plugin": ">=8",
     "eslint": "^9",
-    "eslint-config-next": "15.2.2",
+    "eslint-config-next": "^15",
+    "prettier": ">=3.6",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.13",
     "typescript": "^5"

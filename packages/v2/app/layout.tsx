@@ -1,6 +1,6 @@
 import '@/core/styles/legacyGlobals.css';
 import './globals.css';
-import AppRouterCacheProvider from '@swiftpost/elysium/core/AppRouterCacheProvider';
+import AppRouterCacheProvider from '@swiftpost/elysium/core/next15/AppRouterCacheProvider';
 import ThemeProvider from '@swiftpost/elysium/core/ThemeProvider';
 import { theme, mainFont } from '@/core/styles/theme';
 
