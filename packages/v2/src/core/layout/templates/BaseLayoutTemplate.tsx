@@ -20,9 +20,9 @@ const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
         color: colors.gray[800],
       }}
     >
-      {/* <PersonJsonLd /> */}
+      <PersonJsonLd />
       <Header />
-      {/* <Box
+      <Box
         component="main"
         sx={{
           flexGrow: 1,
@@ -30,10 +30,10 @@ const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
         }}
       >
         {children}
-      </Box> */}
+      </Box>
       <Footer />
       {/* Construction banner outside the main flow to overlay properly */}
-      {/* <ConstructionBanner /> */}
+      <ConstructionBanner />
     </Stack>
   );
 };
