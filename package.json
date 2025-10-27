@@ -20,8 +20,8 @@
     "@mui/material": "^7",
     "@swiftpost/elysium": "*",
     "next": "^15.5.3",
-    "react": "^19",
-    "react-dom": "^19"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@swiftpost/config": "*",
