@@ -110,20 +110,6 @@ export interface SkillsProps {
   skills?: Skill[];
 }
 
-export interface SEOProps {
-  title?: string;
-  description?: string;
-  canonical?: string;
-  ogImage?: string;
-  ogImageAlt?: string;
-  noindex?: boolean;
-  article?: {
-    publishedTime: string;
-    modifiedTime?: string;
-    tags?: string[];
-  };
-}
-
 export interface BreadcrumbItem {
   href: string;
   label: string;

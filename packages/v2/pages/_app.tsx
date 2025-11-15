@@ -2,7 +2,7 @@ import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import PagesRouterCacheProvider from '@swiftpost/elysium/core/next15/PagesRouterCacheProvider';
-import { defaultSEO } from '@/features/seo/seo';
+import { defaultSEO } from '@/features/seo/seoData';
 import CookieConsent from '@/features/analytics/components/CookieConsent';
 import '@/core/styles/legacyGlobals.css';
 

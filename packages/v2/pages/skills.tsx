@@ -8,7 +8,18 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'Skills & Expertise',
+  description:
+    'Explore my technical skills in data analysis, including Excel, Python, SQL, Business Intelligence tools, and more.',
+};
+export const metadata = generateSEOMetadata(seoMetadata);
 
 const Skills: NextPage = () => {
   // Additional skills list
@@ -35,10 +46,7 @@ const Skills: NextPage = () => {
 
   return (
     <BaseLayoutTemplate>
-      <SEO
-        title="Skills & Expertise"
-        description="Explore my technical skills in data analysis, including Excel, Python, SQL, Business Intelligence tools, and more."
-      />
+      <CompatSEO {...seoMetadata} />
 
       {/* Page Header */}
       <div className="bg-indigo-700 text-white">

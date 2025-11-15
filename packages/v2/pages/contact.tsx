@@ -1,13 +1,24 @@
 import { useState } from 'react';
 import type { NextPage } from 'next';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIconOutlined from '@mui/icons-material/MailOutlined';
 import MailIcon from '@mui/icons-material/Mail';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import { unit } from '@/core/styles/staticTheme';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'Contact Me',
+  description:
+    "Get in touch with me for data analysis services, collaborations, or job opportunities. I'd love to hear from you!",
+};
+export const metadata = generateSEOMetadata(seoMetadata);
 
 const Contact: NextPage = () => {
   // Form state
@@ -92,10 +103,7 @@ const Contact: NextPage = () => {
 
   return (
     <BaseLayoutTemplate>
-      <SEO
-        title="Contact Me"
-        description="Get in touch with me for data analysis services, collaborations, or job opportunities. I'd love to hear from you!"
-      />
+      <CompatSEO {...seoMetadata} />
 
       {/* Page Header */}
       <div className="bg-indigo-700 text-white">

@@ -1,9 +1,17 @@
 // pages/privacy.tsx
 import type { NextPage } from 'next';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
 import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
 import Link from 'next/link';
+import { SeoInputMetadata } from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'Privacy Policy',
+  description:
+    'Learn how we collect, use, and protect your personal information in compliance with GDPR and CCPA regulations.',
+  canonical: '/privacy',
+};
 
 const Privacy: NextPage = () => {
   // Get the current date to display when the policy was last updated
@@ -15,11 +23,7 @@ const Privacy: NextPage = () => {
 
   return (
     <BaseLayoutTemplate>
-      <SEO
-        title="Privacy Policy"
-        description="Learn how we collect, use, and protect your personal information in compliance with GDPR and CCPA regulations."
-        canonical="/privacy"
-      />
+      <CompatSEO {...seoMetadata} />
 
       {/* Page Header */}
       <div className="bg-indigo-700 text-white">

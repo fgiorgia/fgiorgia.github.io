@@ -3,6 +3,13 @@ import './globals.css';
 import AppRouterCacheProvider from '@swiftpost/elysium/core/next15/AppRouterCacheProvider';
 import ThemeProvider from '@swiftpost/elysium/core/ThemeProvider';
 import { theme, mainFont } from '@/core/styles/theme';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const layoutBaseMetadata: SeoInputMetadata = {};
+export const metadata = generateSEOMetadata(layoutBaseMetadata);
 
 interface Props {
   children: React.ReactNode;

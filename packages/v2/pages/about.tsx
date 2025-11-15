@@ -4,15 +4,23 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
 import { unit } from '@/core/styles/staticTheme';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'About Me',
+  description:
+    'Learn more about my background, education, experience, and interests in data analysis and business intelligence.',
+};
+export const metadata = generateSEOMetadata(seoMetadata);
 
 const About: NextPage = () => {
   return (
     <BaseLayoutTemplate>
-      <SEO
-        title="About Me"
-        description="Learn more about my background, education, experience, and interests in data analysis and business intelligence."
-      />
+      <CompatSEO {...seoMetadata} />
 
       {/* Page Header */}
       <div className="bg-indigo-700 text-white">

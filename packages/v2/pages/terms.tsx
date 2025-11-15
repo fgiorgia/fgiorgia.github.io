@@ -1,10 +1,21 @@
 // pages/terms.tsx
-import React from 'react';
 import type { NextPage } from 'next';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
 import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
 import Link from 'next/link';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'Terms of Service',
+  description:
+    'The terms and conditions governing your use of this website and the services provided.',
+  canonical: '/terms',
+};
+export const metadata = generateSEOMetadata(seoMetadata);
 
 const Terms: NextPage = () => {
   // Get the current date to display when the terms were last updated
@@ -16,7 +27,7 @@ const Terms: NextPage = () => {
 
   return (
     <BaseLayoutTemplate>
-      <SEO
+      <CompatSEO
         title="Terms of Service"
         description="The terms and conditions governing your use of this website and the services provided."
         canonical="/terms"
