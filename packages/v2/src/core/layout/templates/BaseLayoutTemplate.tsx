@@ -1,6 +1,3 @@
-'use client';
-
-import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import PersonJsonLd from '../../../features/seo/components/PersonJsonLd';
@@ -20,8 +17,8 @@ const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
         color: colors.gray[800],
       }}
     >
-      <PersonJsonLd />
-      <Header />
+      {/* <PersonJsonLd /> */}
+      {/* <Header /> */}
       <Box
         component="main"
         sx={{
@@ -31,9 +28,9 @@ const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
       >
         {children}
       </Box>
-      <Footer />
+      {/* <Footer /> */}
       {/* Construction banner outside the main flow to overlay properly */}
-      <ConstructionBanner />
+      {/* <ConstructionBanner /> */}
     </Stack>
   );
 };
