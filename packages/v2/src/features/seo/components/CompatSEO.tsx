@@ -1,12 +1,10 @@
-'use client';
-
 import React from 'react';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
 import { getAssetPath } from '@/core/common/utils';
 import { siteUrl, defaultSEO } from '../seoData';
-import { useIsPagesRouter } from '@/core/compat/useIsPagesRouter';
 import { SeoInputMetadata } from '../generateSEOMetadata';
 
+// TODO: Can be removed once switching completely to AppRouter
 const CompatSEO: React.FC<SeoInputMetadata> = ({
   title,
   description,
@@ -24,41 +22,37 @@ const CompatSEO: React.FC<SeoInputMetadata> = ({
       : `${siteUrl}${getAssetPath(ogImage)}`
     : `${siteUrl}${getAssetPath('./images/gfanalytics-og.png')}`;
 
-  const isPagesRouter = useIsPagesRouter();
-
   return (
     <>
-      {isPagesRouter && (
-        // TODO: Can be removed once switching completely to AppRouter
-        <NextSeo
-          title={title}
-          description={description}
-          canonical={pageUrl}
-          noindex={noindex}
-          titleTemplate={defaultSEO.titleTemplate} // Explicitly use the titleTemplate from defaultSEO
-          openGraph={{
-            url: pageUrl,
-            title: title, // This will be used as-is for OpenGraph
-            description: description,
-            images: [
-              {
-                url: imageUrl,
-                width: 1200,
-                height: 630,
-                alt: ogImageAlt || title || 'Page image',
-              },
-            ],
-            ...(article && {
-              type: 'article',
-              article: {
-                publishedTime: article.publishedTime,
-                modifiedTime: article.modifiedTime,
-                tags: article.tags,
-              },
-            }),
-          }}
-        />
-      )}
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={pageUrl}
+        noindex={noindex}
+        titleTemplate={defaultSEO.titleTemplate} // Explicitly use the titleTemplate from defaultSEO
+        openGraph={{
+          url: pageUrl,
+          title: title, // This will be used as-is for OpenGraph
+          description: description,
+          images: [
+            {
+              url: imageUrl,
+              width: 1200,
+              height: 630,
+              alt: ogImageAlt || title || 'Page image',
+            },
+          ],
+          ...(article && {
+            type: 'article',
+            article: {
+              publishedTime: article.publishedTime,
+              modifiedTime: article.modifiedTime,
+              tags: article.tags,
+            },
+          }),
+        }}
+      />
+
       {/* TODO: Think if this is needed once switching to AppRouter */}
       {article && (
         <ArticleJsonLd

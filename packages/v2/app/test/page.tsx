@@ -23,7 +23,6 @@ const Home: React.FC = () => {
   const featuredProjects = getProjects().filter((project) => project.featured);
   return (
     <BaseLayoutTemplate>
-      {/* TODO: SEO doesn't work in AppRouter, replace as appropriate */}
       <HeroBanner />
       <Skills />
       <ProjectsGrid projects={featuredProjects} />
