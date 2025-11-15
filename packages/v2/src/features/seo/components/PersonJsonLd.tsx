@@ -1,7 +1,7 @@
 // packages/v2/components/seo/person_json_ld.tsx
 import React from 'react';
 import Head from 'next/head';
-import { siteUrl } from '../seo';
+import { siteUrl } from '../seoData';
 import { getAssetPath } from '@/core/common/utils';
 
 const PersonJsonLd: React.FC = () => {

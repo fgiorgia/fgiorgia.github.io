@@ -1,12 +1,13 @@
+'use client';
+
 import React from 'react';
 import { NextSeo, ArticleJsonLd } from 'next-seo';
 import { getAssetPath } from '@/core/common/utils';
-import { SEOProps } from '@/core/common/types';
-import { siteUrl, defaultSEO } from '../seo';
-import { useIsAppRouter } from '@/core/compat/isAppRouter';
-import AppRouterSEO from './AppRouterSEO';
+import { siteUrl, defaultSEO } from '../seoData';
+import { useIsPagesRouter } from '@/core/compat/useIsPagesRouter';
+import { SeoInputMetadata } from '../generateSEOMetadata';
 
-const SEO: React.FC<SEOProps> = ({
+const CompatSEO: React.FC<SeoInputMetadata> = ({
   title,
   description,
   canonical,
@@ -23,13 +24,13 @@ const SEO: React.FC<SEOProps> = ({
       : `${siteUrl}${getAssetPath(ogImage)}`
     : `${siteUrl}${getAssetPath('./images/gfanalytics-og.png')}`;
 
-  const isAppRouter = useIsAppRouter();
+  const isPagesRouter = useIsPagesRouter();
 
   return (
     <>
-      {isAppRouter ?
-        <AppRouterSEO />
-      : <NextSeo
+      {isPagesRouter && (
+        // TODO: Can be removed once switching completely to AppRouter
+        <NextSeo
           title={title}
           description={description}
           canonical={pageUrl}
@@ -57,7 +58,8 @@ const SEO: React.FC<SEOProps> = ({
             }),
           }}
         />
-      }
+      )}
+      {/* TODO: Think if this is needed once switching to AppRouter */}
       {article && (
         <ArticleJsonLd
           type="BlogPosting"
@@ -81,4 +83,4 @@ const SEO: React.FC<SEOProps> = ({
   );
 };
 
-export default SEO;
+export default CompatSEO;

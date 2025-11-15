@@ -2,7 +2,7 @@ import React from 'react';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import Link from 'next/link';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
 import Breadcrumbs from '@/features/seo/components/Breadcrumbs';
 import ProjectTabs from '@/features/projects/components/ProjectSection/ProjectTabs';
 import {
@@ -11,6 +11,18 @@ import {
 } from '@/features/projects/projectUtils';
 import { getAssetPath } from '@/core/common/utils';
 import { Project } from '@/core/common/types';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'Project Not Found',
+  description:
+    "The project you're looking for doesn't exist or has been removed.",
+  noindex: true,
+};
+export const metadata = generateSEOMetadata(seoMetadata);
 
 interface ProjectDetailProps {
   project: Project;
@@ -20,11 +32,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
   if (!project) {
     return (
       <BaseLayoutTemplate>
-        <SEO
-          title="Project Not Found"
-          description="The project you're looking for doesn't exist or has been removed."
-          noindex={true}
-        />
+        <CompatSEO {...seoMetadata} />
         <div className="container-wide py-16 text-center">
           <h1 className="text-3xl font-bold">Project not found</h1>
           <p className="mt-4">
@@ -49,7 +57,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project }) => {
 
   return (
     <BaseLayoutTemplate>
-      <SEO
+      <CompatSEO
         title={project.title}
         description={project.description}
         ogImage={

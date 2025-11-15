@@ -10,8 +10,19 @@ import {
   CheckCircle,
 } from 'lucide-react';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
 import Link from 'next/link';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'Website Under Construction',
+  description: 'This portfolio website is currently under construction.',
+  noindex: true,
+};
+export const metadata = generateSEOMetadata(seoMetadata);
 
 const Construction: NextPage = () => {
   // Progress indicators for different sections
@@ -27,7 +38,7 @@ const Construction: NextPage = () => {
 
   return (
     <BaseLayoutTemplate>
-      <SEO
+      <CompatSEO
         title="Website Under Construction"
         description="This portfolio website is currently under construction. I'm adding new projects and features regularly."
         noindex={true}

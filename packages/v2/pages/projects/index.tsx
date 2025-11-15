@@ -9,11 +9,22 @@ import {
   Filter,
 } from 'lucide-react';
 import BaseLayoutTemplate from '@/core/layout/templates/BaseLayoutTemplate';
-import SEO from '@/features/seo/components/SEO';
+import CompatSEO from '@/features/seo/components/CompatSEO';
 import ProjectsGridCard from '@/features/projects/components/ProjectsGrid/ProjectsGridCard';
 import { getProjects } from '@/features/projects/projectUtils';
 import { Project } from '@/core/common/types';
 import ComingSoonCard from '@/features/workInProgress/components/ComingSoonCard';
+import {
+  generateSEOMetadata,
+  SeoInputMetadata,
+} from '@/features/seo/generateSEOMetadata';
+
+const seoMetadata: SeoInputMetadata = {
+  title: 'Projects',
+  description:
+    'Explore my portfolio of data analysis and business intelligence projects, including Excel dashboards, Python analysis, SQL optimization, and Power BI visualizations.',
+};
+export const metadata = generateSEOMetadata(seoMetadata);
 
 interface ProjectsPageProps {
   projects: Project[];
@@ -98,10 +109,7 @@ const Projects: NextPage<ProjectsPageProps> = ({ projects }) => {
 
   return (
     <BaseLayoutTemplate>
-      <SEO
-        title="Projects"
-        description="Explore my portfolio of data analysis and business intelligence projects, including Excel dashboards, Python analysis, SQL optimization, and Power BI visualizations."
-      />
+      <CompatSEO {...seoMetadata} />
 
       {/* Page Header */}
       <div className="bg-indigo-700 text-white">
