@@ -11,7 +11,8 @@
   "scripts": {
     "dev": "yarn workspace v2 dev",
     "build": "yarn workspace v2 build",
-    "start": "yarn workspace v2 start",
+    "build:dev": "yarn workspace v2 build:dev",
+    "serve": "yarn workspace v2 serve",
     "lint": "turbo lint",
     "lint:ci": "turbo lint --ui=stream --concurrency=1 -- --quiet",
     "lint:fix": "turbo lint:fix"
