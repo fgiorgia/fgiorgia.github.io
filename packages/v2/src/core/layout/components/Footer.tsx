@@ -1,3 +1,6 @@
+'use client';
+// TODO: consider removing after transition to app router
+
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
