@@ -24,10 +24,6 @@ const Home: React.FC = () => {
   const featuredProjects = getProjects().filter((project) => project.featured);
   return (
     <BaseLayoutTemplate>
-      <CompatSEO
-        description="Data Analyst specializing in Excel, Python, SQL, and Business Intelligence solutions. View my portfolio showcasing data analysis and visualization projects."
-        ogImage={getAssetPath('./images/gfanalytics-og.png')}
-      />
       <HeroBanner />
       <Skills />
       <ProjectsGrid projects={featuredProjects} />
