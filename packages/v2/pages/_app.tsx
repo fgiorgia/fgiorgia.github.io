@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { AppCacheProvider } from '@mui/material-nextjs/v15-pagesRouter';
+import PagesRouterCacheProvider from '@swiftpost/elysium/core/next15/PagesRouterCacheProvider';
 import { defaultSEO } from '@/features/seo/seo';
 import CookieConsent from '@/features/analytics/components/CookieConsent';
 import '@/core/styles/legacyGlobals.css';
@@ -11,7 +11,7 @@ import { theme, mainFont } from '@/core/styles/theme';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
-    <AppCacheProvider {...pageProps}>
+    <PagesRouterCacheProvider {...pageProps}>
       <DefaultSeo {...defaultSEO} />
       {process.env.NEXT_PUBLIC_GA_ID && (
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
@@ -22,7 +22,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         </main>
       </ThemeProvider>
       <CookieConsent />
-    </AppCacheProvider>
+    </PagesRouterCacheProvider>
   );
 };
 

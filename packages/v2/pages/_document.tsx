@@ -6,11 +6,12 @@ import Document, {
   DocumentContext,
   DocumentProps,
 } from 'next/document';
+
 import {
   DocumentHeadTags,
   DocumentHeadTagsProps,
   documentGetInitialProps,
-} from '@mui/material-nextjs/v15-pagesRouter';
+} from '@swiftpost/elysium/core/next15/PagesRouterCacheProvider';
 
 function MyDocument(props: DocumentProps & DocumentHeadTagsProps) {
   return (

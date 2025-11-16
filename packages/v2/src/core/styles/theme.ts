@@ -1,6 +1,6 @@
 'use client';
 
-import { createTheme } from '@mui/material/styles';
+import { createTheme } from '@swiftpost/elysium/themes/createTheme';
 import { theme as baseTheme } from '@swiftpost/elysium/themes/gamut';
 import { Inter } from 'next/font/google';
 
