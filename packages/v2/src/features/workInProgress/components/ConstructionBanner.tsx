@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import { Hammer, X } from 'lucide-react';
 import Link from 'next/link';

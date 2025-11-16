@@ -13,7 +13,7 @@ const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
     <Stack
       direction="column"
       sx={{
-        minHeight: '100vh',
+        minHeight: '100dvh',
         backgroundColor: colors.gray[50],
         color: colors.gray[800],
       }}
@@ -25,8 +25,6 @@ const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
         sx={{
           flexGrow: 1,
           display: 'block',
-          // ensure minHeight for layouts that rely on full-viewport
-          minHeight: '0',
         }}
       >
         {children}
