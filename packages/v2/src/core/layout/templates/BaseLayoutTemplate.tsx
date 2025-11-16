@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -13,27 +15,25 @@ const BaseLayoutTemplate: React.FC<LayoutProps> = ({ children }) => {
     <Stack
       direction="column"
       sx={{
-        minHeight: '100vh',
+        minHeight: '100dvh',
         backgroundColor: colors.gray[50],
         color: colors.gray[800],
       }}
     >
-      <PersonJsonLd />
+      {/* <PersonJsonLd /> */}
       <Header />
-      <Box
+      {/* <Box
         component="main"
         sx={{
           flexGrow: 1,
           display: 'block',
-          // ensure minHeight for layouts that rely on full-viewport
-          minHeight: '0',
         }}
       >
         {children}
-      </Box>
+      </Box> */}
       <Footer />
       {/* Construction banner outside the main flow to overlay properly */}
-      <ConstructionBanner />
+      {/* <ConstructionBanner /> */}
     </Stack>
   );
 };
