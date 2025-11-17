@@ -14,6 +14,6 @@ export const mainFont = Inter({
 export const theme = createTheme(baseTheme, {
   typography: {
     fontFamily:
-      'var(--font-inter) var(--default-font-family,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji")',
+      'var(--font-inter),var(--default-font-family),ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji")',
   },
 });
