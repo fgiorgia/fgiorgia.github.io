@@ -1,4 +1,5 @@
-// components/ui/cookie_consent.tsx
+'use client';
+
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Cookie, X, ChevronRight } from 'lucide-react';

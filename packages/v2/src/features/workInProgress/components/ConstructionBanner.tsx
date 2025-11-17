@@ -10,11 +10,6 @@ const ConstructionBanner: React.FC = () => {
   const [initialized, setInitialized] = useState<boolean>(false);
 
   useEffect(() => {
-    // Only run this effect on client-side
-    if (typeof window === 'undefined') {
-      return;
-    }
-
     // Initial check - run after a small delay to ensure DOM is ready
     setTimeout(checkBannerState, 300);
     setInitialized(true);

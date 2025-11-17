@@ -7,6 +7,7 @@ import {
   generateSEOMetadata,
   SeoInputMetadata,
 } from '@/features/seo/generateSEOMetadata';
+import CookieConsent from '@/features/analytics/components/CookieConsent';
 
 const layoutBaseMetadata: SeoInputMetadata = {};
 export const metadata = generateSEOMetadata(layoutBaseMetadata);
@@ -29,7 +30,12 @@ const RootLayout: React.FC<Props> = ({
             enableCssLayer: true,
           }}
         >
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <ThemeProvider theme={theme}>
+            <>
+              {children}
+              <CookieConsent />
+            </>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
